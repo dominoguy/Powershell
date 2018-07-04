@@ -37,7 +37,7 @@ Function BackupPST ($Filename, $SourceDir, $DestDir, $FilePath, $RobocopyLog)
     }
 }
 
-$List = Get-Content 'F:\Data\Scripts\pstlist.txt'
+$List = Get-Content 'F:\Data\Scripts\Powershell\pstlist.txt'
 
 Foreach ($Row in $List)
 {
@@ -55,12 +55,15 @@ Get-ChildItem $StartDir -Recurse | Where {$_.extension -eq ".pst"} | % {
         $FileName = $_.Name
         $SourceDir = $_.Directory
         $FilePath = $_.FullName
-        $DestDir = $row[1]
-        #$UserDir = $row[1]
-        #$DestDir = $SourceDir | Where-Object {$_ -notin $UserDir}
-        #Write-host " This is the destination dir  " $DestDir
+        $UserDir = $row[1]
+        #$DiffDir = Compare-Object -ReferenceObject $SourceDir -DifferenceObject $StartDir -PassThru
+        #$DiffDir = ($SourceDir -replace $Startdir , "")
+        Write-Host 'This is the difference in the directories' $DiffDir
+        $DestDir = $Userdir +'\' + $DiffDir
+        Write-host " This is the destination dir  " $DestDir
         $RobocopyLog = $DestDir +'\' + $Filename + '.log'
         #BackupPST $Filename $SourceDir $DestDir $FilePath $RobocopyLog
+        
        
 
     }
