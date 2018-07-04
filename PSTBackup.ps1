@@ -58,7 +58,7 @@ Get-ChildItem $StartDir -Recurse | Where {$_.extension -eq ".pst"} | % {
         $FilePath = $_.FullName
         $UserDir = $row[1]
         #$DiffDir = Compare-Object -ReferenceObject $SourceDir -DifferenceObject $StartDir -PassThru
-        $DiffDir = $SourceDir -replace "F:\TEST1\USERS\Betty\Outlook" , ""
+        $DiffDir = $SourceDir -replace [Regex]::Escape("F:\TEST1\USERS\Betty\Outlook") , ""
         
         Write-Host 'This is the difference in the directories' $DiffDir
         $DestDir = $Userdir +'\' + $DiffDir
