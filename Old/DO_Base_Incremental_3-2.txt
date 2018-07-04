@@ -1,0 +1,17 @@
+ Log normal %1\%4-BC-CutoffDateLog.log
+
+ option confirm:yes-to-all
+ #compare ignoring 2 second diff, daylight savings time, and using crc
+ criteria timestamp:2sec;IgnoreDST crc
+ #filter by cutoff date
+ filter cutoff:<"01/01/2012"
+ #load current files against snapshot from the last baseline
+ load "%3" "%2"
+ #expand to affect subfolders and files
+ expand all
+ #select updated files
+ select rt.all.files
+ #set the archive bit for changed files
+ attrib +a
+
+ 

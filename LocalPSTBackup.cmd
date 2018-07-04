@@ -1,0 +1,11 @@
+robocopy \\whv-dt-064.whv.ads\c$\data\outlook       D:\Data\User\CBurnett\Outlook  /e /zb /ndl /np /tee /w:0 /r:0 /log:D:\Data\User\CBurnett\Outlook\PSTCopy.log
+robocopy \\whv-dt-066.whv.ads\c$\data\outlook       D:\Data\User\AKathler\Outlook  /e /zb /ndl /np /tee /w:0 /r:0 /log:D:\Data\User\AKathler\Outlook\PSTCopy.log
+robocopy \\whv-lt-058.whv.ads\c$\data\MRyan\outlook D:\Data\User\MRyan\Outlook     /e /zb /ndl /np /tee /w:0 /r:0 /log:D:\Data\User\MRyan\Outlook\PSTCopy.log
+robocopy \\whv-lt-060.whv.ads\c$\data\              D:\Data\User\LPerich\Outlook   /e /zb /ndl /np /tee /w:0 /r:0 /log:D:\Data\User\LPerich\Outlook\PSTCopy.log
+robocopy \\whv-lt-064.whv.ads\c$\data\outlook       D:\Data\User\LHill\Outlook     /e /zb /ndl /np /tee /w:0 /r:0 /log:D:\Data\User\LHill\Outlook\PSTCopy.log
+robocopy \\whv-lt-065.whv.ads\c$\data\outlook       D:\Data\User\GGill\Outlook     /e /zb /ndl /np /tee /w:0 /r:0 /log:D:\Data\User\GGill\Outlook\PSTCopy.log
+robocopy \\whv-lt-053.whv.ads\c$\data\outlook       D:\Data\User\JKelly\Outlook    /e /zb /ndl /np /tee /w:0 /r:0 /log:D:\Data\User\JKelly\Outlook\PSTCopy.log
+robocopy \\whv-lt-059.whv.ads\c$\data\outlook       D:\Data\User\TComan\Outlook    /e /zb /ndl /np /tee /w:0 /r:0 /log:D:\Data\User\TComan\Outlook\PSTCopy.log
+robocopy \\whv-lt-066.whv.ads\c$\data\outlook       D:\Data\User\crota\Outlook     /e /zb /ndl /np /tee /w:0 /r:0 /log:D:\Data\User\crota\Outlook\PSTCopy.log
+robocopy \\whv-lt-057.whv.ads\c$\data               D:\Data\User\JWilliams\Outlook /e /zb /ndl /np /tee /w:0 /r:0 /log:D:\Data\User\JWilliams\Outlook\PSTCopy.log
+robocopy \\whv-lt-062.whv.ads\c$\data\Outlook       D:\Data\User\SParmar\Outlook   /e /zb /ndl /np /tee /w:0 /r:0 /log:D:\Data\User\SParmar\Outlook\PSTCopy.log

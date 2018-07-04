@@ -1,0 +1,26 @@
+function Test-FileLock {
+  param (
+    [parameter(Mandatory=$true)][string]$Path,
+    [parameter][string]$Source
+  )
+
+  $oFile = New-Object System.IO.FileInfo $Path
+
+  if ((Test-Path -Path $Path) -eq $false) {
+    return $false
+  }
+
+  try {
+    $oStream = $oFile.Open([System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
+
+    if ($oStream) {
+      $oStream.Close()
+    }
+    $false
+  } catch {
+    # file is locked by a process.
+    return $true
+  }
+}
+
+test-filelock -Path 'c:\data\outlook' -Source 'c:\data'

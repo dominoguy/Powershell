@@ -1,0 +1,101 @@
+﻿Folder Compare
+Produced: 5/8/2018 2:13:20 PM
+
+Mode:  Differences
+Left base folder: F:\Sandbox\Server\Backups\ACAWT\ACAWT-SQL-002
+Right base folder: F:\Sandbox\Server\Baselines\ACAWT\ACAWT-SQL-002\04_2018.bcss
+
+Left Orphan Files                                 Size      Modified
+----------------------------------------------------------------------------------
+Data\Group\Ricoh 2554\z75619en\disk1\SAV56Pf.xpi  43,053    3/11/2016 3:28:26 AM
+Data\Group\Ricoh 2554\z75619en\disk1\SAV56Pe.xpi  43,053    3/11/2016 3:28:24 AM
+Data\Group\Ricoh 2554\z75619en\disk1\SAV56Pd.xpi  43,053    3/11/2016 3:28:24 AM
+Data\Group\Ricoh 2554\z75619en\disk1\SAV56Pc.xpi  43,053    3/11/2016 3:28:24 AM
+Data\Group\Ricoh 2554\z75619en\disk1\SAV56Pb.xpi  43,053    3/11/2016 3:28:24 AM
+Data\Group\Ricoh 2554\z75619en\disk1\SAV56Pa.xpi  43,053    3/11/2016 3:28:24 AM
+Data\Group\Ricoh 2554\z75619en\disk1\SAV56P2K.RCF 2         4/8/2009 5:56:56 PM
+Data\Group\Ricoh 2554\z75619en\disk1\ricdb64.dl_  29,362    8/21/2006 10:59:12 PM
+Data\Group\Ricoh 2554\z75619en\disk1\ric56pwm.ex_ 44,822    6/28/2010 10:22:54 PM
+Data\Group\Ricoh 2554\z75619en\disk1\ric56plm.dl_ 17,842    12/26/2013 12:44:30 AM
+Data\Group\Ricoh 2554\z75619en\disk1\RIC56Pf.xpi  43,053    3/11/2016 3:27:18 AM
+Data\Group\Ricoh 2554\z75619en\disk1\ric56Pf.ini  1,043     5/21/2013 8:30:10 PM
+Data\Group\Ricoh 2554\z75619en\disk1\RIC56Pe.xpi  43,053    3/11/2016 3:27:18 AM
+Data\Group\Ricoh 2554\z75619en\disk1\ric56Pe.ini  1,043     5/21/2013 8:30:10 PM
+Data\Group\Ricoh 2554\z75619en\disk1\RIC56Pd.xpi  43,053    3/11/2016 3:27:18 AM
+Data\Group\Ricoh 2554\z75619en\disk1\ric56Pd.ini  1,043     5/21/2013 8:30:10 PM
+Data\Group\Ricoh 2554\z75619en\disk1\RIC56Pct.DL_ 30,858    6/5/2007 6:37:22 PM
+Data\Group\Ricoh 2554\z75619en\disk1\RIC56Pcj.DL_ 165,281   4/25/2013 1:31:02 AM
+Data\Group\Ricoh 2554\z75619en\disk1\RIC56Pc.xpi  43,053    3/11/2016 3:27:18 AM
+Data\Group\Ricoh 2554\z75619en\disk1\ric56Pc.ini  1,043     5/21/2013 8:30:10 PM
+Data\Group\Ricoh 2554\z75619en\disk1\ric56pc.dl_  239,356   10/28/2012 9:23:34 PM
+Data\Group\Ricoh 2554\z75619en\disk1\ric56pbd.dl_ 178,761   5/16/2013 12:47:00 AM
+Data\Group\Ricoh 2554\z75619en\disk1\RIC56Pb.xpi  43,053    3/11/2016 3:27:18 AM
+Data\Group\Ricoh 2554\z75619en\disk1\ric56Pb.ini  1,043     6/5/2007 6:04:52 PM
+Data\Group\Ricoh 2554\z75619en\disk1\RIC56Pa.xpi  43,053    3/11/2016 3:27:18 AM
+Data\Group\Ricoh 2554\z75619en\disk1\ric56Pa.ini  1,043     6/5/2007 6:05:04 PM
+Data\Group\Ricoh 2554\z75619en\disk1\RIC56P2K.RCF 2         4/8/2009 5:56:56 PM
+Data\Group\Ricoh 2554\z75619en\disk1\ric56P.pdf   48        4/8/2009 5:56:54 PM
+Data\Group\Ricoh 2554\z75619en\disk1\ric56p.cat   43,338    3/16/2016 10:35:05 PM
+Data\Group\Ricoh 2554\z75619en\disk1\readme.html  36,706    9/17/2015 10:59:35 PM
+Data\Group\Ricoh 2554\z75619en\disk1\rd06pd64.dl_ 57,736    10/28/2015 2:41:42 AM
+Data\Group\Ricoh 2554\z75619en\disk1\OEMSETUP.INF 21,384    3/11/2016 3:18:58 AM
+Data\Group\Ricoh 2554\z75619en\disk1\OEMSETUP.DSC 1,173     3/11/2016 3:18:58 AM
+Data\Group\Ricoh 2554\z75619en\disk1\NRG56Pf.xpi  43,051    3/11/2016 3:26:12 AM
+Data\Group\Ricoh 2554\z75619en\disk1\NRG56Pe.xpi  43,051    3/11/2016 3:26:12 AM
+Data\Group\Ricoh 2554\z75619en\disk1\NRG56Pd.xpi  43,051    3/11/2016 3:26:12 AM
+Data\Group\Ricoh 2554\z75619en\disk1\NRG56Pc.xpi  43,051    3/11/2016 3:26:10 AM
+Data\Group\Ricoh 2554\z75619en\disk1\NRG56Pb.xpi  43,051    3/11/2016 3:26:10 AM
+Data\Group\Ricoh 2554\z75619en\disk1\NRG56Pa.xpi  43,051    3/11/2016 3:26:10 AM
+Data\Group\Ricoh 2554\z75619en\disk1\NRG56P2K.RCF 2         4/8/2009 5:56:56 PM
+Data\Group\Ricoh 2554\z75619en\disk1\mfricr64.dl_ 46,217    8/17/2012 1:12:44 AM
+Data\Group\Ricoh 2554\z75619en\disk1\licence.txt  3,322     6/5/2007 6:08:38 PM
+Data\Group\Ricoh 2554\z75619en\disk1\LAN56Pf.xpi  43,054    3/11/2016 3:25:04 AM
+Data\Group\Ricoh 2554\z75619en\disk1\LAN56Pe.xpi  43,054    3/11/2016 3:25:04 AM
+Data\Group\Ricoh 2554\z75619en\disk1\LAN56Pd.xpi  43,054    3/11/2016 3:25:04 AM
+Data\Group\Ricoh 2554\z75619en\disk1\LAN56Pc.xpi  43,054    3/11/2016 3:25:04 AM
+Data\Group\Ricoh 2554\z75619en\disk1\LAN56Pb.xpi  43,054    3/11/2016 3:25:04 AM
+Data\Group\Ricoh 2554\z75619en\disk1\LAN56Pa.xpi  43,054    3/11/2016 3:25:04 AM
+Data\Group\Ricoh 2554\z75619en\disk1\LAN56P2K.RCF 2         4/8/2009 5:56:56 PM
+Data\Group\Ricoh 2554\z75619en\disk1\INF56Pf.xpi  43,055    3/11/2016 3:23:48 AM
+Data\Group\Ricoh 2554\z75619en\disk1\INF56Pe.xpi  43,055    3/11/2016 3:23:48 AM
+Data\Group\Ricoh 2554\z75619en\disk1\INF56Pd.xpi  43,055    3/11/2016 3:23:46 AM
+Data\Group\Ricoh 2554\z75619en\disk1\INF56Pc.xpi  43,055    3/11/2016 3:23:46 AM
+Data\Group\Ricoh 2554\z75619en\disk1\INF56Pb.xpi  43,055    3/11/2016 3:23:46 AM
+Data\Group\Ricoh 2554\z75619en\disk1\INF56Pa.xpi  43,055    3/11/2016 3:23:46 AM
+Data\Group\Ricoh 2554\z75619en\disk1\INF56P2K.RCF 2         4/8/2009 5:56:56 PM
+Data\Group\Ricoh 2554\z75619en\disk1\GES56Pf.xpi  43,057    3/11/2016 3:22:44 AM
+Data\Group\Ricoh 2554\z75619en\disk1\GES56Pe.xpi  43,057    3/11/2016 3:22:44 AM
+Data\Group\Ricoh 2554\z75619en\disk1\GES56Pd.xpi  43,057    3/11/2016 3:22:44 AM
+Data\Group\Ricoh 2554\z75619en\disk1\GES56Pc.xpi  43,057    3/11/2016 3:22:42 AM
+Data\Group\Ricoh 2554\z75619en\disk1\GES56Pb.xpi  43,057    3/11/2016 3:22:42 AM
+Data\Group\Ricoh 2554\z75619en\disk1\GES56Pa.xpi  43,057    3/11/2016 3:22:42 AM
+Data\Group\Ricoh 2554\z75619en\disk1\GES56P2K.RCF 2         4/8/2009 5:56:56 PM
+Data\Group\Ricoh 2554\z75619en\disk1\eng56pu.dl_  517,269   3/11/2016 3:16:36 AM
+Data\Group\Ricoh 2554\z75619en\disk1\eng56pl.dl_  1,221,054 3/11/2016 3:16:58 AM
+Data\Group\Ricoh 2554\z75619en\disk1\eng56p.ch_   133,524   7/5/2013 1:18:32 AM
+Data\Group\Ricoh 2554\z75619en.exe                2,820,677 11/6/2017 6:27:48 PM
+Data\Group\MMC.msc                                126,382   6/21/2013 2:58:13 PM
+Data\Group\mc-wol.exe                             5,632     4/6/2007 1:42:32 PM
+Data\Group\mcgetmac.exe                           5,120     4/6/2007 1:46:40 PM
+Data\Group\list.txt                               3,459     1/28/2012 9:54:05 AM
+Data\Group\GoTo.exe                               2,576,168 4/23/2009 7:49:38 AM
+Data\Group\GhostSrv.exe                           558,248   10/3/2003 11:11:08 AM
+Data\Group\Ghostexp.exe                           798,720   10/3/2003 10:50:00 AM
+Data\Group\ghost32.exe                            2,086,912 10/3/2003 10:41:36 AM
+Data\Group\ghost.exe                              1,394,212 6/16/2004 1:37:12 PM
+Data\Group\Eula.txt                               7,005     7/28/2006 9:32:44 AM
+Data\Group\Default.RDP                            2,026     5/17/2013 10:37:57 AM
+Data\Group\cmd searches.txt                       258       3/28/2008 9:09:02 AM
+----------------------------------------------------------------------------------
+
+Right Orphan Files                                Size      Modified
+----------------------------------------------------------------------------------
+
+Left Newer Files                                  Size      Modified
+----------------------------------------------------------------------------------
+
+Right Newer Files                                 Size      Modified
+----------------------------------------------------------------------------------
+
+Differences Files                                 Size      Modified
+----------------------------------------------------------------------------------

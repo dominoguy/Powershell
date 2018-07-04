@@ -1,0 +1,25 @@
+Log verbose %3\%4.log
+
+option confirm:yes-to-all
+
+# Compare using crc.
+
+criteria crc
+
+# Load current files against snapshot from the last patch.
+
+load "%1" "%2"
+
+# Expand to affect subfolders and files.
+
+expand all
+
+# Select updated files.
+
+select left.diff.files left.orphan.files
+
+# Copy changes to the monthly directory.
+
+copyto left path:base "%3"
+
+

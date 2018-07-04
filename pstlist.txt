@@ -1,0 +1,4 @@
+F:\TEST1\Users\Betty\Outlook,F:\TEST2\Users\Betty\Outlook
+F:\TEST1\Users\Bob\Outlook,F:\TEST2\Users\Bob\Outlook
+F:\TEST1\Users\Fred\Outlook,F:\TEST2\Users\Fred\Outlook
+F:\TEST1\Users\Ted\Outlook,F:\TEST2\Users\Ted\Outlook

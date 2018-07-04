@@ -1,0 +1,12 @@
+#Log
+#Logging
+$Logfile = 'F:\Temp\Error.Log'
+Function LogWrite
+{
+    Param ([string]$logstring)
+    Add-Content $Logfile -value $logstring
+}
+
+$pos = $name.IndexOf(";")
+$leftPart = $name.Substring(0, $pos)
+$rightPart = $name.Substring($pos+1)

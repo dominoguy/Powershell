@@ -1,0 +1,17 @@
+ Log normal %1\%4-BC-CRCLog.log
+
+ option confirm:yes-to-all
+ #compare ignoring 2 second diff, daylight savings time, and using crc
+ criteria timestamp:2sec;IgnoreDST CRC
+ #load current files against snapshot from the last baseline
+ load "%3" "%2"
+ #expand to affect subfolders and files
+ expand all
+ #select updated files
+ select rt.diff.files rt.orphan.files
+
+ #set the archive bit for changed files
+ attrib +a
+ 
+ #copy changes to Incremental folder
+ #copyto rt path:relative "%1\%4_Incremental\"

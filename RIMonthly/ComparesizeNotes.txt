@@ -1,0 +1,55 @@
+
+Parsing XML in Powershell to get the delta of data size from month to month
+Uses dot notation
+1) load the xml file
+	[xml]$xmldocument=Get-Content -path F:\Sandbox\Server\Baselines\ACAWT\ACAWT-SQL-002\04_2018_Report.xml
+2) Get the amount of changed data in MB (rounded) of the target folder
+	[math]::Round((($xmldocument.bcreport.foldercomp.foldercomp.lt.size)-($xmldocument.bcreport.foldercomp.foldercomp.rt.size))/1048576)
+note convert to GBs
+
+Disk size in bytes
+$disk = Get-WmiObject Win32_LogicalDisk -ComputerName remotecomputer -Filter "DeviceID='C:'"
+$disk.size
+$disk.freespace
+
+convert to GBs
+
+freespace - delta of monthlys if negative then Oh Oh.
+
+Powershell getting the freespace
+
+$disk = Get-WmiObject Win32_LogicalDisk -Filter "DeviceID='F:'" | Select-Object Size,FreeSpace
+$disk.size
+$disk.freespace
+
+[math]::Round($disk.freespace/1048576)
+
+
+
+435522
+
+
+
+
+Notes:
+full list of properties
+	$disk |Format-list *
+
+
+$disk = Get-WmiObject Win32_LogicalDisk -Filter "DeviceID='F:'" | Foreach-Object {$_.Size,$_.FreeSpace}
+
+$xmldocument | format-list *
+	gets details on object
+
+[math]::Round($a)
+
+
+
+
+[xml]$xmldocument=Get-Content -path F:\Temp\Report.xml
+
+
+500 000 878 592 = 4,768 
+456 677 445 632  
+
+$disk = Get-WmiObject Win32_LogicalDisk -Filter "DeviceID='F:'" | Select-Object Size,FreeSpace
