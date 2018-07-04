@@ -52,12 +52,14 @@ Get-ChildItem $StartDir -Recurse | Where {$_.extension -eq ".pst"} | % {
         Write-host "      This is the fullpath "$_.FullName
         Write-host "      This is the filename" $_.Name
         Write-host '      This is the SourcePath ' $_.Directory
+        Write-Host '      This is the start dir' $StartDir
         $FileName = $_.Name
         $SourceDir = $_.Directory
         $FilePath = $_.FullName
         $UserDir = $row[1]
         #$DiffDir = Compare-Object -ReferenceObject $SourceDir -DifferenceObject $StartDir -PassThru
-        #$DiffDir = ($SourceDir -replace $Startdir , "")
+        $DiffDir = $SourceDir -replace "F:\TEST1\USERS\Betty\Outlook" , ""
+        
         Write-Host 'This is the difference in the directories' $DiffDir
         $DestDir = $Userdir +'\' + $DiffDir
         Write-host " This is the destination dir  " $DestDir
