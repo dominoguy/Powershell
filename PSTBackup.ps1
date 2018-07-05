@@ -37,15 +37,16 @@ Function BackupPST ($Filename, $SourceDir, $DestDir, $FilePath, $RobocopyLog)
     }
 }
 
-$List = Get-Content 'F:\Data\Scripts\Powershell\pstlist.txt'
+#$List = Get-Content 'F:\Data\Scripts\Powershell\pstlist.txt'
+$List = Import-Csv 'F:\Data\Scripts\Powershell\pstlist.csv'
 
 Foreach ($Row in $List)
 {
    # write-host $Row
-   $Row = $Row.Split(",")
+   #$Row = $Row.Split(",")
 
 #get a list of pst files (recursive into sub dirs) using source a root dir
-$StartDir = $row[0]
+$StartDir = $row.StartDir
 #$FileList = New-Object System.Collections.ArrayList
 
 Get-ChildItem $StartDir -Recurse | Where {$_.extension -eq ".pst"} | % {
@@ -54,12 +55,13 @@ Get-ChildItem $StartDir -Recurse | Where {$_.extension -eq ".pst"} | % {
         Write-host '      This is the SourcePath ' $_.Directory
         Write-Host '      This is the start dir' $StartDir
         $FileName = $_.Name
-        $SourceDir = $_.Directory
+        $SourceDir = [String]($_.Directory)
         $FilePath = $_.FullName
         $UserDir = $row[1]
-        #$DiffDir = Compare-Object -ReferenceObject $SourceDir -DifferenceObject $StartDir -PassThru
-        $DiffDir = $SourceDir -replace [Regex]::Escape("F:\TEST1\USERS\Betty\Outlook") , ""
-        
+    
+        #$DiffDir = $SourceDir -replace [Regex]::Escape("F:\TEST1\USERS\Betty\Outlook") , ""
+        #$DiffDir = $SourceDir -replace [Regex]::Escape ($SourceDir) , ""
+        $DiffDir = $SourceDir -replace $StartDir , ''
         Write-Host 'This is the difference in the directories' $DiffDir
         $DestDir = $Userdir +'\' + $DiffDir
         Write-host " This is the destination dir  " $DestDir
