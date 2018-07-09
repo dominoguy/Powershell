@@ -1,7 +1,7 @@
 #PSTBackup Version 1.0
 
 #Logging
-$logFile = 'F:\Data\Scripts\Powershell\LOGS\PSTCopy.log'
+$logFile = 'D:\Data\Scripts\LOGS\PSTCopy_Manual.log'
 $logPFileExists = Test-Path -path $logFile
 If ( $logFileExists -eq $True) {
     Remove-Item $LogFile
@@ -38,8 +38,8 @@ Function BackupPST ($Filename, $SourceDir, $DestDir, $FilePath, $RobocopyLog, $U
     }
 }
 
-LogWrite "PSTBackup Begins"
-$List = Import-Csv 'F:\Data\Scripts\Powershell\pstlist.csv'
+LogWrite "Manual PSTBackup Begins"
+$List = Import-Csv 'D:\Data\Scripts\pstlist_Manual.csv'
 
 Foreach ($Row in $List)
 {
@@ -61,4 +61,4 @@ IF ($FolderExists -eq $True) {
     }
     Else {LogWrite "$Time  ***** $Username $StartDir is not available *****"}
 }
-LogWrite "PSTBackup Ends"
+LogWrite "Manual PSTBackup Ends"
