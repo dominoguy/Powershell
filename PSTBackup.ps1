@@ -1,7 +1,7 @@
 #PSTBackup Version 1.0
 
 #Logging
-$logFile = 'F:\Data\Scripts\LOGS\PSTCopy.log'
+$logFile = 'F:\Data\Scripts\Powershell\LOGS\PSTCopy.log'
 $logPFileExists = Test-Path -path $logFile
 If ( $logFileExists -eq $True) {
     Remove-Item $LogFile
@@ -45,6 +45,7 @@ Foreach ($Row in $List)
 {
 #get a list of pst files (recursive into sub dirs) using source a root dir
 $StartDir = $row.StartDir
+$UserName = $row.UserName
 $FolderExists = Test-Path $StartDir
 IF ($FolderExists -eq $True) {
     Get-ChildItem $StartDir -Recurse | Where-Object {$_.extension -eq ".pst"} | ForEach-Object {
