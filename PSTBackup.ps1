@@ -1,16 +1,19 @@
-#PSTBackup
+#PSTBackup Version 1.0
 
 #Logging
-$logPath = 'F:\Data\Scripts\LOGS'
-$logPathExists = Test-Path -path $logPath
-If ( $logPathExists -eq $False) {
-    New-Item -ItemType Directory -Force -Path $LogPath
+$logFile = 'F:\Data\Scripts\LOGS\PSTCopy.log'
+$logPFileExists = Test-Path -path $logFile
+If ( $logFileExists -eq $True) {
+    Remove-Item $LogFile
+    New-Item -ItemType File -Force -Path $LogFile
 } 
-$Logfile = $logPath + '\PSTCopy.Log'
+Else {
+    New-Item -ItemType File -Force -Path $LogFile}
 Function LogWrite
 {
     Param ([string]$logstring)
-    Add-Content $Logfile -value $logstring
+    $Time=Get-Date
+    Add-Content $Logfile -value "$Time $logstring"
 }
 Function BackupPST ($Filename, $SourceDir, $DestDir, $FilePath, $RobocopyLog)
 {$oFile = New-Object System.IO.FileInfo $FilePath
@@ -23,52 +26,38 @@ Function BackupPST ($Filename, $SourceDir, $DestDir, $FilePath, $RobocopyLog)
         }
         $False
     } Catch {
-        $Time=Get-Date
         $ErrorMessage = $_.Exception.Message
-        LogWrite "$Time $FilePath $ErrorMessage"
+        LogWrite "$FilePath $ErrorMessage"
         return $True
     } Finally{
-        $Time=Get-Date
         If (-Not $ErrorMessage) {
-            LogWrite "$Time $FilePath is ready for backup"
+            LogWrite "$FilePath is ready for backup"
             Robocopy.exe $SourceDir $DestDir $Filename /e /ndl /np /tee /w:0 /r:0 /log:$RobocopyLog
-            LogWrite "$Time $FileName has been backed up"
+            LogWrite "$FileName has been backed up"
         }
     }
 }
 
-#$List = Get-Content 'F:\Data\Scripts\Powershell\pstlist.txt'
+LogWrite "PSTBackup Begins"
 $List = Import-Csv 'F:\Data\Scripts\Powershell\pstlist.csv'
 
 Foreach ($Row in $List)
 {
-   # write-host $Row
-   #$Row = $Row.Split(",")
-
 #get a list of pst files (recursive into sub dirs) using source a root dir
 $StartDir = $row.StartDir
-#$FileList = New-Object System.Collections.ArrayList
-
-Get-ChildItem $StartDir -Recurse | Where {$_.extension -eq ".pst"} | % {
-        Write-host "      This is the fullpath "$_.FullName
-        Write-host "      This is the filename" $_.Name
-        Write-host '      This is the SourcePath ' $_.Directory
-        Write-Host '      This is the start dir' $StartDir
+$FolderExists = Test-Path $StartDir
+IF ($FolderExists -eq $True) {
+    Get-ChildItem $StartDir -Recurse | Where-Object {$_.extension -eq ".pst"} | ForEach-Object {
         $FileName = $_.Name
         $SourceDir = [String]($_.Directory)
         $FilePath = $_.FullName
-        $UserDir = $row[1]
-    
-        #$DiffDir = $SourceDir -replace [Regex]::Escape("F:\TEST1\USERS\Betty\Outlook") , ""
-        #$DiffDir = $SourceDir -replace [Regex]::Escape ($SourceDir) , ""
-        $DiffDir = $SourceDir -replace $StartDir , ''
-        Write-Host 'This is the difference in the directories' $DiffDir
+        $UserDir = $row.UserDir    
+        $DiffDir = $SourceDir.replace($StartDir,'')
         $DestDir = $Userdir +'\' + $DiffDir
-        Write-host " This is the destination dir  " $DestDir
         $RobocopyLog = $DestDir +'\' + $Filename + '.log'
-        #BackupPST $Filename $SourceDir $DestDir $FilePath $RobocopyLog
-        
-       
-
+        BackupPST $Filename $SourceDir $DestDir $FilePath $RobocopyLog    
+        } 
     }
+    Else {LogWrite "$Time $StartDir is not available"}
 }
+LogWrite "PSTBackup Ends"
