@@ -1,14 +1,7 @@
 #PSTBackup Version 1.0
 
 #Logging
-$logFile = 'F:\Data\Scripts\Powershell\LOGS\PSTCopy.log'
-$logPFileExists = Test-Path -path $logFile
-If ( $logFileExists -eq $True) {
-    Remove-Item $LogFile
-    New-Item -ItemType File -Force -Path $LogFile
-} 
-Else {
-    New-Item -ItemType File -Force -Path $LogFile}
+
 Function LogWrite
 {
     Param ([string]$logstring)
@@ -37,6 +30,15 @@ Function BackupPST ($Filename, $SourceDir, $DestDir, $FilePath, $RobocopyLog, $U
         }
     }
 }
+
+$logFile = 'F:\Data\Scripts\Powershell\LOGS\PSTCopy.log'
+$logPFileExists = Test-Path -path $logFile
+If ( $logFileExists -eq $True) {
+    Remove-Item $LogFile
+    New-Item -ItemType File -Force -Path $LogFile
+} 
+Else {
+    New-Item -ItemType File -Force -Path $LogFile}
 
 LogWrite "PSTBackup Begins"
 $List = Import-Csv 'F:\Data\Scripts\Powershell\pstlist.csv'
