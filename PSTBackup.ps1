@@ -7,8 +7,15 @@ function Write-Log
     $Time=Get-Date
     Add-Content $Logfile -value "$Time $logstring"
 }
-function Backup-PST ($Filename, $SourceDir, $DestDir, $FilePath, $RobocopyLog, $Username)
+function Backup-PST
 {
+    Param ([String]$Filename,
+            [String]$SourceDir,
+            [String]$DestDir,
+            [String]$FilePath,
+            [String]$RobocopyLog,
+            [String]$Username)
+
     $oFile = New-Object System.IO.FileInfo $FilePath
     try
     {
