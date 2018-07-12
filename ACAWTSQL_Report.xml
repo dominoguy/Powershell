@@ -1,0 +1,2284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bcreport created="7/12/2018 2:25:46 PM">
+	<foldercomp>
+		<ltpath>F:\Sandbox\Server\Baselines\ACAWT\ACAWT-SQL-002\04_2018.bcss</ltpath>
+		<rtpath>F:\Sandbox\Server\Backups\ACAWT\ACAWT-SQL-002</rtpath>
+		<mode>Differences</mode>
+		<foldercomp>
+			<lt>
+				<name>Data</name>
+				<size>14,731,340</size>
+				<modified>4/13/2018 3:54:13 PM</modified>
+			</lt>
+			<rt>
+				<name>Data</name>
+				<size>88,015,189</size>
+				<modified>4/13/2018 3:54:13 PM</modified>
+			</rt>
+			<foldercomp>
+				<lt>
+					<name>Group</name>
+					<size>14,729,080</size>
+					<modified>5/8/2018 1:41:41 PM</modified>
+				</lt>
+				<rt>
+					<name>Group</name>
+					<size>39,739,246</size>
+					<modified>7/12/2018 11:34:49 AM</modified>
+				</rt>
+				<foldercomp>
+					<rt>
+						<name>Lexmark_Printer_Software_G2_PCL</name>
+						<size>32,175,104</size>
+						<modified>7/12/2018 11:34:49 AM</modified>
+					</rt>
+					<foldercomp>
+						<rt>
+							<name>Drivers</name>
+							<size>32,175,104</size>
+							<modified>7/12/2018 11:34:49 AM</modified>
+						</rt>
+						<foldercomp>
+							<rt>
+								<name>Print</name>
+								<size>32,175,104</size>
+								<modified>7/12/2018 11:34:49 AM</modified>
+							</rt>
+							<foldercomp>
+								<rt>
+									<name>GDI</name>
+									<size>32,175,104</size>
+									<modified>7/12/2018 11:34:50 AM</modified>
+								</rt>
+								<foldercomp>
+									<rt>
+										<name>amd64</name>
+										<size>13,969,685</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<foldercomp>
+										<rt>
+											<name>amd64</name>
+											<size>5,814,799</size>
+											<modified>7/12/2018 11:34:50 AM</modified>
+										</rt>
+										<filecomp status="rtonly">
+											<rt>
+												<name>locale.gp_</name>
+												<size>3,543</size>
+												<modified>4/25/2013 8:10:00 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>msxpsinc.gp_</name>
+												<size>93</size>
+												<modified>4/25/2013 8:10:02 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>msxpsinc.pp_</name>
+												<size>92</size>
+												<modified>4/25/2013 8:09:58 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>mxdwdrv.dl_</name>
+												<size>491,604</size>
+												<modified>4/25/2013 8:10:00 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>p6disp.gp_</name>
+												<size>7,097</size>
+												<modified>4/25/2013 8:10:02 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>p6font.gp_</name>
+												<size>1,084</size>
+												<modified>4/25/2013 8:09:58 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pcl4res.dl_</name>
+												<size>86,274</size>
+												<modified>4/25/2013 8:09:58 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pcl5eres.dl_</name>
+												<size>401,345</size>
+												<modified>4/25/2013 8:09:58 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pcl5ures.dl_</name>
+												<size>400,893</size>
+												<modified>4/25/2013 8:10:00 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pclxl.dl_</name>
+												<size>80,963</size>
+												<modified>4/25/2013 8:09:58 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pclxl.gp_</name>
+												<size>3,722</size>
+												<modified>4/25/2013 8:09:58 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pjl.gp_</name>
+												<size>482</size>
+												<modified>4/25/2013 8:09:58 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pjlmon.dl_</name>
+												<size>12,790</size>
+												<modified>4/25/2013 8:10:00 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>ps_schm.gd_</name>
+												<size>1,684</size>
+												<modified>4/25/2013 8:10:00 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>ps5ui.dl_</name>
+												<size>439,409</size>
+												<modified>4/25/2013 8:09:56 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pscript.hl_</name>
+												<size>11,640</size>
+												<modified>4/25/2013 8:10:00 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pscript.nt_</name>
+												<size>625,885</size>
+												<modified>4/25/2013 8:10:00 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pscript5.dl_</name>
+												<size>375,423</size>
+												<modified>4/25/2013 8:09:58 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pscrptfe.nt_</name>
+												<size>760,828</size>
+												<modified>4/25/2013 8:10:00 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>stddtype.gd_</name>
+												<size>7,001</size>
+												<modified>4/25/2013 8:10:00 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>stdnames.gp_</name>
+												<size>3,545</size>
+												<modified>4/25/2013 8:09:58 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>stdschem.gd_</name>
+												<size>16,010</size>
+												<modified>4/25/2013 8:09:56 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>stdschmx.gd_</name>
+												<size>901</size>
+												<modified>4/25/2013 8:10:00 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>ttfsub.gp_</name>
+												<size>283</size>
+												<modified>4/25/2013 8:09:56 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>unidrv.dl_</name>
+												<size>325,404</size>
+												<modified>4/25/2013 8:09:56 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>unidrv.hl_</name>
+												<size>8,654</size>
+												<modified>4/25/2013 8:09:58 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>unidrvui.dl_</name>
+												<size>472,705</size>
+												<modified>4/25/2013 8:09:56 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>unires.dl_</name>
+												<size>549,048</size>
+												<modified>4/25/2013 8:09:56 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>xpssvcs.dl_</name>
+												<size>726,397</size>
+												<modified>4/25/2013 8:09:56 PM</modified>
+											</rt>
+										</filecomp>
+									</foldercomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LangDll.dll</name>
+											<size>30,208</size>
+											<modified>6/1/2016 8:56:48 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02o4a.dl_</name>
+											<size>396,566</size>
+											<modified>6/9/2016 8:32:24 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02o4c.dl_</name>
+											<size>123,437</size>
+											<modified>6/9/2016 8:32:10 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02o4z.dl_</name>
+											<size>834,856</size>
+											<modified>6/9/2016 8:32:40 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02o4z.ex_</name>
+											<size>37,348</size>
+											<modified>6/9/2016 8:33:12 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02o40.dl_</name>
+											<size>8,118</size>
+											<modified>6/9/2016 8:32:10 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02obc.dl_</name>
+											<size>511,417</size>
+											<modified>7/1/2015 4:13:54 PM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02obj.dl_</name>
+											<size>32,667</size>
+											<modified>6/11/2014 1:47:30 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02opt.dl_</name>
+											<size>187,069</size>
+											<modified>6/8/2016 3:21:04 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02opu.dl_</name>
+											<size>87,793</size>
+											<modified>6/20/2016 2:51:20 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02otd.dl_</name>
+											<size>82,899</size>
+											<modified>1/22/2014 1:22:50 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oua.dl_</name>
+											<size>45,650</size>
+											<modified>6/2/2016 6:12:56 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oub.dl_</name>
+											<size>105,137</size>
+											<modified>6/2/2016 6:12:52 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02ouc.dl_</name>
+											<size>460,597</size>
+											<modified>6/2/2016 6:13:18 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oud.dl_</name>
+											<size>4,038,945</size>
+											<modified>6/2/2016 6:13:00 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oue.dl_</name>
+											<size>812,621</size>
+											<modified>6/2/2016 6:12:58 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02ouf.dl_</name>
+											<size>93,878</size>
+											<modified>6/2/2016 6:13:08 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oug.dl_</name>
+											<size>26,012</size>
+											<modified>6/2/2016 6:13:02 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02ouh.dl_</name>
+											<size>210,284</size>
+											<modified>6/2/2016 6:13:06 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>ntprint.cat</name>
+											<size>15,060</size>
+											<modified>4/25/2013 8:09:54 PM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>ntprint.inf</name>
+											<size>14,324</size>
+											<modified>4/25/2013 8:09:54 PM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>ar</name>
+										<size>147,153</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>147,153</size>
+											<modified>3/9/2016 2:31:44 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>cs</name>
+										<size>183,287</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>183,287</size>
+											<modified>3/9/2016 2:31:48 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>da</name>
+										<size>178,767</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>178,767</size>
+											<modified>3/9/2016 2:31:34 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>de</name>
+										<size>186,615</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>186,615</size>
+											<modified>3/9/2016 2:31:38 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>el</name>
+										<size>205,657</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>205,657</size>
+											<modified>3/9/2016 2:31:42 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>en</name>
+										<size>166,716</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>166,716</size>
+											<modified>3/9/2016 2:31:46 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>es</name>
+										<size>181,039</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>181,039</size>
+											<modified>3/9/2016 2:31:50 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>fi</name>
+										<size>177,338</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>177,338</size>
+											<modified>3/9/2016 2:31:42 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>fr</name>
+										<size>187,018</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>187,018</size>
+											<modified>3/9/2016 2:31:50 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>hr</name>
+										<size>183,067</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>183,067</size>
+											<modified>4/19/2016 1:19:06 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>hu</name>
+										<size>188,862</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>188,862</size>
+											<modified>3/9/2016 2:31:58 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>i386</name>
+										<size>12,999,192</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<foldercomp>
+										<rt>
+											<name>i386</name>
+											<size>5,476,072</size>
+											<modified>7/12/2018 11:34:50 AM</modified>
+										</rt>
+										<filecomp status="rtonly">
+											<rt>
+												<name>locale.gp_</name>
+												<size>3,543</size>
+												<modified>4/25/2013 8:10:10 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>msxpsinc.gp_</name>
+												<size>93</size>
+												<modified>4/25/2013 8:10:10 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>msxpsinc.pp_</name>
+												<size>92</size>
+												<modified>4/25/2013 8:10:08 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>mxdwdrv.dl_</name>
+												<size>508,815</size>
+												<modified>4/25/2013 8:10:10 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>p6disp.gp_</name>
+												<size>7,097</size>
+												<modified>4/25/2013 8:10:12 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>p6font.gp_</name>
+												<size>1,084</size>
+												<modified>4/25/2013 8:10:06 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pcl4res.dl_</name>
+												<size>86,273</size>
+												<modified>4/25/2013 8:10:08 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pcl5eres.dl_</name>
+												<size>401,343</size>
+												<modified>4/25/2013 8:10:08 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pcl5ures.dl_</name>
+												<size>400,891</size>
+												<modified>4/25/2013 8:10:10 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pclxl.dl_</name>
+												<size>80,961</size>
+												<modified>4/25/2013 8:10:08 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pclxl.gp_</name>
+												<size>3,722</size>
+												<modified>4/25/2013 8:10:08 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pjl.gp_</name>
+												<size>482</size>
+												<modified>4/25/2013 8:10:08 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pjlmon.dl_</name>
+												<size>11,077</size>
+												<modified>4/25/2013 8:10:10 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>ps_schm.gd_</name>
+												<size>1,684</size>
+												<modified>4/25/2013 8:10:08 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>ps5ui.dl_</name>
+												<size>396,148</size>
+												<modified>4/25/2013 8:10:06 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pscript.hl_</name>
+												<size>11,640</size>
+												<modified>4/25/2013 8:10:10 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pscript.nt_</name>
+												<size>625,438</size>
+												<modified>4/25/2013 8:10:10 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pscript5.dl_</name>
+												<size>337,082</size>
+												<modified>4/25/2013 8:10:06 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>pscrptfe.nt_</name>
+												<size>760,002</size>
+												<modified>4/25/2013 8:10:10 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>stddtype.gd_</name>
+												<size>7,001</size>
+												<modified>4/25/2013 8:10:10 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>stdnames.gp_</name>
+												<size>3,545</size>
+												<modified>4/25/2013 8:10:08 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>stdschem.gd_</name>
+												<size>16,010</size>
+												<modified>4/25/2013 8:10:06 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>stdschmx.gd_</name>
+												<size>901</size>
+												<modified>4/25/2013 8:10:08 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>ttfsub.gp_</name>
+												<size>283</size>
+												<modified>4/25/2013 8:10:06 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>unidrv.dl_</name>
+												<size>279,663</size>
+												<modified>4/25/2013 8:10:06 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>unidrv.hl_</name>
+												<size>8,654</size>
+												<modified>4/25/2013 8:10:08 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>unidrvui.dl_</name>
+												<size>431,832</size>
+												<modified>4/25/2013 8:10:06 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>unires.dl_</name>
+												<size>549,054</size>
+												<modified>4/25/2013 8:10:04 PM</modified>
+											</rt>
+										</filecomp>
+										<filecomp status="rtonly">
+											<rt>
+												<name>xpssvcs.dl_</name>
+												<size>541,662</size>
+												<modified>4/25/2013 8:10:06 PM</modified>
+											</rt>
+										</filecomp>
+									</foldercomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LangDll.dll</name>
+											<size>29,696</size>
+											<modified>6/1/2016 8:57:26 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02o4a.dl_</name>
+											<size>276,954</size>
+											<modified>6/9/2016 8:29:28 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02o4c.dl_</name>
+											<size>102,989</size>
+											<modified>6/9/2016 8:29:20 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02o4z.dl_</name>
+											<size>551,590</size>
+											<modified>6/9/2016 8:29:30 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02o4z.ex_</name>
+											<size>40,813</size>
+											<modified>6/9/2016 8:33:02 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02o40.dl_</name>
+											<size>8,125</size>
+											<modified>6/9/2016 8:29:20 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02obc.dl_</name>
+											<size>445,642</size>
+											<modified>7/1/2015 3:57:44 PM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02obj.dl_</name>
+											<size>29,200</size>
+											<modified>6/11/2014 1:47:22 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02opt.dl_</name>
+											<size>161,396</size>
+											<modified>6/20/2016 2:51:32 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02opu.dl_</name>
+											<size>78,615</size>
+											<modified>1/22/2014 1:23:36 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02otd.dl_</name>
+											<size>76,842</size>
+											<modified>1/22/2014 1:22:36 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oua.dl_</name>
+											<size>47,085</size>
+											<modified>6/2/2016 6:03:30 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oub.dl_</name>
+											<size>101,492</size>
+											<modified>6/2/2016 6:03:26 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02ouc.dl_</name>
+											<size>348,962</size>
+											<modified>6/2/2016 6:03:40 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oud.dl_</name>
+											<size>4,044,248</size>
+											<modified>6/2/2016 6:03:44 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oue.dl_</name>
+											<size>817,546</size>
+											<modified>6/2/2016 6:03:34 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02ouf.dl_</name>
+											<size>87,231</size>
+											<modified>6/2/2016 6:03:40 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oug.dl_</name>
+											<size>30,519</size>
+											<modified>6/2/2016 6:03:38 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02ouh.dl_</name>
+											<size>214,791</size>
+											<modified>6/2/2016 6:03:40 AM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>ntprint.cat</name>
+											<size>15,060</size>
+											<modified>4/25/2013 8:10:04 PM</modified>
+										</rt>
+									</filecomp>
+									<filecomp status="rtonly">
+										<rt>
+											<name>ntprint.inf</name>
+											<size>14,324</size>
+											<modified>4/25/2013 8:10:14 PM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>it</name>
+										<size>181,861</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>181,861</size>
+											<modified>3/9/2016 2:31:56 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>ja</name>
+										<size>186,897</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>186,897</size>
+											<modified>3/9/2016 2:31:40 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>ko</name>
+										<size>218,629</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>218,629</size>
+											<modified>3/9/2016 2:31:52 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>nl</name>
+										<size>177,365</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>177,365</size>
+											<modified>3/9/2016 2:31:52 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>no</name>
+										<size>171,544</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>171,544</size>
+											<modified>3/9/2016 2:31:56 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>pl</name>
+										<size>191,455</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>191,455</size>
+											<modified>3/9/2016 2:31:54 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>pt_br</name>
+										<size>179,602</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>179,602</size>
+											<modified>3/9/2016 2:31:48 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>ro</name>
+										<size>204,752</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>204,752</size>
+											<modified>3/9/2016 2:31:32 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>ru</name>
+										<size>196,039</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>196,039</size>
+											<modified>3/9/2016 2:31:36 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>sk</name>
+										<size>188,768</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>188,768</size>
+											<modified>4/19/2016 1:19:10 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>sl</name>
+										<size>178,727</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>178,727</size>
+											<modified>4/19/2016 1:19:12 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>sr_Latn</name>
+										<size>182,894</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>182,894</size>
+											<modified>4/19/2016 1:19:02 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>sv</name>
+										<size>175,611</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>175,611</size>
+											<modified>3/9/2016 2:31:38 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>tr</name>
+										<size>183,330</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>183,330</size>
+											<modified>3/9/2016 2:31:36 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>zh</name>
+										<size>156,513</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>156,513</size>
+											<modified>3/9/2016 2:31:34 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<foldercomp>
+									<rt>
+										<name>zh_tw</name>
+										<size>182,403</size>
+										<modified>7/12/2018 11:34:50 AM</modified>
+									</rt>
+									<filecomp status="rtonly">
+										<rt>
+											<name>LMU02oui.chm</name>
+											<size>182,403</size>
+											<modified>3/9/2016 2:31:40 AM</modified>
+										</rt>
+									</filecomp>
+								</foldercomp>
+								<filecomp status="rtonly">
+									<rt>
+										<name>LMU02o4b.gd_</name>
+										<size>4,125</size>
+										<modified>11/5/2015 8:18:14 AM</modified>
+									</rt>
+								</filecomp>
+								<filecomp status="rtonly">
+									<rt>
+										<name>LMU02o4b.xm_</name>
+										<size>1,902</size>
+										<modified>11/5/2015 8:18:14 AM</modified>
+									</rt>
+								</filecomp>
+								<filecomp status="rtonly">
+									<rt>
+										<name>LMU02o4bw.xm_</name>
+										<size>5,435</size>
+										<modified>11/5/2015 8:18:14 AM</modified>
+									</rt>
+								</filecomp>
+								<filecomp status="rtonly">
+									<rt>
+										<name>LMU02o40.cat</name>
+										<size>65,267</size>
+										<modified>7/11/2016 9:58:02 AM</modified>
+									</rt>
+								</filecomp>
+								<filecomp status="rtonly">
+									<rt>
+										<name>LMU02o40.gd_</name>
+										<size>87,709</size>
+										<modified>7/1/2016 6:07:18 AM</modified>
+									</rt>
+								</filecomp>
+								<filecomp status="rtonly">
+									<rt>
+										<name>LMU02o40.gp_</name>
+										<size>13,507</size>
+										<modified>7/1/2016 6:07:18 AM</modified>
+									</rt>
+								</filecomp>
+								<filecomp status="rtonly">
+									<rt>
+										<name>LMU02o40.in_</name>
+										<size>332</size>
+										<modified>6/20/2016 2:53:58 AM</modified>
+									</rt>
+								</filecomp>
+								<filecomp status="rtonly">
+									<rt>
+										<name>LMU02o40.inf</name>
+										<size>23,226</size>
+										<modified>6/20/2016 2:53:58 AM</modified>
+									</rt>
+								</filecomp>
+								<filecomp status="rtonly">
+									<rt>
+										<name>LMU02o40.tx_</name>
+										<size>9,085</size>
+										<modified>7/1/2016 6:07:22 AM</modified>
+									</rt>
+								</filecomp>
+								<filecomp status="rtonly">
+									<rt>
+										<name>LMU02o40m.gp_</name>
+										<size>2,412</size>
+										<modified>7/1/2016 6:07:18 AM</modified>
+									</rt>
+								</filecomp>
+								<filecomp status="rtonly">
+									<rt>
+										<name>LMU02oimg.pn_</name>
+										<size>7,869</size>
+										<modified>6/3/2016 9:04:54 AM</modified>
+									</rt>
+								</filecomp>
+								<filecomp status="rtonly">
+									<rt>
+										<name>LMU02op0.xm_</name>
+										<size>6,513</size>
+										<modified>6/20/2016 2:51:34 AM</modified>
+									</rt>
+								</filecomp>
+								<filecomp status="rtonly">
+									<rt>
+										<name>LMU02opt.xm_</name>
+										<size>36,936</size>
+										<modified>6/8/2016 3:11:18 AM</modified>
+									</rt>
+								</filecomp>
+							</foldercomp>
+						</foldercomp>
+					</foldercomp>
+				</foldercomp>
+				<foldercomp>
+					<lt>
+						<name>Ricoh 2554</name>
+						<size>7,164,938</size>
+						<modified>5/8/2018 1:41:41 PM</modified>
+					</lt>
+					<foldercomp>
+						<lt>
+							<name>z75619en</name>
+							<size>4,344,261</size>
+							<modified>5/8/2018 1:41:41 PM</modified>
+						</lt>
+						<foldercomp>
+							<lt>
+								<name>disk1</name>
+								<size>4,344,261</size>
+								<modified>5/8/2018 1:41:42 PM</modified>
+							</lt>
+							<filecomp status="ltonly">
+								<lt>
+									<name>eng56p.ch_</name>
+									<size>133,524</size>
+									<modified>7/5/2013 1:18:32 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>eng56pl.dl_</name>
+									<size>1,221,054</size>
+									<modified>3/11/2016 3:16:58 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>eng56pu.dl_</name>
+									<size>517,269</size>
+									<modified>3/11/2016 3:16:36 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>GES56P2K.RCF</name>
+									<size>2</size>
+									<modified>4/8/2009 5:56:56 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>GES56Pa.xpi</name>
+									<size>43,057</size>
+									<modified>3/11/2016 3:22:42 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>GES56Pb.xpi</name>
+									<size>43,057</size>
+									<modified>3/11/2016 3:22:42 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>GES56Pc.xpi</name>
+									<size>43,057</size>
+									<modified>3/11/2016 3:22:42 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>GES56Pd.xpi</name>
+									<size>43,057</size>
+									<modified>3/11/2016 3:22:44 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>GES56Pe.xpi</name>
+									<size>43,057</size>
+									<modified>3/11/2016 3:22:44 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>GES56Pf.xpi</name>
+									<size>43,057</size>
+									<modified>3/11/2016 3:22:44 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>INF56P2K.RCF</name>
+									<size>2</size>
+									<modified>4/8/2009 5:56:56 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>INF56Pa.xpi</name>
+									<size>43,055</size>
+									<modified>3/11/2016 3:23:46 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>INF56Pb.xpi</name>
+									<size>43,055</size>
+									<modified>3/11/2016 3:23:46 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>INF56Pc.xpi</name>
+									<size>43,055</size>
+									<modified>3/11/2016 3:23:46 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>INF56Pd.xpi</name>
+									<size>43,055</size>
+									<modified>3/11/2016 3:23:46 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>INF56Pe.xpi</name>
+									<size>43,055</size>
+									<modified>3/11/2016 3:23:48 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>INF56Pf.xpi</name>
+									<size>43,055</size>
+									<modified>3/11/2016 3:23:48 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>LAN56P2K.RCF</name>
+									<size>2</size>
+									<modified>4/8/2009 5:56:56 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>LAN56Pa.xpi</name>
+									<size>43,054</size>
+									<modified>3/11/2016 3:25:04 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>LAN56Pb.xpi</name>
+									<size>43,054</size>
+									<modified>3/11/2016 3:25:04 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>LAN56Pc.xpi</name>
+									<size>43,054</size>
+									<modified>3/11/2016 3:25:04 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>LAN56Pd.xpi</name>
+									<size>43,054</size>
+									<modified>3/11/2016 3:25:04 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>LAN56Pe.xpi</name>
+									<size>43,054</size>
+									<modified>3/11/2016 3:25:04 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>LAN56Pf.xpi</name>
+									<size>43,054</size>
+									<modified>3/11/2016 3:25:04 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>licence.txt</name>
+									<size>3,322</size>
+									<modified>6/5/2007 6:08:38 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>mfricr64.dl_</name>
+									<size>46,217</size>
+									<modified>8/17/2012 1:12:44 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>NRG56P2K.RCF</name>
+									<size>2</size>
+									<modified>4/8/2009 5:56:56 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>NRG56Pa.xpi</name>
+									<size>43,051</size>
+									<modified>3/11/2016 3:26:10 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>NRG56Pb.xpi</name>
+									<size>43,051</size>
+									<modified>3/11/2016 3:26:10 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>NRG56Pc.xpi</name>
+									<size>43,051</size>
+									<modified>3/11/2016 3:26:10 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>NRG56Pd.xpi</name>
+									<size>43,051</size>
+									<modified>3/11/2016 3:26:12 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>NRG56Pe.xpi</name>
+									<size>43,051</size>
+									<modified>3/11/2016 3:26:12 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>NRG56Pf.xpi</name>
+									<size>43,051</size>
+									<modified>3/11/2016 3:26:12 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>OEMSETUP.DSC</name>
+									<size>1,173</size>
+									<modified>3/11/2016 3:18:58 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>OEMSETUP.INF</name>
+									<size>21,384</size>
+									<modified>3/11/2016 3:18:58 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>rd06pd64.dl_</name>
+									<size>57,736</size>
+									<modified>10/28/2015 2:41:42 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>readme.html</name>
+									<size>36,706</size>
+									<modified>9/17/2015 10:59:35 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>ric56p.cat</name>
+									<size>43,338</size>
+									<modified>3/16/2016 10:35:05 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>ric56P.pdf</name>
+									<size>48</size>
+									<modified>4/8/2009 5:56:54 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>RIC56P2K.RCF</name>
+									<size>2</size>
+									<modified>4/8/2009 5:56:56 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>ric56Pa.ini</name>
+									<size>1,043</size>
+									<modified>6/5/2007 6:05:04 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>RIC56Pa.xpi</name>
+									<size>43,053</size>
+									<modified>3/11/2016 3:27:18 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>ric56Pb.ini</name>
+									<size>1,043</size>
+									<modified>6/5/2007 6:04:52 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>RIC56Pb.xpi</name>
+									<size>43,053</size>
+									<modified>3/11/2016 3:27:18 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>ric56pbd.dl_</name>
+									<size>178,761</size>
+									<modified>5/16/2013 12:47:00 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>ric56pc.dl_</name>
+									<size>239,356</size>
+									<modified>10/28/2012 9:23:34 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>ric56Pc.ini</name>
+									<size>1,043</size>
+									<modified>5/21/2013 8:30:10 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>RIC56Pc.xpi</name>
+									<size>43,053</size>
+									<modified>3/11/2016 3:27:18 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>RIC56Pcj.DL_</name>
+									<size>165,281</size>
+									<modified>4/25/2013 1:31:02 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>RIC56Pct.DL_</name>
+									<size>30,858</size>
+									<modified>6/5/2007 6:37:22 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>ric56Pd.ini</name>
+									<size>1,043</size>
+									<modified>5/21/2013 8:30:10 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>RIC56Pd.xpi</name>
+									<size>43,053</size>
+									<modified>3/11/2016 3:27:18 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>ric56Pe.ini</name>
+									<size>1,043</size>
+									<modified>5/21/2013 8:30:10 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>RIC56Pe.xpi</name>
+									<size>43,053</size>
+									<modified>3/11/2016 3:27:18 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>ric56Pf.ini</name>
+									<size>1,043</size>
+									<modified>5/21/2013 8:30:10 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>RIC56Pf.xpi</name>
+									<size>43,053</size>
+									<modified>3/11/2016 3:27:18 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>ric56plm.dl_</name>
+									<size>17,842</size>
+									<modified>12/26/2013 12:44:30 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>ric56pwm.ex_</name>
+									<size>44,822</size>
+									<modified>6/28/2010 10:22:54 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>ricdb64.dl_</name>
+									<size>29,362</size>
+									<modified>8/21/2006 10:59:12 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>SAV56P2K.RCF</name>
+									<size>2</size>
+									<modified>4/8/2009 5:56:56 PM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>SAV56Pa.xpi</name>
+									<size>43,053</size>
+									<modified>3/11/2016 3:28:24 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>SAV56Pb.xpi</name>
+									<size>43,053</size>
+									<modified>3/11/2016 3:28:24 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>SAV56Pc.xpi</name>
+									<size>43,053</size>
+									<modified>3/11/2016 3:28:24 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>SAV56Pd.xpi</name>
+									<size>43,053</size>
+									<modified>3/11/2016 3:28:24 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>SAV56Pe.xpi</name>
+									<size>43,053</size>
+									<modified>3/11/2016 3:28:24 AM</modified>
+								</lt>
+							</filecomp>
+							<filecomp status="ltonly">
+								<lt>
+									<name>SAV56Pf.xpi</name>
+									<size>43,053</size>
+									<modified>3/11/2016 3:28:26 AM</modified>
+								</lt>
+							</filecomp>
+						</foldercomp>
+					</foldercomp>
+					<filecomp status="ltonly">
+						<lt>
+							<name>z75619en.exe</name>
+							<size>2,820,677</size>
+							<modified>11/6/2017 6:27:48 PM</modified>
+						</lt>
+					</filecomp>
+				</foldercomp>
+			</foldercomp>
+			<foldercomp>
+				<lt>
+					<name>Secure</name>
+					<size>0</size>
+					<modified>5/8/2018 4:03:49 PM</modified>
+				</lt>
+				<rt>
+					<name>Secure</name>
+					<size>48,273,683</size>
+					<modified>5/8/2018 4:05:44 PM</modified>
+				</rt>
+				<foldercomp>
+					<rt>
+						<name>Xerox3655i</name>
+						<size>48,273,683</size>
+						<modified>5/8/2018 4:05:44 PM</modified>
+					</rt>
+					<foldercomp>
+						<rt>
+							<name>ntprint.inf_amd64</name>
+							<size>11,122,148</size>
+							<modified>5/8/2018 4:05:44 PM</modified>
+						</rt>
+						<foldercomp>
+							<rt>
+								<name>amd64</name>
+								<size>11,096,540</size>
+								<modified>5/8/2018 4:05:44 PM</modified>
+							</rt>
+							<filecomp status="rtonly">
+								<rt>
+									<name>locale.gpd</name>
+									<size>14,088</size>
+									<modified>6/10/2009 11:59:20 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>msxpsinc.gpd</name>
+									<size>73</size>
+									<modified>6/10/2009 11:59:20 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>msxpsinc.ppd</name>
+									<size>72</size>
+									<modified>6/10/2009 11:59:20 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>mxdwdrv.dll</name>
+									<size>715,264</size>
+									<modified>1/28/2010 10:38:14 PM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>p6disp.gpd</name>
+									<size>25,489</size>
+									<modified>6/10/2009 11:53:12 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>p6font.gpd</name>
+									<size>3,293</size>
+									<modified>6/10/2009 11:53:12 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>pcl4res.dll</name>
+									<size>292,352</size>
+									<modified>1/28/2010 10:28:20 PM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>pcl5eres.dll</name>
+									<size>1,057,792</size>
+									<modified>1/28/2010 10:28:22 PM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>pcl5ures.dll</name>
+									<size>1,058,304</size>
+									<modified>1/28/2010 10:28:22 PM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>pclxl.dll</name>
+									<size>207,872</size>
+									<modified>7/13/2009 4:19:38 PM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>pclxl.gpd</name>
+									<size>10,375</size>
+									<modified>6/10/2009 11:53:12 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>pjl.gpd</name>
+									<size>1,156</size>
+									<modified>6/10/2009 11:53:12 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>pjlmon.dll</name>
+									<size>22,016</size>
+									<modified>1/28/2010 10:39:10 PM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>PS_SCHM.GDL</name>
+									<size>5,561</size>
+									<modified>6/10/2009 11:59:20 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>ps5ui.dll</name>
+									<size>847,360</size>
+									<modified>1/28/2010 10:38:10 PM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>pscript.hlp</name>
+									<size>26,038</size>
+									<modified>6/10/2009 11:41:00 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>pscript.ntf</name>
+									<size>1,062,732</size>
+									<modified>6/10/2009 11:59:38 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>pscript5.dll</name>
+									<size>629,760</size>
+									<modified>1/28/2010 10:38:10 PM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>PSCRPTFE.NTF</name>
+									<size>1,293,180</size>
+									<modified>6/10/2009 11:59:46 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>STDDTYPE.GDL</name>
+									<size>23,812</size>
+									<modified>6/10/2009 11:59:20 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>stdnames.gpd</name>
+									<size>14,362</size>
+									<modified>6/10/2009 11:59:20 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>STDSCHEM.GDL</name>
+									<size>59,116</size>
+									<modified>6/10/2009 11:59:20 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>STDSCHMX.GDL</name>
+									<size>2,278</size>
+									<modified>6/10/2009 11:59:20 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>ttfsub.gpd</name>
+									<size>698</size>
+									<modified>6/10/2009 11:59:20 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>unidrv.dll</name>
+									<size>479,232</size>
+									<modified>1/28/2010 10:39:18 PM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>unidrv.hlp</name>
+									<size>21,225</size>
+									<modified>6/10/2009 11:41:00 AM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>unidrvui.dll</name>
+									<size>884,224</size>
+									<modified>1/28/2010 10:38:12 PM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>unires.dll</name>
+									<size>762,368</size>
+									<modified>1/28/2010 10:28:24 PM</modified>
+								</rt>
+							</filecomp>
+							<filecomp status="rtonly">
+								<rt>
+									<name>xpssvcs.dll</name>
+									<size>1,576,448</size>
+									<modified>1/28/2010 10:39:20 PM</modified>
+								</rt>
+							</filecomp>
+						</foldercomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>ntprint.cat</name>
+								<size>15,910</size>
+								<modified>1/28/2010 10:41:56 PM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>ntprint.inf</name>
+								<size>9,698</size>
+								<modified>1/28/2010 3:36:36 PM</modified>
+							</rt>
+						</filecomp>
+					</foldercomp>
+					<foldercomp>
+						<rt>
+							<name>WC3655_5.433.16.0_PCL_x64_Driver.inf</name>
+							<size>37,151,288</size>
+							<modified>5/8/2018 4:05:45 PM</modified>
+						</rt>
+						<filecomp status="rtonly">
+							<rt>
+								<name>locale.gpd</name>
+								<size>14,088</size>
+								<modified>1/28/2016 12:51:16 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>p6disp.gpd</name>
+								<size>25,489</size>
+								<modified>1/28/2016 12:51:16 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>p6font.gpd</name>
+								<size>3,293</size>
+								<modified>1/28/2016 12:51:16 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>pcl5eres.dll</name>
+								<size>1,066,496</size>
+								<modified>1/28/2016 10:44:58 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>pclxl.dll</name>
+								<size>216,576</size>
+								<modified>1/28/2016 10:44:58 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>pclxl.gpd</name>
+								<size>10,375</size>
+								<modified>1/28/2016 12:51:18 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>pjl.gpd</name>
+								<size>1,156</size>
+								<modified>1/28/2016 12:51:18 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>STDDTYPE.GDL</name>
+								<size>23,812</size>
+								<modified>1/28/2016 12:51:18 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>stdnames.gpd</name>
+								<size>14,362</size>
+								<modified>1/28/2016 12:51:18 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>STDSCHEM.GDL</name>
+								<size>59,116</size>
+								<modified>1/28/2016 12:51:18 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>STDSCHMX.GDL</name>
+								<size>2,278</size>
+								<modified>1/28/2016 12:51:18 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>ttfsub.gpd</name>
+								<size>698</size>
+								<modified>1/28/2016 12:51:18 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>unidrv.dll</name>
+								<size>487,928</size>
+								<modified>1/28/2016 10:45:02 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>unidrv.hlp</name>
+								<size>21,225</size>
+								<modified>1/28/2016 12:51:18 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>unidrvui.dll</name>
+								<size>892,920</size>
+								<modified>1/28/2016 10:45:04 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>unires.dll</name>
+								<size>771,064</size>
+								<modified>1/28/2016 10:45:06 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2comsVH.dll</name>
+								<size>669,688</size>
+								<modified>1/28/2016 10:45:08 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2coreVH.dll</name>
+								<size>8,408,064</size>
+								<modified>1/28/2016 10:45:18 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2dburl.cat</name>
+								<size>26,472</size>
+								<modified>1/28/2016 10:43:36 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2DBURL.inf</name>
+								<size>4,083</size>
+								<modified>1/28/2016 12:51:18 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2DBURVH.cab</name>
+								<size>126,617</size>
+								<modified>1/28/2016 12:51:20 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2fpbVH.exe</name>
+								<size>1,019,904</size>
+								<modified>1/28/2016 10:45:22 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2fpd02.dll</name>
+								<size>45,048</size>
+								<modified>1/28/2016 10:45:22 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2fputVH.dll</name>
+								<size>557,056</size>
+								<modified>1/28/2016 10:45:26 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2guiVH.dll</name>
+								<size>9,901,568</size>
+								<modified>1/28/2016 10:45:42 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2jobtVH.exe</name>
+								<size>1,217,024</size>
+								<modified>1/28/2016 10:45:44 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2ptpcVH.dll</name>
+								<size>1,686,528</size>
+								<modified>1/28/2016 10:45:48 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2rnutVH.dll</name>
+								<size>275,456</size>
+								<modified>1/28/2016 10:45:50 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2rpclVH.dll</name>
+								<size>1,767,416</size>
+								<modified>1/28/2016 10:45:54 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2txtVH.cab</name>
+								<size>1,249,939</size>
+								<modified>1/28/2016 12:51:20 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2upVH.dll</name>
+								<size>2,173,440</size>
+								<modified>1/28/2016 10:45:58 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2utilVH.dll</name>
+								<size>2,037,248</size>
+								<modified>1/28/2016 10:46:04 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x2wftuVH.dll</name>
+								<size>428,544</size>
+								<modified>1/28/2016 10:46:06 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x5pp.dll</name>
+								<size>51,712</size>
+								<modified>1/28/2016 10:46:08 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>x5print.dll</name>
+								<size>19,968</size>
+								<modified>1/28/2016 10:46:08 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>xDBURlVH.cfg</name>
+								<size>20</size>
+								<modified>1/28/2016 12:51:22 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>xDBURlVH.gpd</name>
+								<size>98,368</size>
+								<modified>1/28/2016 12:51:22 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>xDBURlVH.ini</name>
+								<size>633</size>
+								<modified>1/28/2016 12:51:22 AM</modified>
+							</rt>
+						</filecomp>
+						<filecomp status="rtonly">
+							<rt>
+								<name>xlibeay101l.dll</name>
+								<size>1,775,616</size>
+								<modified>1/28/2016 10:46:12 AM</modified>
+							</rt>
+						</filecomp>
+					</foldercomp>
+					<filecomp status="rtonly">
+						<rt>
+							<name>APWinstall.bat</name>
+							<size>247</size>
+							<modified>2/11/2016 1:23:14 PM</modified>
+						</rt>
+					</filecomp>
+				</foldercomp>
+			</foldercomp>
+		</foldercomp>
+	</foldercomp>
+</bcreport>

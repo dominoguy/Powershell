@@ -1,6 +1,6 @@
 #disk size check
 
-$disk = Get-WmiObject win32_LogicalDisk -Filter "DeviceID='C:'" | Select-Object Size,FreeSpace
+$disk = Get-WmiObject win32_LogicalDisk -Filter "DeviceID='F:'" | Select-Object Size,FreeSpace
 
 $DiskFreeSpace = [Math]::Round($disk.FreeSpace/1gb,2)
 $DiskSize = [Math]::Round($disk.Size/1gb,2)
