@@ -9,12 +9,14 @@ function Write-Log
 }
 function Backup-PST
 {
-    Param ([String]$Filename,
-            [String]$SourceDir,
-            [String]$DestDir,
-            [String]$FilePath,
-            [String]$RobocopyLog,
-            [String]$Username)
+    Param (
+        [String]$Filename,
+        [String]$SourceDir,
+        [String]$DestDir,
+        [String]$FilePath,
+        [String]$RobocopyLog,
+        [String]$Username
+        )
 
     $oFile = New-Object System.IO.FileInfo $FilePath
     try
