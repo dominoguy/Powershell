@@ -1,66 +1,93 @@
-#PSTBackup Version 1.0
-
-
-Function LogWrite
+#PSTBackup Version 2.0
+#Changed code to conform to Renatus Coding standards
+#Brian Long July 12, 2018
+function Write-Log
 {
-    Param ([string]$logstring)
+    Param
+    (
+        [string]$logstring
+    )
     $Time=Get-Date
     Add-Content $Logfile -value "$Time $logstring"
 }
-Function BackupPST ($Filename, $SourceDir, $DestDir, $FilePath, $RobocopyLog, $Username)
-{$oFile = New-Object System.IO.FileInfo $FilePath
-    
-    Try {
-        $oStream = $oFile.Open([System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
-        If ($oStream) {
+function Backup-PST
+{
+    Param
+    (
+        [String]$Filename,
+        [String]$SourceDir,
+        [String]$DestDir,
+        [String]$FilePath,
+        [String]$RobocopyLog,
+        [String]$Username
+    )
 
+    $oFile = New-Object System.IO.FileInfo $FilePath
+    try
+    {
+        $oStream = $oFile.Open([System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
+        if ($oStream)
+        {
             $oStream.Close()
         }
         $False
-    } Catch {
+    }
+    catch
+    {
         $ErrorMessage = $_.Exception.Message
-        LogWrite " ***** $UserName $FilePath $ErrorMessage *****"
+        Write-Log " ***** $UserName $FilePath $ErrorMessage *****"
         return $True
-    } Finally{
-        If (-Not $ErrorMessage) {
-            LogWrite "$UserName $FilePath is ready for backup"
+    } 
+    finally
+    {
+        if (-Not $ErrorMessage)
+        {
+            Write-Log "$UserName $FilePath is ready for backup"
             Robocopy.exe $SourceDir $DestDir $Filename /e /ndl /np /tee /w:0 /r:0 /log:$RobocopyLog
-            LogWrite "$UserName $FileName has been backed up"
+            Write-Log "$UserName $FileName has been backed up"
         }
     }
 }
 
-#Logging
 $logFile = 'D:\Data\Scripts\LOGS\PSTCopy_Manual.log'
-$logPFileExists = Test-Path -path $logFile
-If ( $logFileExists -eq $True) {
-    Remove-Item $LogFile
-    New-Item -ItemType File -Force -Path $LogFile
-} 
-Else {
-    New-Item -ItemType File -Force -Path $LogFile}
+$logFileExists = Test-Path -path $logFile
 
-LogWrite "Manual PSTBackup Begins"
+if ( $logFileExists -eq $True)
+{
+    Remove-Item $logFile
+    New-Item -ItemType File -Force -Path $logFile
+}
+else
+{
+    New-Item -ItemType File -Force -Path $logFile
+}
+
+Write-Log "Manual PSTBackup Begins"
+
 $List = Import-Csv 'D:\Data\Scripts\pstlist_Manual.csv'
 
-Foreach ($Row in $List)
+foreach ($row in $list)
 {
-#get a list of pst files (recursive into sub dirs) using source a root dir
-$StartDir = $row.StartDir
-$UserName = $row.UserName
-$FolderExists = Test-Path $StartDir
-IF ($FolderExists -eq $True) {
-    Get-ChildItem $StartDir -Recurse | Where-Object {$_.extension -eq ".pst"} | ForEach-Object {
-        $FileName = $_.Name
-        $SourceDir = [String]($_.Directory)
-        $FilePath = $_.FullName
-        $UserDir = $row.UserDir    
-        $DiffDir = $SourceDir.replace($StartDir,'')
-        $DestDir = $Userdir +'\' + $DiffDir
-        $RobocopyLog = $DestDir +'\' + $Filename + '.log'
-        BackupPST $Filename $SourceDir $DestDir $FilePath $RobocopyLog $Username
-        } 
+    #get a list of pst files (recursive into sub dirs) using source as root dir
+    $startDir = $row.startDir
+    $userName = $row.userName
+    $folderExists = Test-Path $startDir
+
+    if ($folderExists -eq $True) 
+    {
+        $pstList = Get-ChildItem $startDir -Recurse | Where-Object {$_.extension -eq ".pst"}
+        foreach ($pst in $pstList)
+        {
+            $fileName = $pst.Name
+            $sourceDir = [String]($pst.Directory)
+            $filePath = $pst.FullName
+            $userDir = $row.UserDir    
+            $diffDir = $sourceDir.replace($startDir,'')
+            $destDir = $userdir +'\' + $diffDir
+            $robocopyLog = $destDir +'\' + $filename + '.log'
+            Backup-PST $fileName $sourceDir $destDir $filePath $robocopyLog $userName
+        }
     }
-    Else {LogWrite "$Time  ***** $Username $StartDir is not available *****"}
+    else {Write-Log "$Time  ***** $userName $startDir is not available *****"}
 }
-LogWrite "Manual PSTBackup Ends"
+Write-Log "Manual PSTBackup Ends"

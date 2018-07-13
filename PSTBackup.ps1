@@ -3,20 +3,24 @@
 #Brian Long July 12, 2018
 function Write-Log
 {
-    Param ([string]$logstring)
+    Param
+    (
+        [string]$logstring
+    )
     $Time=Get-Date
     Add-Content $Logfile -value "$Time $logstring"
 }
 function Backup-PST
 {
-    Param (
+    Param
+    (
         [String]$Filename,
         [String]$SourceDir,
         [String]$DestDir,
         [String]$FilePath,
         [String]$RobocopyLog,
         [String]$Username
-        )
+    )
 
     $oFile = New-Object System.IO.FileInfo $FilePath
     try
