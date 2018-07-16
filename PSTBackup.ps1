@@ -1,26 +1,53 @@
 #PSTBackup Version 2.0
-#Changed code to conform to Renatus Coding standards
 #Brian Long July 12, 2018
-function Write-Log
+<#
+.SYNOPSIS
+Robocopys PSTs from a local workstation to the server
+
+.DESCRIPTION
+Starts in a targeted directory and checks each subsequent folder for psts, if found checks to see if
+it is in use,if not then does the robocopy.
+
+.PARAMETER PSTListLocation
+Location of the list of psts in CSV format
+IE. F:\Data\Scripts\Powershell\pstlist.csv
+
+.PARAMETER LogLocaiton
+Location of log file
+IE. F:\Data\Scripts\Powershell\LOGS\PSTCopy.log
+#>
+
+param(
+        [Parameter(Mandatory=$true,Position=1)][string]$PSTListLocation,
+        [Parameter(Mandatory=$true,Position=2)][string]$LogLocation)
+
+<#
+.SYNOPSIS
+Writes to a log.
+
+.Description
+Writes to a log file in a specified location.
+
+.PARAMETER logstring
+String of text
+#>
+        function Write-Log
 {
-    Param
-    (
-        [string]$logstring
-    )
+    Param(
+        [string]$logstring)
+
     $Time=Get-Date
     Add-Content $Logfile -value "$Time $logstring"
 }
 function Backup-PST
 {
-    Param
-    (
+    Param(
         [String]$Filename,
         [String]$SourceDir,
         [String]$DestDir,
         [String]$FilePath,
         [String]$RobocopyLog,
-        [String]$Username
-    )
+        [String]$Username)
 
     $oFile = New-Object System.IO.FileInfo $FilePath
     try
@@ -37,7 +64,7 @@ function Backup-PST
         $ErrorMessage = $_.Exception.Message
         Write-Log " ***** $UserName $FilePath $ErrorMessage *****"
         return $True
-    } 
+    }
     finally
     {
         if (-Not $ErrorMessage)
@@ -49,7 +76,8 @@ function Backup-PST
     }
 }
 
-$logFile = 'F:\Data\Scripts\Powershell\LOGS\PSTCopy.log'
+#$logFile = 'F:\Data\Scripts\Powershell\LOGS\PSTCopy.log'
+$logFile = $LogLocation
 $logFileExists = Test-Path -path $logFile
 
 if ( $logFileExists -eq $True)
@@ -64,11 +92,11 @@ else
 
 Write-Log "PSTBackup Begins"
 
-$list = Import-Csv 'F:\Data\Scripts\Powershell\pstlist.csv'
+$list = Import-Csv $PSTListLocation
 
 foreach ($row in $list)
 {
-    #get a list of pst files (recursive into sub dirs) using source as root dir
+    #Get a list of pst files (recursive into sub dirs) using source as root dir
     $startDir = $row.startDir
     $userName = $row.userName
     $folderExists = Test-Path $startDir
@@ -81,7 +109,7 @@ foreach ($row in $list)
             $fileName = $pst.Name
             $sourceDir = [String]($pst.Directory)
             $filePath = $pst.FullName
-            $userDir = $row.UserDir    
+            $userDir = $row.UserDir
             $diffDir = $sourceDir.replace($startDir,'')
             $destDir = $userdir +'\' + $diffDir
             $robocopyLog = $destDir +'\' + $filename + '.log'
