@@ -18,8 +18,9 @@ IE. F:\Data\Scripts\Powershell\LOGS\PSTCopy.log
 #>
 
 param(
-        [Parameter(Mandatory=$true,Position=1)][string]$PSTListLocation,
-        [Parameter(Mandatory=$true,Position=2)][string]$LogLocation)
+        [Parameter(Mandatory=$true,Position=1,HelpMessage='Location of CSV PST List')][string]$PSTListLocation,
+        [Parameter(Mandatory=$true,Position=2,HelpMessage='Location of Log file')][string]$LogLocation
+    )
 
 <#
 .SYNOPSIS
