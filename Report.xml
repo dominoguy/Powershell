@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bcreport created="7/19/2018 4:28:26 PM">
+	<foldercomp>
+		<ltpath>F:\Temp\04_2018.bcss</ltpath>
+		<rtpath>F:\Sandbox\Server\Backups\ACAWT\ACAWT-SQL-002</rtpath>
+		<foldercomp>
+			<lt>
+				<name>Data</name>
+				<size>14,731,340</size>
+				<modified>4/13/2018 3:54:13 PM</modified>
+			</lt>
+			<rt>
+				<name>Data</name>
+				<size>88,015,189</size>
+				<modified>4/13/2018 3:54:13 PM</modified>
+			</rt>
+		</foldercomp>
+	</foldercomp>
+</bcreport>

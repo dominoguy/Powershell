@@ -27,7 +27,7 @@ param(
 Writes to a log.
 
 .Description
-Writes to a log file in a specified location.
+Creates a new log file in the designated location.
 
 .PARAMETER logstring
 String of text
