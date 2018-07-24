@@ -6,9 +6,21 @@
 
 [xml]$XmlDocument = Get-content -Path 'F:\Data\Scripts\Powershell\ACAWTSQL_Report.xml'
 # $XmlDocument.GetType().FullName
-$folderdata = $XmlDocument.bcreport.foldercomp.foldercomp.lt.name
-$folderdatasize = $XmlDocument.bcreport.foldercomp.foldercomp.lt.size
+$LTfolderdata = $XmlDocument.bcreport.foldercomp.foldercomp.lt.name
+$LTfolderdatasize = $XmlDocument.bcreport.foldercomp.foldercomp.lt.size
+
+[int]$RawLTSize = $LTfolderdatasize -replace '[,]',''
+
+#$LTFolderSize = [Math]::Round($RawLTSize/1mb,2)
+#write-host 'The Left folder ' $LTfolderdata 'is' $LTFolderSize 'MB'
+
+$RTfolderdata = $XmlDocument.bcreport.foldercomp.foldercomp.rt.name
+$RTfolderdatasize = $XmlDocument.bcreport.foldercomp.foldercomp.rt.size
+
+[int]$RawRTSize = $RTfolderdatasize -replace '[,]',''
 
 
-write-host $folderdata
-write-host $folderdatasize
+$backupSize = $RTfolderdatasize-$LTfolderdatasize
+$backupSizeMB  = [Math]::Round($backupSize/1mb,2)
+
+write-host 'The data size of the backup is ' $backupSizeMB 'MB'
