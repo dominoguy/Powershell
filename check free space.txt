@@ -1,0 +1,8 @@
+ch
+1) Run BCSS Report on all backup dirs to get the size of the backups
+	a) log that the report has been run on a particular date
+
+2) Run the check procedure accessing each report and adding its backup data to keep a running total of what is consumed.
+2a) Log the size of each incoming backup for each server. 
+
+3) 
