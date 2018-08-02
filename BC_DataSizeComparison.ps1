@@ -41,32 +41,6 @@ function Write-Log
     Add-Content $Logfile -value "$Time $logdatetime"
 }
 
-function Get-Month () 
-{
-    $value = "" | Select-Object -Property curMonth,curYear,prevMonth,prevYear
-    $date = Get-Date
-    $currentMonth = $date.Month
-    $currentYear = $date.Year
-    $prevMonth = $currentMonth-1
-
-    write-Log "This is the previous month inside the function $prevMonth"
-
-    If ($prevMonth = 0)
-    {
-        $prevMonth = 12
-        $prevYear = $currentYear-1
-    }
-    else
-    {
-    $prevYear = $currentYear
-    }
-    $value.curMonth =$currentMonth
-    $value.curYear = $currentYear
-    $value.prevMonth = $prevMonth
-    $value.prevYear = $prevYear
-    Return $value
-}
-
 
 $logFile = $LogLocation
 $logFileExists = Test-Path -path $logFile
@@ -83,10 +57,27 @@ else
 
 Write-Log "BCSS Data Size Comparison Begins"
 
+$date = Get-Date
+$currentMonth = $date.Month
+$currentYear = $date.Year
+$prevMonth = (Get-Date).AddMonths(-1)
+$prevMonth = $prevMonth.Month
+$prevMonth = 12
+If ($prevMonth -eq 12)
+{
+    $prevYear = (Get-Date).AddYears(-1)
+    $prevYear = $prevYear.Year
+}
+else {
+    $prevYear = $currentYear
+}
+$currentMonth = "0$currentMonth"
+$prevMonth = "0$prevMonth"
 
-#$date = Get-Date
-$month = Get-Month
+write-Log "This is the current month $currentMonth"
+write-Log "This is the previous month $prevMonth"
+write-Log "This is the current year $currentYear"
+write-Log "This is the previous year $prevYear"
 
-write-Log "This is the previous month $($month.prevMonth)"
 
 Write-Log "BCSS Data Size Comparison Ends"
