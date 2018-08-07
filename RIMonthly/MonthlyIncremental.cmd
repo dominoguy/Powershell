@@ -17,7 +17,7 @@ If not exist %RunPath%\LOGS mkdir %RunPath%\LOGS
 
 echo Starting Monthly Incremental Backup for %curDate% >> %LogName%
 
-set bcApp="C:\Beyond Compare\Beyond Compare 3\BCompare.exe"
+set bcApp="C:\Program Files\Beyond Compare 4\BCompare.exe"
 
 set bcscptsnap=%RunPath%\BCSnap.txt
 set bcscptcopy=%RunPath%\CompareCopy.txt

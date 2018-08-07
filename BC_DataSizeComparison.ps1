@@ -62,7 +62,7 @@ $currentMonth = $date.Month
 $currentYear = $date.Year
 $prevMonth = (Get-Date).AddMonths(-1)
 $prevMonth = $prevMonth.Month
-$prevMonth = 12
+#$prevMonth = 12
 If ($prevMonth -eq 12)
 {
     $prevYear = (Get-Date).AddYears(-1)
@@ -71,13 +71,22 @@ If ($prevMonth -eq 12)
 else {
     $prevYear = $currentYear
 }
-$currentMonth = "0$currentMonth"
-$prevMonth = "0$prevMonth"
+
+If ($currentMonth -le 10)
+{
+    $currentMonth = "0$currentMonth"
+}
+
+If ($prevMonth -le 10)
+{
+    $prevMonth = "0$prevMonth"
+}
+
 
 write-Log "This is the current month $currentMonth"
 write-Log "This is the previous month $prevMonth"
 write-Log "This is the current year $currentYear"
 write-Log "This is the previous year $prevYear"
 
-
+set $bcApp="C:\Program Files\Beyond Compare 4\BCompare.exe"
 Write-Log "BCSS Data Size Comparison Ends"
