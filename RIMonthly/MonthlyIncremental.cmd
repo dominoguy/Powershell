@@ -89,7 +89,7 @@ If not exist %bcssFileworking% echo Error: There is no %bcssFileworking% >> %Log
 rem Run the monthly incremental
 
 	echo Running the monthly incremental for %bcssnewFile% on %Servername% : %Time% >> %LogName%
-	%bcApp% @%bcscptsize% %clientdir% %bcssFileWorking% %bcssFileDir% %bcssprevFile%
+rem	%bcApp% @%bcscptsize% %clientdir% %bcssFileWorking% %bcssFileDir% %bcssprevFile%
 	%bcApp% @%bcscptcopy% %clientdir% %bcssFileWorking% %MonthlyDir% %bcssprevFile%
 
 	copy %bcssFileWorking% %MonthlyDir%\%bcssprevFile%.bcss
