@@ -41,7 +41,6 @@ function Write-Log
     Add-Content $Logfile -value "$Time $logdatetime"
 }
 
-
 $logFile = $LogLocation
 $logFileExists = Test-Path -path $logFile
 
@@ -109,7 +108,6 @@ foreach ($row in $list)
     $dirServer = $Path[5]
     $dirBaseline = 'Baselines'
 
-    
     #$dirFolder = $Path[1]
     #$dirClient = $Path[2]
     #$dirServer = $Path[3]
@@ -129,15 +127,18 @@ foreach ($row in $list)
     $bcssFile = "$drive\$folder1\$folder2\$dirBaseline\$dirClient\$dirServer\${currentMonth}_$currentYear.bcss"
 
     #write-Log "This is the BCSS file location $bcssFile"
-
     #write-Log "this is the bcss file directory $bcssFileDir"
     #write-Log "This is the BCSS report file name $bcssFileName"
     #write-Log "This is the beyond compare  $bcApp"
 
-    write-Log "Running the comparison for $dirserver "
+    write-Log "***Running the comparison for $dirserver ***"
 
-    Write-host $bcApp $bcCompareSize $ClientDir $bcssFile $bcssFileDIr $bcssFilename
-    & $bcApp $bcCompareSize $ClientDir $bcssFile $bcssFileDIr $bcssFilename
+    #Write-host $bcApp $bcCompareSize $ClientDir $bcssFile $bcssFileDIr $bcssFilename
+    #& $bcApp $bcCompareSize $ClientDir $bcssFile $bcssFileDIr $bcssFilename | out-null
+
+    Start-Process $bcApp -argumentlist "$bcCompareSize $ClientDir $bcssFile $bcssFileDIr $bcssFilename" -NoNewWindow -Wait
+   # & $bcApp $bcCompareSize $ClientDir $bcssFile $bcssFileDIr $bcssFilename -NoNewWindow -Wait
+    
 
     [xml]$XmlDocument = Get-content -Path "${bcssReport}_Report.xml"
     #write-Log "This is the report path ${bcssReport}_Report.xml"
@@ -153,26 +154,26 @@ foreach ($row in $list)
     $disksizeMB = [Math]::Round($disk.size/1mb,2)
     $diskFreeMB = [Math]::Round($disk.Freespace/1mb,2)
 
-    write-Log "The drive limit is $driveLimitMB MB"
+    #write-Log "The drive limit is $driveLimitMB MB"
     write-Log "Total disk size is $disksizeMB MB"
     Write-Log "Total free disk space is $diskFreeMB MB"
 
     $LTfolderdata = $XmlDocument.bcreport.foldercomp.foldercomp.lt.name
     $LTfolderdatasize = $XmlDocument.bcreport.foldercomp.foldercomp.lt.size
-    Write-Log "This is the size of the left folder in comp $LTfolderdatasize"
-    [int]$RawLTSize = $LTfolderdatasize -replace '[,]',''
+    #Write-Log "This is the size of the left folder in comp $LTfolderdatasize"
+    #[int]$RawLTSize = $LTfolderdatasize -replace '[,]',''
+    $LTfolderdatasize = $LTfolderdatasize -replace '[,]',''
 
     $RTfolderdata = $XmlDocument.bcreport.foldercomp.foldercomp.rt.name
     $RTfolderdatasize = $XmlDocument.bcreport.foldercomp.foldercomp.rt.size
-    Write-Log "This is the size of the right folder in comp $RTfolderdatasize"
-    [int]$RawRTSize = $RTfolderdatasize -replace '[,]',''
-
+    #Write-Log "This is the size of the right folder in comp $RTfolderdatasize"
+    #[int]$RawRTSize = $RTfolderdatasize -replace '[,]',''
+    $RTfolderdatasize = $RTfolderdatasize -replace '[,]',''
 
     $RawBackupSize = $LTfolderdatasize-$RTfolderdatasize
-    #[int]$RawBackupSize = '48273683'
     $BackupSize = [Math]::Round($RawBackupSize/1mb,2)
 
-    Write-Log "This is the size of the backup: $BackupSize MB"
+    Write-Log "The backup size for $dirserver is $BackupSize MB"
     $SpaceRemain = $diskFree - $RawBackupSize
     $SpaceRemainMB = [Math]::Round($SpaceRemain/1mb,2)
 
@@ -184,6 +185,7 @@ foreach ($row in $list)
     {
         Write-Log "Backup is too big. you need $SpaceRemain MB more"
     }
+
 
 
 
