@@ -11,10 +11,12 @@ Runs a Beyond Compare report on the changes between the last BCSS and the curren
 .PARAMETER ServerList
 Location of the list of client server directories in csv format
 IE. F:\Data\Scripts\Powershell\RIMonthly\serverslist.csv
+G:\Backups\RIBackup\RIMonthly\serverslist.csv
 
 .PARAMETER LogLocaiton
 Location of log file
 IE. F:\Data\Scripts\Powershell\LOGS\BC_Comparison.log
+G:\Backups\RIBackup\RIMonthly\LOGS\BC_Comparison.log
 #>
 
 param(
@@ -81,12 +83,6 @@ If ($prevMonth -le 10)
     $prevMonth = "0$prevMonth"
 }
 
-
-#write-Log "This is the current month $currentMonth"
-#write-Log "This is the previous month $prevMonth"
-#write-Log "This is the current year $currentYear"
-#write-Log "This is the previous year $prevYear"
-
 #Create the comparison reports
 $runPath = $PSScriptRoot
 $bcApp="C:\Program Files\Beyond Compare 4\BCompare.exe"
@@ -101,6 +97,7 @@ foreach ($row in $list)
     $ClientDIr = $row.ClientDIr
     $Path = $ClientDIr.split("\")
     $drive = $Path[0]
+
     $Folder1 = $Path[1]
     $Folder2 = $Path[2]
     $dirFolder = $Path[3]
@@ -112,36 +109,22 @@ foreach ($row in $list)
     #$dirClient = $Path[2]
     #$dirServer = $Path[3]
 
-    #write-Log "This is the drive $drive"
-    #write-Log "This is folder1 $folder1"
-    #write-Log "This is folder2 $folder2"
-    #write-Log "This is the root folder $dirFolder"
-    #write-Log "This is the client acronym $dirClient"
-    #write-Log "This is the server $dirServer"
-
     $bcssFileDir = "$drive\$folder1\$folder2\$dirBaseline\$dirClient\$dirServer"
+    #$bcssFileDir = "$drive\$dirBaseline\$dirClient\$dirServer"
+
     $bcssFileName = "${currentMonth}_$currentYear"
     $bcssFile = "$bcssFileDir\${currentMonth}_$currentYear.bcss"
     $bcssReport = "$bcssFileDir\${currentMonth}_$currentYear"
   
     $bcssFile = "$drive\$folder1\$folder2\$dirBaseline\$dirClient\$dirServer\${currentMonth}_$currentYear.bcss"
-
-    #write-Log "This is the BCSS file location $bcssFile"
-    #write-Log "this is the bcss file directory $bcssFileDir"
-    #write-Log "This is the BCSS report file name $bcssFileName"
-    #write-Log "This is the beyond compare  $bcApp"
+    #$bcssFile = "$drive\$dirBaseline\$dirClient\$dirServer\${currentMonth}_$currentYear.bcss"
 
     write-Log "***Running the comparison for $dirserver ***"
 
-    #Write-host $bcApp $bcCompareSize $ClientDir $bcssFile $bcssFileDIr $bcssFilename
-    #& $bcApp $bcCompareSize $ClientDir $bcssFile $bcssFileDIr $bcssFilename | out-null
-
     Start-Process $bcApp -argumentlist "$bcCompareSize $ClientDir $bcssFile $bcssFileDIr $bcssFilename" -NoNewWindow -Wait
-   # & $bcApp $bcCompareSize $ClientDir $bcssFile $bcssFileDIr $bcssFilename -NoNewWindow -Wait
-    
 
     [xml]$XmlDocument = Get-content -Path "${bcssReport}_Report.xml"
-    #write-Log "This is the report path ${bcssReport}_Report.xml"
+   
 #Check for free space on a drive
     [int]$driveLimit = '100000000'
     [int]$driveLimitMB = [Math]::Round('100000000'/1mb,2)
@@ -160,14 +143,12 @@ foreach ($row in $list)
 
     $LTfolderdata = $XmlDocument.bcreport.foldercomp.foldercomp.lt.name
     $LTfolderdatasize = $XmlDocument.bcreport.foldercomp.foldercomp.lt.size
-    #Write-Log "This is the size of the left folder in comp $LTfolderdatasize"
-    #[int]$RawLTSize = $LTfolderdatasize -replace '[,]',''
+   
     $LTfolderdatasize = $LTfolderdatasize -replace '[,]',''
 
     $RTfolderdata = $XmlDocument.bcreport.foldercomp.foldercomp.rt.name
     $RTfolderdatasize = $XmlDocument.bcreport.foldercomp.foldercomp.rt.size
-    #Write-Log "This is the size of the right folder in comp $RTfolderdatasize"
-    #[int]$RawRTSize = $RTfolderdatasize -replace '[,]',''
+
     $RTfolderdatasize = $RTfolderdatasize -replace '[,]',''
 
     $RawBackupSize = $LTfolderdatasize-$RTfolderdatasize
@@ -185,10 +166,6 @@ foreach ($row in $list)
     {
         Write-Log "Backup is too big. you need $SpaceRemain MB more"
     }
-
-
-
-
 }
 
 
