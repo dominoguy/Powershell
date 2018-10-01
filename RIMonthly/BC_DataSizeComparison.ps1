@@ -31,16 +31,16 @@ Writes to a log.
 .Description
 Creates a new log file in the designated location.
 
-.PARAMETER logdatetime
-datetime of text
+.PARAMETER logText
+Text added to log
 #>
 function Write-Log
 {
     Param(
-        [String]$logdatetime)
+        [String]$logText)
 
     $Time=Get-Date
-    Add-Content $Logfile -value "$Time $logdatetime"
+    Add-Content $Logfile -value "$Time $logText"
 }
 
 $logFile = $LogLocation
@@ -167,11 +167,5 @@ foreach ($row in $list)
         Write-Log "Backup is too big. you need $SpaceRemain MB more"
     }
 }
-
-
-
-
-
-
 
 Write-Log "BCSS Data Size Comparison Ends"

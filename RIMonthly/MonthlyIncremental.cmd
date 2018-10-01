@@ -53,13 +53,18 @@ echo Starting Monthly Incremental Backup for %ServerName% : %Time%  >> %LogName%
 
 for /f "tokens=1,2" %%a in ("%cDate%") do for /f "tokens=1,2,3 delims=/" %%i in ("%%b") do set nMonth=%%i&set nYear=%%k
 
+echo 1 nMonth is %nMonth%
+
+If %nMonth% LSS 10 set nMonth=%nMonth:0=%
 set /a nPrevMonth=%nMonth%-1
+
+echo 2 nMonth is %nMonth%
+echo 3 nPrevMonth is %nPrevMonth%
+
+If %nMonth% LSS 10 set nMonth=0%nMonth%
 set /a nPrevYear=%nYear%
 if %nPrevMonth% == 0 set nPrevMonth=12&set /a nPrevYear=%nYear%-1
-
-set nPrevMonth=0%nPrevMonth%
-
-set nPrevMonth=%nPrevMonth:~-2%
+If %nPrevMonth% LSS 10 set nPrevMonth=0%nPrevMonth%
  
 set clientdir=%drive%\%backdir%\%var3%\%Var4%\%client%\%servername%
 
