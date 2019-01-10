@@ -1,0 +1,22 @@
+Log verbose %4
+
+option confirm:yes-to-all
+
+#Filter out any files created on or newer than the BCSS of the client server
+filter -*.bcss
+filter cutoff:>%3
+
+# Compare using crc
+criteria crc
+
+# Load current files against snapshot from the last patch.
+load "%1" "%2"
+
+# Expand to affect subfolders and files.
+expand all
+
+# Select updated files.
+select left.orphan.all
+
+# Delete extraneous older files
+delete recyclebin=no left
