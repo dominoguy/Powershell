@@ -32,7 +32,7 @@ Creates a new log file in the designated location.
 .PARAMETER logstring
 String of text
 #>
-        function Write-Log
+function Write-Log
 {
     Param(
         [string]$logstring)
