@@ -24,7 +24,7 @@ G:\Backups\RIBackup\RIMonthly\serverslist.csv
 
 .PARAMETER LogLocaiton
 Location of log file
-IE. F:\Data\Scripts\Powershell\LOGS\BC_Comparison.log
+IE. F:\Data\Scripts\Powershell\LOGS\2019_BackupCleanUp.log
 G:\Backups\RIBackup\RIMonthly\LOGS\BC_Comparison.log
 #>
 
