@@ -86,7 +86,7 @@ $backupFileName = $NewDBName
 #Date-Time
 $curDate = Get-Date -Uformat "%m/%d/%Y"
 
-Get-ChildItem -Path $BackupFIlePath -Filter $backupFileNameSearch |
+Get-ChildItem -Recurse -Path $BackupFIlePath -Filter $backupFileNameSearch |
 ForEach-Object {
 
     $backupFileFullPath = $_.FullName
