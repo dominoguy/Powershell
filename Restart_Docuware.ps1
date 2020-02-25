@@ -2,7 +2,15 @@
 #Brian Long February 21, 2020
 <#
 .SYNOPSIS
-Stops the Docuware Desktop service executable and restarts the Docuware service
+Stops the Docuware Desktop service executable and restarts the Docuware service based on a trigger file.
+DocuwareRestart.hta
+Scheduled task
+Program
+    Powershell.exe
+Arguments
+-ExecutionPolicy Bypass F:\Data\Scripts\Powershell\Restart_Docuware.ps1 -TriggerLocation 'F:\Data\Scripts\Docuware\Reset.txt' -LogLocation 'F:\Data\Scripts\Docuware\Logs\DocuwareRestart.log'
+
+
 
 .DESCRIPTION
 Users request a restart by running the Docuware_Rest.hta which creates a trigger file.
@@ -54,7 +62,8 @@ function Restart-Docuware
 {
     $Arguments = "/f /fi ""Username eq blongadmin"" /im notepad.exe"
     start-process taskkill -ArgumentList $Arguments
-
+    #maybe required if the taskkill is still running when service is restarted
+    #start-sleep -Seconds 10
     Start-Service -Name "Xbox Live Game Save"
     Remove-item $strTrigger
   
