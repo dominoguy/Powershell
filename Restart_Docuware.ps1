@@ -10,8 +10,6 @@ Program
 Arguments
 -ExecutionPolicy Bypass F:\Data\Scripts\Powershell\Restart_Docuware.ps1 -TriggerLocation 'F:\Data\Scripts\Docuware\Reset.txt' -LogLocation 'F:\Data\Scripts\Docuware\Logs\DocuwareRestart.log'
 
-
-
 .DESCRIPTION
 Users request a restart by running the Docuware_Rest.hta which creates a trigger file.
 This script checks every 5 minutes for the existence of the file and if so stops the Docuware Desktop service executable and restarts the service, then deletes the trigger document
@@ -68,7 +66,6 @@ function Restart-Docuware
     Remove-item $strTrigger
   
 #taskkill /F /FI "Username eq docuwareservice" /IM "DocuWare.DesktopService.exe *32"
-
 }
 
 #temp Variables
