@@ -76,7 +76,7 @@ if ( $logFileExists -eq $False)
 }
 
 #Powershell Console
-#.\ServerConfigInfo.ps1 'F:\Data\Scripts\Powershell\LOGS\ADInfo.log' 'F:\Data\Scripts\Powershell\Logs' 'ADUserInfo.csv' 'ADComputerInfo.csv' 'DHCPInfo.csv'
+#.\GetADUserInfo.ps1 'F:\Data\Scripts\Powershell\LOGS\ADInfo.log' 'F:\Data\Scripts\Powershell\Logs' 'ADUserInfo.csv' 'ADComputerInfo.csv' 'DHCPInfo.csv'
 'F:\Data\Scripts\Powershell\LOGS\ADInfo.log' 
 'F:\Data\Scripts\Powershell\Logs' 
 'ADUserInfo.csv'
@@ -107,14 +107,8 @@ Write-Log "Completed User Information from Active Directory"
 #Get the Active Driectory Computer Information and put it into a csv File
 Write-Log "Getting Computer Information from Active Directory"
 Get-ADComputer -Filter * -SearchBase $domain -ResultPageSize 0 -Property CN,DistinguishedName,PasswordLastSet,Operatingsystem,OperatingsystemVersion | Select CN,DistinguishedName,PasswordLastSet,OperatingSystem,OperatingSystemVersion | Export-CSV -NoType $ADComputerFile
-#get ip address that ad remembered
-
 Write-Log "Completed Computer Information from Active Directory"
 #Get DHCP Information and put it into a csv File
 Write-Log "Getting DHCP Information"
 Get-DhcpServerv4Lease -ComputerName $DHCPServer -ScopeId $DHCPScopeID | Export-CSV -NoType $DHCPFile
 Write-Log "Completed DHCP Information"
-
-#Get Scheduled Tasks
-
-#GET backups of AD, DNS and DHCP
