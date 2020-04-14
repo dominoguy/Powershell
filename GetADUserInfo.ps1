@@ -27,6 +27,9 @@ IE.'ADComputerInfo.csv'
 .PARAMETER DHCPFileName
 The name of the DHCP information file
 IE.'DHCPInfo.csv'
+.PARAMETER SchedTaskFileName
+The name of the Scheduled Tasks information file
+IE.'SchedTaskInfo.csv'
 
 #>
 
@@ -36,7 +39,8 @@ param(
         [Parameter(Mandatory=$true,HelpMessage='OutPut Location')][string]$OutPutFilePath,
         [Parameter(Mandatory=$true,HelpMessage='Name of ADUser Info File')][string]$ADUserFileName,
         [Parameter(Mandatory=$true,HelpMessage='Name of ADComputer Info File')][string]$ADComputerFileName,
-        [Parameter(Mandatory=$true,HelpMessage='Name of DHCP Info File')][string]$DHCPFileName
+        [Parameter(Mandatory=$true,HelpMessage='Name of DHCP Info File')][string]$DHCPFileName,
+        [Parameter(Mandatory=$true,HelpMessage='Name of Scheduled Task Info File')][string]$SchedTaskFileName
     )
 <#
 .SYNOPSIS
@@ -76,13 +80,13 @@ if ( $logFileExists -eq $False)
 }
 
 #Powershell Console
-#.\ServerConfigInfo.ps1 'F:\Data\Scripts\Powershell\LOGS\ADInfo.log' 'F:\Data\Scripts\Powershell\Logs' 'ADUserInfo.csv' 'ADComputerInfo.csv' 'DHCPInfo.csv'
+#.\ServerConfigInfo.ps1 'F:\Data\Scripts\Powershell\LOGS\ADInfo.log' 'F:\Data\Scripts\Powershell\Logs' 'ADUserInfo.csv' 'ADComputerInfo.csv' 'DHCPInfo.csv' 'SchedTaskInfo.csv'
 'F:\Data\Scripts\Powershell\LOGS\ADInfo.log' 
 'F:\Data\Scripts\Powershell\Logs' 
 'ADUserInfo.csv'
 'ADComputerInfo.csv'
 'DHCPInfo.csv'
-
+'SchedTaskInfo.csv'
 
 $ADUserFile = $OutPutFilePath + "\" + $ADUserFileName
 #Get the domain we are in 
@@ -99,6 +103,7 @@ $DHCPScopeID = $DHCPScopeInfo.ScopeID
 $ADUserFile = $OutPutFilePath + "\" + $ADUserFileName
 $ADComputerFile = $OutPutFilePath + "\" + $ADComputerFileName
 $DHCPFile = $OutPutFilePath + "\" + $DHCPFileName
+$SchedTaskFile = $OutPutFilePath + "\" + $SchedTaskFileName
 
 #Get the Active Directory User information and put into a csv file
 Write-Log "Getting User Information from Active Directory"
@@ -106,15 +111,14 @@ Get-ADUser -Filter * -SearchBase $domain -ResultPageSize 0 -Property samaccountn
 Write-Log "Completed User Information from Active Directory"
 #Get the Active Driectory Computer Information and put it into a csv File
 Write-Log "Getting Computer Information from Active Directory"
-Get-ADComputer -Filter * -SearchBase $domain -ResultPageSize 0 -Property CN,DistinguishedName,PasswordLastSet,Operatingsystem,OperatingsystemVersion | Select CN,DistinguishedName,PasswordLastSet,OperatingSystem,OperatingSystemVersion | Export-CSV -NoType $ADComputerFile
-#get ip address that ad remembered
-
+Get-ADComputer -Filter * -SearchBase $domain -ResultPageSize 0 -Property CN,DistinguishedName,IPv4Address,PasswordLastSet,Operatingsystem,OperatingsystemVersion | Select CN,DistinguishedName,IPv4Address,PasswordLastSet,OperatingSystem,OperatingSystemVersion | Export-CSV -NoType $ADComputerFile
 Write-Log "Completed Computer Information from Active Directory"
 #Get DHCP Information and put it into a csv File
 Write-Log "Getting DHCP Information"
 Get-DhcpServerv4Lease -ComputerName $DHCPServer -ScopeId $DHCPScopeID | Export-CSV -NoType $DHCPFile
 Write-Log "Completed DHCP Information"
-
 #Get Scheduled Tasks
-
+Write-Log "Getting Scheduled Task Information"
+Get-ScheduledTask -Taskpath * | Export-ScheduledTask
+Write-Log "Completed Scheduled Task Information"
 #GET backups of AD, DNS and DHCP
