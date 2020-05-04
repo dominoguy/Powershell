@@ -1,16 +1,10 @@
-#Get Active Directory User Information
+#Get Server Config Information
 <#
 .SYNOPSIS
-This script returns Active Directory Users information and last logon time and exports to a CSV file.
+This script returns server configuration information.
 
 .DESCRIPTION
-This script removes the date from the file name and copies the file to a designated directory for backup.
-The script will keep 30 days of the vendors backups and deleting anything older.
-There should NOT be any other files in this directory than the backup files.
-Backup scripts should excempt the vendors backup directory from the client backup.
-
-Sample file name:
-    Back_Office_Database_2018-09-04--03-00-12.7z
+This script returns the following: User information from AD, computer information from AD, DHCP information and a backup of DHCP, and a backup of the DNS configuration.
 
 .PARAMETER LogLocation
 Location of log file and its name
@@ -45,20 +39,8 @@ param(
 <#
 .SYNOPSIS
 Writes to a log.
-
 .Description
 Creates a new log file in the designated location.
-
-.PARAMETER logstring
-String of text
-#>
-<#
-.SYNOPSIS
-Writes to a log.
-
-.Description
-Creates a new log file in the designated location.
-
 .PARAMETER logstring
 String of text
 #>
@@ -95,18 +77,14 @@ $userdomain = Get-ADDomain
 $dc1 = $userdomain.DNSRoot.split('.')[0]
 $dc2 = $userdomain.DNSRoot.split('.')[1]
 $domain = "dc=$dc1,dc=$dc2"
-#Get the DHCP servername
-$DHCPServerInfo = Get-DhcpServerInDC
-$DHCPServer = $DHCPServerInfo.DNSName
-$DHCPScopeInfo = Get-DHCPServerv4Scope -ComputerName $DHCPServer
-$DHCPScopeID = $DHCPScopeInfo.ScopeID
+$DNSZone = $userdomain.DNSRoot
 
 $ADUserFile = $OutPutFilePath + "\" + $ADUserFileName
 $ADComputerFile = $OutPutFilePath + "\" + $ADComputerFileName
 $DHCPFile = $OutPutFilePath + "\" + $DHCPFileName
 
-$OutPathPathExists = Test-Path -path $OutPutFilePath
-if ( $OutPathPathExists -eq $False)
+$OutPathFileExists = Test-Path -path $OutPutFilePath
+if ( $OutPathFileExists -eq $False)
 {
  New-Item -ItemType Directory -Force -Path $OutPutFilePath
 }
@@ -117,37 +95,61 @@ if ( $SchedPathExists -eq $False)
  New-Item -ItemType Directory -Force -Path $SchedTaskFolderPath
 }
 $ServerName = get-content env:computername
+$DNSDomain = get-content env:userdnsdomain
+$FullServerName = $Servername + '.' + $DNSDomain
 $PDCInfo = Get-ADDomainController -Discover -Service "PrimaryDC"
 $PDCName = $PDCInfo.name
-Write-Log $PDCName
+
 #check to see if you are on the PDC then get the AD stuff
 If ($ServerName -eq $PDCName)
 #Get the Active Directory User information and put into a csv file
 {
 Write-Log "Getting User Information from Active Directory"
-Get-ADUser -Filter * -SearchBase $domain -ResultPageSize 0 -Property samaccountname,Surname,GivenName,enabled,HomeDirectory,HomeDrive,ProfilePath,EmailAddress,lastLogonTimestamp | Select SAMAccountname,Surname,GivenName,Enabled,HomeDirectory,HomeDrive,ProfilePath,EmailAddress,@{n="lastLogonDate";e={[datetime]::FromFileTime($_.lastLogonTimestamp)}} | Export-CSV -NoType $ADUserFile
+Get-ADUser -Filter * -SearchBase $domain -ResultPageSize 0 -Property samaccountname,Surname,GivenName,enabled,HomeDirectory,HomeDrive,ProfilePath,EmailAddress,lastLogonTimestamp | Select-Object SAMAccountname,Surname,GivenName,Enabled,HomeDirectory,HomeDrive,ProfilePath,EmailAddress,@{n="lastLogonDate";e={[datetime]::FromFileTime($_.lastLogonTimestamp)}} | Export-CSV -NoType $ADUserFile
 Write-Log "Completed User Information from Active Directory"
 #Get the Active Driectory Computer Information and put it into a csv File
 Write-Log "Getting Computer Information from Active Directory"
-Get-ADComputer -Filter * -SearchBase $domain -ResultPageSize 0 -Property CN,DistinguishedName,IPv4Address,PasswordLastSet,Operatingsystem,OperatingsystemVersion | Select CN,DistinguishedName,IPv4Address,PasswordLastSet,OperatingSystem,OperatingSystemVersion | Export-CSV -NoType $ADComputerFile
+Get-ADComputer -Filter * -SearchBase $domain -ResultPageSize 0 -Property CN,DistinguishedName,IPv4Address,PasswordLastSet,Operatingsystem,OperatingsystemVersion | Select-Object CN,DistinguishedName,IPv4Address,PasswordLastSet,OperatingSystem,OperatingSystemVersion | Export-CSV -NoType $ADComputerFile
 Write-Log "Completed Computer Information from Active Directory"
 }
 
 #all other servers check for DHCP DNS Scheduled Tasks
+$DHCPService = Get-Service -Name DHCPServer
+$DHCPRunning = $DHCPService.Status
 
+If ($DHCPRunning -eq "Running")
+{
+#Get the DHCP servername
+$DHCPScopeInfo = Get-DHCPServerv4Scope -ComputerName $ServerName
+$DHCPScopeID = $DHCPScopeInfo.ScopeID
 #Get DHCP Information and put it into a csv File
 Write-Log "Getting DHCP Information"
-Get-DhcpServerv4Lease -ComputerName $DHCPServer -ScopeId $DHCPScopeID | Export-CSV -NoType $DHCPFile
+Get-DhcpServerv4Lease -ComputerName $ServerName -ScopeId $DHCPScopeID | Export-CSV -NoType $DHCPFile
 Write-Log "Completed DHCP Information"
+#Backup DHCP Database
+Write-Log "Getting backup of DHCP Database"
+$DHCPDBBackup = $OutPutFilePath + "\DHCP_DB_Backup"
+Backup-DhcpServer -ComputerName $ServerName -Path $DHCPDBBackup
+Write-Log "Completed backup of DHCP Database"
+}
 #Get Scheduled Tasks
 Write-Log "Getting Scheduled Task Information"
-$Tasks = Get-ScheduledTask -TaskPath \ | Select TaskName 
+$Tasks = Get-ScheduledTask -TaskPath \ | Select-Object TaskName 
     foreach($Task in $Tasks){ 
         $TaskName = $Task.TaskName 
         Export-ScheduledTask -TaskName $TaskName | Out-File "$SchedTaskFolderPath\$TaskName.xml" -Force 
     }
 Write-Log "Completed Scheduled Task Information"
-#Get Backup of DHCP database
 
+#Get DNS Information
+$DNSService = Get-Service -Name DNS
+$DNSRunning = $DNSService.Status
 
-#GET backups of AD, DNS
+If ($DNSRunning -eq "Running")
+{
+#Get DNS backup
+Write-Log "Getting DNS Backup"
+$DNSBackup = $OutPutFilePath + "\DNS_ServerConfig.xml"
+    Get-DNSServer | Export-Clixml -Path $DNSBackup
+Write-Log "Completed DNS Backup"
+}
