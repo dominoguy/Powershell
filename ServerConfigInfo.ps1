@@ -6,35 +6,19 @@ This script returns server configuration information.
 .DESCRIPTION
 This script returns the following: User information from AD, computer information from AD, DHCP information and a backup of DHCP, and a backup of the DNS configuration.
 
-.PARAMETER LogLocation
-Location of log file and its name
-IE. F:\Data\Scripts\Powershell\LOGS\ADInfo.log
-.PARAMETER OutPut Location
-The location of the CSV file with data
-IE. F:\Data\Scripts\Powershell\LOGS
-.PARAMETER ADUserFileName
-The name of the ADUSER information file
-IE.'ADUserInfo.csv'
-.PARAMETER ADComputerFileName
-The name of the ADComputer information file
-IE.'ADComputerInfo.csv'
-.PARAMETER DHCPFileName
-The name of the DHCP information file
-IE.'DHCPInfo.csv'
-.PARAMETER SchedTaskFolderPath
-The location of where the Scheduled Tasks are saved.
-IE.F:\Data\Scripts\Powershell\Logs\SchedTasks'
 
+.PARAMETER OutPutLocation
+The local save location of data
+IE. F:\Data\Scripts\Powershell\Logs\ServerConfig
+.PARAMETER RemoteSave
+The remote save location of data. Must be in an UNC Path
+IE. \\RI-FS-001.ri.ads\d$\data\Scripts\Logs\ServerConfig
 #>
 
 
 param(
-        [Parameter(Mandatory=$true,HelpMessage='Location of Log file')][string]$LogLocation,
         [Parameter(Mandatory=$true,HelpMessage='OutPut Location')][string]$OutPutFilePath,
-        [Parameter(Mandatory=$true,HelpMessage='Name of ADUser Info File')][string]$ADUserFileName,
-        [Parameter(Mandatory=$true,HelpMessage='Name of ADComputer Info File')][string]$ADComputerFileName,
-        [Parameter(Mandatory=$true,HelpMessage='Name of DHCP Info File')][string]$DHCPFileName,
-        [Parameter(Mandatory=$true,HelpMessage='Name of Scheduled Task Info File')][string]$SchedTaskFolderPath
+        [Parameter(Mandatory=$False,HelpMessage='Remote Save Location, must be in an UNC path')][string]$RemoteSave
     )
 <#
 .SYNOPSIS
@@ -44,6 +28,8 @@ Creates a new log file in the designated location.
 .PARAMETER logstring
 String of text
 #>
+
+$ServerName = get-content env:computername
 function Write-Log
 {
     Param(
@@ -52,7 +38,7 @@ function Write-Log
     $Time=Get-Date
     Add-Content $Logfile -value "$Time $logstring"
 }
-
+$LogLocation = $OutPutFilePath + "\" + $ServerName + "\" + 'ServerConfig.log'
 $logFile = $LogLocation
 
 $logFileExists = Test-Path -path $logFile
@@ -62,27 +48,25 @@ if ( $logFileExists -eq $False)
 }
 
 #Powershell Console
-#.\ServerConfigInfo.ps1 'F:\Data\Scripts\Powershell\LOGS\ADInfo.log' 'F:\Data\Scripts\Powershell\Logs' 'ADUserInfo.csv' 'ADComputerInfo.csv' 'DHCPInfo.csv' 'F:\Data\Scripts\Powershell\Logs\SchedTasks'
-'F:\Data\Scripts\Powershell\LOGS\ADInfo.log' 
-'F:\Data\Scripts\Powershell\Logs' 
-'ADUserInfo.csv'
-'ADComputerInfo.csv'
-'DHCPInfo.csv'
-'F:\Data\Scripts\Powershell\Logs\SchedTasks'
+#.\ServerConfigInfo.ps1 'F:\Data\Scripts\Powershell\Logs' '\\RI-FS-001.ri.ads\D$\Data\Scripts\Logs'
 
+$SaveLocation = $OutPutFilePath + "\" + $ServerName
+$ADUserFile = $SaveLocation + "\" + 'ADUserInfo.csv'
+$ADComputerFile = $SaveLocation + "\" + '\ADComputerInfo.csv'
+$DHCPFile = $SaveLocation + "\" + 'DHCPInfo.csv'
+$DHCPDBBackup = $SaveLocation + "\" + "\DHCP_DB_Backup"
+$SchedTaskFolderPath =  $SaveLocation + "\" + 'SchedTasks'
+$DNSBackup = $SaveLocation + "\" + "DNS_ServerConfig.xml"
 
-$ADUserFile = $OutPutFilePath + "\" + $ADUserFileName
+Write-Log 'Starting ServerConfig'
+
 #Get the domain we are in 
 $userdomain = Get-ADDomain
 $dc1 = $userdomain.DNSRoot.split('.')[0]
 $dc2 = $userdomain.DNSRoot.split('.')[1]
 $domain = "dc=$dc1,dc=$dc2"
-$DNSZone = $userdomain.DNSRoot
 
-$ADUserFile = $OutPutFilePath + "\" + $ADUserFileName
-$ADComputerFile = $OutPutFilePath + "\" + $ADComputerFileName
-$DHCPFile = $OutPutFilePath + "\" + $DHCPFileName
-
+#Local Save
 $OutPathFileExists = Test-Path -path $OutPutFilePath
 if ( $OutPathFileExists -eq $False)
 {
@@ -90,13 +74,11 @@ if ( $OutPathFileExists -eq $False)
 }
 
 $SchedPathExists = Test-Path -path $SchedTaskFolderPath
-if ( $SchedPathExists -eq $False)
+if ($SchedPathExists -eq $False)
 {
  New-Item -ItemType Directory -Force -Path $SchedTaskFolderPath
 }
-$ServerName = get-content env:computername
-$DNSDomain = get-content env:userdnsdomain
-$FullServerName = $Servername + '.' + $DNSDomain
+
 $PDCInfo = Get-ADDomainController -Discover -Service "PrimaryDC"
 $PDCName = $PDCInfo.name
 
@@ -113,11 +95,8 @@ Get-ADComputer -Filter * -SearchBase $domain -ResultPageSize 0 -Property CN,Dist
 Write-Log "Completed Computer Information from Active Directory"
 }
 
-#all other servers check for DHCP DNS Scheduled Tasks
-$DHCPService = Get-Service -Name DHCPServer
-$DHCPRunning = $DHCPService.Status
-
-If ($DHCPRunning -eq "Running")
+#Get DHCP if available
+If (Get-Service -Name DHCPServer -ErrorAction SilentlyContinue)
 {
 #Get the DHCP servername
 $DHCPScopeInfo = Get-DHCPServerv4Scope -ComputerName $ServerName
@@ -128,10 +107,11 @@ Get-DhcpServerv4Lease -ComputerName $ServerName -ScopeId $DHCPScopeID | Export-C
 Write-Log "Completed DHCP Information"
 #Backup DHCP Database
 Write-Log "Getting backup of DHCP Database"
-$DHCPDBBackup = $OutPutFilePath + "\DHCP_DB_Backup"
+
 Backup-DhcpServer -ComputerName $ServerName -Path $DHCPDBBackup
 Write-Log "Completed backup of DHCP Database"
 }
+
 #Get Scheduled Tasks
 Write-Log "Getting Scheduled Task Information"
 $Tasks = Get-ScheduledTask -TaskPath \ | Select-Object TaskName 
@@ -141,15 +121,39 @@ $Tasks = Get-ScheduledTask -TaskPath \ | Select-Object TaskName
     }
 Write-Log "Completed Scheduled Task Information"
 
-#Get DNS Information
-$DNSService = Get-Service -Name DNS
-$DNSRunning = $DNSService.Status
-
-If ($DNSRunning -eq "Running")
+#Get DNS Information if available
+If (Get-Service -Name DNS -ErrorAction SilentlyContinue)
 {
 #Get DNS backup
 Write-Log "Getting DNS Backup"
-$DNSBackup = $OutPutFilePath + "\DNS_ServerConfig.xml"
     Get-DNSServer | Export-Clixml -Path $DNSBackup
 Write-Log "Completed DNS Backup"
 }
+
+#Remote Save
+If ($RemoteSave -eq "" -or $RemoteSave -eq $null)
+{
+    Write-Log "Not Saving remotely"
+}
+else 
+{
+    Write-Log "Saving remotely"
+    #Test Conection to target server
+    $RemoteServer = [regex]::match($RemoteSave,'^\\\\(.*?)\\').Groups[1].Value
+    If (Test-connection -Cn $RemoteServer -BufferSize 16 -count 1 -ea 0 -quiet)
+    {
+        Write-Log "Copying to remote save location"
+        $RemoteSavePathExists = Test-Path -path $RemoteServer
+        if ($RemoteSavePathExists -eq $False)
+        {
+            New-Item -ItemType Directory -Force -Path $RemoteSave
+        }
+        Copy-Item -Path $SaveLocation -Destination $RemoteSave -Recurse -Force
+    }
+    else 
+    {
+        Write-Log "Target Server is not available"
+    }
+}
+
+Write-Log 'Finished ServerConfig'
