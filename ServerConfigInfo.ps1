@@ -9,10 +9,10 @@ This script returns the following: User information from AD, computer informatio
 
 .PARAMETER OutPutLocation
 The local save location of data
-IE. F:\Data\Scripts\Powershell\Logs\ServerConfig
+IE. F:\Data\ServerConfigInfo
 .PARAMETER RemoteSave
 The remote save location of data. Must be in an UNC Path
-IE. \\RI-FS-001.ri.ads\d$\data\Scripts\Logs\ServerConfig
+IE. \\RI-FS-001.ri.ads\d$\data\ServerConfigInfo
 #>
 
 
@@ -87,7 +87,7 @@ If ($ServerName -eq $PDCName)
 #Get the Active Directory User information and put into a csv file
 {
 Write-Log "Getting User Information from Active Directory"
-Get-ADUser -Filter * -SearchBase $domain -ResultPageSize 0 -Property samaccountname,Surname,GivenName,enabled,HomeDirectory,HomeDrive,ProfilePath,EmailAddress,lastLogonTimestamp | Select-Object SAMAccountname,Surname,GivenName,Enabled,HomeDirectory,HomeDrive,ProfilePath,EmailAddress,@{n="lastLogonDate";e={[datetime]::FromFileTime($_.lastLogonTimestamp)}} | Export-CSV -NoType $ADUserFile
+Get-ADUser -Filter * -SearchBase $domain -ResultPageSize 0 -Property samaccountname,enabled,Surname,GivenName,Initials,HomeDirectory,HomeDrive,ProfilePath,EmailAddress,lastLogonTimestamp | Select-Object SAMAccountname,Enabled,Surname,GivenName,Initials,HomeDirectory,HomeDrive,ProfilePath,EmailAddress,@{n="lastLogonDate";e={[datetime]::FromFileTime($_.lastLogonTimestamp)}} | Export-CSV -NoType $ADUserFile
 Write-Log "Completed User Information from Active Directory"
 #Get the Active Driectory Computer Information and put it into a csv File
 Write-Log "Getting Computer Information from Active Directory"
@@ -126,7 +126,7 @@ If (Get-Service -Name DNS -ErrorAction SilentlyContinue)
 {
 #Get DNS backup
 Write-Log "Getting DNS Backup"
-    Get-DNSServer | Export-Clixml -Path $DNSBackup
+Get-DNSServer | Export-Clixml -Path $DNSBackup
 Write-Log "Completed DNS Backup"
 }
 
