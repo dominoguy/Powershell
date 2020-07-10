@@ -59,11 +59,11 @@ $VMName = $VM.vmName
 $NumberofCPs = $VM.maxCheckpoints
 $diskLocation = $VM.diskLocation
 Write-Log "Checking $VMName ...."
-#IF there are an  equal number of start files end files then we can proceed 
+
 #get the IP address of the vm
 $IPResult = Get-VM $VMName | Select-object -ExpandProperty networkadapters | select-Object ipaddresses
 $VMIP =$IPResult.Ipaddresses
-Write-Log "The IPAddress of $VMName is $VMIP"
+Write-Log $VMName": IPAddress is $VMIP"
 
 #get the credentials to access the read share on the vm
 $Username = "ri\bakreadservice"
@@ -72,43 +72,90 @@ $SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
 $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $Username, $SecurePassword
 
 #get into the share to access the read file of the vm
-
-
-#Get the domain for the guest
-#$Result = Invoke-Command $VMName -Credential $cred -ScriptBlock {Get-WmiObject -class win32_computersystem}
-#$Domain = $Result.Domain
-#Write-Log "The domain is $Domain"
-
-#this may require a net use using the bacreadservice
-New-PSDrive -Name "Q" -Root "\\$VMIP\$VMName-Status$" -Persist -PSProvider "FileSystem" -Credential $cred
-
-#$StatusPath = "\\$VMIP\$VMName-Status$"
-
-$StatusPathExists = Test-Path -Path $StatusPath
+$StatusPath = "\\$VMIP\$VMName-Status$" 
+Write-Log $VMName": Checking share $StatusPath"
+try
+    {If (Test-Path -Path $StatusPath -ErrorAction Stop)
+        {
+            $StatusPathExists = $true
+        }
+    Else
+        {
+            $StatusPathExists = $False
+            Write-Log $VMName": $VMName-Status$ share is not visible"
+        }
+    }
+    Catch [UnauthorizedAccessException]
+    {
+        $StatusPathExists = $true
+    }
+#IF there are an  equal number of start files end files then we can proceed 
 IF ($StatusPathExists -eq $True)
     {
-        $StatusStarts = Invoke-Command $VMName -Credential $cred -ScriptBlock {(get-ChildItem -Path "\\$VMIP\$VMName-Status$" *Start.txt | Measure-Object).count}
-        $StatusFinish = Invoke-Command $VMName -Credential $cred -ScriptBlock {(get-ChildItem -Path "\\$VMIP\$VMName-Status$" *Finish.txt | Measure-Object).count}
+        New-PSDrive -Name "Q" -Root $StatusPath -PSProvider "FileSystem" -Credential $cred
+        $StatusStarts = (get-ChildItem -Path "Q:" *Start.txt | Measure-Object).count
+        $StatusFinish = (get-ChildItem -Path "Q:" *Finish.txt | Measure-Object).count
 
-        Write-Log "$VMName Number of Starts is $StatusStarts"
-        Write-Log "$VMName Number of Finish is $StatusFinish"
+        Write-Log $VMName": Number of Starts is $StatusStarts"
+        Write-Log $VMName": Number of Finish is $StatusFinish"
         
         If ($StatusStarts -eq $StatusFinish)
         {
-            write-log "We can Checkpoint $VMName"
-            #Remove WSB drive from VM
+            write-log $VMName": We can do a Checkpoint"
+            #check to see if there is a backup drive attached to the vm
+            #IF there is a drive capture the path, in case the drive is VHD and not a usb drive
+            #Is the drive going to be mounted onto the hvs or directly to the vm
+            If (Get-VM $VMName | Get-VMHardDiskDrive -ControllerType SCSI -controllernumber 0 -controllerlocation 0)
+            {
+                    Write-Log "$VMName has a backup drive"
+                    #Remove WSB drive from VM
+                    #We need to grab the disk number for usb drive or the path for a vhdx before unmounting the drive from the vm
+                    $VMDrive = Get-VM $VMName | Get-VMHardDiskDrive -ControllerType SCSI -controllernumber 0 -controllerlocation 0
+                    $VMDrivePath = $VMDrive.Path
+                    #Unmount the drive
+                    Get-vm $VMName | get-vmharddiskdrive -controllertype SCSI -controllernumber 0 -controllerlocation 0 | remove-vmharddiskdrive
+            }
+            else {
+                Write-Log "$VMName has no backup drive"
+            }
+            
+            #If the drive cannot be unmounted email alert
+                #exit
             #Do the Rolling Checkpoint on the VM
-            #Attach the WSB drive to the VM 
+                #Create the VM CSV file list for function New-RollingVMCheckpoint
+                <#
+               $CSVFile = "C:\ProgramData\RI PowerShell\Settings\RI-Virtualization\$VMName-rollingcheckpoints.csv"
+               $CSVFileExists = Test-Path -path $CSVFile
+               $headers = 'vmName,maxCheckpoints,diskLocation'
+               if ( $CSVFileExists -eq $True)
+               {
+                   Remove-Item $CSVFile
+                   New-Item -ItemType File -Force -Path $CSVFile
+                   Set-Content -Path $CSVFile - Value $headers
+                   $A = Get-Content -Path $CSVFile
+                   $A = $A[1..($A.Count - 1)]
+                   $A | Out-File -FilePath $CSVFile
+               }
+               else
+               {
+                   New-Item -ItemType File -Force -Path $CSVFile
+               }
+            #>
+        
+                # after checkpoint is done - how is this returned?
+                # if the checkpoint guid id can be  returned then i can be searched on the eventvwr on host
+            #Attach the WSB drive to the VM
+            #add-VMHardDiskDrive -VMName $VMName -controllertype SCSI -controllernumber 0 -controllerlocation 0 -path D:\Virtual\SHEP-EXCH-001\SHEP-EXCH-001-Backup.Vhdx
+            Get-VM $VMName | Add-VMHardDiskDrive -ControllerType SCSI -ControllerNumber 0 -controllerlocation 0 -path $VMDrivePath
         }
         else
         {
-            write-log "Error: Cannot CheckPoint: a process is still unfinished"
+            write-log $VMName": Error: Cannot CheckPoint: a process is still unfinished"
         }
-    }
-    else 
-    {
-        Write-Log "$VMName-Status$ share is not visible" 
+        Remove-PSDrive -Name "Q"
     }
     
 } 
+
+#After checking all vms and unmounting backup drives call existing rolling checkpoint function using the list of vms check
 

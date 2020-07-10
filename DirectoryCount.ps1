@@ -6,7 +6,7 @@ This script will calculate the number of files and the size of directories
 .DESCRIPTION
 The script will access a list of directories to work on from a .csv file. 
 It will then calculate the number of files per directory and keep a subtotal for a final total of directories in the list.
-Next it will calculate the size of the directories and convert to MG or GB, it will total sub directories and give a final total
+Next it will calculate the size of the directories and convert to GB, it will total sub directories and give a final total
 DirectoryCount.ps1 -LogLocation 'F:\Data\Scripts\Powershell\LOGS\DirectoryCount.log' -DirectoryList 'F:\Data\Scripts\Powershell\DirectoryList.csv'
 
 .PARAMETER LogLocation
