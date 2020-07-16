@@ -123,7 +123,7 @@ IF ($StatusPathExists -eq $True)
                 #exit
             #Do the Rolling Checkpoint on the VM
                 #Create the VM CSV file list for function New-RollingVMCheckpoint
-                <#
+                
                $CSVFile = "C:\ProgramData\RI PowerShell\Settings\RI-Virtualization\$VMName-rollingcheckpoints.csv"
                $CSVFileExists = Test-Path -path $CSVFile
                $headers = 'vmName,maxCheckpoints,diskLocation'
@@ -131,17 +131,18 @@ IF ($StatusPathExists -eq $True)
                {
                    Remove-Item $CSVFile
                    New-Item -ItemType File -Force -Path $CSVFile
-                   Set-Content -Path $CSVFile - Value $headers
-                   $A = Get-Content -Path $CSVFile
-                   $A = $A[1..($A.Count - 1)]
-                   $A | Out-File -FilePath $CSVFile
                }
                else
                {
                    New-Item -ItemType File -Force -Path $CSVFile
                }
-            #>
-        
+                Set-Content -Path $CSVFile - Value $headers
+                   $A = Get-Content -Path $CSVFile
+                   $A = $A[1..($A.Count - 1)]
+                   $A | Out-File -FilePath $CSVFile
+
+            
+               New-RollingVMCheckpointFromFile -Path $CSVFile
                 # after checkpoint is done - how is this returned?
                 # if the checkpoint guid id can be  returned then i can be searched on the eventvwr on host
             #Attach the WSB drive to the VM
