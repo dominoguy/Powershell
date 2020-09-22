@@ -107,16 +107,17 @@ IF ($StatusPathExists -eq $True)
             #Is the drive going to be mounted onto the hvs or directly to the vm
             If (Get-VM $VMName | Get-VMHardDiskDrive -ControllerType SCSI -controllernumber 0 -controllerlocation 0)
             {
-                    Write-Log "$VMName has a backup drive"
+                    Write-Log "$VMName has a backup drive attached"
                     #Remove WSB drive from VM
                     #We need to grab the disk number for usb drive or the path for a vhdx before unmounting the drive from the vm
                     $VMDrive = Get-VM $VMName | Get-VMHardDiskDrive -ControllerType SCSI -controllernumber 0 -controllerlocation 0
                     $VMDrivePath = $VMDrive.Path
                     #Unmount the drive
                     Get-vm $VMName | get-vmharddiskdrive -controllertype SCSI -controllernumber 0 -controllerlocation 0 | remove-vmharddiskdrive
+                    Write-Log "$VMName backup drive has been removed"
             }
             else {
-                Write-Log "$VMName has no backup drive"
+                Write-Log "$VMName has no backup drive attached"
             }
             
             #If the drive cannot be unmounted email alert

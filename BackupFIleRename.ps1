@@ -31,14 +31,17 @@ IE. "Act! Ace_Manufacturing*.txt"
 .PARAMETER NewDBName
 The new name of the database
 IE. 'ACT_Backup.txt'
-
+.PARAMETER DaysToRetain
+The number of days of backups to retain
+IE. 14
 #>
 param(
         [Parameter(Mandatory=$true,HelpMessage='Location of Log file')][string]$LogLocation,
         [Parameter(Mandatory=$true,HelpMessage='DB FIle Path')][string]$DBFilePath,
         [Parameter(Mandatory=$true,HelpMessage='DB New Location Path')][string]$DBNewLocation,
         [Parameter(Mandatory=$true,HelpMessage='DB FileNameSearch')][string]$DBFileNameSearch,
-        [Parameter(Mandatory=$true,HelpMessage='New DB Name')][string]$NewDBName
+        [Parameter(Mandatory=$true,HelpMessage='New DB Name')][string]$NewDBName,
+        [Parameter(Mandatory=$true,HelpMessage='Days To Retain')][string]$DaysToRetain,
     )
 
 #Functions
@@ -96,8 +99,11 @@ $backupFileNameSearch = $DBFileNameSearch
 $backupFileName = $NewDBName
 #$backupFileName = 'ACT_Backup.txt'
 
+
+
 #Date-Time
-$curDate = Get-Date -Uformat "%m/%d/%Y"
+$retatinDate = (Get-Date).adddays(-$DaysToRetain)
+$retatinDate = Get-Date -Uformat "%m/%d/%Y"
 
 Get-ChildItem -Recurse -Path $BackupFIlePath -Filter $backupFileNameSearch |
 ForEach-Object {
