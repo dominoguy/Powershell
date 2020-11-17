@@ -1,0 +1,15 @@
+Client,ServerName,Domain,AdminName,Password
+SHEP,SHEP-APP-012,shep.ads,riadmin,B@rnyard2020
+SHEP,SHEP-APP-013,shep.ads,riadmin,B@rnyard2020
+SHEP,SHEP-APP-015,shep.ads,riadmin,B@rnyard2020
+SHEP,SHEP-APP-016,shep.ads,riadmin,B@rnyard2020
+SHEP,SHEP-APP-017,shep.ads,riadmin,B@rnyard2020
+SHEP,SHEP-EXCH-001,shep.ads,riadmin,B@rnyard2020
+SHEP,SHEP-FS-001,shep.ads,riadmin,B@rnyard2020
+SHEP,SHEP-HDC-001,shep.ads,riadmin,B@rnyard2020
+SHEP,SHEP-MEM-001,shep.ads,riadmin,B@rnyard2020
+SHEP,SHEP-SP-001,shep.ads,riadmin,B@rnyard2020
+SHEP,SHEP-TSE-003,shep.ads,riadmin,B@rnyard2020
+SHEP,SHEP-TSE-004,shep.ads,riadmin,B@rnyard2020
+SHEP,SHEP-TSE-005,shep.ads,riadmin,B@rnyard2020
+SHEP,SHEP-TSE-006,shep.ads,riadmin,B@rnyard2020
