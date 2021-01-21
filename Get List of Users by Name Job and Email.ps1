@@ -8,15 +8,15 @@ param(
     )
 
 
-$ADUserFile = $OutPutFilePath + '\UserByEmailAddress.csv'
+$ADUserFile = $OutPutFilePath + '\ADUsersList.csv'
 #Get the domain we are in 
 $userdomain = Get-ADDomain
 $dc1 = $userdomain.DNSRoot.split('.')[0]
 $dc2 = $userdomain.DNSRoot.split('.')[1]
 $domain = "dc=$dc1,dc=$dc2"
 
-Get-ADUser -Filter {employeeNumber -like '*' -And Enabled -eq $True} -SearchBase $domain -ResultPageSize 0 -Property Surname,GivenName,Initials,Title,EmailAddress,Employeenumber | Select-Object Surname,GivenName,Initials,Title,EmailAddress,EmployeeNumber | Export-CSV -NoType $ADUserFile
-$Header = 'LastName','FirstName','MiddleInitial','Title','EmailAddress','EmployeeNumber'
+Get-ADUser -Filter {employeeNumber -like '*' -And Enabled -eq $True} -SearchBase $domain -ResultPageSize 0 -Property Employeenumber,Surname,GivenName,physicalDeliveryOfficeName,Title,Department,EmailAddress| Select-Object Employeenumber,Surname,GivenName,physicalDeliveryOfficeName,Title,Department,EmailAddress | Export-CSV -NoType $ADUserFile
+$Header = 'EmployeeNumber','LastName','FirstName','Facility','Department','Title','EmailAddress'
 $A = Get-Content -Path $ADUserFile
 $A = $A[1..($A.Count - 1)]
 $A | Out-File -FilePath $ADUserFile

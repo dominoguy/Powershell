@@ -1,0 +1,20 @@
+Active Directory Attributes
+
+Employee Number		1002
+Lastname		Aguilar
+Firstname		Noemy
+Facility		Millwoods Care Centre
+Service			Long Term Care
+Department		Nursing
+Job			HCA
+Email Address		naguilar@SHEPHERDSCARE.org
+
+
+Employee Number
+Lastname = sn or surname
+Firstname = givenName
+Office = physicalDeliveryOfficeName
+NA = Service
+Department = department
+Job Title = title
+Email address = mail

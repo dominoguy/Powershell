@@ -135,7 +135,7 @@ foreach ($row in $Serverlist)
             foreach ($Line in $Filelist)
             {
                 $FIlePath = "Q:" + $Line.FilePath
-                Write-Log "Checking $ServerName at $FilePath"
+                Write-Log "   Checking $ServerName at $FilePath"
 
                 $FileSize = (Get-ItemProperty $FilePath).Length/1MB
                 Get-Content -Path $ResultsCSV
@@ -144,7 +144,7 @@ foreach ($row in $Serverlist)
                     FilePath = "$FilePath"
                     FileSize = "$FileSize"
                 }
-                Write-Log "File Check $Server $FilePath $FileSize"
+                Write-Log "      File Check $Server $FilePath $FileSize"
                 $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation
             }
         }

@@ -1,0 +1,866 @@
+﻿EMPLOYEE,LASTNAME,FIRSTNAME,Facility,Service,Department,Job,WLADDR4
+1002,AGUILAR,NOEMY,Millwoods Care Centre,Long Term Care,Nursing,HCA,naguilar@SHEPHERDSCARE.org
+1004,ALBA,FABY,Millwoods Care Centre,Long Term Care,Nursing,HCA,falba@shepherdscare.org
+1032,COLUMBANO,ELIZABETH,Kensington Village,Assisted Living,Nursing,HCA,ecolumbano@SHEPHERDSCARE.org
+1037,DE GRANDE,NORM,Millwoods Care Centre,Long Term Care,Admin,ED Accommodations,ndegrande@SHEPHERDSCARE.org
+1042,DHALIWAL,JAGDEEP,Millwoods Care Centre,Long Term Care,Nursing,HCA,jdhaliwal@SHEPHERDSCARE.org
+1043,SRAN,RUPINDER,Millwoods Care Centre,Long Term Care,Nursing,HCA,rsran@shepherdscare.org
+1058,GALOLO,ZENAIDA,Millwoods Care Centre,Long Term Care,Nursing,HCA,zgalolo@SHEPHERDSCARE.org
+1060,GARCIA,AIDA,Millwoods Care Centre,Long Term Care,Nursing,HCA,agarcia@shepherdscare.org
+1068,GLOMBICA,TERESA,Millwoods Care Centre,Long Term Care,Nursing,HCA,tglombica@SHEPHERDSCARE.org
+1078,HERMANN,ALICE,Millwoods Care Centre,Long Term Care,Nursing,Medical Record Clerk,ahermanns@SHEPHERDSCARE.org
+1083,HONTIVEROS,HELEN,Millwoods Care Centre,Long Term Care,Nursing,HCA,hhontiveros@SHEPHERDSCARE.org
+1092,JAVIER,ELIZABETH,Millwoods Care Centre,Long Term Care,Nursing,HCA,ejavier@SHEPHERDSCARE.org
+1096,TUBERA,MARILYN,Millwoods Care Centre,Long Term Care,Nursing,HCA,mtubera@shepherdscare.org
+1107,LABRENTZ,CHRISTA,Millwoods Care Centre,Long Term Care,Admin,Receptionist,clabrentz@SHEPHERDSCARE.org
+1110,LARA,FLORENCE,Millwoods Care Centre,Long Term Care,Nursing,HCA,flara@SHEPHERDSCARE.org
+1125,MALHI,GURPREET,Millwoods Care Centre,Long Term Care,Nursing,HCA,gmalhi@SHEPHERDSCARE.org
+1135,MONRO,MARIAH,Millwoods Care Centre,Long Term Care,Nursing,HCA,mmonro@shepherdscare.org
+1137,MORGAN,CAROL,Millwoods Care Centre,Long Term Care,Nursing,Unit Clerk,cmorgan@shepherdscare.org
+1140,MULAHASANOVIC,INES,Kensington Village,Assisted Living,Nursing,LPN,imulahasanovic@SHEPHERDSCARE.org
+1143,NIELSEN,ELAINE,Head office,Long Term Care,Care Admin,Inservice Coordinator,enielsen@SHEPHERDSCARE.org
+1150,PARIY,EVGENIYA,Millwoods Care Centre,Long Term Care,Nursing,HCA,epariy@SHEPHERDSCARE.org
+1151,PATEL,ALKA,Millwoods Care Centre,Long Term Care,Nursing,HCA,apatel@SHEPHERDSCARE.org
+1157,PYLKO,BEATA,Millwoods Care Centre,Long Term Care,Nursing,HCA,bpylko@SHEPHERDSCARE.org
+1164,RISTAU,KARIN,Millwoods Care Centre,Long Term Care,Therapy,Pastoral Care,kristau@SHEPHERDSCARE.org
+1169,RUNZER,TAMMY,Millwoods Manor,Home Care,Nursing,Home Care Attendant,trunzer@SHEPHERDSCARE.org
+1173,SAINBHEE,MANJEET,Millwoods Care Centre,Long Term Care,Nursing,LPN,msainbhee@shepherdscare.org
+1188,TAYLOR,GAEL,Millwoods Care Centre,Long Term Care,Nursing,Unit Clerk,gtaylor@SHEPHERDSCARE.org
+1196,VASQUEZ,ROSA,Millwoods Care Centre,Long Term Care,Nursing,HCA,rvasquez@SHEPHERDSCARE.org
+1197,VELIE,STEPHANIE,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,svelie@SHEPHERDSCARE.org
+1206,WOZNIAK,IRENA,Millwoods Care Centre,Long Term Care,Nursing,HCA,iwozniak@shepherdscare.org
+1209,ZARA,LILIBETH,Millwoods Care Centre,Long Term Care,Nursing,HCA,lzara@SHEPHERDSCARE.org
+1214,FEHR,ALISON,Millwoods Manor,Home Care,Nursing,Home Care Attendant,afehr@SHEPHERDSCARE.org
+1217,MAZUR-JONKO,JOLANTA,Millwoods Manor,Home Care,Nursing,Home Care Attendant,jmazur-jonko@shepherdscare.org
+1221,BARAYUGA,BETTY,Southside Manor,Home Care,Nursing,Home Care Attendant,bbarayuga@SHEPHERDSCARE.org
+1224,DYMITER-DYLICKI,DOROTA,Eden,Long Term Care,Nursing,HCA,ddymiter-dylicki@SHEPHERDSCARE.org
+1231,ANINO,RAMELLA,Kensington Village,Long Term Care,Nursing,Registered Nurse,ranino@SHEPHERDSCARE.org
+1234,AYELE,ALEM,Kensington Village,Assisted Living,Nursing,HCA,aayele@shepherdscare.org
+1245,COLLINS,PEGGY,Kensington Village,Assisted Living,Nursing,HCA,pcollins@SHEPHERDSCARE.org
+1258,DUENAS-LEE,ANNABELLE,Kensington Village,Assisted Living,Nursing,HCA,aduenas-lee@SHEPHERDSCARE.org
+1259,DUPUIS,MAURICE,Shepherd's Garden DAL,Assisted Living,Maintenance,Maintenance,mdupuis@SHEPHERDSCARE.org
+1266,GHEBREMICEAL,ASMERET,Kensington Village,Long Term Care,Nursing,HCA,aghebremiceal@shepherdscare.org
+1269,GRAHAM,KAREN,Kensington Village,Long Term Care,Nursing,Unit Clerk,kgraham@SHEPHERDSCARE.org
+1285,LLOYD,TRACEY,Kensington Village,Assisted Living,Nursing,HCA,tlloyd@SHEPHERDSCARE.org
+1290,MARTINEZ,MIRNA,Kensington Village,Long Term Care,Nursing,HCA,mmartinez@shepherdscare.org
+1293,MENDOZA,TERESITA,Kensington Village,Assisted Living,Nursing,HCA,tmendoza@SHEPHERDSCARE.org
+1294,MILLS,TERESA,Kensington Village,Long Term Care,Nursing,HCA,tmills@SHEPHERDSCARE.org
+1298,MULAHASANOVIC,JASMINKA,Kensington Village,Assisted Living,Nursing,HCA,jmulahasanovic@SHEPHERDSCARE.org
+1307,PORRAS,ARLENE,Kensington Village,Assisted Living,Nursing,HCA,aporras@shepherdscare.org
+1315,SANCHEZ,MARTA,Kensington Village,Assisted Living,Nursing,HCA,msanchez@shepherdscare.org
+1319,SHEPHERD,RACHEL,Kensington Village,Assisted Living,Nursing,HCA,rshepherd@shepherdscare.org
+1327,TIAGO,NOLLIE,Kensington Village,Assisted Living,Nursing,HCA,ntiago@shepherdscare.org
+1340,WOODFORD,BEVERLY,Millwoods Care Centre,Long Term Care,Care Admin,RAI Coordinator,bwoodford@SHEPHERDSCARE.org
+1343,ANTAL,HARJIT,Millwoods Care Centre,Long Term Care,Nursing,HCA,hantal@SHEPHERDSCARE.org
+1345,BIASCAN,JOAHNA,Millwoods Care Centre,Long Term Care,Nursing,HCA,jbiascan@SHEPHERDSCARE.org
+1346,CHACKO,BEENA,Millwoods Care Centre,Long Term Care,Nursing,HCA,bchacko@SHEPHERDSCARE.org
+1355,SROMEK,DANUTA,Millwoods Care Centre,Long Term Care,Nursing,HCA,dsromek@SHEPHERDSCARE.org
+1356,HANDA,SUKVINDER,Eden,Long Term Care,Nursing,HCA,shanda@SHEPHERDSCARE.org
+1364,CHIPPENDALE,MARGARET,Millwoods Manor,Home Care,Nursing,Home Care Attendant,mchippendale@SHEPHERDSCARE.org
+1384,JOHN,MARIAMMA THOMAS,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,mjohn@shepherdscare.org
+1388,ESPIRITU,BERNADETTE,Greenfield,Assisted Living,Nursing,LPN,BEspiritu@SHEPHERDSCARE.org
+1390,FEREIRA,MYRNA,Kensington Village,Assisted Living,Nursing,HCA,mfereira@SHEPHERDSCARE.org
+1411,WELDEGHIORGHIS,SARA,Kensington Village,Assisted Living,Nursing,HCA,sweldeghiorghis@shepherdscare.org
+1415,HANIC,MAUREEN,Kensington Village,Supportive Housing,Therapy,Recreation Aides,mhanic@shepherdscare.org
+1455,HEBNER,DESIREE,Greenfield,Assisted Living,Nursing,HCA,dhebner@shepherdscare.org
+1469,ASCANO,LILETH,Millwoods Care Centre,Long Term Care,Nursing,HCA,lascano@SHEPHERDSCARE.org
+1480,BANGUABI,MUKUNDUA,Kensington Village,Assisted Living,Nursing,HCA,mbanguabi@SHEPHERDSCARE.org
+1485,TORREON,SARAH,Kensington Village,Long Term Care,Nursing,Registered Nurse,storreon@SHEPHERDSCARE.org
+1487,BISSON,DANIEL,Kensington Village,Long Term Care,Therapy,Recreation Therapist,dbisson@SHEPHERDSCARE.org
+1493,SCOTT,BRENDA,Kensington Village,Assisted Living,Nursing,Nurse Manager,bscott@SHEPHERDSCARE.org
+1505,ANDRIPA,MILA,Kensington Village,Home Care,Nursing,Home Care Attendant,mandripa@shepherdscare.org
+1533,NUIDAAL,CHRISTINA,Kensington Village,Long Term Care,Nursing,HCA,cnuidaal@shepherdscare.org
+1555,FAVIS,JAQUELINE,Kensington Village,Assisted Living,Nursing,HCA,jfavis@SHEPHERDSCARE.org
+1563,JACOB,MARIAMMA,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,mjacob@SHEPHERDSCARE.org
+1567,LEONAR-WILLIAMS,JESSITA,Millwoods Care Centre,Long Term Care,Nursing,HCA,jleonar-williams@SHEPHERDSCARE.org
+1573,DOMINGO,ELEN,Kensington Village,Assisted Living,Nursing,HCA,edomingo@shepherdscare.org
+1594,BANGAR,KARISHMA,Millwoods Care Centre,Long Term Care,Nursing,HCA,kbangar@shepherdscare.org
+1608,BEGG,IRENE,Kensington Village,Assisted Living,Nursing,LPN,ibegg@SHEPHERDSCARE.org
+1636,SAJORNE,MARIA,Kensington Village,Long Term Care,Nursing,HCA,msajorne@shepherdscare.org
+1639,MATIC- RAKIN,SNEZANA,Kensington Village,Assisted Living,Nursing,HCA,smatic-rakin@SHEPHERDSCARE.org
+1641,DONOHUE,BERNICE,Eden,Long Term Care,Nursing,Unit Clerk,BDonohue@shepherdscare.org
+1645,AWAD,IKRAM,Greenfield,Assisted Living,Nursing,LPN,iawad@SHEPHERDSCARE.org
+1656,PRINCIPE,ELIZABETH,Kensington Village,Long Term Care,Nursing,HCA,eprincipe@SHEPHERDSCARE.org
+1719,GUARATCHADO,EDNA,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,eguaratchado@SHEPHERDSCARE.org
+1739,GILL,RAJINDER,Millwoods Care Centre,Long Term Care,Nursing,HCA,rgill@SHEPHERDSCARE.org
+1757,ZAFAR,KANWAL ZEHRA,Millwoods Care Centre,Long Term Care,Nursing,LPN,kzafar@SHEPHERDSCARE.org
+1760,MASSEY,SABRINA,Millwoods Care Centre,Long Term Care,Nursing,HCA,smassey@SHEPHERDSCARE.org
+1763,ENDOZO,RITCHE,Millwoods Care Centre,Long Term Care,Nursing,HCA,rendozo@SHEPHERDSCARE.org
+1771,MOHAMED,FARIHA,Kensington Village,Assisted Living,Nursing,HCA,fmohamed@SHEPHERDSCARE.org
+1823,SAMUEL,VEENA,Millwoods Care Centre,Long Term Care,Nursing,HCA,vsamuel@SHEPHERDSCARE.org
+1843,DOOLITTLE,AMBER,Greenfield,Assisted Living,Nursing,HCA,adoolittle@SHEPHERDSCARE.org
+1864,FLORES,MARISSA,Kensington Village,Assisted Living,Nursing,HCA,mflores@shepherdscare.org
+1865,CADAWAS,GERARDETTE,Millwoods Care Centre,Long Term Care,Nursing,HCA,gcadawas@SHEPHERDSCARE.org
+1878,KOUMANE,HAWA,Greenfield,Assisted Living,Nursing,LPN,hkoumane@shepherdscare.org
+1897,BACON,DOROTHY,Barrhead,Assisted Living,Nursing,HCA,dbacon@shepherdscare.org
+1906,STEL,HENRIETTA,Barrhead,Assisted Living,Therapy,Recreation Aides,hstel@shepherdscare.org
+1907,DEVRIES,MELISSA,Barrhead,Assisted Living,Nursing,LPN,mdevries@SHEPHERDSCARE.org
+1929,MACDONALD,MARIA,Millwoods Manor,Home Care,Nursing,Home Care Attendant,mmacdonald@SHEPHERDSCARE.org
+1968,VANDEN BOSCH,NATHALIE,Millwoods Care Centre,Long Term Care,Nursing,LPN,nvandenbosch@SHEPHERDSCARE.org
+1970,KENNEDY,RENATE,Millwoods Care Centre,Long Term Care,Nursing,HCA,rkennedy@SHEPHERDSCARE.org
+2021,GONZALEZ,MARIA,Kensington Village,Assisted Living,Nursing,LPN,mgonzalez@shepherdscare.org
+2023,ANGODUNG,GLENDA,Kensington Village,Long Term Care,Nursing,HCA,gangodung@SHEPHERDSCARE.org
+2057,FUEMA,WUMBA,Millwoods Care Centre,Long Term Care,Nursing,HCA,wfuema@SHEPHERDSCARE.org
+2069,KELLY,BERNARDITA,Kensington Village,Assisted Living,Nursing,HCA,bkelly@shepherdscare.org
+2088,GEBERKIRSTOS,TSEGEMARIAN,Kensington Village,Assisted Living,Nursing,LPN,mgeberkirstos@SHEPHERDSCARE.org
+2124,AMPING,JILLIAN,Kensington Village,Home Care,Nursing,Home Care Attendant,jamping@shepherdscare.org
+2152,SANCHEZ,LILIBETH,Millwoods Manor,Home Care,Nursing,Home Care Attendant,lsanchez@SHEPHERDSCARE.org
+2185,GEORGE,FREDERICK,Kensington Village,Long Term Care,Therapy,Pastoral Care,fgeorge@shepherdscare.org
+2211,FABIEN,EUTHELIE,Millwoods Care Centre,Long Term Care,Nursing,HCA,efabien@shepherdscare.org
+2218,BALISI,NORAVI,Kensington Village,Assisted Living,Nursing,LPN,nbalisi@SHEPHERDSCARE.org
+2227,Ravarra-Fronda,Josephine,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,jravarra-fronda@SHEPHERDSCARE.org
+2229,VARGA,ANALY,Millwoods Care Centre,Long Term Care,Nursing,HCA,avarga@shepherdscare.org
+2230,ORASA,EFLEDA,Millwoods Care Centre,Long Term Care,Nursing,HCA,eorasa@SHEPHERDSCARE.org
+2231,DUNCAN,LEANNE,Millwoods Care Centre,Long Term Care,Nursing,HCA,lduncan@shepherdscare.org
+2250,KLAPPSTEIN,PAM,Kensington Village,Long Term Care,Therapy,Recreation Aides,pklappstein@SHEPHERDSCARE.org
+2251,CALDARARU,MARIA,Millwoods Care Centre,Long Term Care,Nursing,HCA,mcaldararu@SHEPHERDSCARE.org
+2259,DOLLENTE,LINA,Greenfield,Assisted Living,Nursing,HCA,ldollente@shepherdscare.org
+2260,TAN,GLENDA,Millwoods Manor,Home Care,Nursing,Home Care Attendant,gtan@shepherdscare.org
+2285,CHAUHAN,ANJANABEN,Millwoods Care Centre,Long Term Care,Nursing,HCA,achauhan@SHEPHERDSCARE.org
+2289,NASER,ANNA,Kensington Village,Assisted Living,Nursing,HCA,anaser@SHEPHERDSCARE.org
+2290,McMANN,CORALEE,Barrhead,Assisted Living,Nursing,HCA,cmcmann@shepherdscare.org
+2313,CRUZ,GLENDA,Millwoods Manor,Home Care,Nursing,Home Care Attendant,gcruz@SHEPHERDSCARE.org
+2321,HIEMSTRA,ANGIE,Barrhead,Assisted Living,Nursing,HCA,ahiemstra@SHEPHERDSCARE.org
+2386,SANDHAR,RAJWINDER,Millwoods Care Centre,Long Term Care,Nursing,HCA,rsandhar@SHEPHERDSCARE.org
+2392,ADEN,LUL,Millwoods Care Centre,Long Term Care,Nursing,LPN,laden@SHEPHERDSCARE.org
+2410,MASSIKA,REGINE,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,rmassika@SHEPHERDSCARE.org
+2411,MUTHOMI,JANE,Greenfield,Assisted Living,Nursing,LPN,jmuthomi@SHEPHERDSCARE.org
+2414,GAHIZA,JULIET,Kensington Village,Assisted Living,Nursing,HCA,jgahiza@shepherdscare.org
+2426,PALMA,LUZ,Greenfield,Assisted Living,Nursing,HCA,lpalma@SHEPHERDSCARE.org
+2434,KINANI,SAMIRA,Eden,Long Term Care,Nursing,HCA,skinani@SHEPHERDSCARE.org
+2441,GENER,MARIA,Greenfield,Assisted Living,Nursing,HCA,mgener@SHEPHERDSCARE.org
+2446,DUNCAN,IRYNA,Millwoods Care Centre,Long Term Care,Nursing,HCA,iduncan@SHEPHERDSCARE.org
+2449,AFWORKI,LEWAM,Kensington Village,Assisted Living,Nursing,HCA,lafworki@SHEPHERDSCARE.org
+2460,PHILIP,GRETHLYN,Millwoods Care Centre,Long Term Care,Nursing,LPN,gphilip@SHEPHERDSCARE.org
+2472,PAUL,FEMY,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,fpaul@shepherdscare.org
+2473,OSCIENNY,COLLEEN,Kensington Village,Long Term Care,Nursing,HCA,coscienny@SHEPHERDSCARE.org
+2479,BATE,MARTINA,Barrhead,Assisted Living,Nursing,LPN,mbate@SHEPHERDSCARE.org
+2492,SHIRE,SULEKA,Kensington Village,Assisted Living,Nursing,HCA,sshire@SHEPHERDSCARE.org
+2494,LEZAMA,SYLVIA,Greenfield,Assisted Living,Nursing,LPN,slezama@SHEPHERDSCARE.org
+2521,ALKESTRUP,MARIEL,Barrhead,Assisted Living,Nursing,HCA,malkestrup@SHEPHERDSCARE.org
+2529,OSTIA,VENUS,Millwoods Care Centre,Long Term Care,Nursing,HCA,vostia@SHEPHERDSCARE.org
+2530,ABDI,ASHA,Millwoods Care Centre,Long Term Care,Nursing,HCA,aabdi@SHEPHERDSCARE.org
+2548,DEENSIE,SENTO,Vanguard,Assisted Living,Nursing,HCA,sdeensie@shepherdscare.org
+2553,CASTRO,MELANIE,Millwoods Care Centre,Long Term Care,Nursing,HCA,mcastro@SHEPHERDSCARE.org
+2567,LARITA,TERESITA,Kensington Village,Home Care,Nursing,Home Care Attendant,tlarita@SHEPHERDSCARE.org
+2578,SIMON,ACKAMMA,Greenfield,Assisted Living,Nursing,LPN,asimon@SHEPHERDSCARE.org
+2595,LEUNG,EDWINA,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,eleung@shepherdscare.org
+2596,POTVIN,SYLVIE,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,spotvin@shepherdscare.org
+2597,SADIO,ANGELINA,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,asadio@SHEPHERDSCARE.org
+2600,BUNSAY,DANIEL  JR,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,dbunsay@SHEPHERDSCARE.org
+2603,STAROSTECKI,ALEKSANDRA,Eden,Long Term Care,Nursing,HCA,astarostecki@SHEPHERDSCARE.org
+2607,LAPLANTE,LYNNE,Barrhead,Assisted Living,Nursing,HCA,llaplante@shepherdscare.org
+2623,LAT,HERBERT,Greenfield,Assisted Living,Nursing,HCA,hlat@SHEPHERDSCARE.org
+2626,KRENTZ,CINDY,Vanguard,Assisted Living,Nursing,HCA,ckrentz@shepherdscare.org
+2643,JUSI,SIONY,Millwoods Care Centre,Long Term Care,Nursing,HCA,sjusi@SHEPHERDSCARE.org
+2658,MARANAN,JANICE,Shepherd's Garden DAL,Assisted Living,Nursing,LPN,jmaranan@SHEPHERDSCARE.org
+2667,PARKER,RUTH,Kensington Village,Long Term Care,Nursing,HCA,rparker@SHEPHERDSCARE.org
+2684,OLVINA,SOPHIA,Eden,Long Term Care,Nursing,HCA,solvina@SHEPHERDSCARE.org
+2685,STOBY,MAGGIE,Barrhead,Assisted Living,Nursing,Nurse Manager,mstoby@SHEPHERDSCARE.org
+2689,DE CASTRO,FRITZIE,Kensington Village,Long Term Care,Nursing,HCA,fdecastro@shepherdscare.org
+2704,MCLEAN,PAMELA,Barrhead,Assisted Living,Nursing,LPN,PMcLean@SHEPHERDSCARE.org
+2715,ZWACK,FAY,Barrhead,Assisted Living,Nursing,HCA,fzwack@SHEPHERDSCARE.org
+2728,HOTI-VILLAMOR,CHONA,Kensington Village,Long Term Care,Nursing,HCA,choti-villamor@SHEPHERDSCARE.org
+2738,GLODOVIZA,GLECERIA,Kensington Village,Long Term Care,Nursing,HCA,gglodoviza@SHEPHERDSCARE.org
+2746,HINGZON -SALADINO,MILAGROS,Kensington Village,Home Care,Nursing,Home Care Attendant,mhingzon-saladino@shepherdscare.org
+2751,TANG,YI QING PAMELA,Kensington Village,Assisted Living,Nursing,LPN,ptang@SHEPHERDSCARE.org
+2756,GUTIERREZ,ANNA,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,algutierrez@shepherdscare.org
+2762,LARTEY,MARTHA,Millwoods Care Centre,Long Term Care,Nursing,LPN,mlartey@shepherdscare.org
+2767,SAVARD,FLORENCE,Barrhead,Assisted Living,Nursing,HCA,fsavard@SHEPHERDSCARE.org
+2780,GOLDEN,ESTHER,Barrhead,Assisted Living,Nursing,HCA,egolden@SHEPHERDSCARE.org
+2783,CABARLO,GINA,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,gcabarlo@SHEPHERDSCARE.org
+2784,APIADO,JOSEPH,Millwoods Care Centre,Long Term Care,Nursing,HCA,japiado@shepherdscare.org
+2789,KIEFUIK,TRACY,Millwoods Care Centre,Long Term Care,Nursing,HCA,tkiefuik@SHEPHERDSCARE.org
+2802,TAMANI,GLORIA,Shepherd's Garden DAL,Home Care,Nursing,Home Care Attendant,gtamani@SHEPHERDSCARE.org
+2806,HAYCOCK,TANYA,Greenfield,Assisted Living,Nursing,HCA,thaycock@shepherdscare.org
+2807,VUONG,ROBELINDA,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,rvuong@SHEPHERDSCARE.org
+2809,TRAINOR,CAROL,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,ctrainor@SHEPHERDSCARE.org
+2811,BRIONES,JOAN,Eden,Home Care,Nursing,Home Care Attendant,jbriones@SHEPHERDSCARE.org
+2818,DENURO,ANELE MARIE,Shepherd's Garden DAL,Assisted Living,Nursing,LPN,adenuro@SHEPHERDSCARE.org
+2819,SIMMS,MIRIAM,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,msimms@SHEPHERDSCARE.org
+2823,COLTER,DEBBIE,Barrhead,Assisted Living,Nursing,LPN,dcolter@SHEPHERDSCARE.org
+2830,SCHAUB,MELISSA,Eden,Long Term Care,Nursing,LPN,mschaub@shepherdscare.org
+2833,KRISHNAN,RAJA,Millwoods Care Centre,Long Term Care,Nursing,LPN,rkrishnan@SHEPHERDSCARE.org
+2843,HENRY,LOUISE,Barrhead,Assisted Living,Nutrition ,Cooks,lhenry@SHEPHERDSCARE.org
+2846,CAYANAN,LOLITA,Shepherd's Garden DAL,Assisted Living,Nursing,LPN,lcayanan@SHEPHERDSCARE.org
+2859,MACRAE,JESSICA,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,jmacrae@SHEPHERDSCARE.org
+2860,BELETE,MESERET,Kensington Village,Long Term Care,Nursing,HCA,mbelete@SHEPHERDSCARE.org
+2864,WENDEMAGEGNHU,BEIRUT,Millwoods Care Centre,Long Term Care,Nursing,HCA,bwendemagegnhu@SHEPHERDSCARE.org
+2866,AHMED,FERDOS,Millwoods Care Centre,Long Term Care,Nursing,LPN,fahmed@shepherdscare.org
+2868,ANCHETA,ROWENA,Millwoods Care Centre,Long Term Care,Nursing,HCA,rancheta@shepherdscare.org
+2870,BERNARDINO,CHERRY ANNE,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,cbernardino@shepherdscare.org
+2880,ABDI,SAMIA,Millwoods Care Centre,Long Term Care,Nursing,HCA,sabdi@shepherdscare.org
+2886,OCHREMCHUK,JAIMIE,Barrhead,Assisted Living,Nursing,HCA,jochremchuk@SHEPHERDSCARE.org
+2887,LAMEN,LUTGARDA,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,llamen@shepherdscare.org
+2900,PARDINAS,LOIDA,Southside Manor,Home Care,Nursing,Home Care Attendant,lpardinas@SHEPHERDSCARE.org
+2902,GROOME,GENEVIEVE,Barrhead,Assisted Living,Nursing,HCA,ggroome@shepherdscare.org
+2909,ATAKORA,GRACE,Greenfield,Assisted Living,Nursing,HCA,gatakora@SHEPHERDSCARE.org
+2912,KUMAR,KESHNI,Millwoods Care Centre,Long Term Care,Nursing,LPN,kkumar@shepherdscare.org
+2913,MARTIN,WENDY,Kensington Village,Assisted Living,Nursing,Site Supervisor,wmartin@SHEPHERDSCARE.org
+2916,ATIEMWEN,CAROLINE,Kensington Village,Long Term Care,Nursing,LPN,catiemwen@SHEPHERDSCARE.org
+2923,BOLO,KYLA,Shepherd's Garden DAL,Home Care,Nursing,Site Supervisor,kbolo@shepherdscare.org
+2926,TESEMA,YEWEYNISHET,Kensington Village,Assisted Living,Nursing,HCA,ytesema@SHEPHERDSCARE.org
+2927,BRIGHT,VANESSA,Kensington Village,Long Term Care,Therapy,Recreation Aides,vbright@shepherdscare.org
+2934,BETT,RAYMOND,Kensington Village,Long Term Care,Nursing,Registered Nurse,rbett@SHEPHERDSCARE.org
+2945,SAAD,HAWA,Greenfield,Assisted Living,Nursing,HCA,hawasaad1964@gmail.com
+2946,CARLSON,KRYSTAL,Barrhead,Assisted Living,Nutrition ,Cooks,kcarlson@SHEPHERDSCARE.org
+2953,NYARKO,CHARLES,Greenfield,Assisted Living,Nursing,LPN,cnyarko@SHEPHERDSCARE.org
+2970,TO-ONG,MA SOFIA,Shepherd's Garden DAL,Home Care,Nursing,Home Care Attendant,mto-ong@SHEPHERDSCARE.org
+2972,AROP,SEWANDE,Kensington Village,Assisted Living,Nursing,HCA,sarop@SHEPHERDSCARE.org
+2983,PED,FRAIDA,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,fped@shepherdscare.org
+2990,LAO-LAWI,GRACE,Shepherd's Garden DAL,Home Care,Nursing,Home Care Attendant,glao-lawi@SHEPHERDSCARE.org
+2995,MAOLE,MBELU,Kensington Village,Long Term Care,Nursing,HCA,mmaole@SHEPHERDSCARE.org
+2996,AL-YOUSEFI,FATIMA,Kensington Village,Long Term Care,Nursing,HCA,fal-yousefi@SHEPHERDSCARE.org
+3000,AHMED,FAIZA,Millwoods Care Centre,Long Term Care,Nursing,HCA,fmahmed@SHEPHERDSCARE.org
+3007,DUGGAL,SURICHA,Millwoods Care Centre,Long Term Care,Nursing,LPN,sduggal@shepherdscare.org
+3008,GOODWIN,SHERWIN,Kensington Village,Long Term Care,Nursing,LPN,sgoodwin@SHEPHERDSCARE.org
+3011,BACSO,KENDRA,Millwoods Care Centre,Long Term Care,Therapy,Recreation Therapist,KBacso@SHEPHERDSCARE.org
+3029,PALACPAC,JOHN,Shepherd's Garden DAL,Assisted Living,Nursing,LPN,jpalacpac@SHEPHERDSCARE.org
+3042,ANDRES,NORALYN,Greenfield,Assisted Living,Nursing,HCA,nandres@SHEPHERDSCARE.org
+3059,FRITH,CONNIE,Barrhead,Assisted Living,Nursing,HCA,cfrith@SHEPHERDSCARE.org
+3061,HORECZY,KARLI,Millwoods Care Centre,Long Term Care,Therapy,Recreation Aides,khoreczy@SHEPHERDSCARE.org
+3062,DASALLA,ZENAIDA,Greenfield,Assisted Living,Nursing,HCA,zdasalla@SHEPHERDSCARE.org
+3066,TAYLOR,EVETTE,Kensington Village,Home Care,Nursing,Home Care Attendant,etaylor@shepherdscare.org
+3072,KAUR,MANPREET,Millwoods Care Centre,Long Term Care,Nursing,HCA,manpreetkaur@SHEPHERDSCARE.org
+3082,WILLIAMS,JANINE,Barrhead,Assisted Living,Nursing,LPN,jwilliams@shepherdscare.org
+3085,WELDEYESUS,TENAYE,Vanguard,Assisted Living,Nursing,HCA,tweldeyesus@shepherdscare.org
+3086,OSAKUE,ESTHER,Vanguard,Assisted Living,Nursing,HCA,eosakue@SHEPHERDSCARE.org
+3096,BENNETT,DERECK,Millwoods Care Centre,Long Term Care,Maintenance,Director of Maintenance,dbennett@SHEPHERDSCARE.org
+3098,CHAND,MUNI,Vanguard,Assisted Living,Nursing,HCA,mchand@SHEPHERDSCARE.org
+3103,MIRAMONTES,JENNIFER,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,jmiramontes@shepherdscare.org
+3124,TACHIWONA,ENET,Vanguard,Assisted Living,Nursing,LPN,etachiwona@SHEPHERDSCARE.org
+3126,BIMBA,KRISTINA,Vanguard,Assisted Living,Nursing,LPN,kbimba@shepherdscare.org
+3127,VILLOGA,WINEFREDA,Vanguard,Assisted Living,Nursing,HCA,wvilloga@SHEPHERDSCARE.org
+3138,SANUSI,KEHINDE,Vanguard,Assisted Living,Nursing,HCA,ksanusi@shepherdscare.org
+3140,BACHO,MICHAELE,Vanguard,Assisted Living,Nursing,LPN,MBacho@shepherdscare.org
+3144,HARRIS-HEWSON,LAVERN,Vanguard,Assisted Living,Nursing,LPN,lhewson@SHEPHERDSCARE.org
+3152,KHUMALO,SIBA,Vanguard,Assisted Living,Nursing,LPN,skhumalo@SHEPHERDSCARE.org
+3153,GREEN,SHARON,Vanguard,Assisted Living,Nursing,HCA,sgreen@shepherdscare.org
+3155,CHEN,SHEILA,Kensington Village,Long Term Care,Nursing,LPN,schen@SHEPHERDSCARE.org
+3156,CANALES,CLAUDIA,Vanguard,Assisted Living,Nursing,HCA,ccanales@SHEPHERDSCARE.org
+3161,ROYER,ENIDE,Vanguard,Assisted Living,Nursing,HCA,eroyer@shepherdscare.org
+3163,RAMIC,AMIRA,Vanguard,Assisted Living,Nursing,HCA,aramic@shepherdscare.org
+3167,RICKS,ARTHUR,Vanguard,Assisted Living,Nursing,HCA,aricks@shepherdscare.org
+3173,MABALOT,LETECIA,Vanguard,Assisted Living,Nursing,HCA,lmabalot@shepherdscare.org
+3174,CANTONJOS,FRANCO,Vanguard,Assisted Living,Nursing,HCA,fcantonjos@shepherdscare.org
+3175,ONGJIANGCO,ANASTACIO,Vanguard,Assisted Living,Nursing,HCA,aongjiangco@shepherdscare.org
+3180,REID,MARCIA,Vanguard,Assisted Living,Nursing,LPN,mreid@shepherdscare.org
+3183,BAUTISTA,FELEN,Vanguard,Assisted Living,Nursing,HCA,fbautista@SHEPHERDSCARE.org
+3184,WIBERG,ALISON,Vanguard,Assisted Living,Nursing,LPN,awiberg@SHEPHERDSCARE.org
+3186,FREDRICKS,BUABA,Vanguard,Assisted Living,Nursing,HCA,bfredricks@SHEPHERDSCARE.org
+3189,DYKEMAN,CELIA,Kensington Village,Assisted Living,Nursing,HCA,cdykeman@shepherdscare.org
+3194,KALALA,LEONNIE,Vanguard,Assisted Living,Nursing,HCA,lkalala@SHEPHERDSCARE.org
+3195,BITOY,SHERWINA LYNN,Shepherd's Garden DAL,Home Care,Nursing,Home Care Attendant,sbitoy@shepherdscare.org
+3196,BANGURA,RUGIATU,Vanguard,Assisted Living,Nursing,HCA,rbangura@shepherdscare.org
+3199,NUAKO,CHARLES,Vanguard,Assisted Living,Nursing,HCA,cnuako@shepherdscare.org
+3211,TYMKO,FLORENTINA,Vanguard,Assisted Living,Nursing,HCA,ftymko@SHEPHERDSCARE.org
+3216,KALKAT,KULWARAN,Millwoods Care Centre,Long Term Care,Nursing,HCA,kkalkat@SHEPHERDSCARE.org
+3220,GUTIERREZ,ANA,Kensington Village,Assisted Living,Nursing,HCA,bellaanag25@gmail.com
+3222,DEARING,CRYSTAL,Vanguard,Assisted Living,Nursing,HCA,cdearing@SHEPHERDSCARE.org
+3225,BARRINGTON,JODY,Kensington Village,Home Care,Nursing,Site Supervisor,jbarrington@shepherdscare.org
+3233,ROSEBORSKY,CHARMAINE,Kensington Village,Long Term Care,Nursing,LPN,croseborsky@SHEPHERDSCARE.org
+3237,SAVARD,THERESA,Barrhead,Assisted Living,Nursing,HCA,tleesavard@hotmail.com
+3243,PALENCIA,RENA,Kensington Village,Long Term Care,Nursing,Registered Nurse,rpalencia@SHEPHERDSCARE.org
+3250,JOHNSON,MELISSA,Millwoods Care Centre,Long Term Care,Nursing,Unit Clerk,mjohnson@SHEPHERDSCARE.org
+3256,MBAKOPA,MONKABE,Vanguard,Assisted Living,Nursing,HCA,mmbakopa@gmail.com
+3262,GAUTAM,HIM LAL,Millwoods Care Centre,Long Term Care,Nursing,LPN,ghimlal@yahoo.com
+3270,ADHIKARI,KESHABI,Greenfield,Assisted Living,Therapy,Recreation Aides,kadhikari@shepherdscare.org
+3282,CALDERON - CORPUZ,NOIMIE,Kensington Village,Long Term Care,Nursing,HCA,ncalderon-corpuz@SHEPHERDSCARE.org
+3285,LADIERO,JULIET,Kensington Village,Long Term Care,Nursing,HCA,jladiero@shepherdscare.org
+3290,MATIAS,FLORENCE,Vanguard,Assisted Living,Nursing,HCA,fmatias@SHEPHERDSCARE.org
+3294,KLASSEN,NAOMI,Shepherd's Garden DAL,Assisted Living,Therapy,Recreation Aides,nklassen@SHEPHERDSCARE.org
+3295,NELSON,MARISSA,Shepherd's Garden DAL,Assisted Living,Nursing,LPN,mlictawa@SHEPHERDSCARE.org
+3296,REVELO,JEANETT,Kensington Village,Home Care,Nursing,Home Care Attendant,jrevelo@shepherdscare.org
+3303,MENGSTU,HANA,Kensington Village,Assisted Living,Nursing,HCA,hmengstu@SHEPHERDSCARE.org
+3309,CUARESMA,ANNALEE,Eden,Long Term Care,Nursing,LPN,acuaresma@SHEPHERDSCARE.org
+3310,RADTKE,EWA,Vanguard,Assisted Living,Nursing,LPN,eradtke@shepherdscare.org
+3313,LUBGUBAN,IMEE,Kensington Village,Assisted Living,Nursing,LPN,ilubguban@SHEPHERDSCARE.org
+3317,VILLAFRANCA,LEILA MAE,Shepherd's Garden DAL,Home Care,Nursing,Home Care Attendant,lvillafranca@SHEPHERDSCARE.org
+3322,EDURIA,ARVIN,Millwoods Care Centre,Long Term Care,Nursing,LPN,aeduria@SHEPHERDSCARE.org
+3323,YUSUF,FARHIYA,Millwoods Care Centre,Long Term Care,Nursing,HCA,fyusuf@SHEPHERDSCARE.org
+3325,SIRSKI,DONNA,Millwoods Care Centre,Long Term Care,Therapy,Recreation Aides,DSirski@SHEPHERDSCARE.org
+3326,ZAGO,AURELIENNE,Vanguard,Assisted Living,Nursing,HCA,azago@shepherdscare.org
+3334,WOODMAN,DIANE,Head office,Shared General & Admin,Admin,Finance,dwoodman@SHEPHERDSCARE.org
+3339,BALTAZAR,NANCY,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,nbaltazar@shepherdscare.org
+3351,BARCELO,MARIA,Kensington Village,Long Term Care,Nursing,Registered Nurse,mbarcelo@shepherdscare.org
+3357,LEHUNE,MARY JEAN,Kensington Village,Assisted Living,Nursing,HCA,mlehune@SHEPHERDSCARE.org
+3363,JALLAH,NEOMI  MAMA,Vanguard,Assisted Living,Nursing,HCA,njallah@SHEPHERDSCARE.org
+3365,WOLDEMARIAM,JULIANA,Kensington Village,Long Term Care,Nursing,HCA,jwoldemariam@SHEPHERDSCARE.org
+3366,CASTILLO,ELISA,Kensington Village,Long Term Care,Nursing,HCA,ecastillo@SHEPHERDSCARE.org
+3367,GALAMPANAO,IMELDA,Kensington Village,Long Term Care,Nursing,HCA,igalampanao@SHEPHERDSCARE.org
+3372,APILADO,ROSELLA,Kensington Village,Home Care,Nursing,Home Care Attendant,rapilado@shepherdscare.org
+3377,FAILOGA,SHARON,Shepherd's Garden DAL,Home Care,Nursing,Home Care Attendant,sfailoga@SHEPHERDSCARE.org
+3383,BALDAZO,JEAN,Kensington Village,Home Care,Nursing,Home Care Attendant,jbaldazo@shepherdscare.org
+3388,MCCALL,SHERRY,Barrhead,Assisted Living,Nursing,LPN,smccall@SHEPHERDSCARE.org
+3392,GAIDA,CAMILLE,Vanguard,Assisted Living,Nursing,HCA,cgaida@SHEPHERDSCARE.org
+3401,KUFUOR,ELIZABETH,Vanguard,Assisted Living,Nursing,HCA,ekufuor@SHEPHERDSCARE.org
+3402,BANCORO,GILDA,Vanguard,Assisted Living,Nursing,HCA,gbancoro@SHEPHERDSCARE.org
+3405,VALENZUELA,MERIE,Vanguard,Assisted Living,Nursing,HCA,mvalenzuela@shepherdscare.org
+3408,MATHEW,ABHILASH,Kensington Village,Long Term Care,Nursing,Registered Nurse,amathew@SHEPHERDSCARE.org
+3411,MATHEW,LEENA,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,lmathew@shepherdscare.org
+3412,BULANHAGUI,NORA,Kensington Village,Home Care,Nursing,Home Care Attendant,nbulanhagui@SHEPHERDSCARE.org
+3413,CLARKE,DEION,Kensington Village,Home Care,Nursing,Home Care Attendant,dclarke@shepherdscare.org
+3416,BACHO,FIDEL,Vanguard,Assisted Living,Nursing,HCA,fbacho@shepherdscare.org
+3421,MEASURES,CHRISTINE,Barrhead,Assisted Living,Nursing,HCA,cmeasures@shepherdscare.org
+3431,THIND,RAMAN,Millwoods Care Centre,Long Term Care,Nursing,Site Director of Care,rthind@SHEPHERDSCARE.org
+3441,CRUZ,MYRNA,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,mcruz@shepherdscare.org
+3446,DONOVAN,CARRIE,Kensington Village,Home Care,Nursing,Home Care Attendant,cdonovan@shepherdscare.org
+3452,FERMANO,EMELDA,Vanguard,Assisted Living,Nursing,LPN,efermano@SHEPHERDSCARE.org
+3461,ISMAIL,AYAN,Millwoods Care Centre,Long Term Care,Nursing,HCA,aismail@SHEPHERDSCARE.org
+3465,MACDONALD,ANASTASIA,Head office,Shared General & Admin,Admin,Finance,amacdonald@SHEPHERDSCARE.org
+3466,MANALO,MARILEN,Millwoods Care Centre,Long Term Care,Nursing,HCA,mmanalo@shepherdscare.org
+3477,JOHAL,KAMALJIT,Millwoods Care Centre,Long Term Care,Nursing,LPN,kjohal@shepherdscare.org
+3481,HUYNH,LIZA,Kensington Village,Long Term Care,Nursing,Registered Nurse,lhuynh@SHEPHERDSCARE.org
+3482,SALCEDO,MARIO,Vanguard,Assisted Living,Nursing,HCA,msalcedo@SHEPHERDSCARE.org
+3485,IGNACIO,MA.CECILIA,Vanguard,Assisted Living,Nursing,HCA,mignacio@shepherdscare.org
+3488,DEVASIA,ANCY JOHN,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,adevasia@SHEPHERDSCARE.org
+3502,VAN GELDER,ALICIA,Barrhead,Assisted Living,Nursing,HCA,avangelder@shepherdscare.org
+3507,REDOBLE,CHAD,Vanguard,Assisted Living,Nursing,LPN,credoble@SHEPHERDSCARE.org
+3512,DOGRA,HARDEEP,Millwoods Care Centre,Long Term Care,Nursing,LPN,hdogra@SHEPHERDSCARE.org
+3514,NGONGJOCK,NYAMIR,Kensington Village,Home Care,Nursing,Home Care Attendant,nngongjock@shepherdscare.org
+3515,SNOGBA,PATIENCE,Kensington Village,Long Term Care,Nursing,HCA,psnogba@SHEPHERDSCARE.org
+3528,CABANIANG,PEDRO,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,pcabaniang@SHEPHERDSCARE.org
+3530,FAGYAN,NOEMIE,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,nfagyan@SHEPHERDSCARE.org
+3532,ETIEYIBO,MARICEL,Kensington Village,Long Term Care,Nursing,LPN,metieyibo@SHEPHERDSCARE.org
+3540,KHAIRA,HARJINDER,Millwoods Care Centre,Long Term Care,Nursing,HCA,hkhaira@SHEPHERDSCARE.org
+3541,AMADOR,ALEGRIA,Kensington Village,Assisted Living,Nursing,HCA,aamador@SHEPHERDSCARE.org
+3551,GUALTER,TERESA,Vanguard,Assisted Living,Nursing,HCA,tgualter@shepherdscare.org
+3563,HOOGLAND,KRISTINE,Barrhead,Assisted Living,Nursing,HCA,khoogland@SHEPHERDSCARE.org
+3570,HIZON,ANNIBELLE,Millwoods Care Centre,Long Term Care,Nursing,LPN,AHizon@SHEPHERDSCARE.org
+3579,KHANAL,SHOBHA  BHATTA,Greenfield,Assisted Living,Nursing,LPN,skhanal@SHEPHERDSCARE.org
+3580,ALI,DAHABO,Millwoods Care Centre,Long Term Care,Nursing,HCA,dali@SHEPHERDSCARE.org
+3582,PAPPY JOY,SURYA,Millwoods Care Centre,Long Term Care,Nursing,LPN,spappyjoy@SHEPHERDSCARE.org
+3595,SMITH,ANGELA,Vanguard,Assisted Living,Nursing,LPN,asmith@SHEPHERDSCARE.org
+3597,DEUNDARA,DAYASEELI,Greenfield,Assisted Living,Nursing,HCA,ddeundara@shepherdscare.org
+3601,QUIZON,RODNEY,Vanguard,Assisted Living,Nursing,LPN,rquizon@SHEPHERDSCARE.org
+3608,TANYE,MARY VICTORIA,Eden,Long Term Care,Nursing,HCA,mtanye@SHEPHERDSCARE.org
+3617,ARR,AYAN,Kensington Village,Assisted Living,Nursing,LPN,aarr@SHEPHERDSCARE.org
+3619,BERHE,SENAIT,Kensington Village,Home Care,Nursing,Home Care Attendant,sberhe@shepherdscare.org
+3621,BEYAN,HAYAT,Kensington Village,Assisted Living,Nursing,HCA,hbeyan@SHEPHERDSCARE.org
+3628,AJOU,AKON,Eden,Long Term Care,Nursing,HCA,aajou@shepherdscare.org
+3634,HOOVER,KATHERINE,Barrhead,Assisted Living,Nursing,HCA,khoover@SHEPHERDSCARE.org
+3635,BRETT,EDITH  (EDI),Barrhead,Assisted Living,Nutrition ,Cooks,ebrett@SHEPHERDSCARE.org
+3637,GIBSON,CHELSEA,Barrhead,Assisted Living,Nursing,HCA,cgibson@SHEPHERDSCARE.org
+3639,FORSYTH-DEY,JAMIE,Kensington Village,Long Term Care,Nursing,LPN,jforsyth-dey@SHEPHERDSCARE.org
+3641,HAJI  MUBARAK,HAMDI,Millwoods Care Centre,Long Term Care,Nursing,HCA,hhajimubarak@SHEPHERDSCARE.org
+3658,MELES,NEBIAT,Kensington Village,Assisted Living,Nursing,LPN,nmeles@shepherdscare.org
+3659,TESFAYE,NESIBA,Kensington Village,Assisted Living,Nursing,LPN,ntesfaye@SHEPHERDSCARE.org
+3668,NATALIO,EVANGELINE,Southside Manor,Home Care,Nursing,Home Care Attendant,enatalio@SHEPHERDSCARE.org
+3670,KRISHER,CATHERINE,Barrhead,Assisted Living,Nursing,HCA,ckrisher@SHEPHERDSCARE.org
+3680,MARZAN,JOSEPHINE,Kensington Village,Home Care,Nursing,Home Care Attendant,jmarzan@SHEPHERDSCARE.org
+3688,ABAO,MYRAFE,Millwoods Manor,Home Care,Nursing,Home Care Attendant,mabao@SHEPHERDSCARE.org
+3689,RUSE,ANDREEA,Vanguard,Assisted Living,Nursing,HCA,aruse@shepherdscare.org
+3707,AHMED,FAIZA,Vanguard,Assisted Living,Nursing,HCA,faahmed@SHEPHERDSCARE.org
+3709,TSATURYAN,OLENA,Millwoods Care Centre,Long Term Care,Nursing,HCA,otsaturyan@SHEPHERDSCARE.org
+3710,LICO-ROSALES,DIANE,Vanguard,Assisted Living,Nursing,LPN,dlico-rosales@SHEPHERDSCARE.org
+3715,LWABOSHI,MBUYI,Kensington Village,Assisted Living,Nursing,HCA,mlwaboshi@SHEPHERDSCARE.org
+3719,TEKLU,FREWONEE,Kensington Village,Home Care,Nursing,Home Care Attendant,fteklu@SHEPHERDSCARE.org
+3725,MASESE,JACQUELINE,Millwoods Care Centre,Long Term Care,Nursing,LPN,jmasese@SHEPHERDSCARE.org
+3729,TALAGUIT,NORA,Kensington Village,Long Term Care,Nursing,HCA,ntalaguit@shepherdscare.org
+3732,MICHEL  (NDEMBO),ISABEL,Kensington Village,Home Care,Nursing,Home Care Attendant,imichel_ndembo@SHEPHERDSCARE.org
+3734,ALCOY,CHRISTINE,Millwoods Care Centre,Long Term Care,Nursing,LPN,calcoy@SHEPHERDSCARE.org
+3737,HOOK,HELEN,Barrhead,Assisted Living,Nutrition ,Cooks,hhook@SHEPHERDSCARE.org
+3746,MINHAS,PADMANI,Kensington Village,Assisted Living,Nursing,HCA,pminhas@SHEPHERDSCARE.org
+3750,MADRIAGA,GIRLIE,Vanguard,Assisted Living,Nursing,HCA,gmadriaga@SHEPHERDSCARE.org
+3773,PASCUAL,JINA,Vanguard,Assisted Living,Nursing,HCA,jpascual@shepherdscare.org
+3779,KATUWAL - NEPAL,GEETA,Kensington Village,Assisted Living,Nursing,HCA,gkatuwal-nepal@SHEPHERDSCARE.org
+3781,HOCHE,SAMIA,Eden,Long Term Care,Nursing,LPN,shoche@SHEPHERDSCARE.org
+3783,SIDHU,MANINDERDEEP,Millwoods Care Centre,Long Term Care,Nursing,LPN,msidhu@shepherdscare.org
+3784,AMENTE,ROMAN,Kensington Village,Long Term Care,Nursing,HCA,ramente@SHEPHERDSCARE.org
+3790,GEBREGIORGIS,YANIT,Kensington Village,Long Term Care,Nursing,HCA,ygebregiorgis@SHEPHERDSCARE.org
+3792,ALIDO,MARIA,Vanguard,Assisted Living,Nursing,HCA,malido@SHEPHERDSCARE.org
+3799,JOSEPH-LIRANZO,BETHECAIDA,Eden,Long Term Care,Nursing,HCA,bjoseph-liranzo@shepherdscare.org
+3801,BAUTISTA,ESPERANZA,Kensington Village,Home Care,Nursing,Home Care Attendant,ebautista@SHEPHERDSCARE.org
+3803,SHIBU,CHINJU,Millwoods Care Centre,Long Term Care,Nursing,HCA,cshibu@shepherdscare.org
+3807,PICKETT,JESSICA,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,jpickett@shepherdscare.org
+3819,AGUILA,GLORIA,Millwoods Care Centre,Long Term Care,Nursing,HCA,gaguila@SHEPHERDSCARE.org
+3825,ROXAS,CAROLINE,Kensington Village,Assisted Living,Nursing,LPN,croxas@SHEPHERDSCARE.org
+3826,ASONGALEM,RAISSA,Kensington Village,Assisted Living,Nursing,LPN,rasongalem@SHEPHERDSCARE.org
+3827,ABMA,DESIREE,Kensington Village,Long Term Care,Nursing,LPN,DAbma@SHEPHERDSCARE.org
+3835,TOLI,DO'II,Greenfield,Assisted Living,Nursing,HCA,dtoli@SHEPHERDSCARE.org
+3840,ROUAMBA,BIBATA,Kensington Village,Assisted Living,Nursing,HCA,brouamba@SHEPHERDSCARE.org
+3843,HIEMSTRA,NANCY,Barrhead,Assisted Living,Nursing,HCA,nhiemstra@SHEPHERDSCARE.org
+3844,TOMM,WALTER,Barrhead,Assisted Living,Maintenance,Maintenance,wtomm@SHEPHERDSCARE.org
+3845,ROY,CARMELLA,Kensington Village,Home Care,Nursing,Home Care Attendant,croy@SHEPHERDSCARE.org
+3848,CLARKE,MONIQUE,Kensington Village,Assisted Living,Nursing,HCA,mnclarke@shepherdscare.org
+3860,PALAD,DESILE REINA,Kensington Village,Assisted Living,Nursing,LPN,dpalad@SHEPHERDSCARE.org
+3864,MORASH,ALYSSA,Kensington Village,Long Term Care,Nursing,LPN,amorash@SHEPHERDSCARE.org
+3869,KHAIRA,JASMINE,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,jkhaira@SHEPHERDSCARE.org
+3871,NINONUEVO,NOEMI,Kensington Village,Long Term Care,Nursing,HCA,nninonuevo@SHEPHERDSCARE.org
+3873,GAVARRA,ANNE,Millwoods Care Centre,Long Term Care,Nursing,HCA,agavarra@shepherdscare.org
+3876,BILGERA,JERRYVIL,Kensington Village,Assisted Living,Nursing,HCA,jbilgera@SHEPHERDSCARE.org
+3878,PALER,YVONNE,Kensington Village,Assisted Living,Nursing,HCA,ypaler@SHEPHERDSCARE.org
+3880,AHMED,MAKBOULE,Millwoods Care Centre,Long Term Care,Nursing,HCA,mahmed@SHEPHERDSCARE.org
+3885,URDANETA,GRACE,Barrhead,Assisted Living,Nursing,HCA,gurdaneta@SHEPHERDSCARE.org
+3890,GAMBOA,NORALITA,Millwoods Care Centre,Long Term Care,Nursing,HCA,ngamboa@SHEPHERDSCARE.org
+3894,BOL,ALANG,Vanguard,Assisted Living,Nursing,HCA,abol@shepherdscare.org
+3895,QUERUBIN,ETHEL,Eden,Long Term Care,Nursing,Registered Nurse,equerubin@SHEPHERDSCARE.org
+3904,TRINIDAD,ROWENA,Vanguard,Assisted Living,Nursing,HCA,rtrinidad@shepherdscare.org
+3907,VELINA,SHIELA,Kensington Village,Long Term Care,Nursing,HCA,svelina@shepherdscare.org
+3909,MACAINAG,VENESSA,Kensington Village,Assisted Living,Nursing,HCA,vmacainag@SHEPHERDSCARE.org
+3910,BUGNOSEN,JANET,Barrhead,Assisted Living,Nursing,HCA,jbugnosen@SHEPHERDSCARE.org
+3912,CHUA,JONALENE,Southside Manor,Home Care,Nursing,Home Care Attendant,jchua@SHEPHERDSCARE.org
+3914,THOMAS,SONIYA,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,sthomas@shepherdscare.org
+3918,SHARMA,KARUNA,Barrhead,Assisted Living,Nursing,LPN,ksharma@SHEPHERDSCARE.org
+3919,MATHEW,SHIMMY,Vanguard,Assisted Living,Nursing,HCA,shimmymathew@shepherdscare.org
+3920,MIKOLAJEWSKI,MARIA,Vanguard,Assisted Living,Nursing,HCA,mmikolajewski@shepherdscare.org
+3926,MPEMBELE,CHARLENE,Kensington Village,Assisted Living,Nursing,HCA,cmpembele@SHEPHERDSCARE.org
+3927,BALMES,ALICIA,Kensington Village,Long Term Care,Nursing,HCA,abalmes@SHEPHERDSCARE.org
+3930,ABEGAZ,GENET,Millwoods Care Centre,Long Term Care,Nursing,HCA,gabegaz@SHEPHERDSCARE.org
+3933,MANZANO,ELMARIE,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,emanzano@SHEPHERDSCARE.org
+3935,KHROUD,RANJIT,Greenfield,Assisted Living,Nursing,HCA,rkhroud@SHEPHERDSCARE.org
+3936,UMUTESI,ALINE,Vanguard,Assisted Living,Nursing,HCA,aumutesi@SHEPHERDSCARE.org
+3938,MIRAU,RUTH,Barrhead,Assisted Living,Nursing,LPN,rmirau@SHEPHERDSCARE.org
+3940,ALLIB,JENNIFER,Kensington Village,Long Term Care,Nursing,HCA,jallib@shepherdscare.org
+3941,ADALAT,MOUFIDA,Millwoods Care Centre,Long Term Care,Nursing,HCA,madalat@SHEPHERDSCARE.org
+3946,KNIBBS,DAWNE,Barrhead,Assisted Living,Nursing,LPN,dknibbs@SHEPHERDSCARE.org
+3947,DIESEL,PEARL,Barrhead,Assisted Living,Housekeeping,Housekeeper / RSA,pdiesel@SHEPHERDSCARE.org
+3949,KETCHUM,EUFEMIA,Barrhead,Assisted Living,Nursing,HCA,eketchum@SHEPHERDSCARE.org
+3952,SERVIANO,ANABELLE,Eden,Long Term Care,Nursing,HCA,aserviano@SHEPHERDSCARE.org
+3953,MANN,TRACEY,Millwoods Care Centre,Long Term Care,Therapy,Bus Driver,tmann@SHEPHERDSCARE.org
+3954,DE GUZMAN,JESSA,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,jdeguzman@shepherdscare.org
+3955,DABBS,SABRINA,Kensington Village,Assisted Living,Nursing,LPN,SDabbs@SHEPHERDSCARE.org
+3956,WANECHKO,EMILY,Barrhead,Assisted Living,Nursing,HCA,ewanechko@SHEPHERDSCARE.org
+3958,MOWATT,MARCIA,Eden,Long Term Care,Nursing,LPN,mmowatt@SHEPHERDSCARE.org
+3961,TEWITZ,SAMANTHA,Head office,Shared General & Admin,Admin,Human Resources,stewitz@SHEPHERDSCARE.org
+3966,CONNOLLY,ANGIE,Vanguard,Assisted Living,Nursing,HCA,aconnolly@SHEPHERDSCARE.org
+3969,SORIANO,NIKKO,Kensington Village,Long Term Care,Therapy,OT Aides,nsoriano@SHEPHERDSCARE.org
+3973,VEA,INNOCENCIO,Millwoods Care Centre,Long Term Care,Nursing,HCA,ivea@SHEPHERDSCARE.org
+3974,BIONSON,CHRISTEL,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,cbionson@SHEPHERDSCARE.org
+3977,LAGUNDINO,MILAGROS,Eden,Long Term Care,Nursing,HCA,mlagundino@shepherdscareathome.com
+3981,TAKELE,YENENESH,Kensington Village,Assisted Living,Nursing,HCA,ytakele@SHEPHERDSCARE.org
+3985,KUMAR,DEEPA,Eden,Long Term Care,Nursing,HCA,dkumar@SHEPHERDSCARE.org
+3989,PUTHUPARAMBIL,NEENU,Millwoods Care Centre,Long Term Care,Nursing,HCA,nputhuparambil@SHEPHERDSCARE.org
+3990,DAWA,REMEDIOS,Vanguard,Assisted Living,Nursing,HCA,rdawa@SHEPHERDSCARE.org
+3991,MACROHON,ANNA FRANCHEZKA,Vanguard,Assisted Living,Nursing,LPN,amacrohon@SHEPHERDSCARE.org
+3995,BANDA,ESNART,Vanguard,Assisted Living,Nursing,LPN,tbanda@SHEPHERDSCARE.org
+3997,SADHRA,GURNEET,Millwoods Care Centre,Long Term Care,Therapy,Recreation Aides,gsadhra@SHEPHERDSCARE.org
+3998,ATO,NILDA,Vanguard,Assisted Living,Nursing,LPN,nato@SHEPHERDSCARE.org
+4004,MORO,GWENDOLYN,Barrhead,Assisted Living,Nursing,HCA,gmoro@SHEPHERDSCARE.org
+4008,LIM,FATIMA,Barrhead,Assisted Living,Nursing,HCA,flim@SHEPHERDSCARE.org
+4014,INCIONG,AMELIA,Kensington Village,Home Care,Nursing,Home Care Attendant,ainciong@shepherdscare.org
+4017,SAMUEL,AGNES,Millwoods Care Centre,Long Term Care,Nursing,LPN,asamuel@SHEPHERDSCARE.org
+4018,PADILLA,ROSEMARIE,Vanguard,Assisted Living,Nursing,HCA,rpadilla@SHEPHERDSCARE.org
+4019,ESTRADA,FLERIDA,Vanguard,Assisted Living,Nursing,HCA,festrada@shepherdscare.org
+4021,JOSEPH,DEEPA,Vanguard,Assisted Living,Nursing,HCA,djoseph@SHEPHERDSCARE.org
+4026,PERILLO,SALVE,Eden,Long Term Care,Nursing,HCA,sperillo@shepherdscare.org
+4027,PYE,KATHY,Kensington Village,Home Care,Nursing,Home Care Attendant,kpye@SHEPHERDSCARE.org
+4028,CLEMENTS,AMBER,Millwoods Care Centre,Long Term Care,Therapy,PT Aides,aclements@SHEPHERDSCARE.org
+4033,LEMIEUX,GELLYN,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,glemieux@SHEPHERDSCARE.org
+4035,ROBLES,LIEZEL,Millwoods Care Centre,Long Term Care,Nursing,HCA,lrobles@SHEPHERDSCARE.org
+4037,MCKEEVER,FLOYD,Barrhead,Assisted Living,Nursing,HCA,fmckeever@SHEPHERDSCARE.org
+4038,LENGLE,CANDACE,Millwoods Care Centre,Long Term Care,Nursing,LPN,CLengle@SHEPHERDSCARE.org
+4039,BAGUNOC,LYN,Greenfield,Assisted Living,Nursing,HCA,lbagunoc@SHEPHERDSCARE.org
+4041,HARVEY,LINDA,Barrhead,Assisted Living,Admin,Administrative Assistant,LHarvey@shepherdscare.org
+4043,HINZ,BARBARA,Kensington Village,Long Term Care,Nursing,Unit Clerk,bhinz@SHEPHERDSCARE.org
+4044,RAJAN,LEENA,Millwoods Care Centre,Long Term Care,Nursing,HCA,lrajan@SHEPHERDSCARE.org
+4045,PENICHE,TEDDE,Barrhead,Assisted Living,Nursing,LPN,TPolanco@SHEPHERDSCARE.org
+4046,HENRY,KAREN,Barrhead,Assisted Living,Nutrition ,Cooks,khenry@SHEPHERDSCARE.org
+4047,LUMAGUI,MARIA,Millwoods Care Centre,Long Term Care,Nursing,HCA,mlumagui@SHEPHERDSCARE.org
+4050,NDUNGU,ROSE,Greenfield,Assisted Living,Nursing,LPN,RNdungu@shepherdscare.org
+4051,LISTON,EDDIE,Millwoods Care Centre,Long Term Care,Nursing,HCA,eliston@SHEPHERDSCARE.org
+4054,PARANTHAMAN,PRAKASH,Barrhead,Assisted Living,Nutrition ,Cooks,PParanthaman@SHEPHERDSCARE.org
+4057,HABBILING,ANEVIC,Millwoods Care Centre,Long Term Care,Nursing,HCA,ahabbiling@SHEPHERDSCARE.org
+4059,ABBEY,RACHEL,Vanguard,Assisted Living,Nursing,LPN,rabbey@shepherdscare.org
+4060,PARAJULI SHARMA,ANURADHA,Vanguard,Assisted Living,Nursing,LPN,aparajuli-sharma@SHEPHERDSCARE.org
+4066,LITWINOWICH,LOTIS,Millwoods Care Centre,Long Term Care,Nursing,HCA,llitwinowich@SHEPHERDSCARE.org
+4069,PORTER,KELVIN (MARK),Shepherd's Garden DAL,Assisted Living,Maintenance,Maintenance,mporter@SHEPHERDSCARE.org
+4071,SALAS,MARY GRACE,Kensington Village,Long Term Care,Nursing,HCA,msalas@shepherdscare.org
+4072,MERCADO,IMEE,Kensington Village,Long Term Care,Nursing,HCA,imercado@SHEPHERDSCARE.org
+4074,LAVISTE,RY,Millwoods Care Centre,Long Term Care,Nursing,HCA,rlaviste@SHEPHERDSCARE.org
+4086,SERVIANO,JOESRAEL,Eden,Long Term Care,Nursing,LPN,jserviano@SHEPHERDSCARE.org
+4089,DRIESSEN,DEBRA,Barrhead,Assisted Living,Nursing,LPN,ddriessen@SHEPHERDSCARE.org
+4091,KLEIN,DEANNA,Barrhead,Assisted Living,Nursing,HCA,dklein@SHEPHERDSCARE.org
+4098,KAUR,AMANDEEP,Millwoods Care Centre,Long Term Care,Nursing,HCA,akaur@SHEPHERDSCARE.org
+4100,ADEJUMO,MONSURAT,Millwoods Care Centre,Long Term Care,Nursing,HCA,madejumo@SHEPHERDSCARE.org
+4103,CANDELARIA,HANNAH,Millwoods Care Centre,Long Term Care,Therapy,PT Aides,hcandelaria@SHEPHERDSCARE.org
+4105,SANTOS,DANNA,Eden,Home Care,Nursing,Home Care Attendant,dsantos@SHEPHERDSCARE.org
+4107,NAIDAS-BALGOS,MIRIAM,Eden,Long Term Care,Nursing,HCA,mnaidas-balgos@SHEPHERDSCARE.org
+4108,YABUT,MARYNEL,Eden,Long Term Care,Nursing,HCA,myabut@shepherdscareathome.com
+4109,SALVADOR,ROVELIN,Eden,Long Term Care,Nursing,HCA,rsalvador@SHEPHERDSCARE.org
+4111,OTYENO,BETTY,Eden,Long Term Care,Nursing,LPN,botyeno@SHEPHERDSCARE.org
+4112,MUSHEGERHO,BIRHU,Eden,Long Term Care,Nursing,LPN,bmushegerho@SHEPHERDSCARE.org
+4113,DENG,ANGALINA,Eden,Long Term Care,Nursing,HCA,adeng@SHEPHERDSCARE.org
+4115,GREEN,GUILLERMO,Shepherd's Garden DAL,Assisted Living,Maintenance,Maintenance,GGreen@SHEPHERDSCARE.org
+4116,BURTON,APRIL,Eden,Long Term Care,Nursing,HCA,aburton@SHEPHERDSCARE.org
+4117,GARCIA,ELIZABETH,Eden,Long Term Care,Nursing,HCA,EGarcia@shepherdscareathome.com
+4118,CAJATE,JESMAR,Eden,Long Term Care,Nursing,HCA,jcajate@SHEPHERDSCARE.org
+4122,PETERS,MELISSA,Barrhead,Assisted Living,Nursing,HCA,mpeters@SHEPHERDSCARE.org
+4124,MANALO,EVA,Eden,Long Term Care,Nursing,HCA,emanalo@shepherdscare.org
+4125,HIDALGO,JOVELYN,Eden,Long Term Care,Nursing,HCA,jhidalgo@SHEPHERDSCARE.org
+4127,ABAYABAY,CECILE,Barrhead,Assisted Living,Nursing,HCA,cabayabay@SHEPHERDSCARE.org
+4130,ILOKA,STELLA,Eden,Long Term Care,Nursing,HCA,siloka@SHEPHERDSCARE.org
+4131,NYIAWUNG,GLORY,Eden,Long Term Care,Nursing,HCA,gnyiawung@SHEPHERDSCARE.org
+4132,KAPOOR,POOJA,Eden,Long Term Care,Nursing,HCA,pkapoor@SHEPHERDSCARE.org
+4133,HAILE,TSEGA,Kensington Village,Assisted Living,Nursing,HCA,thaile@SHEPHERDSCARE.org
+4135,JACOBSSON,LAURA,Barrhead,Assisted Living,Nutrition ,Cooks,ljacobsson@SHEPHERDSCARE.org
+4136,DELLOSA,JOSEPHINE,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,jdellosa@SHEPHERDSCARE.org
+4137,KHUMBAH,MARTIN,Eden,Long Term Care,Nursing,LPN,MKumbah@SHEPHERDSCARE.org
+4140,KALER,AKASHDEEP,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,AKaler@shepherdscare.org
+4142,BITON,REIAN,Kensington Village,Assisted Living,Nursing,LPN,rbiton@shepherdscare.org
+4144,CLARKE,MELINDA,Barrhead,Assisted Living,Nursing,HCA,mclarke@SHEPHERDSCARE.org
+4146,FITZGERALD,ERIN,Barrhead,Assisted Living,Nutrition ,Cooks,efitzgerald@SHEPHERDSCARE.org
+4149,MARISCAL RODRIGUEZ,VIOLETA,Millwoods Care Centre,Long Term Care,Admin,Administrative Assistant,vmariscal@SHEPHERDSCARE.org
+4155,MARANAN,MICHELLE,Shepherd's Garden DAL,Assisted Living,Nursing,HCA,mmaranan@SHEPHERDSCARE.org
+4158,SAMONTE,MILDRED,Southside Manor,Home Care,Nursing,Home Care Attendant,msamonte@SHEPHERDSCARE.org
+4159,VAN ASSEN,ARIANNE,Barrhead,Assisted Living,Nursing,HCA,avanassen@SHEPHERDSCARE.org
+4161,SINGH,NAMITA,Greenfield,Assisted Living,Nursing,LPN,NSingh@shepherdscare.org
+4162,MANGGUERA,WINNIE,Shepherd's Garden DAL,Home Care,Nursing,Home Care Attendant,wmangguera@SHEPHERDSCARE.org
+4163,MARTINEAU,CHAUNDRA,Millwoods Care Centre,Long Term Care,Nursing,HCA,cmartineau@SHEPHERDSCARE.org
+4165,ESTIFANOS,MERON,Kensington Village,Home Care,Nursing,Home Care Attendant,mestifanos@SHEPHERDSCARE.org
+4166,MACKEY,KYLA,Barrhead,Assisted Living,Nursing,HCA,kmackey@SHEPHERDSCARE.org
+4168,CALZADA,RUTH,Kensington Village,Long Term Care,Nursing,LPN,rcalzada@SHEPHERDSCARE.org
+4170,PERSAND,REENA,Vanguard,Assisted Living,Nursing,HCA,rpersand@SHEPHERDSCARE.org
+4172,ACHARYA,SHREYA,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,sacharya@SHEPHERDSCARE.org
+4173,ROSARIO,DAISY MAE,Eden,Long Term Care,Nursing,HCA,drosario@shepherdscare.org
+4178,KIBREAB,HIZBAWIT,Vanguard,Assisted Living,Nursing,HCA,hkibreab@SHEPHERDSCARE.org
+4179,MATHEWS,SHYLAJA,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,smathews@SHEPHERDSCARE.org
+4182,NAKILA,JANE,Vanguard,Assisted Living,Admin,Receptionist,jnakila@shepherdscare.org
+4183,PARRACK,ABBY,Barrhead,Assisted Living,Nursing,HCA,aparrack@SHEPHERDSCARE.org
+4188,SING,SAMIE,Millwoods Care Centre,Long Term Care,Therapy,Recreation Aides,ssing@SHEPHERDSCARE.org
+4189,LEDESMA,FEROLYN,Vanguard,Assisted Living,Nursing,LPN,fledesma@SHEPHERDSCARE.org
+4190,KALAPURACKAL,VILSON,Vanguard,Assisted Living,Nursing,LPN,hkalapurackal@SHEPHERDSCARE.org
+4191,RANKIN,DEAN,Millwoods Care Centre,Assisted Living,Maintenance,Maintenance,DRankin@SHEPHERDSCARE.org
+4192,DURNFORD,SERAH,Kensington Village,Long Term Care,Nursing,LPN,moraaok@hotmail.com
+4195,LAGMAN,KAITHLYN,Kensington Village,Assisted Living,Nursing,LPN,klagman@SHEPHERDSCARE.org
+4196,GARCIA,CECILIA,Kensington Village,Long Term Care,Nursing,HCA,cgarcia@SHEPHERDSCARE.org
+4197,KAUR,RAMANDEEP,Kensington Village,Long Term Care,Nursing,HCA,ramandeepkaur@SHEPHERDSCARE.org
+4199,RODRIGUEZ,SHEILA,Vanguard,Assisted Living,Therapy,Recreation Aides,srodriguez@SHEPHERDSCARE.org
+4201,VARGHESE,RENJULA,Millwoods Care Centre,Long Term Care,Nursing,HCA,rvarghese@SHEPHERDSCARE.org
+4202,NICOLASORA,SHERRY,Eden,Long Term Care,Nursing,Registered Nurse,snicolasora@SHEPHERDSCARE.org
+4203,VALIMAKI,MICHAEL,Shepherd's Garden DAL,Assisted Living,Maintenance,Maintenance,mvalimaki@SHEPHERDSCARE.org
+4204,MAYEN,SEDONIA,Eden,Long Term Care,Nursing,HCA,smayen@SHEPHERDSCARE.org
+4205,MONARES,MAYLENE,Eden,Long Term Care,Nursing,HCA,mmonares@SHEPHERDSCARE.org
+4206,BROWN,ELAINE,Eden,Long Term Care,Nursing,HCA,ebrown@shepherdscare.org
+4207,NUSUG,DIVINA,Eden,Long Term Care,Nursing,HCA,dnusug@SHEPHERDSCARE.org
+4208,SILVERA-HILL,JEROME,Eden,Long Term Care,Nursing,HCA,jsilvera-hill@SHEPHERDSCARE.org
+4209,TAN,VANESSA ( JUVI,Eden,Long Term Care,Nursing,LPN,vtan@shepherdscare.org
+4210,MCMURDO,JOEL,Eden,Long Term Care,Nursing,LPN,jmcmurdo@SHEPHERDSCARE.org
+4211,LABUTAN,DIANA,Eden,Long Term Care,Nursing,HCA,dlabutan@shepherdscare.org
+4212,FLAVIANO,KARLA JOY,Eden,Long Term Care,Nursing,HCA,kflaviano@SHEPHERDSCARE.org
+4214,BROWN,THEONI,Millwoods Care Centre,Long Term Care,Nursing,HCA,tbrown@SHEPHERDSCARE.org
+4215,MACALANDA,RODOLFO,Millwoods Care Centre,Long Term Care,Nursing,HCA,rmacalanda@SHEPHERDSCARE.org
+4218,DOTON,CHRISTINE,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,CDoton@SHEPHERDSCARE.org
+4221,ALI,FARHIYO,Shepherd's Garden DAL,Home Care,Nursing,Home Care Attendant,fali@SHEPHERDSCARE.org
+4222,MERCADO,GLENDA,Eden,Long Term Care,Nursing,HCA,gmercado@SHEPHERDSCARE.org
+4223,KOAK,PUONA,Eden,Long Term Care,Nursing,HCA,pkoak@SHEPHERDSCARE.org
+4224,SAMRA,RAVINDER,Eden,Long Term Care,Nursing,HCA,rsamra@SHEPHERDSCARE.org
+4225,KAUR,GURMEET,Eden,Long Term Care,Nursing,HCA,gurmeetkaur@shepherdscare.org
+4226,ABACLOD,PHOEBELYN,Eden,Long Term Care,Nursing,HCA,pabaclod@shepherdscare.org
+4227,TUT,NYAMOI,Eden,Long Term Care,Nursing,HCA,ntut@SHEPHERDSCARE.org
+4228,NDIANGANG MBUONG NGO,MARGARET,Eden,Long Term Care,Nursing,LPN,mndiangang@SHEPHERDSCARE.org
+4229,SERVIANO,MALDA,Eden,Long Term Care,Nursing,HCA,mserviano@SHEPHERDSCARE.org
+4230,CRUZ,JOCELYN,Eden,Long Term Care,Nursing,HCA,jcruz@SHEPHERDSCARE.org
+4231,FATTAH,SANAA,Eden,Long Term Care,Nursing,HCA,sfattah@SHEPHERDSCARE.org
+4232,NKENG,AWA,Eden,Long Term Care,Nursing,HCA,nkeng.awa123@yahoo.ca
+4233,MOSCOSO,LOVE JOY,Eden,Long Term Care,Nursing,HCA,lmoscoso@SHEPHERDSCARE.org
+4234,SABENIANO,MONETTE,Eden,Long Term Care,Nursing,HCA,msabeniano@shepherdscare.org
+4235,SAPUAN,SOCORRO,Eden,Long Term Care,Nursing,HCA,ssapuan@SHEPHERDSCARE.org
+4236,RAMOS,CECILIA,Eden,Long Term Care,Nursing,HCA,cramos@SHEPHERDSCARE.ORG
+4237,KAUR,GURPREET,Eden,Long Term Care,Nursing,HCA,gurpreetkaur@SHEPHERDSCARE.ORG
+4238,VERMA,PUNIT,Eden,Long Term Care,Nursing,LPN,pverma@SHEPHERDSCARE.ORG
+4239,BOGADOR,EMELITA,Eden,Long Term Care,Nursing,HCA,ebogador@SHEPHERDSCARE.org
+4240,BALAIS,ELLEN,Eden,Long Term Care,Nursing,HCA,ebalais@SHEPHERDSCARE.org
+4242,JOHAL,LAKHBIR,Eden,Long Term Care,Nursing,HCA,ljohal@SHEPHERDSCARE.ORG
+4243,DE LOS SANTOS,VIBERLYN,Eden,Long Term Care,Nursing,HCA,vdelossantos@SHEPHERDSCARE.org
+4245,BAYADAS,NENITA,Eden,Long Term Care,Nursing,HCA,nbayadas@SHEPHERDSCARE.org
+4246,FLORES,JED,Eden,Long Term Care,Nursing,HCA,jflores@SHEPHERDSCARE.org
+4247,CABILITASAN,EVE,Eden,Long Term Care,Nursing,HCA,ecabilitasan@SHEPHERDSCARE.org
+4248,AUSTRIA-SALTER,MARIE FE,Eden,Long Term Care,Nursing,HCA,maustriasalter@SHEPHERDSCARE.org
+4249,AMADOR,SAHLEE,Eden,Long Term Care,Nursing,HCA,samador@SHEPHERDSCARE.ORG
+4251,SIDHU,JAGJIT,Eden,Long Term Care,Nursing,HCA,jsidhu@SHEPHERDSCARE.ORG
+4252,MANSON,PHILOMENA,Eden,Long Term Care,Nursing,HCA,pmanson@SHEPHERDSCARE.org
+4253,CRUZ,NINO,Eden,Long Term Care,Nursing,HCA,ncruz@SHEPHERDSCARE.org
+4255,ABDALA,HERMINIA,Eden,Long Term Care,Nursing,HCA,habdala@SHEPHERDSCARE.ORG
+4256,PERILLO,JHONVIE,Eden,Long Term Care,Nursing,HCA,jperillo@SHEPHERDSCARE.org
+4258,RABANO,ANNABELLE,Shepherd's Garden DAL,Home Care,Nursing,Home Care Attendant,arabano@SHEPHERDSCARE.org
+4259,PRIGITH,RANI,Millwoods Care Centre,Long Term Care,Nursing,HCA,rprigith@SHEPHERDSCARE.org
+4260,PANDHER,DAMANPREET,Eden,Long Term Care,Nursing,Registered Nurse,dpandher@SHEPHERDSCARE.org
+4261,ALIM,CARMENCITA,Eden,Long Term Care,Nursing,HCA,calim@SHEPHERDSCARE.org
+4262,RAMIREZ,ADA FE,Eden,Long Term Care,Nursing,HCA,aramirez@SHEPHERDSCARE.org
+4263,LUAL,AJA,Eden,Long Term Care,Nursing,HCA,alual@SHEPHERDSCARE.org
+4264,MUHAMMAD RAFIQ,JHARNA,Eden,Long Term Care,Nursing,HCA,jrafiq@SHEPHERDSCARE.org
+4265,MEHTA,REENABEN,Eden,Long Term Care,Nursing,HCA,rmehta@SHEPHERDSCARE.org
+4266,ANGOK,MARY,Eden,Long Term Care,Nursing,HCA,mangok@SHEPHERDSCARE.org
+4267,OSAM,DINA,Eden,Long Term Care,Nursing,HCA,dosam@SHEPHERDSCARE.org
+4269,KRENZ,ANGELA,Millwoods Care Centre,Long Term Care,Therapy,Recreation Aides,akrenz@SHEPHERDSCARE.ORG
+4270,AWUME,DELASE,Eden,Long Term Care,Nursing,Registered Nurse,dawume@SHEPHERDSCARE.org
+4271,REICHLE,TRACEY,Millwoods Care Centre,Long Term Care,Nursing,HCA,treichle@SHEPHERDSCARE.org
+4274,FUNG,PHILIP,Millwoods Care Centre,Long Term Care,Admin,Business Admin Coordinator,pfung@SHEPHERDSCARE.org
+4275,DHALIWAL,GAGNDEEP,Millwoods Care Centre,Long Term Care,Nursing,HCA,gdhaliwal@SHEPHERDSCARE.org
+4276,LUCAGBO,JODY,Millwoods Care Centre,Long Term Care,Nursing,LPN,jlucagbo@SHEPHERDSCARE.org
+4278,URTEZUELA,JOSIELY,Millwoods Care Centre,Long Term Care,Nursing,HCA,jurtezuela@SHEPHERDSCARE.org
+4281,JACOB,JITHIN,Millwoods Care Centre,Long Term Care,Nursing,Nurse Manager,jjacob@SHEPHERDSCARE.org
+4283,VISTA,MA.NOREEN,Kensington Village,Assisted Living,Nursing,LPN,nvista@SHEPHERDSCARE.org
+4284,AGUSTIN,CATHERINE,Kensington Village,Assisted Living,Nursing,HCA,cagustin@SHEPHERDSCARE.org
+4287,ABBA,KAFAYAT,Eden,Long Term Care,Nursing,Registered Nurse,kabba@SHEPHERDSCARE.org
+4288,MATHAI,JENY,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,JMathai@SHEPHERDSCARE.org
+4290,MARON,KIMBERLY,Barrhead,Assisted Living,Nursing,HCA,kmaron@SHEPHERDSCARE.ORG
+4292,ANDERSON,DARYL,Barrhead,Assisted Living,Therapy,Bus Driver,danderson@SHEPHERDSCARE.org
+4296,HARVEY,ROBERT,Barrhead,Assisted Living,Maintenance,Maintenance,jharvey@shepherdscare.org
+4298,LORILLA,MARIEVEL,Millwoods Care Centre,Long Term Care,Nursing,LPN,mlorilla@SHEPHERDSCARE.org
+4299,PADUA,JULIANNE,Eden,Long Term Care,Nursing,Registered Nurse,jpadua@SHEPHERDSCARE.org
+4301,PACULOR,SOFIA,Shepherd's Garden DAL,Assisted Living,Nursing,LPN,spaculor@SHEPHERDSCARE.ORG
+4303,JOSEPH,YVES-LYSE,Eden,Long Term Care,Nursing,LPN,TJoseph@SHEPHERDSCARE.org
+4304,NIMPAYE,TELEPHONSE,Eden,Long Term Care,Nursing,LPN,TNimpaye@SHEPHERDSCARE.org
+4305,FUNG,CHARLOTTE,Eden,Long Term Care,Nursing,Registered Nurse,cfung@SHEPHERDSCARE.org
+4306,TAN,SHERYL,Eden,Long Term Care,Nursing,HCA,stan@SHEPHERDSCARE.org
+4307,SANDHU,HARPREET,Eden,Long Term Care,Nursing,LPN,hsandhu@SHEPHERDSCARE.org
+4308,MANZANO,ENGEL,Shepherd's Garden DAL,Home Care,Nursing,Home Care Attendant,engelmanzano@SHEPHERDSCARE.org
+4310,BUGNOSEN,JAZMINE,Barrhead,Assisted Living,Nursing,HCA,jazminebugnosen@SHEPHERDSCARE.org
+4311,RAJAN,ANCY,Eden,Long Term Care,Nursing,HCA,arajan@SHEPHERDSCARE.org
+4312,PHILLIP,RENEE,Eden,Long Term Care,Nursing,Registered Nurse,rphilip2@SHEPHERDSCARE.org
+4314,SHARMA,ANJANA,Eden,Long Term Care,Nursing,LPN,asharma@SHEPHERDSCARE.org
+4316,MADLANGBAYAN,AILEEN,Millwoods Care Centre,Long Term Care,Nursing,HCA,acabuso@SHEPHERDSCARE.org
+4318,BONGCO,ZANDRA,Kensington Village,Long Term Care,Nursing,LPN,zbongco@SHEPHERDSCARE.org
+4321,DANNHAUER,JENNY,Millwoods Care Centre,Long Term Care,Therapy,Pastoral Care,jdannhauer@SHEPHERDSCARE.ORG
+4323,FAN,YE,Eden,Long Term Care,Nursing,LPN,yfan@SHEPHERDSCARE.org
+4326,IGBINOBARO,ISOKEN,Eden,Long Term Care,Nursing,HCA,iigbinobaro@SHEPHERDSCARE.org
+4327,NARAYANAN,NISHEEDH,Eden,Long Term Care,Nursing,HCA,nnarayanan@SHEPHERDSCARE.org
+4329,KERR,DANYKA,Barrhead,Assisted Living,Nursing,HCA,dkerr@SHEPHERDSCARE.org
+4331,FERRER,IDONNAH,Kensington Village,Long Term Care,Nursing,Registered Nurse,iferrer@SHEPHERDSCARE.org
+4332,KEOHANE,KAYLEIGH,Eden,Long Term Care,Nursing,HCA,kkeohane@SHEPHERDSCARE.org
+4334,ACHARYA,BANUJA,Eden,Long Term Care,Nursing,HCA,bacharya@SHEPHERDSCARE.org
+4335,LOCKHART,TYRESHA,Kensington Village,Long Term Care,Therapy,Recreation Aides,tlockhart@SHEPHERDSCARE.org
+4338,SMITH,JAMES,Shepherd's Garden DAL,Assisted Living,Maintenance,Maintenance,JSmith@SHEPHERDSCARE.ORG
+4339,JAWARA,SIRAH,Vanguard,Assisted Living,Nursing,LPN,sjawara@SHEPHERDSCARE.org
+4340,PHILIP,DEEPAMOL,Eden,Long Term Care,Nursing,HCA,dphilip@SHEPHERDSCARE.org
+4342,ANANEH,NIMA,Eden,Long Term Care,Nursing,HCA,nananeh@SHEPHERDSCARE.org
+4343,BRETT,CHRISTOPHER,Eden,Long Term Care,Therapy,PT Aides,cbrett@SHEPHERDSCARE.org
+4344,TEMRAZ,LYDIA,Vanguard,Assisted Living,Nursing,LPN,LTemraz@SHEPHERDSCARE.org
+4345,JOSEPH,SHOLLAMMA,Vanguard,Assisted Living,Nursing,LPN,sjoseph@SHEPHERDSCARE.org
+4346,WIJDANI,FERESHTA,Vanguard,Assisted Living,Nursing,LPN,FWijdani@SHEPHERDSCARE.org
+4347,ADAM,LAURIE,Eden,Long Term Care,Nursing,Registered Nurse,ladam@SHEPHERDSCARE.org
+4349,RANDHAWA,RAMINDER,Eden,Long Term Care,Nursing,Registered Nurse,rrandhawa@SHEPHERDSCARE.org
+4352,FRASER,ALLAN,Millwoods Care Centre,Long Term Care,Therapy,Bus Driver,afraser@SHEPHERDSCARE.org
+4353,PATHAK,JAGJEET,Eden,Long Term Care,Nursing,HCA,jpathak@SHEPHERDSCARE.org
+4354,KHAWAS,SUMNIMA,Eden,Long Term Care,Nursing,LPN,SKhawas@SHEPHERDSCARE.org
+4355,CANOG,MARICEL,Eden,Long Term Care,Nursing,HCA,mcanog@SHEPHERDSCARE.org
+4356,JOSAN,HARSROOP,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,HJosan@SHEPHERDSCARE.ORG
+4357,KAUR,MANPREET,Eden,Long Term Care,Therapy,Recreation Aides,mkaur@SHEPHERDSCARE.org
+4360,KANG,HARJOT,Eden,Long Term Care,Nursing,LPN,HKang@SHEPHERDSCARE.org
+4364,LANGLOIS,MEGAN,Eden,Long Term Care,Nursing,Registered Nurse,MLanglois@SHEPHERDSCARE.org
+4365,WRAICH,JASKARANJOT,Millwoods Care Centre,Long Term Care,Nursing,HCA,jwraich@SHEPHERDSCARE.org
+4367,KOSHY,LIJI,Millwoods Care Centre,Long Term Care,Nursing,HCA,lkoshy@SHEPHERDSCARE.org
+4370,GLORIA,CECILIO (Sonny),Shepherd's Garden DAL,Assisted Living,Maintenance,Maintenance,sgloria@SHEPHERDSCARE.org
+4372,VICEO-DITTMAR,JAIMEE,Eden,Long Term Care,Nursing,Registered Nurse,jviceo@SHEPHERDSCARE.org
+4374,LLAMADO-HOCKETT,CHARIELYN,Kensington Village,Long Term Care,Nursing,HCA,cllamado-hockett@SHEPHERDSCARE.org
+4375,LOMIBAO,EVANGELINE,Kensington Village,Long Term Care,Nursing,HCA,elomibao@SHEPHERDSCARE.org
+4376,ROSSENALLY,HOSSEN,Vanguard,Assisted Living,Nursing,HCA,hrossenally@SHEPHERDSCARE.org
+4377,CHINEL,ANTONETTE,Vanguard,Assisted Living,Nursing,HCA,achinel@SHEPHERDSCARE.org
+4378,ODONO,VIVIAN,Vanguard,Assisted Living,Nursing,HCA,vodono@SHEPHERDSCARE.org
+4379,ALIASUT,GLAYNIS,Vanguard,Assisted Living,Nursing,HCA,galiasut@SHEPHERDSCARE.org
+4382,PUJEDA,LIRIO,Kensington Village,Home Care,Nursing,Home Care Attendant,lpujeda@SHEPHERDSCARE.org
+4384,OGUNLADE,OMOBOLA,Kensington Village,Assisted Living,Nursing,LPN,bogunlade@SHEPHERDSCARE.org
+4386,WOODS,STEVEN,Barrhead,Assisted Living,Maintenance,Maintenance,SWoods@shepherdscare.org
+4387,CARSWELL,BRANT,Barrhead,Assisted Living,Therapy,Bus Driver,bcarswell@SHEPHERDSCARE.org
+4388,WALTON,MA GIA,Millwoods Care Centre,Long Term Care,Nursing,HCA,mwalton@SHEPHERDSCARE.org
+4389,MARTA,VALERICA,Vanguard,Assisted Living,Nursing,LPN,VMarta@SHEPHERDSCARE.org
+4390,ANAYA SANCHEZ,TATIANA,Vanguard,Assisted Living,Nursing,HCA,tanayasanchez@SHEPHERDSCARE.org
+4393,RAVINA,WILLA,Kensington Village,Long Term Care,Nursing,HCA,wravina@SHEPHERDSCARE.org
+4394,VILLARANTE,MARIA,Kensington Village,Long Term Care,Nursing,HCA,mvillarante@SHEPHERDSCARE.org
+4395,AQUINO,MARILYN,Kensington Village,Long Term Care,Nursing,HCA,mcaquino@SHEPHERDSCARE.org
+4396,ARUN,ASAKUMARI,Vanguard,Assisted Living,Nursing,HCA,aarun@SHEPHERDSCARE.org
+4397,VISWANATHAN,AKHILA,Millwoods Care Centre,Long Term Care,Nursing,LPN,aviswanathan@SHEPHERDSCARE.org
+4398,TRANIA,JEANETTE,Kensington Village,Long Term Care,Nursing,HCA,jtrania@SHEPHERDSCARE.org
+4399,ALBARIO,PIO,Kensington Village,Long Term Care,Nursing,HCA,palbario@SHEPHERDSCARE.org
+4400,LEROUX,PHILIP,Shepherd's Garden DAL,Assisted Living,Maintenance,Maintenance,pleroux@SHEPHERDSCARE.org
+4402,ANTONY RAJAN,MICHAEL,Vanguard,Assisted Living,Nursing,HCA,mantonyrajan@SHEPHERDSCARE.org
+4405,BITON,LERMA,Kensington Village,Home Care,Nursing,Home Care Attendant,lbiton@SHEPHERDSCARE.ORG
+4406,ARRIOLA,MITZI,Kensington Village,Long Term Care,Nursing,HCA,marriola@SHEPHERDSCARE.org
+4407,ESTRADA,DENNIS,Vanguard,Assisted Living,Nursing,HCA,destrada@SHEPHERDSCARE.org
+4409,MINAS,MARIELLA,Kensington Village,Long Term Care,Nursing,LPN,mminas@SHEPHERDSCARE.org
+4412,CELIS,FLORENCE,Shepherd's Garden DAL,Assisted Living,Nursing,LPN,fcelis@SHEPHERDSCARE.ORG
+4413,DAYAG,KIMBERLY,Barrhead,Assisted Living,Nursing,HCA,kdayag@SHEPHERDSCARE.org
+4414,DAYAG,KYNA  KATE,Barrhead,Assisted Living,Nursing,HCA,kbdayag@SHEPHERDSCARE.org
+4415,LUKE,EMERALD,Millwoods Care Centre,Long Term Care,Nursing,HCA,eluke@SHEPHERDSCARE.org
+4416,BAGNE,DECENIA,Kensington Village,Home Care,Nursing,Home Care Attendant,dbagne@SHEPHERDSCARE.ORG
+4417,PAGADUAN,FELISA,Kensington Village,Home Care,Nursing,Home Care Attendant,fpagaduan@SHEPHERDSCARE.org
+4419,HAMMEL,MARIA,Millwoods Care Centre,Long Term Care,Nursing,HCA,mhammel@SHEPHERDSCARE.org
+4420,TRAN,JOHNY,Eden,Long Term Care,Nursing,Registered Nurse,jtran@SHEPHERDSCARE.org
+4421,SANTHOSH,ANNAMMA,Eden,Long Term Care,Nursing,Registered Nurse,asanthosh@SHEPHERDSCARE.org
+4422,SEBASTIAN,DONA,Kensington Village,Long Term Care,Nursing,Registered Nurse,dsebastian@SHEPHERDSCARE.org
+4423,PENNER,ZACHARY,Head office,Shared General & Admin,Admin,General Manager,zpenner@SHEPHERDSCARE.org
+4426,PINGAL,MARY ANN,Kensington Village,Assisted Living,Nursing,HCA,mpingal@SHEPHERDSCARE.org
+4427,FALADE,IYABO,Kensington Village,Home Care,Nursing,Home Care Attendant,ifalade@SHEPHERDSCARE.org
+4428,KOBANAKO,AMELIE,Kensington Village,Assisted Living,Nursing,HCA,akobanako@SHEPHERDSCARE.org
+4430,KAUR,NAVJOT,Vanguard,Assisted Living,Nursing,LPN,nkaur@shepherdscare.org
+4431,CHIN-LOY,JODY,Vanguard,Assisted Living,Nursing,LPN,jloy@SHEPHERDSCARE.org
+4434,OLDFIELD,DANIELLA,Kensington Village,Assisted Living,Nursing,LPN,DOldfield@SHEPHERDSCARE.ORG
+4435,GALVIN,DENISE,Greenfield,Assisted Living,Nursing,HCA,dgalvin@SHEPHERDSCARE.org
+4436,RAUN,SARA RUTH,Kensington Village,Home Care,Nursing,Home Care Attendant,sraun@SHEPHERDSCARE.org
+4438,LAUDENCIA,JANNETTE,Millwoods Care Centre,Long Term Care,Nursing,HCA,jlaudencia@SHEPHERDSCARE.org
+4439,FOWLER,KIRSTEN,Kensington Village,Assisted Living,Nursing,HCA,kfowler@SHEPHERDSCARE.org
+4440,DAVIES,CYRINE,Millwoods Care Centre,Long Term Care,Nursing,HCA,cdavies@SHEPHERDSCARE.org
+4443,THAMPY,RINI,Millwoods Care Centre,Long Term Care,Nursing,HCA,rthampy@SHEPHERDSCARE.org
+4444,KAUR,AMANPREET,Millwoods Care Centre,Long Term Care,Nursing,HCA,amanpreetkaur@SHEPHERDSCARE.ORG
+4445,HASSAN,SAGAL,Kensington Village,Home Care,Nursing,Site Supervisor,shassan@SHEPHERDSCARE.org
+4448,BICOMONG,JOAN,Eden,Home Care,Nursing,Home Care Attendant,jbicomong@SHEPHERDSCARE.org
+4450,SANTOS,JEENDINE,Eden,Long Term Care,Nursing,LPN,jsantos@SHEPHERDSCARE.org
+4452,OKORO,VALENTINE,Barrhead,Assisted Living,Nursing,HCA,vokoro@SHEPHERDSCARE.ORG
+4453,FATINDEJI,CHRISTINE,Kensington Village,Assisted Living,Nursing,HCA,cfatindeji@SHEPHERDSCARE.org
+4456,AHMED,FATIMA MOHAMUD,Kensington Village,Assisted Living,Nursing,LPN,fatimaahmed@SHEPHERDSCARE.org
+4457,SASI,SREEJA,Millwoods Care Centre,Long Term Care,Nursing,HCA,ssasi@SHEPHERDSCARE.org
+4460,BLEN,HELEN,Greenfield,Assisted Living,Nursing,HCA,hblen@SHEPHERDSCARE.org
+4461,CABILI,RIYA,Barrhead,Assisted Living,Nursing,HCA,rcabili@SHEPHERDSCARE.org
+4462,UWAMAHORO,JOSEPHINE,Kensington Village,Long Term Care,Nursing,HCA,juwamahoro@SHEPHERDSCARE.org
+4465,NOWAY,ELSA,Kensington Village,Long Term Care,Nursing,HCA,enoway@SHEPHERDSCARE.org
+4466,RAJAN,JOLLY,Millwoods Care Centre,Long Term Care,Nursing,HCA,jrajan@SHEPHERDSCARE.org
+4467,SANDHU,SUKHDEEP KAUR,Millwoods Care Centre,Long Term Care,Nursing,HCA,sukhdeepsandhu@shepherdscare.org
+4468,MAKNOJIA,SHAHINA,Eden,Long Term Care,Nursing,Registered Nurse,smaknojia@SHEPHERDSCARE.ORG
+4469,VINCENT,BERNADETTE,Eden,Long Term Care,Nursing,HCA,bvincent@SHEPHERDSCARE.ORG
+4471,BAINS,RAVINDER,Greenfield,Assisted Living,Nursing,HCA,rbains@SHEPHERDSCARE.org
+4472,PIPKE,REBEKAH,Eden,Long Term Care,Nursing,Registered Nurse,rpipke@SHEPHERDSCARE.org
+4473,THOMAS,JANCY,Eden,Long Term Care,Nursing,HCA,jthomas@SHEPHERDSCARE.org
+4474,HANDSOR,SHERINA,Barrhead,Assisted Living,Nursing,LPN,shandsor@SHEPHERDSCARE.ORG
+4477,LASCANO,JANICE,Kensington Village,Long Term Care,Nursing,HCA,jlascano@shepherdscare.org
+4478,ATOMSA,LIYA,Kensington Village,Long Term Care,Nursing,HCA,latomsa@shepherdscare.org
+4481,KAUR,AMRITPAL,Millwoods Care Centre,Long Term Care,Nursing,LPN,amritpalkaur@SHEPHERDSCARE.ORG
+4483,MYREHAUG,REBECCA,Barrhead,Assisted Living,Nursing,HCA,rmyrehaug@shepherdscare.org
+4485,YIADOM,YVETTE,Millwoods Care Centre,Long Term Care,Nursing,LPN,yyiadom@shepherdscare.org
+4486,VERMA,SHIVANI,Millwoods Care Centre,Long Term Care,Nursing,HCA,sverma@SHEPHERDSCARE.ORG
+4487,SIDHU,JASVEEN,Millwoods Care Centre,Long Term Care,Nursing,Registered Nurse,jasveensidhu@SHEPHERDSCARE.ORG
+4488,ALMAREZ,AYETH,Millwoods Care Centre,Long Term Care,Nursing,HCA,aalmarez@shepherdscare.org
+4490,KONRAD,EMILY,Millwoods Care Centre,Long Term Care,Therapy,Recreation Aides,ekonrad@shepherdscare.org
+4491,MCPHAIL,CHRISTINA,Greenfield,Assisted Living,Nursing,HCA,cmcphail@shepherdscare.org
+4493,ROTIMI,SCHOLASTICA,Kensington Village,Long Term Care,Nursing,Registered Nurse,srotimi@shepherdscare.org
+4494,BARNSTABLE,COURTNEY ANNE,Vanguard,Assisted Living,Therapy,Recreation Student/Trainee,cbarnstable@shepherdscare.org
+4495,HANK,LINDA,Barrhead,Assisted Living,Therapy,Recreation Aides,lhank@SHEPHERDSCARE.ORG
+4496,PANAG,HARPREET,Greenfield,Assisted Living,Nursing,HCA,hpanag@SHEPHERDSCARE.ORG
+4498,HOWARD,KEIRA,Millwoods Care Centre,Long Term Care,Nursing,HCA,khoward@shepherdscare.org
+4499,KERR,AMANDA,Kensington Village,Long Term Care,Therapy,OT Aides,akerr@shepherdscare.org
+4500,CARUMBA,JOELLA,Kensington Village,Long Term Care,Therapy,OT Aides,jcarumba@shepherdscare.org
+4501,GIESBRECHT,TAYA,Head office,Shared General & Admin,Admin,Summer Student,tgiesbrecht@shepherdscare.org
+4502,LISKE,JOSCELYN,Barrhead,Assisted Living,Therapy,Recreation Aides,jliske@shepherdscare.org
+4504,OLAGUNJU,GRACE,Eden,Long Term Care,Nursing,Registered Nurse,golagunju@shepherdscare.org
+4505,COLTER,SHELDON,Barrhead,Assisted Living,Therapy,Recreation Aides,scolter@shepherdscare.org
+4506,DEJONG,ALYSSA,Barrhead,Assisted Living,Nursing,HCA,ADeJong@SHEPHERDSCARE.org
+4507,IGWE,OGECHUKWU,Greenfield,Assisted Living,Nursing,HCA,OIgwe@SHEPHERDSCARE.org
+4508,REGASSA,TIBLET,Greenfield,Assisted Living,Nursing,HCA,TRegassa@SHEPHERDSCARE.ORG
+4509,ZELEKE,MEMAR,Greenfield,Assisted Living,Nursing,LPN,MZeleke@SHEPHERDSCARE.org
+4510,AGYEMANG,PAMILA,Greenfield,Assisted Living,Nursing,LPN,pagyemang@shepherdscare.org
+4511,HAILE,LAMLAM,Kensington Village,Assisted Living,Nursing,HCA,lhaile@shepherdscare.org
+4512,HAQ,ZOYA,Millwoods Care Centre,Long Term Care,Admin,Hospitality Aide (S),zhaq@SHEPHERDSCARE.ORG
+4513,SIDDIQUE,HAFSA,Vanguard,Assisted Living,Nursing,LPN,hsiddique@shepherdscare.org
+4514,TSADA,DEHAB,Kensington Village,Home Care,Nursing,LPN,dtsada@shepherdscare.org
+4515,SIMEON,MACARIA,Kensington Village,Long Term Care,Nursing,LPN,msimeon@SHEPHERDSCARE.org
+4516,ALIM,DJAMILATOU,Millwoods Care Centre,Long Term Care,Nursing,LPN,dalim@shepherdscare.org
+4518,SEKALALA-WILLIAMS,JOYCE,Eden,Long Term Care,Nursing,LPN,jsekalala-williams@SHEPHERDSCARE.ORG
+4519,BAGGAY,PRINCESS,Eden,Long Term Care,Nursing,HCA,pbaggay@shepherdscare.org
+4520,NAISUBI,HALIMA,Eden,Long Term Care,Nursing,LPN,hnaisubi@shepherdscare.org
+4521,BROWN,AVIS,Millwoods Care Centre,Long Term Care,Nursing,HCA,abrown@shepherdscare.org
+4523,OGUNLOLA-AJAYI,OLUSHOLA,Vanguard,Assisted Living,Nursing,LPN,oogunlola-ajayi@SHEPHERDSCARE.ORG
+4524,FAJI,ABEBA,Kensington Village,Long Term Care,Nursing,HCA,afaji@shepherdscare.org
+4525,JOSEPH,LINCY,Vanguard,Assisted Living,Nursing,HCA,ljoseph@shepherdscare.org
+4526,RABINOVICH,NATALYA,Kensington Village,Long Term Care,Nursing,Registered Nurse,nrabinovich@shepherdscare.org
+4527,DE GUZMAN,DIANE,Shepherd's Garden DAL,Home Care,Nursing,Home Care Attendant,ddeguzman@shepherdscare.org
+4528,YUSON,JAY,Eden,Long Term Care,Nursing,HCA,jyuson@shepherdscare.org
+4529,VALLEJO,ROSARIO,Kensington Village,Long Term Care,Nursing,HCA,rvallejo@shepherdscare.org
+4530,SULIMAN,TERHAS,Millwoods Care Centre,Long Term Care,Nursing,LPN,tsuliman@shepherdscare.org
+4531,KHALIL,SAMAN,Millwoods Care Centre,Long Term Care,Nursing,HCA,skhalil@shepherdscare.org
+4533,PALLERA,JEMIMA,Kensington Village,Long Term Care,Nursing,LPN,jpallera@shepherdscare.org
+4536,ENRIQUEZ,RIZZA JOY,Millwoods Care Centre,Long Term Care,Nursing,HCA,renriquez@shepherdscare.org
+4537,THATTIL,JAIN,Barrhead,Assisted Living,Nursing,LPN,jthattil@shepherdscare.org
+4539,DIOSES,JOHN PAUL,Eden,Long Term Care,Nursing,LPN,jdioses@shepherdscare.org
+4540,VALDEZ,LEA,Eden,Long Term Care,Nursing,HCA,lvaldez@shepherdscare.org
+4542,URRA,NICOL,Eden,Long Term Care,Nursing,HCA,nurra@shepherdscare.org
+4543,ULLRICH,BRIANNE,Millwoods Care Centre,Long Term Care,Nursing,LPN,bullrich@shepherdscare.org
+4544,VERMA,BHAVNEET,Millwoods Care Centre,Long Term Care,Nursing,LPN,bverma@shepherdscare.org
+4545,KHUSHBU,KHUSHBU,Millwoods Care Centre,Long Term Care,Nursing,HCA,kkhushbu@shepherdscare.org
+4546,PAPIRNY,ROBYN,Millwoods Care Centre,Long Term Care,Nursing,HCA,rpapirny@shepherdscare.org
+4547,MOHAN,PARVATHY,Southside Manor,Home Care,Nursing,Home Care Attendant,pmohan@shepherdscare.org
+4548,COHEN,JESSICA,Millwoods Care Centre,Long Term Care,Nursing,HCA,jcohen@shepherdscare.org
+4549,TAKARUZA,FAITH,Eden,Long Term Care,Nursing,HCA,ftakaruza@shepherdscare.org
+4550,MIR ENAYATULLAH,SHAKILA,Vanguard,Assisted Living,Nursing,LPN,senayatullah@shepherdscare.org
+4551,GHANBARI,MARJAN,Eden,Long Term Care,Nursing,LPN,mghanbari@shepherdscare.org
+4552,SAJY,SHINIMOL,Millwoods Care Centre,Long Term Care,Nursing,HCA,ssajy@shepherdscare.org
+4553,FUENTES,DIVINA,Millwoods Care Centre,Long Term Care,Nursing,HCA,dfuentes@shepherdscare.org
+4554,MACALTAO,NERISSA,Kensington Village,Long Term Care,Nursing,Registered Nurse,nmacaltao@shepherdscare.org
+4555,NOCETE,NEIL IAN,Millwoods Care Centre,Long Term Care,Nursing,HCA,nnocete@shepherdscare.org
+4556,MBAYU,ANGELINE,Millwoods Care Centre,Long Term Care,Nursing,HCA,ambayu@shepherdscare.org
+4557,WALSH,THERESA,Millwoods Care Centre,Long Term Care,Nursing,HCA,twalsh@shepherdscare.org
+4558,SALEH,FARDOUSA,Millwoods Care Centre,Long Term Care,Nursing,LPN,fsaleh@shepherdscare.org
+4559,LADOUCEUR,MIKAELA,Millwoods Care Centre,Long Term Care,Nursing,HCA,mladouceur@shepherdscare.org
+4560,BORLE,DOROTHY,Barrhead,Assisted Living,Nutrition ,Cooks,dborle@SHEPHERDSCARE.org
+4561,WINTERS,JOLENE,Vanguard,Assisted Living,Nursing,HCA,jwinters@shepherdscare.org
+4562,LICACHO,GERALDINE,Kensington Village,Assisted Living,Nursing,LPN,GLicacho@SHEPHERDSCARE.org
+4564,CARTER,SOPHIA,Kensington Village,Assisted Living,Therapy,Recreation Aides,scarter@shepherdscare.org
+4565,SILGARD,DEREK,Barrhead,Assisted Living,Maintenance,Maintenance,dsilgard@shepherdscare.org
+4566,SINGH,ARSHDEEP,Millwoods Care Centre,Long Term Care,Therapy,Occupational Therapist,asingh@shepherdscare.org
+4567,MARCELINO,MARY JOY,Eden,Long Term Care,Nursing,HCA,mmarcelino@shepherdscare.org
+4568,FERNANDEZ,MARINELLE,Millwoods Care Centre,Long Term Care,Therapy,OT Aides,mfernandez@shepherdscare.org
+4569,MACDONALD,LAURA,Vanguard,Assisted Living,Nursing,Registered Nurse,lmacdonald@shepherdscare.org
+4570,GEORGE,JISMI,Kensington Village,Long Term Care,Nursing,Registered Nurse,jgeorge@shepherdscare.org
+4571,MALIK,BARKHA,Vanguard,Assisted Living,Nursing,Hospitality Aide (C),bmalik@shepherdscare.org
+4572,CONCEPCION,REENA,Eden,Long Term Care,Nursing,Registered Nurse,rconcepcion@shepherdscare.org
+4573,LATIMER,JORDAN,Eden,Long Term Care,Therapy,Recreation Aides,JordanLatimer@SHEPHERDSCARE.org
+4575,O'BRIEN,KALI-MARIE,Barrhead,Assisted Living,Nursing,LPN,KOBrien@SHEPHERDSCARE.org
+4576,BIRHANIE,ELSA,Kensington Village,Assisted Living,Nursing,HCA,EBirhanie@SHEPHERDSCARE.org
+4577,SHRESTHA,DHRUBA LAL,Millwoods Care Centre,Long Term Care,Nursing,HCA,dshrestha@shepherdscare.org
+4578,GOSWAMI,LUBHANI,Millwoods Care Centre,Long Term Care,Nursing,HCA,lgoswami@shepherdscare.org
+4580,FALCONAR,CASSIDY,Eden,Long Term Care,Therapy,Recreation Therapist,cfalconar@shepherdscare.org
+4581,JOHAL,GURPREET,Southside Manor,Home Care,Nursing,HCA,gjohal@shepherdscare.org
+4582,SEMWAL,RUCHI,Southside Manor,Home Care,Nursing,Home Care Attendant,rsemwal@shepherdscare.org
+4583,SON,ABIGAIL,Kensington Village,Home Care,Nursing,Home Care Attendant,ason@shepherdscare.org
+4584,DEL ROSARIO,CAMILLE,Eden,Long Term Care,Nursing,Registered Nurse,cdelrosario@shepherdscare.org
+4585,SANTOS,JANINE,Eden,Long Term Care,Nursing,Registered Nurse,janinesantos@shepherdscare.org
+4586,KUMSA,METI,Kensington Village,Home Care,Nursing,Home Care Attendant,mkumsa@shepherdscare.org
+4587,RANGASAMY,SELVARAJ,Barrhead,Assisted Living,Nutrition ,Cooks,srangasamy@shepherdscare.org
+4588,MITCHELL,JULIE,Barrhead,Assisted Living,Nutrition ,Cooks,jmitchell@shepherdscare.org
+4589,TANYI,MIRANDA,Shepherd's Garden DAL,Assisted Living,Nursing,LPN,mtanyi@shepherdscare.org
+4590,MACDONALD,REGAN,Kensington Village,Assisted Living,Nursing,LPN,rmacdonald@shepherdscare.org
+4591,AQUINO,MARIEL,Kensington Village,Home Care,Nursing,LPN,marielaquino@shepherdscare.org
+9007,DORIS,MERCEDITA,Shepherd's Garden DAL,Assisted Living,Nursing,Nurse Manager,mdoris@SHEPHERDSCARE.org
+9016,CHAUHAN,KIRAN,Greenfield,Assisted Living,Nursing,Nurse Manager,kchauhan@SHEPHERDSCARE.org
+9039,TONN,RANDALL,Millwoods Care Centre,Long Term Care,Therapy,VP Mission Effectiveness,rtonn@SHEPHERDSCARE.org
+9049,NUNES,AMBREEN,Eden,Long Term Care,Nursing,Site Director of Care,anunes@SHEPHERDSCARE.org
+9050,SNEDDON,JAMES,Head office,Shared General & Admin,Admin,Finance,jsneddon@SHEPHERDSCARE.org
+9051,HAUGEN,LYNN,Millwoods Care Centre,Long Term Care,Care Admin,Executive Director of Care,lynnhaugen@SHEPHERDSCARE.org
+9052,HALL,JANICE,Head office,Shared General & Admin,Admin,Finance,jhall@SHEPHERDSCARE.org
+9061,GRANT,SHERRY LYNN,Head office,Shared General & Admin,Admin,Human Resources,lgrant@SHEPHERDSCARE.ORG
+9066,EWASKOW,BLAIR,Vanguard,Assisted Living,Therapy,Pastoral Care,bewaskow@SHEPHERDSCARE.org
+9072,TENNANT,PATRICIA,Head office,Shared General & Admin,Admin,Finance,ttennant@SHEPHERDSCARE.org
+9075,CAPAR,TRACEY,Kensington Village,Supportive Housing,Admin,Business Admin Coordinator,tcapar@SHEPHERDSCARE.org
+9085,EDWARDS,KAITLYN,Vanguard,Assisted Living,Therapy,Recreation Therapist,kedwards@SHEPHERDSCARE.org
+9087,SCHIMKE,JULIE,Head office,Shared General & Admin,Admin,Admin Assist,JSchimke@SHEPHERDSCARE.org
+9089,NCUBE,NOMVULA,Head office,Shared General & Admin,Admin,OH&S Coordinator,nncube@SHEPHERDSCARE.org
+9091,GIESBRECHT,PAMELA,Head office,Shared General & Admin,Admin,Human Resources,pgiesbrecht@SHEPHERDSCARE.org
+9095,MILLER,JUDY,Millwoods Care Centre,Long Term Care,Therapy,Volunteer Coordinator,JudyMiller@SHEPHERDSCARE.org
+9096,HINGER,MICHAEL,Millwoods Care Centre,Long Term Care,Therapy,Pastoral Care,mhinger@SHEPHERDSCARE.org
+9097,STRAUB RIVEST,KARA,Millwoods Care Centre,Long Term Care,Therapy,Occupational Therapist,KRivest@SHEPHERDSCARE.org
+9100,REDDEKOPP,DALE,Eden,Long Term Care,Therapy,Pastoral Care,dreddekopp@SHEPHERDSCARE.ORG
+9101,PAULSON,GERALD,Kensington Village,Long Term Care,Therapy,Pastoral Care,gpaulson@SHEPHERDSCARE.org
+9102,PAULSON,DIANE,Kensington Village,Long Term Care,Therapy,Pastoral Care,dpaulson@SHEPHERDSCARE.org
+9103,JANOVSKY,CASSANDRA,Eden,Long Term Care,Therapy,Social Worker,cjanovsky@SHEPHERDSCARE.org
+9104,POMPEI,CHRISTINE,Eden,Long Term Care,Therapy,Recreation Therapist,cpompei@SHEPHERDSCARE.org
+9105,BURNS,JENNIFER,Head office,Shared General & Admin,Admin,Human Resources,JBurns@SHEPHERDSCARE.ORG
+9106,CLARKE,ANGELIKA,Vanguard,Assisted Living,Nursing,Site Director of Care,aclarke@SHEPHERDSCARE.org
+9108,ALLSEN,LARRY,Head office,Shared General & Admin,Admin,CIO,lallsen@SHEPHERDSCARE.org
+9111,TEIXEIRA,ASHLEY,Vanguard,Assisted Living,Nursing,Site Supervisor,ateixeira@SHEPHERDSCARE.org
+9112,RIMANDO,JACQUELINE,Kensington Village,Long Term Care,Nursing,Nurse Manager,jrimando@SHEPHERDSCARE.org
+9113,BOONE,CHANTEL,Eden,Long Term Care,Therapy,Occupational Therapist,CBoone@SHEPHERDSCARE.org
+9114,ALLOUCHE,NATALIE,Kensington Village,Long Term Care,Care Admin,Campus Director of Care,nallouche@SHEPHERDSCARE.org
+9115,GROH,DIANA,Head office,Shared General & Admin,Admin,Human Resources,dgroh@SHEPHERDSCARE.org
+9119,MALLACH,KARLA,Head office,Shared General & Admin,Admin,Administrative Assistant,kmallach@SHEPHERDSCARE.org
+9129,ATUKWOH,CLAUDIA ANU,Millwoods Care Centre,Long Term Care,Therapy,Social Worker,CAtukwoh@SHEPHERDSCARE.org
+9133,LATIMER,JILLIENNE,Eden,Long Term Care,Nursing,Hospitality Aide (C),jlatimer@SHEPHERDSCARE.org
+9135,MIZRAHII,YOVELLA,Vanguard,Assisted Living,Nursing,Hospitality Aide (C),ymizrahii@SHEPHERDSCARE.org
+9140,BELL,TOBIN,Millwoods Care Centre,Long Term Care,Admin,Hospitality Aide (S),tbell@SHEPHERDSCARE.org
+9141,WASYLYCIA,GRECIA,Millwoods Care Centre,Long Term Care,Admin,Hospitality Aide (S),gwasylycia@SHEPHERDSCARE.org
+9146,JOHN,MINNU,Vanguard,Assisted Living,Admin,Hospitality Aide (S),minnucyril14@gmail.com
+9148,SCHEFFER,MATTHEW,Kensington Village,Long Term Care,Therapy,Occupational Therapist,mscheffer@SHEPHERDSCARE.org
+9150,HELMERS,JOYCE,Millwoods Care Centre,Long Term Care,Admin,Hospitality Aide (S),jhelmers@shepherdscare.org
+9151,KHRUSHED,OMAR,Head office,Shared General & Admin,Admin,Finance,okhrushed@SHEPHERDSCARE.org
+9152,SHIRE,HAFSA,Vanguard,Assisted Living,Nursing,Hospitality Aide (C),hshire@shepherdscare.org
+9153,ESPINO,GENECCA,Millwoods Care Centre,Long Term Care,Nursing,Hospitality Aide (C),gespino@shepherdscare.org
+9154,SILVESTRE,GLENDA,Vanguard,Assisted Living,Nursing,Hospitality Aide (C),gsilvestre@shepherdscare.org
+9155,ELLIOTT,AMANDA,Vanguard,Assisted Living,Nursing,Hospitality Aide (C),aelliott@shepherdscare.org
+9156,PICHE,SIEANNA,Vanguard,Assisted Living,Nursing,Hospitality Aide (C),spiche@shepherdscare.org
+9157,HANSON,SYDNEY,Millwoods Care Centre,Long Term Care,Admin,Hospitality Aide (S),shanson@shepherdscare.org
+9159,GOYAL,MAITRI,Vanguard,Assisted Living,Nursing,Hospitality Aide (C),mgoyal@shepherdscare.org
+9160,REID,TAVIA,Millwoods Care Centre,Long Term Care,Admin,Hospitality Aide (S),treid@shepherdscare.org
+9161,MYSHAK,AMY,Millwoods Care Centre,Long Term Care,Admin,Hospitality Aide (S),amyshak@shepherdscare.org
+9162,HASEL,DEBORAH,Kensington Village,Long Term Care,Nursing,Hospitality Aide (C),dhasel@shepherdscare.org
+9163,WALTERS,MELISSEA,Vanguard,Assisted Living,Nursing,Hospitality Aide (C),mwalters@shepherdscare.org
+9165,FROEHLICH,CINDY,Head office,Shared General & Admin,Admin,Finance,cfroehlich@shepherdscare.org
+9166,CHONEY,ESMIRA,Kensington Village,Long Term Care,Care Admin,Inservice Coordinator,

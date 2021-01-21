@@ -137,7 +137,7 @@ IF ($StatusPathExists -eq $True)
                {
                    New-Item -ItemType File -Force -Path $CSVFile
                }
-                Set-Content -Path $CSVFile - Value $headers
+                Set-Content -Path $CSVFile -Value $headers
                    $A = Get-Content -Path $CSVFile
                    $A = $A[1..($A.Count - 1)]
                    $A | Out-File -FilePath $CSVFile
