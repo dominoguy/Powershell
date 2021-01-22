@@ -1,0 +1,8 @@
+System Info
+@{Manufacturer=GIGABYTE; Model=MMLP3AP-00; TotalPhysicalMemory=10652696576}
+Memory Info
+@{capacity=8589934592; devicelocator=ChannelA-DIMM0}
+@{capacity=2147483648; devicelocator=ChannelB-DIMM0}
+Disk Info
+@{deviceid=C:; size=119465984000; freespace=28824801280}
+@{deviceid=D:; size=1000202039296; freespace=233766117376}

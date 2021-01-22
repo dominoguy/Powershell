@@ -1,5 +1,9 @@
 #Compare 2 CSV files and copy the differences into a third CSV.
 #Intended to be used to compare Active user list and a list of active AD accounts, the difference are accounts to be removed from AD
+#Active Employee list headers (from Larry)
+#EMPLOYEE	LASTNAME	FIRSTNAME	Facility    Service 	Department	Job	    WLADDR4
+#AD list headers (script on shep-hdc-001\d\data\scripts\Get List of Users by Name Job and Email.ps1)
+#Employee	LastName	FirstName	Facility	Department	Title	EmailAddress
 #Required Employee ID must be a number and files need to be CSV
 #NOTE: It is possible that there is an user in ActiveEmployees.csv that is active but not in AD.
 
@@ -29,8 +33,14 @@ else
 
 Write-Log "Starting UserAccount Check"
 
+#CSV file list of enabled users from Active Directory
 $ADUsers = import-csv -path 'F:\Data\Scripts\Powershell\CompareAccountLists\ADUsers.csv'
+#CSV file from Shep containing a list of Active Employees
 $ActiveEmployees = import-csv -path 'F:\Data\Scripts\Powershell\CompareAccountLists\ActiveEmployees.csv'
+#CSV file list of users in AD file but not in Active Employee file
+$CSVToBeDisabled = "F:\Data\Scripts\Powershell\CompareAccountLists\ToBeDisabled.csv"
+#CSV file list of users not active in AD but is in the Active Employee file
+$CSVToBeResolved = "F:\Data\Scripts\Powershell\CompareAccountLists\ToBeResolved.csv"
 
 #put the list in an object and loop through each 
 #Using the SideIndicator put the different AD Users (<=) in the TobeDisabled.csv and the different active employee users (=>) in ToBeResolved.csv
@@ -38,7 +48,6 @@ $compare = Compare-Object $ADUsers $ActiveEmployees -property Employee
 
 If ($compare) {
     #Create ToBeDeleted CSV file
-    $CSVToBeDisabled = "F:\Data\Scripts\Powershell\CompareAccountLists\ToBeDisabled.csv"
     $CSVFileExists = Test-Path -path $CSVToBeDisabled
     if ( $CSVFileExists -eq $True)
     {
@@ -71,7 +80,7 @@ If ($compare) {
     }
 
     #Create ToBeResolved CSV file
-        $CSVToBeResolved = "F:\Data\Scripts\Powershell\CompareAccountLists\ToBeResolved.csv"
+       
         $CSVFileExists = Test-Path -path $CSVToBeResolved
         if ( $CSVFileExists -eq $True)
         {

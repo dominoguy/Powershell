@@ -1,0 +1,11 @@
+System Info
+@{Manufacturer=System manufacturer; Model=System Product Name; TotalPhysicalMemory=8555474944}
+Memory Info
+@{capacity=4294967296; devicelocator=ChannelA-DIMM0}
+@{capacity=4294967296; devicelocator=ChannelB-DIMM0}
+Disk Info
+@{deviceid=C:; size=126941560832; freespace=29876555776}
+@{deviceid=D:; size=104853504; freespace=61972480}
+@{deviceid=E:; size=; freespace=}
+@{deviceid=F:; size=500000878592; freespace=453949087744}
+@{deviceid=Z:; size=126941560832; freespace=27986956288}

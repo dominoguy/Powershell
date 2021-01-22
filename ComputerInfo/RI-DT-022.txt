@@ -1,0 +1,9 @@
+System Info
+@{Manufacturer=LENOVO; Model=10AY0082US; TotalPhysicalMemory=8491487232}
+Memory Info
+@{capacity=4294967296; devicelocator=ChannelA-DIMM0}
+@{capacity=4294967296; devicelocator=ChannelB-DIMM0}
+Disk Info
+@{deviceid=C:; size=500105736192; freespace=400133275648}
+@{deviceid=D:; size=; freespace=}
+@{deviceid=E:; size=; freespace=}

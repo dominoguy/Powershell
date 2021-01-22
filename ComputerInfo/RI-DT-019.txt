@@ -1,0 +1,12 @@
+System Info
+@{Manufacturer=Dell Inc.; Model=OptiPlex 755                 ; TotalPhysicalMemory=4148801536}
+Memory Info
+@{capacity=1073741824; devicelocator=DIMM_1}
+@{capacity=1073741824; devicelocator=DIMM_3}
+@{capacity=1073741824; devicelocator=DIMM_2}
+@{capacity=1073741824; devicelocator=DIMM_4}
+Disk Info
+@{deviceid=C:; size=249421623296; freespace=158151241728}
+@{deviceid=D:; size=3000457228288; freespace=194432114688}
+@{deviceid=G:; size=4000650883072; freespace=2638540898304}
+@{deviceid=L:; size=4000650883072; freespace=1180564738048}

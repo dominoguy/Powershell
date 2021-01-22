@@ -18,3 +18,80 @@ NA = Service
 Department = department
 Job Title = title
 Email address = mail
+
+userAccountControl
+
+$limit = (Get-Date).AddDays(-15)
+$path = "C:\Some\Path"
+
+# Delete files older than the $limit.
+Get-ChildItem -Path $path -Recurse -Force | Where-Object { !$_.PSIsContainer -and $_.CreationTime -lt $limit } | Remove-Item -Force
+
+# Delete any empty directories left behind after deleting the old files.
+Get-ChildItem -Path $path -Recurse -Force | Where-Object { $_.PSIsContainer -and (Get-ChildItem -Path $_.FullName -Recurse -Force | Where-Object { !$_.PSIsContainer }) -eq $null } | Remove-Item -Force -Recurse
+
+3:05 PM 1/18/2021
+$Acer   = Import-Csv -Path .\testb.csv
+$SAS    = Import-Csv -Path .\testa.csv
+Compare-Object -ReferenceObject $Acer -DifferenceObject $SAS -Property 'Unique ID' -PassThru -IncludeEqual | Format-Table -AutoSize
+
+2) if you don’t need duplicated values
+$pro1 = import-csv -path ‘D:\test1.csv’
+$pro2 = import-csv -path ‘D:\test2.csv’
+
+compare-object $pro1 $pro2 -property “mention your column header” | export-csv ‘D:\test3.csv’ -notypeinformation
+
+
+‘F:\Data\Scripts\Powershell\CompareAccountLists\
+
+Get-Content -Path $ResultsCSV
+                $Results = [PSCustomObject]@{
+                    ServerName = "$Servername"
+                    FilePath = "$FilePath"
+                    FileSize = "$FileSize"
+                }
+                Write-Log "      File Check $Server $FilePath $FileSize"
+                $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation
+
+1) Remove distribution groups
+2) Disabled Account
+3) Edit Description - add Date of when disabled
+4) Move account to respective Disabled OU
+5) Hide Email in GAL - ECP
+
+
+Add a CNAME record for book and paste the following so it points to: 6423e24e4fb649719b461ec1ba4cdf6e.unbouncepages.com
+52.53.110.86
+
+
+
+wmic /node:10.0.7.100 csproduct get name,identifyingnumber
+wmic /node:10.0.7.100 memorychip get devicelocator,capacity > f:\ri-hvs-901mem.log
+wmic /node:10.0.7.100 logicaldisk get size,freespace,caption
+
+get-ciminstance -computername ri-hvs-901 -classname win32_logicaldisk
+
+ get-ciminstance win32_bios
+
+
+Get-WmiObject win32_computersystem -computername ace-dt-005
+Get-WmiObject win32_computersystem -computername ri-hvs-901
+
+Get-WmiObject win32_computersystem -computername ace-dt-005 | select-object -property Manufacturer,Model,totalphysicalmemory | FL
+Get-WmiObject win32_logicaldisk -computername ace-dt-005 | Select-Object -property deviceid,size,freespace
+Get-WmiObject win32_physicalmemory -computername ace-dt-005 | Select-Object -property capacity,devicelocator
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
