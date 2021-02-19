@@ -13,7 +13,8 @@ function Write-Log
     Add-Content $Logfile -value "$Time $logstring"
 }
 
-$LogLocation = 'D:\Data\Scripts\LOGS\ComputerInfolog.log'
+#$LogLocation = 'D:\Data\Scripts\LOGS\ComputerInfolog.log'
+$LogLocation = 'D:\Data\Scripts\LOGS\ODC-HVS-001Infolog.log'
 $logFile = $LogLocation
 
 $logFileExists = Test-Path -path $logFile
@@ -30,7 +31,8 @@ else
 
 Write-Log "Gathering Computer Information"
 
-$CompCSV = "D:\Data\Scripts\ComputerInfo\ACEWKSList.csv"
+#$CompCSV = "D:\Data\Scripts\ComputerInfo\WKSList.csv"
+$CompCSV = "D:\Data\Scripts\ComputerInfo\ODCHVS.csv"
 $CompList = Import-Csv $CompCSV
 
 foreach ($row in $CompList)

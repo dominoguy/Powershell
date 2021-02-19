@@ -45,7 +45,7 @@ Write-Log "Start Windows Server Backup"
 #Create a Windows Backup Policy
 $WBPolicy = New-WBPolicy
 
-#Add System Sate into the policy
+#Add System State into the policy
 Add-WBSystemState -Policy $WBPolicy
 
 #Add Baremetal Backup
