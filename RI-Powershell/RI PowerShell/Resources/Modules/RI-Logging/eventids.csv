@@ -1,0 +1,24 @@
+source,entryTypeid,eventId,category,description
+RI PowerShell Engine,Information,100,1,Registered the following log sources: `n$sourceListSummary
+RI PowerShell Engine,Information,101,1,RI PowerShell $version started as $currentUser.
+RI PowerShell Meta,Warning,500,1,$Command is deprecated and will be removed in the next major version of RI PowerShell.
+RI PowerShell Meta,Warning,501,1,$Message (Deprecated behavior)
+RI PowerShell Update,Information,700,1,Deployed RI PowerShell to downstream server $serverFQDN.
+RI PowerShell Update,Error,900,1,Unable to deploy RI PowerShell to downstream server $serverFQDN.
+RI PowerShell Shell,Information,1000,1,PowerShell history file at $historyFile has been cleared.
+RI PowerShell Windows Update,Information,1300,1,Windows Update policy settings purged.
+RI PowerShell Windows Update,Information,1301,1,Sent command to remotely install Windows Updates on $computer.
+RI PowerShell Windows Update,Error,1501,1,Could not send command to remotely install Windows Updates on $computer.
+RI PowerShell WSUS,Information,1600,1,Restarted WSUS App Pool.
+RI PowerShell WSUS,Information,1601,1,Optimized WSUS content.
+RI PowerShell WSUS,Information,1602,1,Optimized WSUS database.
+RI PowerShell WSUS,Information,1603,1,$updateListCount WSUS declined updates removed.
+RI PowerShell User Profiles,Information,1900,1,Removed disabled user profile $samAccountName with SID $sid.
+RI PowerShell Virtualization,Information,2200,1,Created new rolling checkpoint $checkpointGUID for virtual machine $VMName.
+RI PowerShell Virtualization,Information,2201,1,Disconnected drive on SCSI 0 $diskLocation from virtual machine $vmName.
+RI PowerShell Virtualization,Information,2202,1,Reconnected drive on SCSI 0 $diskLocation to virtual machine $vmName.
+RI PowerShell Backup,Information,2500,1,Backup drive $diskNumber has been set offline.
+RI PowerShell Backup,Information,2501,1,Backup drive $diskNumber has been set online.
+RI PowerShell Backup,Information,2502,1,Exported backup log to $logFile.
+RI PowerShell Application,Information,2800,1,Uploaded $newestFilePath to StockSync.
+RI PowerShell Application,Warning,2900,1,No new file found at $Path to upload to StockSync.

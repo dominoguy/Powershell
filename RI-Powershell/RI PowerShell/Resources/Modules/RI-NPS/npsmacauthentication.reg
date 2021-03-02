@@ -1,0 +1,14 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\4]
+"RolesSupported"=dword:0000000a
+"FriendlyName"="MD5-Challenge"
+"Path"=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,\
+  00,25,00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,52,00,\
+  61,00,73,00,63,00,68,00,61,00,70,00,2e,00,64,00,6c,00,6c,00,00,00
+"InvokeUsernameDialog"=dword:00000001
+"InvokePasswordDialog"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RemoteAccess\Policy] < exists
+"Allow LM Authentication"=dword:00000000 < default
+"User Identity Attribute"=dword:0000001f

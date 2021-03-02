@@ -30,7 +30,7 @@ Write-Log "Starting VM Snapshot Check"
 
 #Create results file
 $ResultsExists = Test-Path -path $ResultsCSV
-$Headers = '"ServerName","VMName"'
+$Headers = '"VMName","SnapshotName","SnapshotTYpe"'
 if ( $ResultsExists -eq $True)
 {
     Remove-Item $ResultsCSV
@@ -45,31 +45,41 @@ else
 
 Write-Log "A Results File has been created"
 
+#$servername = 'RI-HVS-001'
+
 $ServerList = Import-Csv $ServerCSV
 
-$Username = 'RI\riadmin'
-$Password = 'N0matt3r20'
-
-#$SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
-#$cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $Username, $SecurePassword
-
-$servername = 'RI-HVS-001'
-
-#Connect to Server
-#$Session = New-PSSession -ComputerName $servername -Credential $cred
-#Enter-PSSession -Session $Session
-$vms = Invoke-Command -Computername $servername -ScriptBlock{get-vm | Select-Object -ExpandProperty Name}
-
-#$vms = get-vm
-
-foreach ($vm in $vms)
+foreach ($row in $Serverlist)
 {
-write-log "the $vm.name is $vm.state" 
+    
+    $servername = $row.name
+    Write-log $servername
+    $vms = Invoke-Command -Computername $servername -ScriptBlock{get-vm |select-object -Expandproperty Name}
 
+    foreach ($vm in $vms)
+    {
+        write-log "    $vm"
+        Write-Host $vm
+
+        $Snapshots = Invoke-Command -Computername $servername -ScriptBlock{param($var1) get-vm $var1 | Get-VMSnapshot} -ArgumentList $vm
+        foreach ($item in $Snapshots) 
+        {
+        $VMName =  $item.VMName
+        $SnapshotName = $item.Name
+        $SnapshotTYpe = $item.SnapshotType
+
+        Get-Content -Path $ResultsCSV
+        $Results = [PSCustomObject]@{
+            VMName = "$VMName"
+            SnapshotName = "$SnapshotName"
+            SnapshotTYpe = "$SnapshotTYpe"
+            }
+        $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation
+        }
+
+    }
 }
 
+write-log 'Finished VM Snapshot Check'
 
 
-
-
-Exit-PSSession

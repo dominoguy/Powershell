@@ -1,0 +1,4 @@
+RI PowerShell
+Version 6.2.0
+Channel Release
+Build 2095
