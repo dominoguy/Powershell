@@ -1,0 +1,6 @@
+vmName,maxCheckpoints,diskLocation
+RI-FS-001,3
+RI-HDC-001,3
+RI-TSE-001,3
+RI-SD-001,2
+RI-WIKI-001,2
