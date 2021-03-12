@@ -1,12 +1,9 @@
 #VM-SnapshotList
 
 
-function ConvertToGB
-{
-    Param(
-        [Int]$Size
-    )
-    [Math]::Round($Size/1gb,2)
+function ConvertToGB ($Size)
+    {$a = [Math]::Round($Size/1gb,2)
+    Return $a
 }
 
 
@@ -40,7 +37,7 @@ Write-Log "Starting VM Snapshot Check"
 
 #Create results file
 $ResultsExists = Test-Path -path $ResultsCSV
-$Headers = '"VMName","SnapshotName","SnapshotTYpe"'
+$Headers = '"ServerName","DriveName","FreeSpace","DiskSize","VMName","State","SnapshotName","SnapshotTYpe"'
 if ( $ResultsExists -eq $True)
 {
     Remove-Item $ResultsCSV
@@ -55,8 +52,6 @@ else
 
 Write-Log "A Results File has been created"
 
-#$servername = 'RI-HVS-001'
-
 $ServerList = Import-Csv $ServerCSV
 
 foreach ($row in $Serverlist)
@@ -64,31 +59,48 @@ foreach ($row in $Serverlist)
     
     $servername = $row.name
     Write-log $servername
-    #add line to results for hvs, check drive on c and d, total disk and free space
-    #
-     #Connect to Server
-     $cdisk = Invoke-Command -ComputerName $servername -ScriptBlock{Get-WmiObject win32_LogicalDisk -Filter "DeviceID='C:'" | Select-Object Size,FreeSpace,DeviceID}
-     $cdiskFreeSpace = [Math]::Round($cdisk.FreeSpace/1gb,2)
-     $cdiskSize = [Math]::Round($cdisk.Size/1gb,2)
-     $cdiskName = $cdisk.DeviceID
-     #$cdiskFreeSpace = ConvertToGB $disk.FreeSpace
-     #$cdiskSize - ConvertToGB $disk.Size
- 
-     $Results = [PSCustomObject]@{
-         ServerName = "$Servername"
-         DriveName = "$cdiskName"
-         FreeSpace = "$cdiskFreeSpace"
-         DiskSize = "$cdiskSize"
-     } 
-     $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation -Force
+    
+    #Connect to Server
+    #Get the size and free space on C: and D:
+    $cdisk = Invoke-Command -ComputerName $servername -ScriptBlock{Get-WmiObject win32_LogicalDisk -Filter "DeviceID='C:'" | Select-Object Size,FreeSpace,DeviceID}
+    $cdiskName = $cdisk.DeviceID
+    $cdiskFreeSpace = ConvertToGB $cdisk.FreeSpace
+    $cdiskSize = ConvertToGB $cdisk.Size
 
+    $Results = [PSCustomObject]@{
+        ServerName = "$Servername"
+        DriveName = "$cdiskName"
+        FreeSpace = "$cdiskFreeSpace"
+        DiskSize = "$cdiskSize"
+    } 
+    $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation -Force
+    
+
+    $ddisk = Invoke-Command -ComputerName $servername -ScriptBlock{Get-WmiObject win32_LogicalDisk -Filter "DeviceID='D:'" | Select-Object Size,FreeSpace,DeviceID}
+    $ddiskName = $ddisk.DeviceID
+    $ddiskFreeSpace = ConvertToGB $ddisk.FreeSpace
+    $ddiskSize = ConvertToGB $ddisk.Size
+
+    $Results = [PSCustomObject]@{
+        ServerName = "$Servername"
+        DriveName = "$ddiskName"
+        FreeSpace = "$ddiskFreeSpace"
+        DiskSize = "$ddiskSize"
+    }
+    $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation -Force
 
     $vms = Invoke-Command -Computername $servername -ScriptBlock{get-vm |select-object -Expandproperty Name}
 
     foreach ($vm in $vms)
     {
         write-log "    $vm"
-        Write-Host $vm
+        $State = Invoke-Command -Computername $servername -ScriptBlock{param($var1) get-vm $var1 | select-object -expandproperty State} -ArgumentList $vm
+        Get-Content -Path $ResultsCSV
+        $Results = [PSCustomObject]@{
+            VMname = "$vm"
+            State = $State
+        }
+        $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation -Force
         #add line in results for each vm, vm status, 
         $Snapshots = Invoke-Command -Computername $servername -ScriptBlock{param($var1) get-vm $var1 | Get-VMSnapshot} -ArgumentList $vm
         foreach ($item in $Snapshots) 
@@ -99,11 +111,11 @@ foreach ($row in $Serverlist)
 
         Get-Content -Path $ResultsCSV
         $Results = [PSCustomObject]@{
-            VMName = "$VMName"
+            #VMName = "$VMName"
             SnapshotName = "$SnapshotName"
             SnapshotTYpe = "$SnapshotTYpe"
             }
-        $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation
+        $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation -Force
         }
 
     }

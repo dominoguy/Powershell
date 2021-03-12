@@ -1,1 +1,437 @@
-"VMName","SnapshotName","SnapshotTYpe"
+"ServerName","DriveName","FreeSpace","DiskSize","VMName","State","SnapshotName","SnapshotTYpe"
+"ACAWT-HVS-001","C:","2202.78","2234.4",,,,
+"ACAWT-HVS-001","D:","5314.9","6704.98",,,,
+,,,,"ACAWT-APP-001","Running",,
+,,,,"ACAWT-APP-002","Running",,
+,,,,"ACAWT-APP-003","Running",,
+,,,,"ACAWT-EXCH-001","Off",,
+,,,,"ACAWT-FS-001","Running",,
+,,,,,,"Rolling Checkpoint - 997d45e1-24b1-4f31-8625-f5deedc31f68","Standard"
+,,,,,,"Rolling Checkpoint - f8ca273a-749f-4f53-91ff-3ffbae84b382","Standard"
+,,,,,,"Rolling Checkpoint - 7ee3d58e-ebe4-44d5-8aef-434a4b20d4c2","Standard"
+,,,,"ACAWT-HDC-001","Running",,
+,,,,,,"Rolling Checkpoint - 117a4331-7591-4327-87ef-14d5544976ab","Standard"
+,,,,,,"Rolling Checkpoint - 7d985531-0fa7-455c-b7d6-4f7e4fde08f8","Standard"
+,,,,,,"Rolling Checkpoint - 256c6c34-45ff-4500-8a73-25d96fbdef40","Standard"
+,,,,"ACAWT-SP-002","Off",,
+,,,,,,"ACAWT-SP-002 - (10/30/2020 - 4:53:14 PM) - Sharepoint 2013 Installed","Standard"
+,,,,,,"ACAWT-SP-002 - (10/30/2020 - 7:36:47 PM) Upgraded SQL2008 to 2012 SP4","Standard"
+,,,,"ACAWT-SP-003","Running",,
+,,,,,,"Rolling Checkpoint - 2c026301-7c43-4a93-a95b-5c00f8e6bbf3","Standard"
+,,,,,,"Rolling Checkpoint - c4a842b2-a83b-4275-809d-d4606169facd","Standard"
+,,,,,,"Rolling Checkpoint - 52d69257-6916-4487-bcbd-e3c304d451e6","Standard"
+,,,,"ACAWT-TSE-001","Off",,
+,,,,,,"Rolling Checkpoint - cc3b65e1-c23c-41a1-9c2d-f35aa840b8ab","Standard"
+,,,,,,"Rolling Checkpoint - f2a38400-9f3c-419e-a828-e92fd3c912d7","Standard"
+,,,,,,"Rolling Checkpoint - ba42033b-aae7-4685-9b8d-43a0b13b1963","Standard"
+"ACAWT-HVS-002","C:","205.03","222.4",,,,
+"ACAWT-HVS-002","D:","7526.14","11176.5",,,,
+,,,,"ACAWT-APP-004","Running",,
+,,,,"ACAWT-APP-005","Running",,
+"ACE-HVS-001","C:","760.43","930.48",,,,
+"ACE-HVS-001","D:","412.44","3724.87",,,,
+,,,,"ACE-FS-001","Off",,
+,,,,"ACE-HDC-001","Off",,
+,,,,"ACE-RDS-001","Off",,
+,,,,"ACE-SRV-001","Running",,
+"ACE-HVS-002","C:","902.46","1116.7",,,,
+"ACE-HVS-002","D:","4354.05","6704.87",,,,
+,,,,"ACE-FS-001","Running",,
+,,,,,,"Rolling Checkpoint - 75351d5a-f8be-4c7b-90fa-2c535a32fccf","Standard"
+,,,,,,"Rolling Checkpoint - 3cac644e-b613-47ee-8d2d-4dac9809fc58","Standard"
+,,,,,,"Rolling Checkpoint - 40e7e890-b63d-4290-8a37-b3d08e9a2c7b","Standard"
+,,,,"ACE-HDC-001","Running",,
+,,,,,,"Rolling Checkpoint - 4b07287d-cbe4-47a9-b78e-69a90ea79e28","Standard"
+,,,,,,"Rolling Checkpoint - 99d04966-e78d-413f-bdb3-856edac7cedd","Standard"
+,,,,,,"Rolling Checkpoint - c6b63c30-7b14-4b00-be7e-4acca9cd01c2","Standard"
+,,,,"ACE-RDS-001","Running",,
+,,,,,,"Rolling Checkpoint - 95b6095e-e4ba-4d65-a231-e560b8c2c50e","Standard"
+,,,,,,"Rolling Checkpoint - 4168162e-9e80-464b-bcca-4152f4f4266d","Standard"
+,,,,,,"Rolling Checkpoint - 60d853be-c8a4-4946-ac3e-f26c37da146d","Standard"
+,,,,"ACE-SRV-001","Off",,
+"ACP-HVS-001","C:","124.3","135.78",,,,
+"ACP-HVS-001","D:","1705.62","2048",,,,
+"ACP-HVS-002","C:","2199.95","2234.4",,,,
+"ACP-HVS-002","D:","5700.02","6704.98",,,,
+,,,,"ACP-APP-002","Running",,
+,,,,,,"Rolling Checkpoint - 5ea575c3-5357-49ac-bc13-343ae818a912","Standard"
+,,,,,,"Rolling Checkpoint - 9382b358-892a-43f2-8133-71a6e98d7f5c","Standard"
+,,,,,,"Rolling Checkpoint - 3d1ee7e3-ec3c-4e6c-944d-1b3816df2e95","Standard"
+,,,,"ACP-EXCH-002","Running",,
+,,,,"ACP-FS-001","Running",,
+,,,,"ACP-HDC-003","Running",,
+,,,,,,"Rolling Checkpoint - 3d875f36-6689-41df-968a-adf564f0925a","Standard"
+,,,,,,"Rolling Checkpoint - f745d00d-dcbb-4a45-b4e1-c86a2d14c73e","Standard"
+,,,,,,"Rolling Checkpoint - 77acdd86-47ce-47f8-802f-d937dd90b8d4","Standard"
+"ARCC-HVS-003","C:","52.15","67.41",,,,
+"ARCC-HVS-003","D:","507.7","1862.5",,,,
+,,,,"ACAW-SRV-001","Running",,
+,,,,"ACU-HDC-001","Running",,
+,,,,,,"Rolling Checkpoint - 31d9bbad-db43-423e-9e3a-b8524ad4a08d","Standard"
+,,,,,,"Rolling Checkpoint - 9d9d3690-2b7b-4947-8e6d-3412ff32d00e","Standard"
+,,,,,,"Rolling Checkpoint - c206b13e-dee7-415f-b3e9-4547a2b90ae7","Standard"
+,,,,"ARCC-FS-001","Off",,
+,,,,"MW-HDC-001","Running",,
+,,,,,,"Rolling Checkpoint - ea0db26d-0297-42e1-b6a2-d19dcba3c244","Standard"
+,,,,,,"Rolling Checkpoint - 0b010d34-527a-4401-9480-4a332a46d9f6","Standard"
+,,,,,,"Rolling Checkpoint - 3b202958-3df8-4cf0-aee3-7853cb4bab26","Standard"
+"ARCC-HVS-004","C:","58.23","67.41",,,,
+"ARCC-HVS-004","D:","65.98","1862.5",,,,
+,,,,"ACAWT-HDC-001","Off",,
+,,,,"ACAWT-SP-001","Off",,
+,,,,,,"ACAWT-SP-001 - (2020-05-22 - 3:30:15 PM)","Standard"
+,,,,,,"Rolling Checkpoint - 1ae875b6-54ff-47f4-aed2-aa0334cf23d1","Standard"
+,,,,,,"Rolling Checkpoint - 50ffde6e-eb35-4adb-8dd9-0bc50e334fd4","Standard"
+,,,,,,"Rolling Checkpoint - ed7d9bdc-b63d-4bc0-89a5-dc05221e0011","Standard"
+,,,,,,"ACAWT-SP-001 - (2020-05-22 - 3:28:29 PM)","Standard"
+,,,,"ACAWT-SP-001New","Running",,
+,,,,,,"ACAWT-SP-001 - (9/10/2020 - 11:37:40 AM)","Standard"
+,,,,"ACAWT-SP-002","Off",,
+,,,,,,"ACAWT-SP-002 - (2020-09-29 - 4:34:21 PM)-BeforeSharepoint2013Install","Standard"
+,,,,"ACAWT-SP-2003","Running",,
+,,,,,,"After-WSS3.0InstallAndConfiguration","Standard"
+,,,,,,"ACAWT-SP-2003 - (2020-09-28 - 9:25:18 PM)-BeforeWSS3.0Install","Standard"
+,,,,"ACU-HDC-001","Off",,
+,,,,"ARCC-EXCH-001","Off",,
+,,,,"ARCC-HDC-003","Off",,
+,,,,"MW-HDC-001","Off",,
+"ARCC-HVS-006","C:","86.51","135.78",,,,
+"ARCC-HVS-006","D:","760.91","2233.37",,,,
+,,,,"ACAW-DEV-001A","Running",,
+,,,,,,"Rolling Checkpoint - d8d19abe-6019-4ada-b86b-9b9899f0cfb9","Standard"
+,,,,,,"Rolling Checkpoint - 56e4ff7b-33e9-479c-a4c3-9209da9b4cf3","Standard"
+,,,,,,"Rolling Checkpoint - b1a72699-c5df-4e40-99c4-c413fcbd1abf","Standard"
+,,,,"ACAWT-VM-002","Off",,
+,,,,"ACTC-FS-001","Running",,
+,,,,"ACTC-HDC-001","Running",,
+,,,,"ACTC-NEW-001","Off",,
+,,,,"ACTC-SRV-001","Running",,
+,,,,,,"Rolling Checkpoint - 256f2572-3d74-4be3-87ae-65e717908d8e","Standard"
+,,,,,,"Rolling Checkpoint - 09abc239-0539-48b9-a961-ad20368c1b80","Standard"
+,,,,,,"Rolling Checkpoint - eed385fd-d5d7-40c7-be90-909789949555","Standard"
+,,,,"ACTC-TSE-001","Running",,
+,,,,"ARCC-APP-001-X","Running",,
+,,,,,,"Rolling Checkpoint - 55ea1b5f-e16c-45c8-9141-09ac4d7d104e","Standard"
+,,,,,,"Rolling Checkpoint - b48a334f-ab72-4060-82b7-feea79c2c651","Standard"
+,,,,"ARCC-HDC-004","Running",,
+,,,,,,"Rolling Checkpoint - f05772cb-d256-4caa-8423-fb202f4facbf","Standard"
+,,,,,,"Rolling Checkpoint - d8fbfd10-d476-4fbc-aee9-360c5be46c50","Standard"
+,,,,,,"Rolling Checkpoint - 49c0486e-889b-42e3-82f2-12b5744e28bb","Standard"
+,,,,"ARCC-SQL-001-X","Running",,
+,,,,"DS292","Off",,
+"ARCC-HVS-007","C:","1091.1","1116.7",,,,
+"ARCC-HVS-007","D:","760.58","6704.87",,,,
+,,,,"ACAWT-SP-001","Off",,
+,,,,,,"ACAWT-SP-001 - (9/10/2020 - 11:37:40 AM)","Standard"
+,,,,"ARCC-EXCH-001-X","Running",,
+,,,,"ARCC-FS-002","Running",,
+,,,,,,"Rolling Checkpoint - 5e20be59-0664-4b70-ab80-1a92827d7aaf","Standard"
+,,,,,,"Rolling Checkpoint - 8ed39486-a312-4d52-b1e9-b37a39689934","Standard"
+,,,,"ARCC-TSE-003","Running",,
+,,,,,,"Rolling Checkpoint - 78c7fa51-bd0d-4522-b7c7-167351985519","Standard"
+,,,,,,"Rolling Checkpoint - ce4314cb-ee18-4728-83f4-c4ccc562e37b","Standard"
+,,,,"ARCC-TSE-004","Running",,
+,,,,,,"Rolling Checkpoint - 90728117-69ba-4dee-baaf-1a491b848571","Standard"
+,,,,,,"Rolling Checkpoint - 1944f0ca-223a-4f01-9074-7e493fe3c809","Standard"
+"BLUS-HVS-001","C:","92.77","278.53",,,,
+"BLUS-HVS-001","D:","1821.03","3724.87",,,,
+,,,,"BLUS-RDS-001","Running",,
+,,,,"BLUS-SQL-002","Off",,
+,,,,"BLUS-SRV-001","Running",,
+,,,,,,"Rolling Checkpoint - 1ff2a089-5a0e-4f56-9438-d1ef7a0349d8","Standard"
+,,,,,,"Rolling Checkpoint - 19ab047a-2064-4ebe-86f0-575e5eea5bb2","Standard"
+,,,,,,"Rolling Checkpoint - dd56526a-fdc3-4c05-bb84-67573ced087d","Standard"
+,,,,"DEMOPOS","Running",,
+"BLUS-HVS-002","C:","240.51","278.53",,,,
+"BLUS-HVS-002","D:","753.1","1861.87",,,,
+,,,,"BLUS-APP-001","Running",,
+,,,,"BLUS-SP-001","Off",,
+,,,,"BLUS-SPT-001","Off",,
+,,,,"BLUS-SQL-001","Running",,
+,,,,"BLUS-SQL-002","Running",,
+"BRIO-HVS-001","C:","86.05","99.48",,,,
+"BRIO-HVS-001","D:","235.45","736.56",,,,
+,,,,"BRIO-MEM-001","Off",,
+,,,,"BRIO-SRV-001","Off",,
+"BRIO-HVS-002","C:","1105.22","1116.65",,,,
+"BRIO-HVS-002","D:","1413.86","2234.48",,,,
+,,,,"BRIO-APP-001","Running",,
+,,,,"BRIO-MEM-001","Running",,
+,,,,,,"Rolling Checkpoint - b28a3508-3c32-439f-b5b7-5d1d3f149593","Standard"
+,,,,,,"Rolling Checkpoint - 8de640e3-49c9-452d-9b98-03f681fb70bc","Standard"
+,,,,,,"Rolling Checkpoint - e9320f36-e2db-499b-96d6-9d4836e2df0e","Standard"
+,,,,"BRIO-SRV-001","Running",,
+,,,,,,"Rolling Checkpoint - 7531a582-9db9-402e-bf72-9e0cdf0cb396","Standard"
+,,,,,,"Rolling Checkpoint - 91f8981b-a001-4279-a4b8-1a9ee38653b1","Standard"
+,,,,,,"Rolling Checkpoint - c2b5626f-4da0-4dfa-a50f-e4d7808e0714","Standard"
+"ENHC-HVS-001","C:","438","464.91",,,,
+"ENHC-HVS-001","D:","624.65","930.37",,,,
+,,,,"ENHC-FS-001","Running",,
+,,,,"ENHC-HDC-001","Running",,
+,,,,,,"ENHC-HDC-001 - (1/21/2021 - 3:41:06 PM)","Standard"
+,,,,"ENHC-SRV-001","Running",,
+,,,,,,"Rolling Checkpoint - dda2296e-6225-4cf5-b99f-0243075b8c9c","Standard"
+,,,,,,"Rolling Checkpoint - 61961a69-83bd-43bb-9aee-e3cc345eb92f","Standard"
+,,,,"ENHC-TSE-001","Running",,
+"GDA-HVS-001","C:","124.46","135.78",,,,
+"GDA-HVS-001","D:","187.18","1116.75",,,,
+,,,,"GDA-FS-001","Running",,
+,,,,,,"Rolling Checkpoint - 0952e697-41c9-4605-8699-dd7a9a80b11e","Standard"
+,,,,,,"Rolling Checkpoint - 2bb662c3-0ba5-4876-911f-244a8932e998","Standard"
+,,,,"GDA-HDC-001","Running",,
+,,,,,,"Rolling Checkpoint - 41d34b31-140e-4c04-a27a-765a6503de31","Standard"
+,,,,,,"Rolling Checkpoint - 4d92798d-0a1d-473e-aca9-d8ab0abd5442","Standard"
+,,,,"GDA-RDS-001","Running",,
+,,,,,,"Rolling Checkpoint - 94799db2-5432-437f-889d-8d09eea65d6e","Standard"
+,,,,,,"Rolling Checkpoint - 6f69de56-69a0-4823-9558-4aaac235b874","Standard"
+,,,,"GDA-WKS-001","Running",,
+,,,,"GDA-WKS-002","Running",,
+,,,,"GDA-WKS-003","Running",,
+"HSFG-HVS-002","C:","91.54","135.78",,,,
+"HSFG-HVS-002","D:","665.45","2048",,,,
+,,,,"HSFG-APP-001","Running",,
+,,,,"HSFG-FS-001","Running",,
+,,,,,,"Rolling Checkpoint - fc929f70-72ec-421e-a90b-87ea5e4407c6","Standard"
+,,,,,,"Rolling Checkpoint - 5d0caeb9-afe9-45eb-aa68-cf8885544056","Standard"
+,,,,,,"Rolling Checkpoint - 86663bcb-4b0b-4768-ac57-bc316584f27a","Standard"
+,,,,"HSFG-HDC-001","Running",,
+,,,,"HSFG-SQL-002","Running",,
+,,,,"HSFG-TSE-001","Running",,
+,,,,"HSFG-TSE-003","Running",,
+,,,,"HSFG-TSETST-001","Running",,
+,,,,"HSFG-TSP-001","Running",,
+,,,,"POS00503","Running",,
+,,,,"POS00601","Running",,
+"NAIL-HVS-001","C:","1660.21","1861.95",,,,
+"NAIL-HVS-001","D:","2800.64","3724.87",,,,
+,,,,"NAIL-FS-001","Running",,
+,,,,,,"Rolling Checkpoint - 41492a4e-0103-4f0e-8484-3de4ed9ceac0","Standard"
+,,,,,,"Rolling Checkpoint - 77dfb502-a227-42a2-9cc9-b1a5b47361ea","Standard"
+,,,,,,"Rolling Checkpoint - f194d29c-be41-415d-b237-a1dbf5718296","Standard"
+,,,,"NAIL-HDC-001","Running",,
+,,,,,,"Rolling Checkpoint - db4c4c09-18bc-46ab-947a-26461a533400","Standard"
+,,,,,,"Rolling Checkpoint - 876a08ed-ec3b-44b5-bba8-9f8e9d5355ae","Standard"
+,,,,,,"Rolling Checkpoint - 5cee4c2b-5db6-4191-9c4a-52f6bcbff160","Standard"
+"ODC-HVS-002","C:","268.16","278.32",,,,
+"ODC-HVS-002","D:","978.76","1116.62",,,,
+,,,,"ODC-APP-001","Running",,
+,,,,,,"Rolling Checkpoint - 1baa534e-e9e5-4c42-b870-4d71cc6b34cc","Standard"
+,,,,,,"Rolling Checkpoint - 5a282b99-a837-4843-8ff9-6939657537e8","Standard"
+,,,,,,"Rolling Checkpoint - 10bc8bea-edbb-4d44-9fc1-da55eda38400","Standard"
+"ODC-HVS-005","C:","889.03","1116.7",,,,
+"ODC-HVS-005","D:","1009.53","6704.87",,,,
+,,,,"ODC-FS-001","Running",,
+,,,,,,"ODC-FS-001 - BeforeChangesMade(2/28/2021 - 9:16:23 AM)","Standard"
+,,,,"ODC-HDC-001","Running",,
+,,,,"ODC-SQL-002","Running",,
+,,,,,,"Rolling Checkpoint - b5a53c8b-84fd-4bdd-837d-2dacced727ea","Standard"
+,,,,,,"Rolling Checkpoint - 7f541b08-fa98-4dea-8f73-de81cc5ccd83","Standard"
+,,,,"ODC-SRV-001","Running",,
+,,,,,,"ODC-SRV-001 - (3/11/2021 - 8:52:22 AM)","Standard"
+,,,,,,"ODC-SRV-001 - (3/12/2021 - 9:07:23 AM)","Standard"
+,,,,"ODC-TSE-001","Running",,
+,,,,,,"ODC-TSE-001 - BeforeSoftwareInstall(2/28/2021 - 9:16:01 AM)","Standard"
+"PAL-HVS-001","C:","119.48","135.78",,,,
+"PAL-HVS-001","D:","722.02","2048",,,,
+,,,,"PAL-APP-001","Running",,
+,,,,,,"Rolling Checkpoint - 2340e738-34c8-4e34-b753-a8b76d766dfe","Standard"
+,,,,,,"Rolling Checkpoint - 4614d7ca-637e-426c-afcf-c192f49b4a5d","Standard"
+,,,,,,"Rolling Checkpoint - a6b7adcb-11dc-4faa-a018-f2a1364ed499","Standard"
+,,,,"PAL-FS-001","Running",,
+,,,,,,"Rolling Checkpoint - 2709905c-747b-461f-a3fb-6414627e5c5e","Standard"
+,,,,,,"Rolling Checkpoint - 3c8eae6a-b278-4bef-90e4-b8991cd4960a","Standard"
+,,,,,,"Rolling Checkpoint - e8706045-6ded-44cc-900e-2e5bc22578c6","Standard"
+,,,,"PAL-HDC-001","Running",,
+,,,,,,"Rolling Checkpoint - 07863e05-5cc7-4872-bb15-05dd3209d89d","Standard"
+,,,,,,"Rolling Checkpoint - 25f176ba-2101-461f-8206-eacd5e6f1edb","Standard"
+,,,,,,"Rolling Checkpoint - 9e0adc94-7536-46e0-beb9-51fbd48f8c79","Standard"
+,,,,"PAL-RDS-001","Running",,
+,,,,,,"Rolling Checkpoint - 4629028f-0665-4ac6-91e2-9846ada98a05","Standard"
+,,,,,,"Rolling Checkpoint - c0504274-9a06-4731-b7e4-8d3785969a5c","Standard"
+,,,,,,"Rolling Checkpoint - 57f5bddd-db3a-4244-9b7e-c30be0b6e90e","Standard"
+,,,,"PAL-VM-001","Off",,
+"PTA-HVS-001","C:","2203.11","2234.4",,,,
+"PTA-HVS-001","D:","5358.08","6704.98",,,,
+,,,,"PTA-APP-002","Running",,
+,,,,,,"PTA-APP-002 - Current Docuware Production Version(10/22/2020 - 5:05:01 PM)","Standard"
+,,,,,,"Rolling Checkpoint - 64242c33-b41f-439a-818b-37583ebe5944","Standard"
+,,,,,,"Rolling Checkpoint - 08883b5d-47eb-433c-ad0e-e5f7c9ca82df","Standard"
+,,,,,,"Rolling Checkpoint - e253f47b-748b-4cf5-9081-cea25baf99cd","Standard"
+,,,,,,"PTA-APP-002 - Before Oct Rollback (3/12/2021 - 7:45:13 AM)","Standard"
+,,,,"PTA-FS-001","Running",,
+,,,,,,"Rolling Checkpoint - aa34cb46-8ead-4a1e-95e0-62b8f2f41d14","Standard"
+,,,,,,"Rolling Checkpoint - 9a3ec665-2afb-4dc3-9e79-2c2fe2afd600","Standard"
+,,,,,,"Rolling Checkpoint - 62bd015a-83af-47a9-9baa-e007286b3a2e","Standard"
+,,,,"PTA-HDC-001","Running",,
+,,,,,,"Rolling Checkpoint - 160eae01-9e91-40f0-a60f-78ab234545d3","Standard"
+,,,,,,"Rolling Checkpoint - 9dfb3338-a293-43e7-8c97-db74f16371d8","Standard"
+,,,,"PTA-TSE-001","Running",,
+,,,,,,"PTA-TSE-001 - Current Docuware Production Version (10/22/2020 - 5:01:49 PM)","Standard"
+,,,,,,"Rolling Checkpoint - 37c8ead5-3296-4c5a-b8b0-f9a1f83ecafe","Standard"
+,,,,,,"Rolling Checkpoint - 11f97d24-81a7-47c3-8ad0-177367f6813a","Standard"
+,,,,,,"Rolling Checkpoint - 1b641c8a-4920-4dc5-9b82-80ee5ec9c402","Standard"
+"RI-HVS-001","C:","249.54","278.53",,,,
+"RI-HVS-001","D:","389.39","3908.5",,,,
+,,,,"ACAW-HDC-002","Running",,
+,,,,"ACTC-HDC-002","Running",,
+,,,,"ACU-HDC-002","Running",,
+,,,,"ARCC-HDC-002","Running",,
+,,,,"EN-BACKUP-116","Running",,
+,,,,"IT-ASSISTANT","Off",,
+,,,,"MW-HDC-002","Running",,
+,,,,"RI-APS-001","Running",,
+,,,,"RI-BACKUP-010","Off",,
+,,,,"RI-DEV-001","Running",,
+,,,,"RI-EXCH-001","Off",,
+,,,,"RI-EXCH-002","Running",,
+,,,,"RI-FS-001","Running",,
+,,,,,,"Rolling Checkpoint - 197220de-8a57-4e71-9cc4-f519dd9e5bf5","Standard"
+,,,,,,"Rolling Checkpoint - a81d4851-d563-4db2-926b-be9d2e5daa42","Standard"
+,,,,,,"Rolling Checkpoint - 256e78ee-5abe-43a6-94a1-61c8b130175f","Standard"
+,,,,"RI-FTP-001","Off",,
+,,,,"RI-HDC-001","Running",,
+,,,,,,"Rolling Checkpoint - ff39d9d1-1322-4dd4-9eb0-e1569b222527","Standard"
+,,,,,,"Rolling Checkpoint - 00de6e5b-a5ef-47ea-9a02-d4d8fea74d87","Standard"
+,,,,,,"Rolling Checkpoint - 41dea98b-b52f-4677-bf95-d4cd066e5edf","Standard"
+,,,,"RI-HM-001","Off",,
+,,,,"RI-HOSTMON-001","Off",,
+,,,,"RI-MDT-003","Running",,
+,,,,"RI-MDT-004","Off",,
+,,,,"RI-PIH-001","Running",,
+,,,,"RI-RDG-001","Running",,
+,,,,"RI-SD-001","Running",,
+,,,,,,"Rolling Checkpoint - 224c45e2-dcc8-4d6a-aa74-a984f00d6457","Standard"
+,,,,,,"Rolling Checkpoint - 3b3fa230-3116-4e13-be6c-83a166649a18","Standard"
+,,,,"RI-SEPM-001","Off",,
+,,,,"RI-SQL-001","Off",,
+,,,,"RI-TSE-001","Running",,
+,,,,,,"Rolling Checkpoint - 853093c5-6733-4d3f-871e-ab0e582fabc5","Standard"
+,,,,,,"Rolling Checkpoint - d060384b-1a0f-44ac-ba0d-66c47106061a","Standard"
+,,,,,,"Rolling Checkpoint - c3aa8798-87a7-4d31-89ef-6fe0a4b6b153","Standard"
+,,,,"RI-WIKI-001","Running",,
+,,,,,,"Rolling Checkpoint - 2cb65ba9-a4ec-4c11-ac09-93f849ec102f","Standard"
+,,,,,,"Rolling Checkpoint - d7d1b8a7-3b0d-4d54-9d72-9e5f858b745a","Standard"
+,,,,"RI-WSUS-002","Running",,
+"RMC-HVS-001","C:","104.36","278.53",,,,
+"RMC-HVS-001","D:","972.71","4468.87",,,,
+,,,,"RMC-APP-001","Off",,
+,,,,"RMC-FS-001","Running",,
+,,,,,,"Rolling Checkpoint - 65b4e86e-7e0f-4ec5-9f1c-5d5251996c80","Standard"
+,,,,,,"Rolling Checkpoint - d63b22d0-3f73-477b-a56a-0e82db55a7d7","Standard"
+,,,,,,"Rolling Checkpoint - 21b5962c-4da5-4280-8c86-6465049d72aa","Standard"
+,,,,"RMC-HDC-001","Running",,
+,,,,,,"Rolling Checkpoint - 1a2cbd32-6971-433f-a1b3-43281c5ffd98","Standard"
+,,,,,,"Rolling Checkpoint - 1c6101d5-e46b-46f6-a968-a99621cfda2e","Standard"
+,,,,,,"Rolling Checkpoint - 613820a5-a37c-4d5a-8061-a67486f58c69","Standard"
+,,,,"RMC-Test-001","Running",,
+,,,,"RMC-VM-001","Off",,
+"SHEP-HVS-001","C:","720.81","930.48",,,,
+"SHEP-HVS-001","D:","3746.92","7449.87",,,,
+,,,,"SHEP-APP-015","Off",,
+,,,,,,"Rolling Checkpoint - 09494134-86cc-4fab-86db-86e68f96a94d","Standard"
+,,,,,,"Rolling Checkpoint - 2f82e900-380a-4e00-a610-b170ecda2cef","Standard"
+,,,,,,"Rolling Checkpoint - bcb0d8ea-f85a-4d83-8b92-46c04e7e8adf","Standard"
+,,,,,,"Rolling Checkpoint - 806b1ed5-1dc5-4215-b50a-192e3e164287","Standard"
+,,,,"SHEP-APP-016","Off",,
+,,,,,,"Rolling Checkpoint - 396db230-c456-4de0-8ca9-0d45e2d77449","Standard"
+,,,,,,"Rolling Checkpoint - 2d105aad-6c6e-4016-94e2-541922d8bb33","Standard"
+,,,,,,"Rolling Checkpoint - b3b3e8cb-8b8b-4c8c-afae-115c66a6738d","Standard"
+,,,,,,"Rolling Checkpoint - f08e716f-9f09-4da3-af2e-b438a55183a9","Standard"
+,,,,"SHEP-EXCH-002","Off",,
+,,,,"SHEP-FS-001","Off",,
+,,,,,,"Rolling Checkpoint - 1060b07b-d1ec-4363-a591-2a1fd36899c9","Standard"
+,,,,,,"Rolling Checkpoint - db4ecbc2-4974-4b4e-92fa-9f8554f3b80f","Standard"
+,,,,,,"Rolling Checkpoint - 25101b1a-0da1-405f-8eea-faf1d5fc1dea","Standard"
+,,,,,,"Rolling Checkpoint - 048a371e-b4bf-425e-b452-114fa6669828","Standard"
+,,,,"SHEP-TSE-003","Off",,
+,,,,,,"Rolling Checkpoint - f69cdf65-ab13-4ff5-8e67-a86aed882b5d","Standard"
+,,,,,,"Rolling Checkpoint - 2362342d-a851-4656-a5a9-d2029a877863","Standard"
+,,,,,,"Rolling Checkpoint - b5ad1e13-7e3f-4114-b8ad-1fa2fa6ed17e","Standard"
+,,,,,,"Rolling Checkpoint - 56e04108-3968-4fc8-a281-82d87e2195f7","Standard"
+"SHEP-HVS-003","C:","122.23","135.78",,,,
+"SHEP-HVS-003","D:","1067.67","1116.62",,,,
+"SHEP-HVS-005","C:","526.86","931.14",,,,
+"SHEP-HVS-005","D:","1498.09","5588.85",,,,
+"SHEP-HVS-007","C:","883.79","1116.7",,,,
+"SHEP-HVS-007","D:","1274.87","6704.87",,,,
+,,,,"SHEP-APP-012","Running",,
+,,,,"SHEP-APP-013","Running",,
+,,,,,,"Rolling Checkpoint - d53f82dd-c5fa-4e5b-94cf-b00aacd5934e","Standard"
+,,,,,,"Rolling Checkpoint - 7a2ac165-a7a8-4b71-aa8d-a7a35ac59909","Standard"
+,,,,,,"Rolling Checkpoint - 4504fd6a-d695-4b36-afba-b7af4819c429","Standard"
+,,,,"SHEP-APP-017","Running",,
+,,,,"SHEP-EXCH-001","Running",,
+,,,,,,"SHEP-EXCH-001 - (3/11/2021 - 8:44:28 AM)","Standard"
+,,,,,,"SHEP-EXCH-001 - (3/12/2021 - 8:30:32 AM)","Standard"
+,,,,"SHEP-HDC-001","Off",,
+,,,,,,"Rolling Checkpoint - 3bf74259-dd79-41e6-bb95-53cccee72cf4","Standard"
+,,,,,,"Rolling Checkpoint - e7ca3ffc-1d3d-4d8c-8ca9-7795c341c0cb","Standard"
+,,,,"SHEP-MEM-001","Running",,
+,,,,,,"Rolling Checkpoint - 27ead779-aa2d-4ec4-a363-7d38398762cc","Standard"
+,,,,,,"Rolling Checkpoint - 890cf75f-b036-493a-a9a0-8a2d0af9c6d1","Standard"
+,,,,,,"Rolling Checkpoint - 3e23618b-510c-4e9a-b67d-ad1826d3dd84","Standard"
+,,,,"SHEP-RDG-001","Off",,
+,,,,"SHEP-SP-001","Running",,
+,,,,,,"Rolling Checkpoint - 972bd7ea-767a-4a8d-985b-40864fcd5bc5","Standard"
+,,,,,,"Rolling Checkpoint - 6fc4fafa-f282-43f5-93d1-ff7b870dad95","Standard"
+,,,,"SHEP-THDC-003","Off",,
+,,,,"SHEP-TSE-004","Running",,
+,,,,,,"Rolling Checkpoint - 6901ae41-f267-4b7f-8114-c2fde530b10b","Standard"
+,,,,,,"Rolling Checkpoint - 4b635ff3-d717-489b-b449-634521d831d3","Standard"
+,,,,,,"Rolling Checkpoint - a6b26ea9-847c-4b38-b7ef-1317374eac91","Standard"
+,,,,"SHEP-TSE-005","Off",,
+,,,,"SHEP-TSE-006","Running",,
+"SHEP-HVS-006","C:","875.58","1116.7",,,,
+"SHEP-HVS-006","D:","2937.68","6704.87",,,,
+,,,,"SHEP-APP-015","Running",,
+,,,,,,"Rolling Checkpoint - 69653414-aae1-44f1-b772-0d21be4ad7d5","Standard"
+,,,,,,"Rolling Checkpoint - b5c31779-eb4a-4441-80c2-bfee86d6bddb","Standard"
+,,,,"SHEP-APP-016","Running",,
+,,,,,,"Rolling Checkpoint - 58ec23fc-d975-4533-a7f5-b21256454faa","Standard"
+,,,,,,"Rolling Checkpoint - 3596972f-17b6-40ae-a2b4-19714c5a3b8f","Standard"
+,,,,"SHEP-FS-001","Running",,
+,,,,,,"Rolling Checkpoint - 1a2c2cdc-a949-4c5c-9040-8ed0a445b6b8","Standard"
+,,,,,,"Rolling Checkpoint - 6ac8d880-fcbe-421d-b7d2-1813a635bef5","Standard"
+,,,,"SHEP-HDC-001","Running",,
+,,,,,,"Rolling Checkpoint - 551e3ff7-1345-4548-a0f3-f7dce1f2aa2d","Standard"
+,,,,,,"Rolling Checkpoint - 2c0527a9-37a9-4135-b809-a237cf27ff4b","Standard"
+,,,,,,"Rolling Checkpoint - e83b1a7e-bb98-46ce-830f-1ca0265fc2dd","Standard"
+,,,,"SHEP-RDG-001","Running",,
+,,,,,,"Rolling Checkpoint - 4c801bef-006b-4ac0-8091-f10a9666dde9","Standard"
+,,,,,,"Rolling Checkpoint - 15d3183a-93bb-44e5-ad9d-cf77697cfdd5","Standard"
+,,,,"SHEP-TSE-003","Running",,
+,,,,,,"Rolling Checkpoint - 72fcfd74-2dc2-44c2-83a9-8454ebf10491","Standard"
+,,,,"SHEP-TSE-005","Running",,
+,,,,,,"Rolling Checkpoint - d3b72f5e-aaab-4502-b4e5-adb3258e62b9","Standard"
+,,,,,,"Rolling Checkpoint - 4e967bb0-6fc1-4251-bb22-42234c03973f","Standard"
+"SHEP-HVS-008","C:","454.75","464.7",,,,
+"SHEP-HVS-008","D:","709.54","930.37",,,,
+,,,,"SHEP-APP-001","Running",,
+,,,,,,"Rolling Checkpoint - 01dbacec-026a-4b60-8954-856a3baad608","Standard"
+,,,,,,"Rolling Checkpoint - 42d3d4b0-de98-4c8c-9ed2-07c58ca7aec8","Standard"
+,,,,,,"Rolling Checkpoint - 7bf75df1-5bba-4101-a04c-7f1a8c160f05","Standard"
+,,,,,,"Rolling Checkpoint - 2d8ed068-223e-49c8-bbce-e6a1989cf2a5","Standard"
+,,,,"SHEP-HDC-004","Running",,
+,,,,,,"Rolling Checkpoint - 0fa32399-7829-4bd8-85d5-1b9c841aa02a","Standard"
+,,,,,,"Rolling Checkpoint - 79ced02a-a56d-423d-bf35-e7a83989d4c4","Standard"
+,,,,,,"Rolling Checkpoint - 32040406-a938-4053-b8b9-96a0279e65dd","Standard"
+"TOO-HVS-001","C:","112.72","135.78",,,,
+"TOO-HVS-001","D:","263.98","1116.69",,,,
+,,,,"TOO-APP-001","Off",,
+,,,,"TOO-APP-002","Off",,
+,,,,"TOO-SRV-002","Running",,
+,,,,,,"Rolling Checkpoint - 70f52a66-916d-44ce-8c4b-fc594b27711f","Standard"
+,,,,"TOO-TEMP","Off",,
+,,,,"TOO-TSE-001","Running",,
+,,,,,,"Rolling Checkpoint - e14406d5-cbb1-4381-92eb-ee6d9afde6fe","Standard"
+"WPC-HVS-001","C:","729.64","930.45",,,,
+"WPC-HVS-001","D:","756.09","1861.87",,,,
+,,,,"WPC-FS-001","Running",,
+,,,,,,"Rolling Checkpoint - e46303d5-a9be-4604-a774-ab48527c7095","Standard"
+,,,,,,"Rolling Checkpoint - c5bf392e-c23f-4e9d-a08e-fc5bb8f695f6","Standard"
+,,,,,,"Rolling Checkpoint - e3a9db1a-0d2d-455d-aaad-0d2100e3dcc1","Standard"
+,,,,"WPC-HDC-001","Running",,
+,,,,,,"Rolling Checkpoint - d715837a-42d8-4c59-baaf-dd64ba477e3e","Standard"
+,,,,,,"Rolling Checkpoint - 12403bbd-7706-40c2-bec4-88709211911a","Standard"
+,,,,,,"Rolling Checkpoint - c49b91ca-be22-4ff6-a388-f1e1ac5c647e","Standard"
+,,,,"WPC-SRV-001","Running",,

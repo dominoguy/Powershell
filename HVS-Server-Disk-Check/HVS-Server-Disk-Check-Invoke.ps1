@@ -1,12 +1,10 @@
 #HVS-Server-Disk-Check
 
-function ConvertToGB
-{
-    Param(
-        [Int]$Size
-    )
-    [Math]::Round($Size/1gb,2)
+function ConvertToGB ($Size)
+    {$a = [Math]::Round($Size/1gb,2)
+    Return $a
 }
+
 
 function Write-Log
 {
@@ -67,12 +65,9 @@ foreach ($row in $Serverlist)
 
     #Connect to Server
     $cdisk = Invoke-Command -ComputerName $servername -ScriptBlock{Get-WmiObject win32_LogicalDisk -Filter "DeviceID='C:'" | Select-Object Size,FreeSpace,DeviceID}
-    #$cdiskFreeSpace = [Math]::Round($cdisk.FreeSpace/1gb,2)
-
-    $cdiskSize = [Math]::Round($cdisk.Size/1gb,2)
     $cdiskName = $cdisk.DeviceID
-    $cdiskFreeSpace = ConvertToGB $disk.FreeSpace
-    #$cdiskSize - ConvertToGB $disk.Size
+    $cdiskFreeSpace = ConvertToGB $cdisk.FreeSpace
+    $cdiskSize = ConvertToGB $cdisk.Size
 
     $Results = [PSCustomObject]@{
         ServerName = "$Servername"
@@ -80,21 +75,22 @@ foreach ($row in $Serverlist)
         FreeSpace = "$cdiskFreeSpace"
         DiskSize = "$cdiskSize"
     } 
-    $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation -Force
+    $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation
     
-<#
-    $ddisk = Get-WmiObject win32_LogicalDisk -Filter "DeviceID='D:'" | Select-Object Size,FreeSpace
-    $ddiskFreeSpace = [Math]::Round($disk.FreeSpace/1gb,2)
-    $ddiskSize = [Math]::Round($disk.Size/1gb,2)
 
+    $ddisk = Invoke-Command -ComputerName $servername -ScriptBlock{Get-WmiObject win32_LogicalDisk -Filter "DeviceID='D:'" | Select-Object Size,FreeSpace,DeviceID}
+    $ddiskName = $ddisk.DeviceID
+    $ddiskFreeSpace = ConvertToGB $ddisk.FreeSpace
+    $ddiskSize = ConvertToGB $ddisk.Size
 
     $Results = [PSCustomObject]@{
         ServerName = "$Servername"
-        $cdisk = "$FilePath"
-        FileSize = "$FileSize"
+        DriveName = "$ddiskName"
+        FreeSpace = "$ddiskFreeSpace"
+        DiskSize = "$ddiskSize"
     }
     $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation
-#>
+
 
 
 }
