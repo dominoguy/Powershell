@@ -1,5 +1,6 @@
 #VM-SnapshotList
-
+#This script connects to each HVS in the server list and gets size and free space on its C: and D: drive
+#It then gets each vm on the HVS and gets it state and any snapshots associated with it.
 
 function ConvertToGB ($Size)
     {$a = [Math]::Round($Size/1gb,2)
@@ -60,8 +61,7 @@ foreach ($row in $Serverlist)
     $servername = $row.name
     Write-log $servername
     
-    #Connect to Server
-    #Get the size and free space on C: and D:
+    #Get the size and free space on C: and D of the HVS, size in GBs
     $cdisk = Invoke-Command -ComputerName $servername -ScriptBlock{Get-WmiObject win32_LogicalDisk -Filter "DeviceID='C:'" | Select-Object Size,FreeSpace,DeviceID}
     $cdiskName = $cdisk.DeviceID
     $cdiskFreeSpace = ConvertToGB $cdisk.FreeSpace
@@ -89,6 +89,7 @@ foreach ($row in $Serverlist)
     }
     $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation -Force
 
+    #Get all the VMs on the HVS - detailing VM name, its state, snapshots
     $vms = Invoke-Command -Computername $servername -ScriptBlock{get-vm |select-object -Expandproperty Name}
 
     foreach ($vm in $vms)
@@ -101,7 +102,7 @@ foreach ($row in $Serverlist)
             State = $State
         }
         $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation -Force
-        #add line in results for each vm, vm status, 
+        
         $Snapshots = Invoke-Command -Computername $servername -ScriptBlock{param($var1) get-vm $var1 | Get-VMSnapshot} -ArgumentList $vm
         foreach ($item in $Snapshots) 
         {
