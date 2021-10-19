@@ -71,6 +71,13 @@ function Write-Log
     Add-Content $Logfile -value "$Time $logstring"
 }
 
+$LogLocation = 'F:\Data\Scripts\Powershell\LOGS\ADInfo.log' 
+$OutPutFilePath = 'F:\Data\Scripts\Powershell\Logs' 
+$ADUserFileName = 'ADUserInfo.csv'
+$ADComputerFileName = 'ADComputerInfo.csv'
+$DHCPFileName = 'DHCPInfo.csv'
+$SchedTaskFileName = 'SchedTaskInfo.csv'
+
 $logFile = $LogLocation
 
 $logFileExists = Test-Path -path $logFile
@@ -81,12 +88,6 @@ if ( $logFileExists -eq $False)
 
 #Powershell Console
 #.\ServerConfigInfo.ps1 'F:\Data\Scripts\Powershell\LOGS\ADInfo.log' 'F:\Data\Scripts\Powershell\Logs' 'ADUserInfo.csv' 'ADComputerInfo.csv' 'DHCPInfo.csv' 'SchedTaskInfo.csv'
-'F:\Data\Scripts\Powershell\LOGS\ADInfo.log' 
-'F:\Data\Scripts\Powershell\Logs' 
-'ADUserInfo.csv'
-'ADComputerInfo.csv'
-'DHCPInfo.csv'
-'SchedTaskInfo.csv'
 
 $ADUserFile = $OutPutFilePath + "\" + $ADUserFileName
 #Get the domain we are in 

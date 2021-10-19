@@ -1,6 +1,14 @@
 #VM-SnapshotList
-#This script connects to each HVS in the server list and gets size and free space on its C: and D: drive
-#It then gets each vm on the HVS and gets it state and any snapshots associated with it.
+<#This script connects to each HVS in the server list and gets size and free space on its C: and D: drive
+It then gets each vm on the HVS and gets it state and any snapshots associated with it.
+Revisions
+1) columns switch, disksize first then free space - done
+2) Populate HVS  name on every line of vm line
+3) add date of snapshots
+4) add automatic start action and how much time until it starts
+5) add automatic stop action details
+6) date each results file - done
+#>
 
 function ConvertToGB ($Size)
     {$a = [Math]::Round($Size/1gb,2)
@@ -16,10 +24,10 @@ function Write-Log
     $Time=Get-Date
     Add-Content $Logfile -value "$Time $logstring"
 }
-
+$ResultsDate = Get-Date -uformat "%Y-%m-%d"
 $LogLocation = 'F:\Data\Scripts\Powershell\LOGS\VMSnapShotList.log'
 $ServerCSV = 'F:\Data\Scripts\Powershell\VMSnapShotList\HVSServerList.csv'
-$ResultsCSV = "F:\Data\Scripts\Powershell\VMSnapShotList\VMSnapShotList-Results.csv"
+$ResultsCSV = "F:\Data\Scripts\Powershell\VMSnapShotList\$ResultsDate-VMSnapShotList-Results.csv"
 
 $logFile = $LogLocation
 $logFileExists = Test-Path -path $logFile
@@ -38,7 +46,7 @@ Write-Log "Starting VM Snapshot Check"
 
 #Create results file
 $ResultsExists = Test-Path -path $ResultsCSV
-$Headers = '"ServerName","DriveName","FreeSpace","DiskSize","VMName","State","SnapshotName","SnapshotTYpe"'
+$Headers = '"ServerName","DriveName","DiskSize","FreeSpace","VMName","State","SnapshotName","SnapshotTYpe"'
 if ( $ResultsExists -eq $True)
 {
     Remove-Item $ResultsCSV
@@ -113,6 +121,7 @@ foreach ($row in $Serverlist)
         Get-Content -Path $ResultsCSV
         $Results = [PSCustomObject]@{
             #VMName = "$VMName"
+            ServerName = "$servername"
             SnapshotName = "$SnapshotName"
             SnapshotTYpe = "$SnapshotTYpe"
             }

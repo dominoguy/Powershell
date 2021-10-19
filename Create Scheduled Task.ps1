@@ -45,8 +45,8 @@ if ( $logFileExists -eq $False)
 }
 
 
-$TaskName ="WB-VM-RI-TestBCL-001"
-$Trigger = '-Daily -At 6pm'
+$TaskName ="Add VM Backup Drive"
+$Trigger = '-Daily -At 4pm'
 
 
 Write-Log "Start Creation of $TaskName Scheduled Task"

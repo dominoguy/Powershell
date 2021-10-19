@@ -36,8 +36,8 @@ IE. ExcludeFilter_SHEP-MEM-001.txt
 
 param(
         [Parameter(Mandatory=$true,HelpMessage='Location of Log file')][string]$LogLocation,
-        [Parameter(Mandatory=$true,HelpMessage='Client Name')][string]$Clientname,
-        [Parameter(Mandatory=$true,HelpMessage='Name of computer to be backed up')][string]$ClientServer,
+       # [Parameter(Mandatory=$true,HelpMessage='Client Name')][string]$Clientname,
+       # [Parameter(Mandatory=$true,HelpMessage='Name of computer to be backed up')][string]$ClientServer,
         [Parameter(Mandatory=$true,HelpMessage='Location of Backup')][string]$BackupLocation,
         [Parameter(Mandatory=$true,HelpMessage='Is there a data directory $True or $False')][string]$IsDataDir,
         [Parameter(Mandatory=$true,HelpMessage='The directory of RSYNC Backup Logs')][string]$RSYNCLogDir,
@@ -67,6 +67,9 @@ $logFileExists = Test-Path -path $logFile
     }
 
 Write-Log "RiLocal Backup Begins"
+
+$ClientServer = Get-Content env:computername
+$ClientName = $ClientServer.Split("-")[0]
 
 If ($IsDataDir -eq $true)
 {

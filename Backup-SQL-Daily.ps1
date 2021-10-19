@@ -3,6 +3,9 @@
 <#
 .SYNOPSIS
 Creates an SQL backup of all databases on the SQL Server instance
+Requires the SQLServer module
+Install-Module -name SQLServer
+get-sqlinstance requires SQLServer Cloud Adapter service to be running
 
 
 .DESCRIPTION
@@ -22,8 +25,59 @@ The name of the ServerInst
 IE. 'PTAS.dmp'
 #>
 
+<#
+.SYNOPSIS
+Writes to a log.
 
-Set-Location "SQLSERVER:\SQL\Computer\Instance\Databases"
-foreach ($database in (Get-ChildItem )) {
+.Description
+Creates a new log file in the designated location.
+
+.PARAMETER logstring
+String of text
+#>
+<#
+function Write-Log
+{
+    Param(
+        [string]$logstring)
+
+    $Time=Get-Date
+    Add-Content $Logfile -value "$Time $logstring"
+}
+
+$LogLocation = 'F:\Data\Scripts\Powershell\LOGS\SQLBackup.log'
+
+param(
+        [Parameter(Mandatory=$False,Position=1,HelpMessage='Location of Log FIle')][string]$LogLocation,
+        [Parameter(Mandatory=$False,Position=2,HelpMessage='Location of the SQL DBs')][string]$DBFilePath,
+        [Parameter(Mandatory=$False,Position=1,HelpMessage='Location of the backup')][string]$DBBackupLocation,
+        [Parameter(Mandatory=$False,Position=1,HelpMessage='Name of the Server Instance')][string]$ServerInst
+    )
+
+$logFile = $LogLocation
+$logFileExists = Test-Path -path $logFile
+
+if ( $logFileExists -eq $True)
+{
+    Remove-Item $logFile
+    New-Item -ItemType File -Force -Path $logFile
+}
+else
+{
+    New-Item -ItemType File -Force -Path $logFile
+}
+
+
+
+
+Write-Log "Starting SQL Backup"
+#>
+
+#Set-Location SQLSERVER:\SQL
+#cd "D:\Data\Server\SQL\MSSQL14.MSSQLSERVER\MSSQL\DATA"
+Set-Location -path "D:\Data\Server\SQL\MSSQL14.MSSQLSERVER\MSSQL\DATA"
+foreach ($database in (Get-ChildItem ))
+{
     $dbName = $database.Name
-    Backup-SqlDatabase -Database $dbName -BackupFile "\\mainserver\databasebackup\$dbName.bak" }
+    Backup-SqlDatabase -Database $dbName -BackupFile "D:\Temp\$dbName.bak" 
+}
