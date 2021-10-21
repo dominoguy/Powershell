@@ -1,6 +1,11 @@
-#BuildExcludeFile
-
-
+<#BuildExcludeFile
+Version 1.0 21-Oct-2021 Brian Long
+This script creates an exclusion list for a server based on the last directoroy RSync finished on.
+It uses the Redirected log and looks at the last 20 entries to determine the last directory.
+It then builds an exclusion list from a default exclusion list adding each entry until it reaches the last directory RSync acted on (which it does not add to the list).
+RSync will then use this list for the manual backup.
+4 parms need to be setup are the log locations and exclude files
+#>
 
 #Functions
 function Write-Log
@@ -28,43 +33,56 @@ else
     New-Item -ItemType File -Force -Path $logFile
 }
 
-Write-Log "Creating Exclude File"
-#Create blank exclude file for server
-#If file already exists delete it.
-$ExcludeFilePath = "F:\Data\Scripts\Powershell\ManualBackups\Exclude-Manual-ODC-FS-001.txt"
-$ExcludeFileExists= Test-Path -path $ExcludeFilePath
-If ($ExcludeFileExists -eq $True)
+Write-Log "Creating Exclude File for "
+
+#Create blank exclude file for server. If file already exists delete it.
+$ExcludeListManualPath = "F:\Data\Scripts\Powershell\ManualBackups\Exclude-Manual-RMC-FS-001.txt"
+$ExcludeListManualPathExists = Test-Path -path $ExcludeListManualPath 
+If ($ExcludeListManualPathExists -eq $True)
 {
-    Remove-Item $ExcludeFilePath
-    New-Item -ItemType File -Force -Path $ExcludeFilePath
+    Remove-Item $ExcludeListManualPath 
+    New-Item -ItemType File -Force -Path $ExcludeListManualPath 
 }
 else
 {
-    New-Item -ItemType File -Force -Path $ExcludeFilePath
+    New-Item -ItemType File -Force -Path $ExcludeListManualPath 
 }
+
 #Get Default exclude folder list
 $ExcludeFIleDefaultsPath = "F:\Data\Scripts\Powershell\ManualBackups\ExcludeFilter-Defaults.Txt"
-#Add the defaults to the list
-Get-Content -Path $ExcludeFIleDefaultsPath | Add-Content -Path $ExcludeFilePath
-#read past incremental backup log file, log which directories backups have completed and find which directory it stopped on
-#Incremental logs are delimited by fixed width columns
-$IncrementalLog = Get-Content -Path "F:\Data\Scripts\Powershell\ManualBackups\RMC-Backup-RMC-FS-001-Incremental.Log"
-#$dataParse = $IncrementalLog -replace '[ ]{2,}',','
-$option = [System.StringSplitOptions]::RemoveEmptyEntries
+$ExcludeFileDefaults = Get-Content -Path $ExcludeFIleDefaultsPath
 
+#Get Redirect log contents
+$reDirectLogPath = "F:\Data\Scripts\Powershell\ManualBackups\RMC-Backup-RMC-FS-001-Incremental.Log.redirect"
+$reDirectLog = Get-Content -Path $reDirectLogPath | Select -last 20
 
-Foreach ($row in $IncrementalLog)
+#Locate the last directory rsync operated on
+Foreach ($row in $reDirectLog)
 {
-    IF ($row | Select-string -Pattern "recv")
+    IF ($row | Select-string -Pattern "/")
     {
-    $dataParse = $row -Replace ".*recv" -replace "recv.*"
-    #$dataParse = $Filter.split('recv',5)[-1]
-    $result = $dataParse.Trim()
+     $dataParse = $row.split("/")
+     $redirectDir = $dataParse[0]
+     $redirectDir = "- " + $redirectDir + "/"
     
-    Add-Content -Path "F:\Data\Scripts\Powershell\ManualBackups\newdelimitedlogfile.txt" -value $result
+        ForEach ($dir in $ExcludeFIleDefaults)
+        {
+            if ($dir -eq $redirectDir)
+            {
+                $lastDir = $dir
+                write-host "This is the lastdir " $lastDir
+            }
+        }
     }
 }
 
-
-#add the directories which have been completed
-#save changes name file in standardized format.
+#Build the exclusion list
+ForEach ($dir1 in $ExcludeFIleDefaults)
+{
+    if ($dir1 -ne $lastDir)
+    {
+        Add-Content -Path $ExcludeListManualPath  -Value $dir1
+    }
+    Else {Break}
+}
+Write-Log "Exclude File Created for "

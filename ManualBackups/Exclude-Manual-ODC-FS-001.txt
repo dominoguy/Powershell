@@ -5,7 +5,6 @@
 - *.tmp
 - cache/
 - dropbox/
-- Dropbox/
 - Recycler/
 - RECYCLER/
 - $RECYCLE.BIN/
@@ -16,5 +15,31 @@
 - System Volume Information/
 - Apple Computer/
 - Downloads/
+- iTunes/
+- Dropbox/
+- *.mp3
+- Accounting/
+- AIDA/
+- Backup/
+- Backups/
+- CorporateData/
+- Dynamics/
+- exec/
+- Group/
+- Group2/
+- Inetpub/
+- ProductionCommon/
+- RoamProfiles/
+- sales/
+- Scripts/
+- Secure/
+- Secureddhcpmgmt.smc
+- ServerConfigInfo/
+- Tech/
+- Temp/
+- TSEProfiles/
+- TSEUsers
+- User/
+
 
 

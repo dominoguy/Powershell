@@ -1,0 +1,27 @@
+#\\
+#   Exclusion directory list for RSync
+#//
+- *.ost
+- *.tmp
+- cache/
+- dropbox/
+- Recycler/
+- RECYCLER/
+- $RECYCLE.BIN/
+- My Documents/My Music/iTunes/
+- iPod Photo Cache/
+- Temporary Internet Files/
+- Cookies/
+- System Volume Information/
+- Apple Computer/
+- Downloads/
+- iTunes/
+- Dropbox/
+- *.mp3
+- Accounting/
+- AIDA/
+- Backup/
+- Backups/
+- CorporateData/
+- Dynamics/
+- exec/
