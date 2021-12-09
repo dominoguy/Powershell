@@ -1,6 +1,7 @@
 Client,ServerName,Domain,AdminName,Password
 RI,RI-APS-001,ri.ads,riadmin,N0matt3r20
-RI-Backup-001,RI-Backup-001,ri.ads,easynetworks,nomolos
+RI-Backup-007,RI-Backup-007,ri.ads,administrator,Generic123
+RI-Backup-008,RI-Backup-008,ri.ads,administrator,Generic123
 RI-Backup-003,RI-Backup-003,ri.ads,administrator,Bl@ckH0le2017
 RI,RI-Backup-004,ri.ads,riadmin,N0matt3r20
 RI,RI-Backup-006,ri.ads,riadmin,N0matt3r20

@@ -20,8 +20,3 @@
 - *.mp3
 - Accounting/
 - AIDA/
-- Backup/
-- Backups/
-- CorporateData/
-- Dynamics/
-- exec/

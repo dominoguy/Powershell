@@ -5,6 +5,9 @@ It uses the Redirected log and looks at the last 20 entries to determine the las
 It then builds an exclusion list from a default exclusion list adding each entry until it reaches the last directory RSync acted on (which it does not add to the list).
 RSync will then use this list for the manual backup.
 4 parms need to be setup are the log locations and exclude files
+Note:
+Refinement - build exlusion list based on two directories, ie. User\Blong
+script would have to go through entire redirect log and the list would be very big. Would this slow down the build script and rsync when running it
 #>
 
 #Functions
@@ -52,7 +55,7 @@ else
 $ExcludeFIleDefaultsPath = "F:\Data\Scripts\Powershell\ManualBackups\ExcludeFilter-Defaults.Txt"
 $ExcludeFileDefaults = Get-Content -Path $ExcludeFIleDefaultsPath
 
-#Get Redirect log contents
+#Get Redirect log contents - get the near to last entry
 $reDirectLogPath = "F:\Data\Scripts\Powershell\ManualBackups\RMC-Backup-RMC-FS-001-Incremental.Log.redirect"
 $reDirectLog = Get-Content -Path $reDirectLogPath | Select -last 20
 

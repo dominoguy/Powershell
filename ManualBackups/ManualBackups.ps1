@@ -68,6 +68,7 @@ foreach ($row in $serverList)
     {
     $List = $DoBackup + " " + $ServerName + " " + $LogVerbosity + " " + $StopTime + " " + $RSyncLogFIle + " " + $ExcludeFile + " " + $RSyncCommand + " " + $BackupLocation + " " + $RedirectLog
     Write-Log $List
+    start-process cmd -ArgumentList "/s /c ""C:\Program files\icw\bin\rsync.exe" -vvrt --partial --modify-window=2 --out-format="TransferInfo: %20t %15l %n" --log-file-format="%i %15l %20M %-10o %n" --stats --timeout=300 --contimeout=120 --stop-at=2021-10-22T16:30 --log-file="/cygdrive/D/backups/RMC/RMC-FS-001/Data/RMC-Backup-RMC-FS-001-Incremental.Log" --exclude-from="/cygdrive/D/Backups/RIBackup/ExcludeFilter_RMC_Manual.Txt" "rsync-bkup@RMC-FS-001.RMC.ads::shadowd/data/" "/cygdrive/D/backups/RMC/RMC-FS-001/Data/" > "D:\backups\RMC\RMC-FS-001\Data\RMC-Backup-RMC-FS-001-Incremental.Log.redirect"""
     }
 }
 
