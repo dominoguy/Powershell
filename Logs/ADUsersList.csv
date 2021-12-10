@@ -1,4 +1,4 @@
-"Employee","LastName","FirstName","Facility","Department","Title","EmailAddress","LastLogonDate"
-"002","Long","Brian","","Network Administrator","Batman","BrianLong@renatus.ca","12/4/2021 12:27:22 PM"
-"55","Sutherland","Corinne","","Network Administrator","Princess of Parking","CorinneSutherland@renatus.ca","12/5/2021 2:16:36 PM"
-"066","Leenheer","Brendon","","","","BrendonLeenheer@renatus.ca","12/6/2021 8:11:13 AM"
+"Employee","LastName","FirstName","Facility","Department","Title","EmailAddress","LastLogon"
+"002","Long","Brian","","Network Administrator","Batman","BrianLong@renatus.ca","12/9/2021 8:00:56 AM"
+"55","Sutherland","Corinne","","Network Administrator","Princess of Parking","CorinneSutherland@renatus.ca","12/9/2021 1:24:15 PM"
+"066","Leenheer","Brendon","","","","BrendonLeenheer@renatus.ca","12/9/2021 2:03:26 PM"

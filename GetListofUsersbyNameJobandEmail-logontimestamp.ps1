@@ -15,8 +15,8 @@ $dc1 = $userdomain.DNSRoot.split('.')[0]
 $dc2 = $userdomain.DNSRoot.split('.')[1]
 $domain = "dc=$dc1,dc=$dc2"
 
-Get-ADUser -Filter {employeeNumber -like '*' -And Enabled -eq $True} -SearchBase $domain -ResultPageSize 0 -Property Employeenumber,Surname,GivenName,physicalDeliveryOfficeName,Title,Department,EmailAddress,LastLogonDate | Select-Object Employeenumber,Surname,GivenName,physicalDeliveryOfficeName,Title,Department,EmailAddress,LastLogonDate | Export-CSV -NoType $ADUserFile
-$Header = 'Employee','LastName','FirstName','Facility','Department','Title','EmailAddress','LastLogonDate'
+Get-ADUser -Filter {employeeNumber -like '*' -And Enabled -eq $True} -SearchBase $domain -ResultPageSize 0 -Property Employeenumber,Surname,GivenName,physicalDeliveryOfficeName,Title,Department,EmailAddress,lastLogonTimestamp | Select-Object Employeenumber,Surname,GivenName,physicalDeliveryOfficeName,Title,Department,EmailAddress,{ [datetime]::FromFileTime( $_.lastLogonTimestamp ) } | Export-CSV -NoType $ADUserFile
+$Header = 'Employee','LastName','FirstName','Facility','Department','Title','EmailAddress','LastLogon'
 $A = Get-Content -Path $ADUserFile
 $A = $A[1..($A.Count - 1)]
 $A | Out-File -FilePath $ADUserFile
