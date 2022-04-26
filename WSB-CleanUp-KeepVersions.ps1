@@ -14,7 +14,9 @@ IE. F:\Data\Scripts\Powershell\LOGS\ADInfo.log
 #>
 param(
         [Parameter(Mandatory=$False,HelpMessage='Volumes to backup')][string]$volumesToBackup,
-        [Parameter(Mandatory=$False,HelpMessage='Windows Server Drive')][string]$BackupTarget
+        [Parameter(Mandatory=$False,HelpMessage='Windows Server Drive')][string]$BackupTarget,
+        [Parameter(Mandatory=$False,HelpMessage='Windows Server Drive')][string]$Name,
+        [Parameter(Mandatory=$False,HelpMessage='Windows Server Drive')][string]$NumberofBackups
     )
 <#
 
@@ -72,4 +74,4 @@ Add-WBBackupTarget -Policy $WBPolicy -Target $backupLocation
 
 
 #Run the backup
-Start-WBBackup -Policy $WBPolicy
+Remove-WBBackupSet -Policy $WBPolicy -BackupTarget $backupLocation -KeepVersions $NumberofBackups

@@ -1,0 +1,2 @@
+﻿vmName,wsbDrive,vhdxDrive,volumesToBackup,backupTarget,numberofBackups
+RI-TESTBCL-001,wsbddrive,vhdxDrive,"C:,D:",E:,4
