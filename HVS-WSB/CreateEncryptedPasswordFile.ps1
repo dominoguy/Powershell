@@ -22,4 +22,4 @@ Function EncryptPassword([string]$UserName, [string]$FilePath)
 }
  
 #Get credentials and create an encrypted password file
-EncryptPassword -UserName "" -FilePath 'F:\Data\Scripts\Powershell\HVS-WSB\EncryptedFile\Password.txt'
+EncryptPassword -UserName "" -FilePath 'D:\Data\Scripts\HVS-WSB\EncryptedFile\Password.txt'
