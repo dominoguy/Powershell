@@ -1,0 +1,3 @@
+﻿vmName,TargetPath,User
+SHEP-MiAlert-001,\\shep-nas-kv-01.shep.ads\shep\Backups\SHEP\SHEP-MiAlert-001,shep\backupservice
+SHEP-MiAlertPBX-001,\\shep-nas-kv-01.shep.ads\shep\Backups\SHEP\SHEP-MiAlertPBX-001,shep\backupservice

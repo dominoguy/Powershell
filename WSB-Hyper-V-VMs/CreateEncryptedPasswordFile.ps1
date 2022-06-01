@@ -1,7 +1,6 @@
 #CreateEncryptedPasswordFile
 #This script creates an encrypted file contain a user's password
 #Password is entered manually
-#Password file is created in the same directory as the location of the script.
 
 #function to Save Credentials to a file
 Function EncryptPassword([string]$UserName, [string]$FilePath)

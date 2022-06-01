@@ -33,7 +33,7 @@ function Write-Log
     $Time=Get-Date
     Add-Content $Logfile -value "$Time $logstring"
 }
-$LogLocation = "D:\Data\Script\Logs.WSBVM.log"
+$LogLocation = "D:\Data\Script\Logs\WSBVM.log"
 $logFile = $LogLocation
 
 $logFileExists = Test-Path -path $logFile

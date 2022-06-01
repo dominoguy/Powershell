@@ -1,3 +1,5 @@
+#Test HV-WSB
+
 #HVS-WSBofVMs
 <#
 .SYNOPSIS
@@ -8,7 +10,6 @@ The script runs a WSB for each VM on a list. It requires that a vhdx is created 
 It will find the proper vhdx for the VM and attach the drive to the VM.
 It will connect to the vm and tell it to run a wsb
 Once the wsb is done the drive will be detached from the vm
-
 Pre-requisites to run on the HVS
 test-wsman
 enable-psremoting
@@ -40,6 +41,7 @@ function Write-Log
     Add-Content $Logfile -value "$Time $logstring"
 }
 
+#$Loglocation = 'F:\Data\Scripts\Powershell\HVS-WSB\Logs\HVS-WSBofVMs.log'
 $Loglocation = 'D:\Data\Scripts\HVS-WSB\Logs\HVS-WSBofVMs.log'
 $logFile = $LogLocation
 
@@ -53,14 +55,36 @@ Write-Log "Start WB VM Backups"
 
 #Get the credentials to access the vms
 $username = "ri-testbcl-001\administrator"
-#$password = ConvertTo-SecureString "Generic123" -AsPlainText -Force
-$passwordLocation = "$PSScriptRoot\Password.txt"
+$password = ConvertTo-SecureString "Generic123" -AsPlainText -Force
+#$passwordLocation = "F:\Data\Scripts\Powershell\HVS-WSB\EncryptedFile\Password.txt"
+#$passwordLocation = "D:\Data\Scripts\HVS-WSB\EncryptedFile\Password.txt"
 
-$password = Get-Content $passwordLocation | ConvertTo-SecureString 
+#$password = Get-Content $passwordLocation | ConvertTo-SecureString 
 $credential = New-Object System.Management.Automation.PsCredential($username,$password)
+#$session = New-PSSession -ComputerName "RI-TestBCL-001" -Credential $credential
+#$ListVMs = 'F:\Data\Scripts\Powershell\HVS-WSB\WSB-VMs.csv'
+$ListVMs = 'D:\Data\Scripts\\HVS-WSB\WSB-VMs.csv'
+$VMs = Import-CSV $ListVMs  | select-object -Property vmName,vhdxDrivePath,volumesToBackup,vmBackupTargetDrive,numberofBackups
+
+Foreach ($VM in $VMs) 
+{ 
+    $vmName = $vm.vmName
+    $vmVHDXDrive = $vm.vhdxDrivePath
+    $vmVolumesToBackup = $vm.volumesToBackup
+    $vmBackupTarget = $vm.vmBackupTargetDrive
+    $vmNumberOfBackups = $vm.numberofBackups
+
+
+#Invoke-Command -Session $session -FilePath "F:\Data\Scripts\Powershell\Windows Server Backup.ps1" -ArgumentList $vmVolumesToBackup,$vmBackupTarget
+#Invoke-Command -Session $session -FilePath "D:\Data\Scripts\HVS-WSB\Windows Server Backup.ps1" -ArgumentList $vmVolumesToBackup,$vmBackupTarget
+Invoke-Command -ComputerName $vmName -Credential $credential -FilePath "D:\Data\Scripts\HVS-WSB\Windows Server Backup.ps1" -ArgumentList $vmVolumesToBackup,$vmBackupTarget
+}
+Exit-PSSession
 
 #Get a list of VMs that are checkpointing
-$ListVMs = 'D:\Data\Scripts\HVS-WSB\WSB-VMs.csv'
+<#
+$ListVMs = 'F:\Data\Scripts\Powershell\HVS-WSB\WSB-VMs.csv'
+$ListVMs = 'F:\Data\Scripts\Powershell\HVS-WSB\WSB-VMs.csv'
 $VMs = Import-CSV $ListVMs  | select-object -Property vmName,vhdxDrivePath,volumesToBackup,vmBackupTargetDrive,numberofBackups
 
 Foreach ($VM in $VMs) 
@@ -129,7 +153,7 @@ Foreach ($VM in $VMs)
                 write-host "The last SCSI Controller Location is $scsiControllerLocation"
                 #Start the WSB Process
                 #$session = New-PSSession -ComputerName $vmName -Credential $credential
-                $session = New-PSSession -ComputerName $vmName -Credential $credential
+                $session = New-PSSession -ComputerName $vmName -Authentication Credssp -Credential $credential
 
                 #is there a wsb already running continue if no
                 #Remove old backups
@@ -143,8 +167,10 @@ Foreach ($VM in $VMs)
 
                  #this is working
                  #run the wsb
-                Write-Log "Running Windows Server backup on $vmName"
-                Invoke-Command -Session $session -FilePath "D:\Data\Scripts\HVS-WSB\Windows Server Backup.ps1" -ArgumentList $vmVolumesToBackup,$vmBackupTarget
+                 Write-Log "Running Windows Server backup on $vmName"
+                Invoke-Command -Session $session -FilePath "F:\Data\Scripts\Powershell\HVS-WSB\Windows Server Backup.ps1" -ArgumentList $vmVolumesToBackup,$vmBackupTarget
+                #Invoke-Command -Session $session  -FilePath "F:\Data\Scripts\Powershell\HVS-WSB\Windows Server Backup.ps1" -ArgumentList $vmVolumesToBackup,$vmBackupTarget
+
 
                 Exit-PSSession
                 #Unmount the wsbdrive
@@ -163,4 +189,4 @@ Foreach ($VM in $VMs)
     }
 Write-Log "Finished WSB for all VMS"
 }
-
+#>
