@@ -5,6 +5,7 @@
 This script does a Windows Server Backup of the System State and critical directories for a list of VMs on a Hyper-V server.
 Currently the script only uses one set of creds. So as long as the cred can modify a location then the location can be used.
 Script could be modified to use diff creds. would need to specify which password.txt file to use
+A log file is also placed at the target location
 Items to check on the HVS:
 test-wsman
 enable-psremoting
@@ -13,7 +14,7 @@ Get-Item wsman:localhost\client\trustedhosts
 Set-Item wsman:\localhost\client\trustedhosts -value 'RI-TESTBCL-001,RI-HVS-001' -Force (Where the value are the vms to be backed up)
 
 .DESCRIPTION
-This script creates a Windows Backup Policy which is used to run the backup against.
+This script creates Windows Server Backups of selected VMs using the HOST.
 
 .PARAMETER LogLocation
 Location of log file and its name
@@ -96,6 +97,8 @@ Foreach ($VMInfo in $VMs)
     {
         Write-log "Backup location is unavailable"
     }
+    #Put a copy of the log in target directory
+    Copy-Item $Loglocation -Destination "G:"
     #Remove the PS Drive
     Get-PSDrive G | Remove-PSDrive
 }

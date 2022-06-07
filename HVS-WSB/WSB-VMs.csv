@@ -1,2 +1,2 @@
-﻿vmName,ControllerType,ControllerNumber,ControllerLocation,DiskNumber,vhdxDrivePath,volumesToBackup,vmBackupTargetDrive,numberofBackups
-RI-TESTBCL-001,SCSI,0,1,,D:\Virtual\RI-TESTBCL-001\Virtual Hard Disks\RI-TESTBCL-001-Backup.vhdx,"C:,D:",E:,4
+﻿vmName,vhdxDrivePath,volumesToBackup,vmBackupTargetDrive,DIskUniqueID,User
+RI-TESTBCL-001,D:\Virtual\RI-TESTBCL-001\Virtual Hard Disks\RI-TESTBCL-001-Backup.vhdx,"C:,D:",E,60022480486C348CE6920FC9ECBC0453,ri-testbcl-001\administrator

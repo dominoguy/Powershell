@@ -22,5 +22,5 @@ Function EncryptPassword([string]$UserName, [string]$FilePath)
     $Credential.Password | ConvertFrom-SecureString | Set-content $FilePath
 }
  
-#Get credentials and create an encrypted password file
+#Get credentials and create an encrypted password file 
 EncryptPassword -UserName "" -FilePath "$PSScriptRoot\Password.txt"
