@@ -50,9 +50,6 @@ if ( $logFileExists -eq $False)
 }
 
 Write-Log "Start WB VM Backups"
-
-
-
 #Get a list of VMs that are checkpointing
 $ListVMs = 'D:\Data\Scripts\HVS-WSB\WSB-VMs.csv'
 $VMs = Import-CSV $ListVMs  | select-object -Property vmName,vhdxDrivePath,volumesToBackup,vmBackupTargetDrive,DiskUniqueID,User
@@ -89,9 +86,7 @@ Foreach ($VM in $VMs)
                 #$DriveName = $Drive.Name
                 $Controller = $Drive.ControllerType
                 $ControllerNumber = $Drive.ControllerNumber
-                #$ControllerLocation = $Drive.ControllerLocation
                 $Path = $Drive.Path
-                #$DiskNumber = $Drive.DiskNumber
 
                 #look for the last SCSI device attached to the vm to use as a reference
                 If ($Controller -eq "SCSI" -And $controllerNumber -eq 0)
@@ -137,15 +132,19 @@ Foreach ($VM in $VMs)
                 Write-Log "Set the Target Drive Letter"
                 $DriveisSet = Invoke-Command -Session $session -FilePath "D:\Data\Scripts\HVS-WSB\SetDriveLetter.ps1" -ArgumentList $vmDiskUniqueID,$vmBackupTarget
 
-                If ($DriveisSet -eq $True)
+                If ($DriveisSet[0] -eq $True)
                     {   #run the wsb
+                        Write-Log $DriveisSet[1]
                         Write-Log "Drive Letter is set to $vmBackupTarget"
                         Write-Log "Running Windows Server backup on $vmName"
                         $vmBackupTargetLetter = $vmBackupTarget + ":"
                         Invoke-Command -Session $session -FilePath "D:\Data\Scripts\HVS-WSB\Windows Server Backup.ps1" -ArgumentList $vmVolumesToBackup,$vmBackupTargetLetter
+                        Write-Log "Did the WSB of $VMName complete: $?"
+                        Write-log "Exit code $LASTEXITCODE"
                     }
                 else {
                     Write-Log "Drive Letter is unavailable for target drive. WSB aborted "
+                    Write-Log $DriveisSet[1]
                 }
                 Exit-PSSession
                 #Unmount the wsbdrive

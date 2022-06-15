@@ -25,8 +25,6 @@ Creates a new log file in the designated location.
 .PARAMETER logstring
 String of text
 #>
-
-Write-host "Volumes to backup: $volumesToBackup"
 function Write-Log
 {
     Param(
@@ -35,7 +33,7 @@ function Write-Log
     $Time=Get-Date
     Add-Content $Logfile -value "$Time $logstring"
 }
-$LogLocation = "$PSScriptroot\Logs\WSBVM.log"
+$LogLocation = "D:\Data\Scripts\Logs\WSBVM.log"
 $logFile = $LogLocation
 
 $logFileExists = Test-Path -path $logFile
@@ -50,6 +48,9 @@ If ($null -eq $WBPolicy)
 {
 #Create a Windows Backup Policy
 $WBPolicy = New-WBPolicy
+
+#Set the WBVssBackupOption
+Set-WBVssBackupOption -Policy $WBPolicy -VssFullBackup
 
 #Add System Sate into the policy
 Add-WBSystemState -Policy $WBPolicy
