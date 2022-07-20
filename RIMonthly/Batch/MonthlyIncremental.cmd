@@ -13,7 +13,6 @@ set curdate=%date%
 set curdate=%curdate:/=-%
 set curdate=%curdate:~4%
 set LogName=%RunPath%\LOGS\Monthly_%curDate%.log
-
 If not exist %RunPath%\LOGS mkdir %RunPath%\LOGS
 
 echo Starting Monthly Incremental Backup for %curDate% >> %LogName%
@@ -24,11 +23,12 @@ set bcscptsnap=%RunPath%\BCSnap.txt
 set bcscptcopy=%RunPath%\CompareCopy.txt
 set bcscptsize=%RunPath%\Comparesize.txt
 
-set serverslist=%RunPath%\serverslist.txt
+set serverslist=F:\Data\Scripts\RIMonthly\serverslist.txt
 
-set monthlydrive=E:
+rem Loop through the server list to run the monthly backups
+set serverlist=f:\data\scripts\rimonthly\serverslist.txt
 
-for /f "tokens=1,2,3,4 delims=\ " %%i in (%serverslist%) do call :MonthlyBackup %%i %%j %%k %%l %%m
+for /f "tokens=1,2,3,4,5,6 delims=\ " %%i in (%serverslist%) do call :MonthlyBackup %%i %%j %%k %%l %%m %%n %%o
 
 GOTO :EOF
 
@@ -37,10 +37,10 @@ GOTO :EOF
 rem set client information
 set drive=%1
 set backdir=%2
-set Client=%3
-set ServerName=%4
-set baselinesdir=Baselines
-
+set var3=%3
+set var4=%4
+set Client=%5
+set ServerName=%6
 
 rem Setting current and previous months based on current date
 set nMonth=
@@ -51,35 +51,33 @@ set cDate=%date%
 
 echo Starting Monthly Incremental Backup for %ServerName% : %Time%  >> %LogName%
 
-
 for /f "tokens=1,2" %%a in ("%cDate%") do for /f "tokens=1,2,3 delims=/" %%i in ("%%b") do set nMonth=%%i&set nYear=%%k
+
 If %nMonth% LSS 10 set nMonth=%nMonth:0=%
 set /a nPrevMonth=%nMonth%-1
+
 If %nMonth% LSS 10 set nMonth=0%nMonth%
 set /a nPrevYear=%nYear%
 if %nPrevMonth% == 0 set nPrevMonth=12&set /a nPrevYear=%nYear%-1
 If %nPrevMonth% LSS 10 set nPrevMonth=0%nPrevMonth%
  
-set clientdir=%drive%\%backdir%\%client%\%servername%
+set clientdir=%drive%\%backdir%\%var3%\%Var4%\%client%\%servername%
 
-set monthlydir=%monthlydrive%\Baselines_%nPrevMonth%_%nPrevYear%\%client%\%servername%
+set monthlydir=%drive%\%backdir%\BackupDrive\Baselines_%nPrevMonth%_%nPrevYear%\%client%\%servername%
 If not exist %monthlydir% mkdir %monthlydir%
-
 
 set bcssnewFile=%nMonth%_%nYear%
 set bcssprevFile=%nPrevMonth%_%nPrevYear%
-set bcssFileDir="%drive%\%Baselinesdir%\%client%\%servername%"
-
+set bcssFileDir="%drive%\%backdir%\Server\Baselines\%client%\%servername%"
 set bcssFileworking=%bcssFiledir%\%bcssprevFile%.bcss
 
 rem directory checks
 if not exist %monthlydir% mkdir %monthlydir%
 If not exist %bcssFileDir% mkdir %bcssFileDir%
 
-
 rem code drive space check
-for /f "usebackq delims== tokens=2" %%x in (`wmic logicaldisk where "DeviceID='%monthlydrive%'" get FreeSpace /format:value`) do set FreeSpace=%%x
-echo There is %FreeSpace% bytes remaining on %monthlydrive% drive>> %LogName%
+for /f "usebackq delims== tokens=2" %%x in (`wmic logicaldisk where "DeviceID='%drive%'" get FreeSpace /format:value`) do set FreeSpace=%%x
+echo There is %FreeSpace% bytes remaining >> %LogName%
 
 rem Run BC Snapshot of Current Client data
 	echo Creating new BCSS snapshot %bcssnewFile% for %Servername% : %Time% >> %LogName%
@@ -96,8 +94,4 @@ rem	%bcApp% @%bcscptsize% %clientdir% %bcssFileWorking% %bcssFileDir% %bcssprevF
 
 	copy %bcssFileWorking% %MonthlyDir%\%bcssprevFile%.bcss
 	echo ...Finished monthly incremental for %Servername% : %Time% >> %LogName%
-
 :EOF
-
-
-

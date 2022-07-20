@@ -7,7 +7,7 @@ option confirm:yes-to-all
 criteria crc
 
 # Load current files against snapshot from the last patch.
-filter "%5"
+
 load "%1" "%2"
 
 # Expand to affect subfolders and files.
@@ -18,8 +18,10 @@ expand all
 
 select left.diff.files left.orphan.files
 
-# Copy changes to the monthly directory.
+# Create a report of differences
+folder-report layout:xml & 
+ options:display-mismatches & 
+ output-to:%3\%4_Report.xml
 
-copyto left path:base "%3"
 
 

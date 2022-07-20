@@ -64,12 +64,22 @@ Foreach ($VMInfo in $VMs)
     $passwordLocation = "$PSScriptRoot\Password.txt"
     $password = Get-Content $passwordLocation | ConvertTo-SecureString
     $Cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $Password
-
-    Set-WBPerformanceConfiguration -OverallPerformanceSetting AlwaysIncremental
+    
     #Create a Windows Backup Policy
     $WBPolicy = New-WBPolicy
     #Add System State into the policy
     Add-WBSystemState -Policy $WBPolicy
+    #On first Saturday of the month do a full backup, otherwise, incremental
+    if ($date.Day -le 7 -and $date.DayOfWeek -eq "Saturday")
+    {
+        Set-WBVssBackupOption -Policy $WBPolicy -VssFullBackup
+        Set-WBPerformanceConfiguration -OverallPerformanceSetting AlwaysFull
+    }
+    else 
+    {
+        Set-WBVssBackupOption -Policy $WBPolicy -VssCopyBackup
+        Set-WBPerformanceConfiguration -OverallPerformanceSetting AlwaysIncremental
+    }
     #Add Baremetal Backup
     Add-WBBareMetalRecovery -Policy $WBPolicy
     #Finish the WBPolicy for the VM

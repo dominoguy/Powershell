@@ -1,0 +1,4 @@
+Client,Server,BaselinesDir,BackupsDir,ListDir,Divide,Root,MonthlyDrive
+ACE,ACE-FS-001,F:\Baselines,F:\Backups,F:\Data\Scripts\Powershell\RIMonthly,T,Data,F:
+ACE,ACE-FS-001,F:\Baselines,F:\Backups,F:\Data\Scripts\Powershell\RIMonthly,F,Software,F:
+RMC,RMC-FS-001,F:\Baselines,F:\Backups,F:\Data\Scripts\Powershell\RIMonthly,F,Data,F:

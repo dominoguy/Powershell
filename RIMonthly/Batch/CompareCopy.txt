@@ -7,7 +7,7 @@ option confirm:yes-to-all
 criteria crc
 
 # Load current files against snapshot from the last patch.
-filter "%5"
+
 load "%1" "%2"
 
 # Expand to affect subfolders and files.

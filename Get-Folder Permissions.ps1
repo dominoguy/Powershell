@@ -67,11 +67,3 @@ $Output | Export-Csv $OutFile
 
 
 Write-Log "End Get Folder Permissions"
-
-
-
-
-
-
-
-

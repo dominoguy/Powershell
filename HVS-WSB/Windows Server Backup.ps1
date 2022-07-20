@@ -50,8 +50,16 @@ If ($null -eq $WBPolicy)
 $WBPolicy = New-WBPolicy
 
 #Set the WBVssBackupOption
-Set-WBVssBackupOption -Policy $WBPolicy -VssFullBackup
-
+#On first Saturday of the month do a full backup, otherwise, incremental
+if ($date.Day -le 7 -and $date.DayOfWeek -eq "Saturday")
+{
+    Set-WBVssBackupOption -Policy $WBPolicy -VssFullBackup
+    Set-WBPerformanceConfiguration -OverallPerformanceSetting AlwaysFull
+}
+else {
+    Set-WBVssBackupOption -Policy $WBPolicy -VssCopyBackup
+    Set-WBPerformanceConfiguration -OverallPerformanceSetting AlwaysIncremental
+}
 #Add System Sate into the policy
 Add-WBSystemState -Policy $WBPolicy
 

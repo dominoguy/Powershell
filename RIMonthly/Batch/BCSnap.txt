@@ -1,5 +1,4 @@
  Log normal %3\%2.log
 
 #take snapshot of the current backup directory
-
- snapshot save-crc save-version filter "%4" path:%1 output:%3\%2.bcss
+ snapshot save-crc save-version no-filters path:%1 output:%3\%2.bcss
