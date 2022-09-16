@@ -13,8 +13,8 @@ function Write-Log
 #get the current date in the format of  month-day-year
 $curDate = Get-Date -UFormat "%m-%d-%Y"
 
-$LogLocation = "F:\Data\Scripts\Powershell\RIMonthly\Logs\RIMMonthly-$curdate.log"
-#$LogLocation = "D:\Backups\RIBackup\RIMonthly\Logs\RIMMonthly-$curdate.log"
+#$LogLocation = "F:\Data\Scripts\Powershell\RIMonthly\Logs\RIMMonthly-$curdate.log"
+$LogLocation = "D:\Backups\RIBackup\RIMonthly\Logs\RIMMonthly-$curdate.log"
 $logFile = $LogLocation
 $logFileExists = Test-Path -path $logFile
 
@@ -31,14 +31,15 @@ else
 Write-Log "Start Monthly Backups for $curDate"
 
 $bcApp = "C:\Program Files\Beyond Compare 4\BCompare.exe"
-$bcSnap = "F:\Data\Scripts\Powershell\RIMonthly\BCSnap.txt"
-#$bcSnap = "D:\Backups\RIBackup\RIMonthly\BCSnap.txt"
-$bcCopy = "F:\Data\Scripts\Powershell\RIMonthly\CompareCopy.txt"
-#$bcCopy = "D:\Backups\RIBackup\RIMonthly\CompareCopy.txt"
+#$bcSnap = "F:\Data\Scripts\Powershell\RIMonthly\BCSnap.txt"
+$bcSnap = "D:\Backups\RIBackup\RIMonthly\BCSnap.txt"
+#$bcCopy = "F:\Data\Scripts\Powershell\RIMonthly\CompareCopy.txt"
+$bcCopy = "D:\Backups\RIBackup\RIMonthly\CompareCopy.txt"
 
 #$bcSize = "F:\Data\Scripts\Powershell\RIMonthly\CompareSize.txt"
 
-$serversList = "F:\Data\Scripts\Powershell\RIMonthly\ServersList.csv"
+#$serversList = "F:\Data\Scripts\Powershell\RIMonthly\ServersList.csv"
+$serversList = "D:\Backups\RIBackup\RIMonthly\ServersList.csv"
 
 $Servers = Import-CSV -Path $serversList | select-object -Property Client,ServerName,BaselinesDir,BackupsDir,DataDir,MonthlyDir,Exempt
 
@@ -112,6 +113,7 @@ ForEach ($server in $Servers)
     #Run the monthly backup
     Write-Log "Start: Monthly backup of $ServerName\$DataDir"
     $prevBCSSFile = "$BaselinesDir\${prevMonth}_$prevYear.bcss"
+    $prevBCSSLog = "$BaselinesDir\${prevMonth}_$prevYear.log"
     $prevBCSSFileExists = Test-Path -path $prevBCSSFile
    
     If ($prevBCSSFileExists -eq $True)
@@ -119,6 +121,8 @@ ForEach ($server in $Servers)
         $bcssPrevDate = "${prevMonth}_$prevYear"
         $argsBCSS = "@$bcCopy /closescript $BackupsDir $prevBCSSFile $MonthlyDir $bcssPrevDate $bcssExceptions"
         Start-Process -FilePath $bcApp -ArgumentList $argsBCSS -wait
+        Copy-Item -Path $prevBCSSFile -Destination $MonthlyDir
+        Copy-Item -Path $prevBCSSLog -Destination $MonthlyDir
     }
     else {
         Write-Log "No previous BCSS, monthly backup to proceed next month"

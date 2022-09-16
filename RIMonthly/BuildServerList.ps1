@@ -14,7 +14,8 @@ IE. F:\Data\Scripts\Powershell\RIMonthly\LOGS\<date>.log
 #>
 
 #Get a list of servers
-$ListofServers = "F:\Data\Scripts\Powershell\RIMonthly\BuildBackupServerList.csv"
+#$ListofServers = "F:\Data\Scripts\Powershell\RIMonthly\BuildBackupServerList.csv"
+$ListofServers = "D:\Backups\RIBackup\RIMonthly\BuildBackupServerList.csv"
 $Servers = Import-CSV $ListofServers | select-object -Property Client,Server,BaselinesDir,BackupsDir,ListDir,Divide,Root,MonthlyDrive
 $Entry  = $Servers | Select-Object -Property Listdir | Select-Object -First 1
 $ListDir = $Entry.ListDir

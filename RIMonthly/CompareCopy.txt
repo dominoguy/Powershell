@@ -1,4 +1,4 @@
-Log verbose %3\%4.log
+Log verbose %3\%4-CopyChanges.log
 
 option confirm:yes-to-all
 
