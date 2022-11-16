@@ -52,7 +52,7 @@ if ( $logFileExists -eq $False)
 Write-Log "Start WB VM Backups"
 #Get a list of VMs that are checkpointing
 $ListVMs = 'D:\Data\Scripts\HVS-WSB\WSB-VMs.csv'
-$VMs = Import-CSV $ListVMs  | select-object -Property vmName,vhdxDrivePath,volumesToBackup,vmBackupTargetDrive,DiskUniqueID,User
+$VMs = Import-CSV $ListVMs  | select-object -Property vmName,vhdxDrivePath,volumesToBackup,vmBackupTargetDrive,DiskUniqueID,User,FQDN
 
 Foreach ($VM in $VMs) 
 { 
@@ -61,6 +61,7 @@ Foreach ($VM in $VMs)
     $vmVolumesToBackup = $vm.volumesToBackup
     $vmBackupTarget = $vm.vmBackupTargetDrive
     $vmDiskUniqueID = $vm.DiskUniqueID
+    $vmFQDN = $vm.FQDN
     
     #Get the credentials to access the vm
     $username = $vm.User
@@ -126,7 +127,7 @@ Foreach ($VM in $VMs)
                 Write-Log "The last SCSI Controller Location is $scsiControllerLocation"
                 
                 #Start the WSB Process
-                $session = New-PSSession -ComputerName $vmName -Credential $credential          
+                $session = New-PSSession -ComputerName $vmFQDN -Credential $credential          
 
                 #In the VM get the disk by UniqueID and assign it a drive letter
                 Write-Log "Set the Target Drive Letter"
