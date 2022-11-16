@@ -1,0 +1,35 @@
+beyond compare
+
+filter cutoff:([<|>](<timestamp>|<number of days>[days])|none)
+
+
+
+
+
+
+
+# Turn verbose logging on.
+
+log verbose append:"C:\My Log.txt"
+
+# Compare using crc.
+
+criteria crc
+
+#Filter newer files out by timestamp - check time format of machine in regional and language setttings
+filter cutoff:>"12/31/2012 12:00pm"
+
+# Load current files against snapshot from the last patch.
+
+load "C:\My Folder" "C:\My Snapshot.bcss"
+
+# Expand to affect subfolders and files.
+
+expand all
+
+# Select updated files.
+
+select left.diff.files left.orphan.files
+
+# delete selected files
+delete left
