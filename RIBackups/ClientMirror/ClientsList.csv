@@ -1,0 +1,2 @@
+﻿Client,ServerName,BackupDir,TargetDir,bcssDir,bcssFile,CutOffDate
+ACE,ACE-FS-001,F:,Data,F:\Data\Scripts\Powershell\RIBackups\ClientMirror,TEST2_2022-11-21.bcss,11/22/2022

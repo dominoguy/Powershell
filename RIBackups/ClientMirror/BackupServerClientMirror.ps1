@@ -61,5 +61,7 @@ ForEach ($client in $Clients)
     $argsBCSS = "@$bcScptMirror /closescript $ClientDir $bcClientSnapshot $bcLog $CutOffDate"
     Start-Process -FilePath $bcApp -ArgumentList $argsBCSS -wait
     Write-Log "Completed mirroring of $servername. See $servername-Mirror.log for details"
+
+    
 }
 Write-Log "Finished Client Mirror"

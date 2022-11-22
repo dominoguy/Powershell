@@ -2,6 +2,7 @@
 log verbose %3
 
 #Filter Rules: newer files out by timestamp - check time format of machine in regional and language setttings
+filter -*.bcss
 filter cutoff:>%4
 
 # Load current files against snapshot from the last patch.
