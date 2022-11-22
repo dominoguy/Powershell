@@ -2,4 +2,4 @@
 
 #take snapshot of the current backup directory
 
- snapshot save-crc save-version filter "%4" path:%1 output:%3\%2.bcss
+ snapshot save-version filter "%4" path:%1 output:%3\%2.bcss

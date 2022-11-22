@@ -1,11 +1,7 @@
 # Turn verbose logging on.
 log verbose %3
 
-# Compare using crc.
-
-criteria crc
-
-#Filter newer files out by timestamp - check time format of machine in regional and language setttings
+#Filter Rules: newer files out by timestamp - check time format of machine in regional and language setttings
 filter cutoff:>%4
 
 # Load current files against snapshot from the last patch.

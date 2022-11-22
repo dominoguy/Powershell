@@ -2,10 +2,6 @@ Log verbose %3\%4.log
 
 option confirm:yes-to-all
 
-# Compare using crc.
-
-criteria crc
-
 # Load current files against snapshot from the last patch.
 
 load "%1" "%2"
