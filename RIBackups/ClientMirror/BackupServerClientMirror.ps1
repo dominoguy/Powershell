@@ -13,7 +13,7 @@
 function Write-Log
 {
     Param(
-        [string]$logstring)
+        [string]$logString)
 
     $Time=Get-Date
     Add-Content $Logfile -value "$Time $logstring"
@@ -35,8 +35,6 @@ else
 }
 
 Write-Log "Start Client Mirror"
-
-
 #Add server list and csv file pull
 $ClientsList = "$appPath\ClientsList.csv"
 $Clients = Import-CSV -Path $ClientsList -Delimiter ','
@@ -47,7 +45,7 @@ ForEach ($client in $Clients)
 {
     $clientName = $client.Client
     $serverName = $client.ServerName
-    $backupDir = $client.ClientDir
+    $backupDir = $client.BackupDir
     $TargetDir = $client.TargetDir
     $BCSSDir = $client.BCSSDir
     $bcssFile = $client.bcssFile
@@ -60,8 +58,17 @@ ForEach ($client in $Clients)
     Write-Log "Starting Mirroring of $servername"
     $argsBCSS = "@$bcScptMirror /closescript $ClientDir $bcClientSnapshot $bcLog $CutOffDate"
     Start-Process -FilePath $bcApp -ArgumentList $argsBCSS -wait
-    Write-Log "Completed mirroring of $servername. See $servername-Mirror.log for details"
+    #Remove empty directories
+    ForEach ($Folder in (Get-ChildItem $ClientDir -Recurse -Force -Directory | Sort-Object -Property FullName -Descending))
+    {
+        $FolderFullName =  $Folder.FullName
+        If((Get-ChildItem -Path $FolderFullName -Force | Select-Object -First 1).Count -eq 0)
+        {
+        "$FolderFullName has been deleted" | Out-File -FilePath "$appPath\Logs\$serverName-DeletedDIr.Log" -Append
+        Remove-Item -path $FolderFullName
+        }
+    }
 
-    
+    Write-Log "Completed mirroring of $servername. See $servername-Mirror.log for details"
 }
 Write-Log "Finished Client Mirror"

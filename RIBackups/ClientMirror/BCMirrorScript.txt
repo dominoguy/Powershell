@@ -1,6 +1,9 @@
 # Turn verbose logging on.
 log verbose %3
 
+#Suppress GUI confirmation windows
+option confirm:yes-to-all
+
 #Filter Rules: newer files out by timestamp - check time format of machine in regional and language setttings
 filter -*.bcss
 filter cutoff:>%4
