@@ -20,6 +20,7 @@ param(
 #$GroupName = "Renatus - Support Staff"
 #$OutPutFilePath = "F:\Temp"
 $MembersFile = $OutPutFilePath + "\$GroupName-Members.csv"
+$GroupMemberofFile = $OutPutFilePath + "\$GroupName-MemberOf.csv"
 
 $MembersFileExists = Test-Path -path $MembersFile
 $Headers = '"Members"'
@@ -33,8 +34,21 @@ else {
     New-Item -ItemType File -Force -Path $MembersFile
     Add-Content -Path $MembersFile -Value $Headers
 }
-
 $tempMembersFile = $OutPutFilePath + "\$GroupName-Members-Temp.csv"
+
+$GroupmemberOfExists = Test-Path -path $GroupMemberofFile
+$GHeaders = '"Memberof"'
+if ( $GroupmemberOfExists -eq $False)
+{
+ New-Item -ItemType File -Force -Path $GroupMemberofFile
+ Add-Content -Path $GroupMemberofFile -Value $GHeaders
+}
+else {
+    Remove-Item $GroupMemberofFile
+    New-Item -ItemType File -Force -Path $GroupMemberofFile
+    Add-Content -Path $GroupMemberofFile -Value $GHeaders
+}
+$tempMembersOfFile = $OutPutFilePath + "\$GroupName-MembersOf-Temp.csv"
 
 #Get the domain we are in
 $userdomain = Get-ADDomain
@@ -42,22 +56,44 @@ $dc1 = $userdomain.DNSRoot.split('.')[0]
 $dc2 = $userdomain.DNSRoot.split('.')[1]
 $domain = "dc=$dc1,dc=$dc2"
 
-$Members = Get-ADGroupMember $GroupName | Select-Object Name
+$Members = Get-ADGroupMember $GroupName | Select-Object Name,ObjectClass
 
-Foreach ($User in $Members.Name)
+Foreach ($Member in $Members)
 {
-   $UserObj = Get-ADUser -Filter "Name -eq '$User'" -SearchBase $domain -ResultPageSize 0 -Properties Enabled | Select-Object Enabled
-   $Status = $UserObj.Enabled
-   
-   IF ($Status -eq $true)
+    $memberClass = $member.ObjectClass
+    If ($memberClass -eq "User")
     {
-        $Results = [PSCustomObject]@{
-            Members = "$User"
-        } 
+        $User = $member.Name
+        $UserObj = Get-ADUser -Filter "Name -eq '$User'" -SearchBase $domain -ResultPageSize 0 -Properties Enabled | Select-Object Enabled
+        $Status = $UserObj.Enabled
+   
+        IF ($Status -eq $true)
+            {
+                $Results = [PSCustomObject]@{Members = "$User"} 
+                $Results | Export-Csv -Path $tempMembersFile -Append -NoTypeInformation
+            }
+    }
+    else 
+    {
+        $GroupMember = $member.Name
+        $Results = [PSCustomObject]@{Members = "$GroupMember (G)"}
         $Results | Export-Csv -Path $tempMembersFile -Append -NoTypeInformation
+        
     }
 }
 Import-Csv $tempMembersFile | Sort-Object Members | Export-Csv -Path $MembersFile -NoTypeInformation
-remove-item $tempMembersFile
+Remove-item $tempMembersFile
 
-Write-Host "Your file is located at $MembersFile"
+$Groups = Get-ADPrincipalGroupMembership $GroupName | Select-Object Name
+Foreach ($Group in $Groups)
+{
+    $GroupMemberOf = $Group.name
+    $Results = [PSCustomObject]@{Memberof = "$GroupMemberOf (G)"}
+    $Results | Export-Csv -Path $tempMembersOfFile -Append -NoTypeInformation
+}
+
+Import-Csv $tempMembersOfFile | Sort-Object Memberof | Export-Csv -Path $GroupMemberofFile -NoTypeInformation
+Remove-item $tempMembersOfFile
+
+Write-Host "Your List of members for $GroupName is located at $MembersFile"
+Write-Host "Your List of groups $GroupName is a member of is located at $GroupMemberofFile"
