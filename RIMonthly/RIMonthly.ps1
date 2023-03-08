@@ -92,6 +92,7 @@ ForEach ($server in $Servers)
     #Create a new snapshot of the existing data. To be used for next months backup
     Write-Log "Start: New BCSS snapshot of $ServerName\$DataDir"
     $bcssCurDate = "${curMonth}_$curYear"
+    <#
     $bcssExceptions = ""
      If ($Exempt -eq "T")
      {
@@ -105,7 +106,7 @@ ForEach ($server in $Servers)
             $bcssExceptions = "$bcssExceptions;-.\$Exemption\"
         }
      }
-    
+    #>
     $argsBCSS = "@$bcSnap /closescript $BackupsDir $bcssCurDate $BaselinesDir $bcssExceptions"
     Start-Process -FilePath $bcApp -ArgumentList $argsBCSS -wait
     Write-Log "Completed: New BCSS snapshot of $ServerName\$DataDir"
