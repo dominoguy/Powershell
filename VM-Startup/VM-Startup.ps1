@@ -31,6 +31,7 @@ function Check-VM
 {
 	param($VMName)
     $Timeout = 300
+    #VM-Settings create a csv options file, include timeout
 	Wait-VM -Name $VMName -For Heartbeat -Delay 5 -Timeout $Timeout
     $heartbeat = (Get-VM $VMName | Select-Object Heartbeat).Heartbeat
     if (($heartbeat -eq 'OkApplicationsHealthy') -or ($heartbeat -eq 'OkApplicationsUnknown'))
@@ -40,26 +41,28 @@ function Check-VM
     }
     else
     {
-        Write-Log "$VMName has no Heartbeat after $Timeout seconds. Exiting Startup VMS, no other VMs will be started"
+        Write-Log "**** $VMName has no Heartbeat after $Timeout seconds. Exiting Startup VMS, no other VMs will be started ****"
         Return ("False")
     }
 }
 
 Write-Log "---------- Starting VMs ----------"
-#Get the Startup List
-$RIHomeFQDN = "RI-HDC-001.ri.ads" 
-IF (Test-Connection -ComputerName $RIHomeFQDN -Quiet)
+
+#Check to see if VMMS Service is running if not wait
+While ((Get-Service VMMS).Status -NE "Running")
 {
-#get the vm csv file and copy to 
-Write-log "Getting lastest Startup File"
-}
-else {
-    Write-Log "Cannot connect to $RIHomeFQDN, using last copied Startup File"
+    Write-Log "Waiting for the VMMS Service"
+    Start-Sleep -Seconds 2
+    #need to break out also
 }
 
 $StartupFile = "$Scriptpath\VMSettings.csv"
 $VMList = Import-CSV -Path $StartupFile
-
+#if file is not here end
+#check vm if autostart is set, set it to nothing
+#test when a vm has autostart and if it collides with boot script
+#email log after boot
+#compare existing vms on server vs in startup vm list and notifiy in separate email if there is a mix match
 #Get a list of primary servers (start first)
 $VMBootOrder = $VMList.Where({$PSItem.BootOrder -ne ""}) | Sort-Object BootOrder
 
@@ -68,7 +71,7 @@ $VMBootOrder = $VMList.Where({$PSItem.BootOrder -ne ""}) | Sort-Object BootOrder
     $VMName = $VM.VMName
     $VMBootOrder = $VM.BootOrder
     $VMDependencies = $VM.Dependencies
-    Write-Log "Performing pre-start check for $VMName"
+    Write-Log "$VMName - Performing pre-start check"
     Write-Log "The VM Boot order is $VMBootOrder"
     $ArrVMDepend = $VMDependencies.Split(',')
     $VMStart = "True"
@@ -82,7 +85,8 @@ $VMBootOrder = $VMList.Where({$PSItem.BootOrder -ne ""}) | Sort-Object BootOrder
          If ($State -ne "Running")
          {
               $VMStart = "False"
-              Write-Log "$VMName is NOT started, it needs $VMD to be started first"
+              Write-Log "**** Error ****"
+              Write-Log "**** $VMName is NOT started, it needs $VMD to be started first ****"
           }
          }
     }
@@ -110,7 +114,7 @@ $VMBootOrder = $VMList.Where({$PSItem.BootOrder -ne ""}) | Sort-Object BootOrder
         {
             Break BootOrder
         }
-        
+
     }
 
 }
