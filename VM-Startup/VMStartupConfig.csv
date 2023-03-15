@@ -1,0 +1,11 @@
+Var,Value
+ScriptPath,C:\Program Files\RI PowerShell\RI-VMStartUp
+ServiceToCheck,VMMS
+Timeout,30
+SleepPeriod,2
+VMTimeout,300
+SMTPServer,smtp.4web.ca
+SMTPUser,smtp@renatus.ca
+SMTPPWD,Gamma@Echo42
+Port,587
+To,brianlong@renatus.ca
