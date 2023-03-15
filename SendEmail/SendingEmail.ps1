@@ -28,15 +28,15 @@ Function SendEmail {
     $smtp.Credentials = New-Object System.Net.NetworkCredential ($SMTPUser,$SMTPPWD)
     $smtp.EnableSSL = $False
     $smtp.Port = 587
-    $emailAttachment = New-Object Net.Mail.Attachment $Attachments
-    $email.Attachments.add($emailAttachment)
+    #$emailAttachment = New-Object Net.Mail.Attachment $Attachments
+    #$email.Attachments.add($emailAttachment)
     $smtp.Send($email)
 }
 
 
 $Subject = "This is a test 2"
 $Body = "Don't look up"
-$Attachments = "F:\Data\Scripts\Powershell\VM-Startup\Logs\VMSetStartup.log"
+#$Attachments = "F:\Data\Scripts\Powershell\VM-Startup\Logs\VMSetStartup.log"
 
 
 

@@ -66,7 +66,7 @@ function Check-VM
 #Script will pause until the VM returns a Heartbeat
 {
 	param($VMName)
-    $VMTimeout = 300
+    ##$VMTimeout = 300
     #VM-Settings create a csv options file, include timeout
 	Wait-VM -Name $VMName -For Heartbeat -Delay 5 -Timeout $VMTimeout
     $heartbeat = (Get-VM $VMName | Select-Object Heartbeat).Heartbeat
@@ -92,20 +92,20 @@ Function SendEmail
         [String]$Attachments
     )
 
-    $SMTPServer = "smtp.4web.ca"
-    #$SMTPServer = "ri-exch-002.ri.ads"
-    $SMTPUser = "smtp@renatus.ca"
-    $SMTPPWD = "Gamma@Echo42"
-    $Port = "587"
-    #$Port = "25"
-    $To = "brianlong@renatus.ca"
+    ##$SMTPServer = "smtp.4web.ca"
+    ##$SMTPServer = "ri-exch-002.ri.ads"
+    ##$SMTPUser = "smtp@renatus.ca"
+    ##$SMTPPWD = "Gamma@Echo42"
+    ##$Port = "587"
+    ##$Port = "25"
+    ##$To = "brianlong@renatus.ca"
     
     $email = New-Object System.Net.Mail.MailMessage
     $email.From = $From
     $email.To.Add($To)
     $email.Subject = $Subject
     $email.Body = $Body
-    $email.isBodyhtml = $true
+    $email.isBodyhtml = $False
     $smtp = New-Object Net.Mail.SmtpClient $SMTPServer,$Port
     $smtp.Credentials = New-Object System.Net.NetworkCredential ($SMTPUser,$SMTPPWD)
     $smtp.EnableSSL = $False
@@ -117,9 +117,8 @@ Function SendEmail
 }
 
 #Load config variables
-$VMStartVars = Import-CSV -Path "D:\Data\Scripts\Startup\VMStartUpConfig.csv"
-#$VMStartVars = Import-CSV -Path "C:\Program Files\RI PowerShell\RI-VMStartUp\VMStartUpConfig.csv"
-#$AdminName = $ServerList.Where({$PSItem.ServerName -eq $ServerName}).AdminName
+#$VMStartVars = Import-CSV -Path "D:\Data\Scripts\Startup\VMStartUpConfig.csv"
+$VMStartVars = Import-CSV -Path "C:\Program Files\RI PowerShell\RI-VMStartUp\VMStartUpConfig.csv"
 $ScriptPath = $VMStartVars.Where({$PSItem.Var -eq "ScriptPath"}).Value
 $ServiceToCheck = $VMStartVars.Where({$PSItem.Var -eq "ServiceToCheck"}).Value
 $TimeOut = $VMStartVars.Where({$PSItem.Var -eq "TimeOut"}).Value
@@ -130,18 +129,13 @@ $SMTPUser = $VMStartVars.Where({$PSItem.Var -eq "SMTPUser"}).Value
 $SMTPPWD = $VMStartVars.Where({$PSItem.Var -eq "SMTPPWD"}).Value
 $Port = $VMStartVars.Where({$PSItem.Var -eq "Port"}).Value
 $TO = $VMStartVars.Where({$PSItem.Var -eq "To"}).Value
-Write-Host "getting startup config, scriptpath = $Scriptpath"
-Write-Host "getting startup config, Port = $Port"
-Write-Host "getting startup config, To = $To"
-
 
 #get the current date in the format of  month-day-year
 $curDate = Get-Date -UFormat "%m-%d-%Y"
 #$Client = $HVSName.Split("-")[0]
-$ScriptPath = "D:\Data\Scripts\Startup" 
-#$ScriptPath = "C:\Program Files\RI PowerShell\RI-VMStartUp"
+##$ScriptPath = "D:\Data\Scripts\Startup" 
+##$ScriptPath = "C:\Program Files\RI PowerShell\RI-VMStartUp"
 $logFile = "$ScriptPath\Logs\VM-Startup-$curdate.log"
-#$logFile= "D:\Backups\RIBackup\RIMonthly\Logs\StartVM-$curdate.log"
 $StatusLog = "$ScriptPath\Logs\VM-StartUpCheck-$curdate.log"
 
 $logFileExists = Test-Path -path $logFile
@@ -171,15 +165,17 @@ If($StartupFileExists -eq $True)
 {
     Write-Log "Startup File Exists. VMS StartUp procedure continues."
     #Check to see VMMS is started
-    $TimeOut = 30
-    $ServiceToCheck = "VMMS"
-    $SleepPeriod = 2
+    
+    ##$TimeOut = 30
+    ##$ServiceToCheck = "VMMS"
+    ##$SleepPeriod = 2
 
     $ServiceStarted = Timeout $ServiceToCheck $TimeOut $SleepPeriod 
 
     IF($ServiceStarted[0] -eq $True)
     {
-        Write-Log "$ServiceToCheck is started after"$ServiceStarted[1]"seconds"
+        $ServiceStartSec = $ServiceStarted[1]
+        Write-Log  "$ServiceToCheck is started after $ServiceStartSec seconds"
         #VMMS is started - continue starting up VMS
         $VMList = Import-CSV -Path $StartupFile
         #Get a list of primary servers (start first)
@@ -235,10 +231,7 @@ If($StartupFileExists -eq $True)
                 }
             }
         }
-        #VM Check
-        #test when a vm has autostart and if it collides with boot script
-        #compare existing vms on server vs in startup vm list and notifiy in separate email if there is a miss match
-        Write-StatusLog "Checking VM StartAction"
+        #VM Check Automatic Startup parameters, and set to Nothing if necessary
         $VMS = get-vm | Select-Object Name,Status,State,AutomaticStartAction,AutomaticStartDelay,AutomaticStopAction
         ForEach ($VM in $VMS)
         {
@@ -248,7 +241,7 @@ If($StartupFileExists -eq $True)
             $VMStartAction = $VM.AutomaticStartAction
             $VMStartDelay = $VM.AutomaticStartDelay
             $VMStopAction = $VM.AutomaticStopAction
-            Write-StatusLog "Checking $VMName"
+            Write-StatusLog "Checking Start Action for $VMName"
             IF ($VMStartAction -NE "Nothing")
             {
                 get-vm $VMName | Set-VM -AutomaticStartAction Nothing
@@ -259,19 +252,23 @@ If($StartupFileExists -eq $True)
             Write-StatusLog "   Start Action is $VMStartAction"
             Write-StatusLog "   Start Delay is $VMStartDelay"
             Write-StatusLog "   Stop Action is $VMStopAction"
+            #Compare existing vms on server vs startup vm list and notifiy in separate email if there is a miss match
             IF($VMList.VMName.Contains($VMName) -eq $true)
             {
                 Write-StatusLog "$VMName is in the Startup file list"
-                Write-StatusLog "Finished VM StartAction"
             }
             else
             {
-                Write-StatusLog "***** $VMName is NOT in the  VMMSettings.csv ****"
-                Write-StatusLog "Finished VM StartAction"
-                $Subject = "$HVSName - $VMName is NOT in the VMMSettings.csv"
-                $Body = "$HVSName - $VMName is NOT in the VMMSettings.csv. Please ADD $VMName to the start up file."
-                $Attachments = "$StatusLog"
-                SendEmail $From $Subject $Body $Attachments
+                Write-StatusLog "********** $VMName is NOT in the  VMMSettings.csv **********"
+                IF($null -eq $StatusBody)
+                {
+                $StatusBody = "There are VMS on the server that are NOT in the VMMSettings.csv. Please check attached log.`r`n$VMName is NOT in the  VMMSettings.csv"
+                }
+                else {
+                    $StatusBody = "$StatusBody`r`n$VMName is NOT in the  VMMSettings.csv"
+                }
+                
+                $VMListWarning = $True
             }
         }
         Write-Log "---------- End VM Start Up ----------"
@@ -279,6 +276,14 @@ If($StartupFileExists -eq $True)
         $Body = "$HVSName has initiated VM startup procedure. See attached log for details. Check the HVS and VMs for any issues."
         $Attachments = "$logFile"
         SendEmail $From $Subject $Body $Attachments
+
+        IF($VMListWarning -eq $True)
+        {
+            $Subject = "$HVSName - There are VMS NOT in the VMMSettings.csv file"
+            $Body = $Statusbody
+            $Attachments = "$StatusLog"
+            SendEmail $From $Subject $Body $Attachments
+        }
         
     }
     ElseIF($ServiceStarted[0] -eq $False)
