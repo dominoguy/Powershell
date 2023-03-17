@@ -8,4 +8,4 @@ SMTPServer,smtp.4web.ca
 SMTPUser,smtp@renatus.ca
 SMTPPWD,Gamma@Echo42
 Port,587
-To,brianlong@renatus.ca
+To,"brianlong@renatus.ca,support@renatus.ca"

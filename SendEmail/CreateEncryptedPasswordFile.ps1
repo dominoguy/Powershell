@@ -24,5 +24,3 @@ Function EncryptPassword([string]$UserName, [string]$FilePath)
  
 #Get credentials and create an encrypted password file 
 EncryptPassword -UserName "" -FilePath "$PSScriptRoot\Password.txt"
-
-

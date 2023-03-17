@@ -59,14 +59,12 @@ Function TimeOut
     {
         Return $True,$totalSecs
     }
-
 }
 
-function Check-VM
+function CheckVM
 #Script will pause until the VM returns a Heartbeat
 {
 	param($VMName)
-    ##$VMTimeout = 300
     #VM-Settings create a csv options file, include timeout
 	Wait-VM -Name $VMName -For Heartbeat -Delay 5 -Timeout $VMTimeout
     $heartbeat = (Get-VM $VMName | Select-Object Heartbeat).Heartbeat
@@ -91,15 +89,8 @@ Function SendEmail
         [String]$Body,
         [String]$Attachments
     )
-
-    ##$SMTPServer = "smtp.4web.ca"
-    ##$SMTPServer = "ri-exch-002.ri.ads"
-    ##$SMTPUser = "smtp@renatus.ca"
-    ##$SMTPPWD = "Gamma@Echo42"
-    ##$Port = "587"
-    ##$Port = "25"
-    ##$To = "brianlong@renatus.ca"
-    
+    $passwordLocation = "$PSScriptRoot\Password.txt"
+    $SMTPPWD = Get-Content $passwordLocation | ConvertTo-SecureString
     $email = New-Object System.Net.Mail.MailMessage
     $email.From = $From
     $email.To.Add($To)
@@ -116,192 +107,196 @@ Function SendEmail
     $email.Dispose()
 }
 
-#Load config variables
-#$VMStartVars = Import-CSV -Path "D:\Data\Scripts\Startup\VMStartUpConfig.csv"
-$VMStartVars = Import-CSV -Path "C:\Program Files\RI PowerShell\RI-VMStartUp\VMStartUpConfig.csv"
-$ScriptPath = $VMStartVars.Where({$PSItem.Var -eq "ScriptPath"}).Value
-$ServiceToCheck = $VMStartVars.Where({$PSItem.Var -eq "ServiceToCheck"}).Value
-$TimeOut = $VMStartVars.Where({$PSItem.Var -eq "TimeOut"}).Value
-$SleepPeriod = $VMStartVars.Where({$PSItem.Var -eq "SleepPeriod"}).Value
-$VMTimeout = $VMStartVars.Where({$PSItem.Var -eq "VMTimeout"}).Value
-$SMTPServer = $VMStartVars.Where({$PSItem.Var -eq "SMTPServer"}).Value
-$SMTPUser = $VMStartVars.Where({$PSItem.Var -eq "SMTPUser"}).Value
-$SMTPPWD = $VMStartVars.Where({$PSItem.Var -eq "SMTPPWD"}).Value
-$Port = $VMStartVars.Where({$PSItem.Var -eq "Port"}).Value
-$TO = $VMStartVars.Where({$PSItem.Var -eq "To"}).Value
+$ConfigFile = "C:\Program Files\RI PowerShell\RI-VMStartUp\VMStartUpConfig.csv"
+$ConfigFileExists = Test-Path -path $ConfigFile
 
-#get the current date in the format of  month-day-year
-$curDate = Get-Date -UFormat "%m-%d-%Y"
-#$Client = $HVSName.Split("-")[0]
-##$ScriptPath = "D:\Data\Scripts\Startup" 
-##$ScriptPath = "C:\Program Files\RI PowerShell\RI-VMStartUp"
-$logFile = "$ScriptPath\Logs\VM-Startup-$curdate.log"
-$StatusLog = "$ScriptPath\Logs\VM-StartUpCheck-$curdate.log"
-
-$logFileExists = Test-Path -path $logFile
-
-if ( $logFileExists -ne $True)
+IF($ConfigFIleExists -eq $True)
 {
-    New-Item -ItemType File -Force -Path $logFile
-}
+    #Load config variables
+    #$VMStartVars = Import-CSV -Path "D:\Data\Scripts\Startup\VMStartUpConfig.csv"
+    $VMStartVars = Import-CSV -Path $ConfigFile
+    $ScriptPath = $VMStartVars.Where({$PSItem.Var -eq "ScriptPath"}).Value
+    $ServiceToCheck = $VMStartVars.Where({$PSItem.Var -eq "ServiceToCheck"}).Value
+    $TimeOut = $VMStartVars.Where({$PSItem.Var -eq "TimeOut"}).Value
+    $SleepPeriod = $VMStartVars.Where({$PSItem.Var -eq "SleepPeriod"}).Value
+    $VMTimeout = $VMStartVars.Where({$PSItem.Var -eq "VMTimeout"}).Value
+    $SMTPServer = $VMStartVars.Where({$PSItem.Var -eq "SMTPServer"}).Value
+    $SMTPUser = $VMStartVars.Where({$PSItem.Var -eq "SMTPUser"}).Value
+    $SMTPPWD = $VMStartVars.Where({$PSItem.Var -eq "SMTPPWD"}).Value
+    $Port = $VMStartVars.Where({$PSItem.Var -eq "Port"}).Value
+    $TO = $VMStartVars.Where({$PSItem.Var -eq "To"}).Value
 
-$StatusLogExists = Test-Path -path $StatusLog
-if ($StatusLogExists -ne $True)
-{
-    New-Item -ItemType File -Force -Path $StatusLog
-}
+    #get the current date in the format of  month-day-year
+    $curDate = Get-Date -UFormat "%m-%d-%Y"
+    #$Client = $HVSName.Split("-")[0]
+    $logFile = "$ScriptPath\Logs\VM-Startup-$curdate.log"
+    $StatusLog = "$ScriptPath\Logs\VM-StartUpCheck-$curdate.log"
 
+    $logFileExists = Test-Path -path $logFile
 
-$HVSName = HOSTNAME.EXE
-#Email Settings
-$From = "$HVSName@renatus.ca"
-
-Write-Log "---------- Starting VMs ----------"
-#Check if StartUp file is present
-$StartupFile = "$Scriptpath\VMSettings.csv"
-
-$StartupFileExists = Test-Path -path $StartupFile
-If($StartupFileExists -eq $True)
-{
-    Write-Log "Startup File Exists. VMS StartUp procedure continues."
-    #Check to see VMMS is started
-    
-    ##$TimeOut = 30
-    ##$ServiceToCheck = "VMMS"
-    ##$SleepPeriod = 2
-
-    $ServiceStarted = Timeout $ServiceToCheck $TimeOut $SleepPeriod 
-
-    IF($ServiceStarted[0] -eq $True)
+    if ( $logFileExists -ne $True)
     {
-        $ServiceStartSec = $ServiceStarted[1]
-        Write-Log  "$ServiceToCheck is started after $ServiceStartSec seconds"
-        #VMMS is started - continue starting up VMS
-        $VMList = Import-CSV -Path $StartupFile
-        #Get a list of primary servers (start first)
-        $VMBootOrder = $VMList.Where({$PSItem.BootOrder -ne ""}) | Sort-Object BootOrder
+        New-Item -ItemType File -Force -Path $logFile
+    }
 
-        :BootOrder ForEach ($VM in $VMBootOrder)
+    $StatusLogExists = Test-Path -path $StatusLog
+    if ($StatusLogExists -ne $True)
+    {
+        New-Item -ItemType File -Force -Path $StatusLog
+    }
+
+
+    $HVSName = HOSTNAME.EXE
+    #Email Settings
+    $From = "$HVSName@renatus.ca"
+
+    Write-Log "---------- Starting VMs ----------"
+    #Check if StartUp file is present
+    $StartupFile = "$Scriptpath\VMSettings.csv"
+
+    $StartupFileExists = Test-Path -path $StartupFile
+    If($StartupFileExists -eq $True)
+    {
+        Write-Log "Startup File Exists. VMS StartUp procedure continues."
+        #Check to see VMMS is started
+        $ServiceStarted = Timeout $ServiceToCheck $TimeOut $SleepPeriod 
+
+        IF($ServiceStarted[0] -eq $True)
         {
-            $VMName = $VM.VMName
-            $VMBootOrder = $VM.BootOrder
-            $VMDependencies = $VM.Dependencies
-            Write-Log "$VMName - Performing pre-start check"
-            Write-Log "The VM Boot order is $VMBootOrder"
-            $ArrVMDepend = $VMDependencies.Split(',')
-            $VMStart = "True"
-            #for each vm in dependencies check to see if it is up
-            IF($ArrVMDepend -Ne "")
+            $ServiceStartSec = $ServiceStarted[1]
+            Write-Log  "$ServiceToCheck is started after $ServiceStartSec seconds"
+            #VMMS is started - continue starting up VMS
+            $VMList = Import-CSV -Path $StartupFile
+            #Get a list of primary servers (start first)
+            $VMBootOrder = $VMList.Where({$PSItem.BootOrder -ne ""}) | Sort-Object BootOrder
+
+            :BootOrder ForEach ($VM in $VMBootOrder)
             {
-                Write-Log "The VM Dependencies are $VMDependencies"
-                ForEach($VMD in $ArrVMDepend)
+                $VMName = $VM.VMName
+                $VMBootOrder = $VM.BootOrder
+                $VMDependencies = $VM.Dependencies
+                Write-Log "$VMName - Performing pre-start check"
+                Write-Log "The VM Boot order is $VMBootOrder"
+                $ArrVMDepend = $VMDependencies.Split(',')
+                $VMStart = "True"
+                #for each vm in dependencies check to see if it is up
+                IF($ArrVMDepend -Ne "")
                 {
-                    $State = (Get-VM $VMD | Select-Object State).State
-                    If ($State -ne "Running")
+                    Write-Log "The VM Dependencies are $VMDependencies"
+                    ForEach($VMD in $ArrVMDepend)
                     {
-                        $VMStart = "False"
+                        $State = (Get-VM $VMD | Select-Object State).State
+                        If ($State -ne "Running")
+                        {
+                            $VMStart = "False"
+                            Write-Log "**** Error ****"
+                            Write-Log "**** $VMName is NOT started, it needs $VMD to be started first ****"
+                        }
+                    }
+                }
+                else
+                {
+                    Write-Log "There are no dependencies for this VM"
+                }
+                #If true then start target vm
+                IF($VMStart -eq "True")
+                {
+                    Write-Log "Pre-check OK. Starting $VMName"
+                    Start-VM -Name $VMName -WarningVariable WarnMessage -ErrorVariable ErrMessage
+                    If($WarnMessage)
+                    {
+                        Write-Log "**** Warning ****"
+                        Write-Log "**** $WarnMessage ****"
+                    }
+                    If($ErrMessage)
+                    {
                         Write-Log "**** Error ****"
-                        Write-Log "**** $VMName is NOT started, it needs $VMD to be started first ****"
+                        Write-Log "**** $ErrMessage ****"
+                    }
+                    $CheckVM = CheckVM -VMName $VMName
+                    IF($CheckVM -eq "False")
+                    {
+                        Break BootOrder
                     }
                 }
             }
-            else
+            #VM Check Automatic Startup parameters, and set to Nothing if necessary
+            $VMS = get-vm | Select-Object Name,Status,State,AutomaticStartAction,AutomaticStartDelay,AutomaticStopAction
+            ForEach ($VM in $VMS)
             {
-                Write-Log "There are no dependencies for this VM"
-            }
-            #If true then start target vm
-            IF ($VMStart -eq "True")
-            {
-                Write-Log "Pre-check OK. Starting $VMName"
-                Start-VM -Name $VMName -WarningVariable WarnMessage -ErrorVariable ErrMessage
-                If($WarnMessage)
+                $VMName = $VM.Name
+                $VMStatus = $VM.Status
+                $VMState = $VM.State
+                $VMStartAction = $VM.AutomaticStartAction
+                $VMStartDelay = $VM.AutomaticStartDelay
+                $VMStopAction = $VM.AutomaticStopAction
+                Write-StatusLog "Checking Start Action for $VMName"
+                IF ($VMStartAction -NE "Nothing")
                 {
-                    Write-Log "**** Warning ****"
-                    Write-Log "**** $WarnMessage ****"
+                    get-vm $VMName | Set-VM -AutomaticStartAction Nothing
+                    Write-StatusLog "$VMName Automatic Start Action is now set to Nothing"
                 }
-                If($ErrMessage)
+                Write-StatusLog "   Status is $VMStatus"
+                Write-StatusLog "   State is $VMState"
+                Write-StatusLog "   Start Action is $VMStartAction"
+                Write-StatusLog "   Start Delay is $VMStartDelay"
+                Write-StatusLog "   Stop Action is $VMStopAction"
+                #Compare existing vms on server vs startup vm list and notifiy in separate email if there is a miss match
+                IF($VMList.VMName.Contains($VMName) -eq $true)
                 {
-                    Write-Log "**** Error ****"
-                    Write-Log "**** $ErrMessage ****"
+                    Write-StatusLog "$VMName is in the Startup file list"
                 }
-                $CheckVM = Check-VM -VMName $VMName
-                IF($CheckVM -eq "False")
+                else
                 {
-                    Break BootOrder
-                }
-            }
-        }
-        #VM Check Automatic Startup parameters, and set to Nothing if necessary
-        $VMS = get-vm | Select-Object Name,Status,State,AutomaticStartAction,AutomaticStartDelay,AutomaticStopAction
-        ForEach ($VM in $VMS)
-        {
-            $VMName = $VM.Name
-            $VMStatus = $VM.Status
-            $VMState = $VM.State
-            $VMStartAction = $VM.AutomaticStartAction
-            $VMStartDelay = $VM.AutomaticStartDelay
-            $VMStopAction = $VM.AutomaticStopAction
-            Write-StatusLog "Checking Start Action for $VMName"
-            IF ($VMStartAction -NE "Nothing")
-            {
-                get-vm $VMName | Set-VM -AutomaticStartAction Nothing
-                Write-StatusLog "$VMName Automatic Start Action is now set to Nothing"
-            }
-            Write-StatusLog "   Status is $VMStatus"
-            Write-StatusLog "   State is $VMState"
-            Write-StatusLog "   Start Action is $VMStartAction"
-            Write-StatusLog "   Start Delay is $VMStartDelay"
-            Write-StatusLog "   Stop Action is $VMStopAction"
-            #Compare existing vms on server vs startup vm list and notifiy in separate email if there is a miss match
-            IF($VMList.VMName.Contains($VMName) -eq $true)
-            {
-                Write-StatusLog "$VMName is in the Startup file list"
-            }
-            else
-            {
-                Write-StatusLog "********** $VMName is NOT in the  VMMSettings.csv **********"
-                IF($null -eq $StatusBody)
-                {
-                $StatusBody = "There are VMS on the server that are NOT in the VMMSettings.csv. Please check attached log.`r`n$VMName is NOT in the  VMMSettings.csv"
-                }
-                else {
-                    $StatusBody = "$StatusBody`r`n$VMName is NOT in the  VMMSettings.csv"
-                }
+                    Write-StatusLog "********** $VMName is NOT in the  VMMSettings.csv **********"
+                    IF($null -eq $StatusBody)
+                    {
+                        $StatusBody = "There are VMS on the server that are NOT in the VMMSettings.csv. Please check attached log.`r`n$VMName is NOT in the  VMMSettings.csv"
+                    }
+                    else 
+                    {
+                        $StatusBody = "$StatusBody`r`n$VMName is NOT in the  VMMSettings.csv"
+                    }
                 
-                $VMListWarning = $True
+                    $VMListWarning = $True
+                }
             }
-        }
-        Write-Log "---------- End VM Start Up ----------"
-        $Subject = "$HVSName - VM Startup Procedure Completed"
-        $Body = "$HVSName has initiated VM startup procedure. See attached log for details. Check the HVS and VMs for any issues."
-        $Attachments = "$logFile"
-        SendEmail $From $Subject $Body $Attachments
+            Write-Log "---------- End VM Start Up ----------"
+            $Subject = "$HVSName - VM Startup Procedure Completed"
+            $Body = "$HVSName has initiated VM startup procedure. See attached log for details. Check the HVS and VMs for any issues."
+            $Attachments = "$logFile"
+            SendEmail $From $Subject $Body $Attachments
 
-        IF($VMListWarning -eq $True)
+            IF($VMListWarning -eq $True)
+            {
+                $Subject = "$HVSName - There are VMS NOT in the VMMSettings.csv file"
+                $Body = $Statusbody
+                $Attachments = "$StatusLog"
+                SendEmail $From $Subject $Body $Attachments
+            }
+        
+        }
+        ElseIF($ServiceStarted[0] -eq $False)
         {
-            $Subject = "$HVSName - There are VMS NOT in the VMMSettings.csv file"
-            $Body = $Statusbody
-            $Attachments = "$StatusLog"
+            Write-Log "$ServiceToCheck did not start before the timeout period of $Timeout seconds"
+            Write-Log "---------- End VM Start Up ----------"
+            $Subject = "$HVSName - VM Startup Procedure Warning: A Service Did Not Start"
+            $Body = "$ServiceToCheck did not start before the timeout period of $Timeout seconds. NO VMs started"
+            $Attachments = "$LogFile"
             SendEmail $From $Subject $Body $Attachments
         }
-        
     }
-    ElseIF($ServiceStarted[0] -eq $False)
+    Else 
     {
-        Write-Log "$ServiceToCheck did not start before the timeout period of $Timeout seconds"
+        Write-Log "$HVSName has no startup file. Startup VMs procedure aborted"
         Write-Log "---------- End VM Start Up ----------"
-        $Subject = "$HVSName - VM Startup Procedure Warning: A Service Did Not Start"
-        $Body = "$ServiceToCheck did not start before the timeout period of $Timeout seconds. NO VMs started"
+        $Subject = "$HVSName - VM Startup Procedure Warning: No StartUp VM File"
+        $Body = "$HVSName Could not find the startup file for this server. NO VMs started"
         $Attachments = "$LogFile"
         SendEmail $From $Subject $Body $Attachments
     }
 }
-Else 
+else 
 {
-    Write-Log "$HVSName has no startup file. Startup VMs procedure aborted"
-    Write-Log "---------- End VM Start Up ----------"
-    $Subject = "$HVSName - VM Startup Procedure Warning: No StartUp VM File"
-    $Body = "$HVSName Could not find the startup file for this server. NO VMs started"
-    $Attachments = "$LogFile"
-    SendEmail $From $Subject $Body $Attachments
+    Write-Host "No config file at $ConfigFile."
 }

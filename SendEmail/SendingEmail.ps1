@@ -12,7 +12,11 @@ Function SendEmail {
     $SMTPServer = "smtp.4web.ca"
     #$SMTPServer = "ri-exch-002.ri.ads"
     $SMTPUser = "smtp@renatus.ca"
-    $SMTPPWD = "Gamma@Echo42"
+    #$SMTPPWD = "Gamma@Echo42"
+
+
+    $passwordLocation = "$PSScriptRoot\Password.txt"
+    $password = Get-Content $passwordLocation | ConvertTo-SecureString
     $Port = "587"
     #$Port = "25"
     $From = "testsender@renatus.ca"
@@ -25,7 +29,8 @@ Function SendEmail {
     $email.Body = $Body
     $email.isBodyhtml = $true
     $smtp = New-Object Net.Mail.SmtpClient $SMTPServer,$Port
-    $smtp.Credentials = New-Object System.Net.NetworkCredential ($SMTPUser,$SMTPPWD)
+    $smtp.Credentials = New-Object System.Net.NetworkCredential ($SMTPUser,$password)
+   
     $smtp.EnableSSL = $False
     $smtp.Port = 587
     #$emailAttachment = New-Object Net.Mail.Attachment $Attachments
