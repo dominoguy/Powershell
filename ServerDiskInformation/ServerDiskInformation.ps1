@@ -24,7 +24,7 @@ $curDate = Get-Date -UFormat "%m-%d-%Y"
 
 $LogLocation = 'F:\Data\Scripts\Powershell\ServerDiskInformation\Logs\ServerDiskUsage.log'
 $CredList = Import-CSV -Path "F:\Data\Scripts\Powershell\ServerList\CredList.csv"
-$ServerCSV = 'F:\Data\Scripts\Powershell\ServerDiskInformation\ServerList.csv'
+$ServerCSV = 'F:\Data\Scripts\Powershell\ServerList\ServerList.csv'
 $ResultsCSV = "F:\Data\Scripts\Powershell\ServerDiskInformation\$curdate-ServerDiskUsage-Results.csv"
 
 $logFile = $LogLocation
@@ -79,23 +79,30 @@ foreach ($row in $Serverlist)
         $AdminName = $CredList.Where({$PSItem.ServerName -eq $ServerName}).AdminName
         $Password = $CredList.Where({$PSItem.ServerName -eq $ServerName}).Password
         $FQDN = "$Servername.$Domain"
+     
         #Is the server up
         IF (Test-Connection -ComputerName $FQDN -Quiet)
         {
             #Create the creds to connect
+            Write-Log "A connection to $FQDN can be made."
             $Username = $Client + "\" + $AdminName
             $SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
             $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $Username, $SecurePassword
     
+            $Session = New-PSSession -ComputerName $FQDN -Credential $cred
+
             #Calculate hard disk usage
             $driveArray = $null
             $driveArray = $ServerDrives.split(',')
+            #USE a new ps session
             Foreach ($Drive in $driveArray)
                 {
+                    Write-host "The drive we are working on is $Drive"
                     $deviceIDName = "DeviceID ='$Drive'"
                     $parameters = @{
-                        Credential = $cred
-                        ComputerName = $FQDN
+                        #Credential = $cred
+                        Session = $Session
+                        #ComputerName = $FQDN
                         ScriptBlock = {
                         Param ($deviceIDName)
                             Get-WmiObject win32_LogicalDisk -Filter $deviceIDName | Select-Object Size,FreeSpace,DeviceID
@@ -120,16 +127,19 @@ foreach ($row in $Serverlist)
                     } 
                     $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation
                  }
-            write-host "Done calculating disk sizes"
+            Write-Log "Done calculating disk sizes"
             #Calculate Data directory size
             $dataArray = $null
             $dataArray = $ServerDataLoc.split(',')
             $sizeResult = 0
             ForEach ($dataPath in $dataArray)
                 {
+                    write-host "the data path is $datapath"
+                    Write-Host "session for data size is $session"
                     $parameters = @{
-                        Credential = $cred
-                        ComputerName = $FQDN
+                        #Credential = $cred
+                        Session = $Session
+                        #ComputerName = $FQDN
                         ScriptBlock = 
                             {
                                 Param ($dataPath)
@@ -138,6 +148,7 @@ foreach ($row in $Serverlist)
                         ArgumentList = $dataPath
                     }
                     $dirSize = Invoke-Command @parameters
+                    Write-host "the data size on $datapath is $dirsize"
                     $sizeResult = $sizeResult + $dirSize
                 }
             $Results = [PSCustomObject]@{
@@ -149,7 +160,8 @@ foreach ($row in $Serverlist)
             DataSize = "$sizeResult"
             } 
             $Results | Export-Csv -Path $ResultsCSV -Force -Append -NoTypeInformation
-            write-host "the size of the data is $sizeResult"
+            Write-Log "Done calculating data size."
+            Exit-PSSession
         }
         else {
         Write-Log "$FQDN is not available"

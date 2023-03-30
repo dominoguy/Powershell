@@ -90,8 +90,11 @@ HSFG,HSFG-TSE-003,hsfg.ads,riadmin,PlutoIs@Planet!2020
 HSFG,HSFG-TSP-001,hsfg.ads,riadmin,PlutoIs@Planet!2020
 HSFG,POS00503,hsfg.ads,riadmin,PlutoIs@Planet!2020
 HSFG,POS00601,hsfg.ads,riadmin,PlutoIs@Planet!2020
-MW,MW-HDC-001,mw.arcc.ads,administrator,d7442489140e78871b1f0a69e74cdfa7
-MW,MW-HDC-002,mw.arcc.ads,administrator,d7442489140e78871b1f0a69e74cdfa7
+MW,MW-HDC-001,mw.ads,riadmin,PlutoIs@Planet!2020
+MW,MW-FS-001,mw.ads,riadmin,PlutoIs@Planet!2020
+MW,MW-APP-001,mw.ads,riadmin,PlutoIs@Planet!2020
+MW,MW-SQL-001,mw.ads,riadmin,PlutoIs@Planet!2020
+MW,MW-TSE-001,mw.ads,riadmin,PlutoIs@Planet!2020
 NAIL,NAIL-FS-001,nail.ads,riadmin,PlutoIs@Planet!2020
 NAIL,NAIL-HDC-001,nail.ads,riadmin,PlutoIs@Planet!2020
 ODC,ODC-APP-001,odc.ads,Administrator,PlutoIs@Planet!2020

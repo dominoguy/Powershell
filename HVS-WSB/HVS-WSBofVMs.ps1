@@ -10,10 +10,13 @@ It will connect to the vm and tell it to run a wsb
 Once the wsb is done the drive will be detached from the vm
 
 Pre-requisites to run on the HVS
-test-wsman
-enable-psremoting
+on client
 Get-Item wsman:localhost\client\trustedhosts
 Set-Item wsman:\localhost\client\trustedhosts -value RI-TESTBCL-001
+
+on target
+Windows server backup needs to be installed on the target
+Powershell modules for WSB need to be installed on 
 
 .PARAMETER LogLocation
 Location of log file and its name
@@ -21,7 +24,8 @@ IE. D:\Data\Scripts\LOGS\WB_SHEP-FS-001.log
 
 #>
 param(
-        [Parameter(Mandatory=$false,HelpMessage='Location of Log file')][string]$LogLocation
+        [Parameter(Mandatory=$false,HelpMessage='Location of Log file')][string]$LogLocation = "D:\Data\Scripts\HVS-WSB\Logs\HVS-WSBofVMs.log",
+        [Parameter(Mandatory=$false,HelpMessage='List of VMs')][string]$ListVMs = "$PSScriptRoot\WSB-VMs.csv"
     )
 <#
 .SYNOPSIS
@@ -40,7 +44,7 @@ function Write-Log
     Add-Content $Logfile -value "$Time $logstring"
 }
 
-$Loglocation = 'D:\Data\Scripts\HVS-WSB\Logs\HVS-WSBofVMs.log'
+#$Loglocation = 'D:\Data\Scripts\HVS-WSB\Logs\HVS-WSBofVMs.log'
 $logFile = $LogLocation
 
 $logFileExists = Test-Path -path $logFile
@@ -51,7 +55,7 @@ if ( $logFileExists -eq $False)
 
 Write-Log "Start WB VM Backups"
 #Get a list of VMs that are checkpointing
-$ListVMs = 'D:\Data\Scripts\HVS-WSB\WSB-VMs.csv'
+
 $VMs = Import-CSV $ListVMs  | select-object -Property vmName,vhdxDrivePath,volumesToBackup,vmBackupTargetDrive,DiskUniqueID,User,FQDN
 
 Foreach ($VM in $VMs) 
@@ -119,27 +123,25 @@ Foreach ($VM in $VMs)
                 Write-Log $driveresults
              }
                 
-                Write-Log "The backupdrive controller is $vhdxController"
-                write-Log "The backupdrive controller number is $vhdxControllerNumber"
-                write-Log "The backupdrive controller location is $vhdxControllerLocation"
                 write-Log "The backupdrive VHDX path is $vmVHDXDrive"
                 write-Log "The last SCSI Controller Number is $scsiControllerNumber"
                 Write-Log "The last SCSI Controller Location is $scsiControllerLocation"
                 
+                Write-Host "Check 10.0"
                 #Start the WSB Process
                 $session = New-PSSession -ComputerName $vmFQDN -Credential $credential          
 
                 #In the VM get the disk by UniqueID and assign it a drive letter
                 Write-Log "Set the Target Drive Letter"
-                $DriveisSet = Invoke-Command -Session $session -FilePath "D:\Data\Scripts\HVS-WSB\SetDriveLetter.ps1" -ArgumentList $vmDiskUniqueID,$vmBackupTarget
-
+                $DriveisSet = Invoke-Command -Session $session -FilePath "$PSScriptRoot\SetDriveLetter.ps1" -ArgumentList $vmDiskUniqueID,$vmBackupTarget
+                Write-Host "Check 11.0"
                 If ($DriveisSet[0] -eq $True)
                     {   #run the wsb
                         Write-Log $DriveisSet[1]
                         Write-Log "Drive Letter is set to $vmBackupTarget"
                         Write-Log "Running Windows Server backup on $vmName"
                         $vmBackupTargetLetter = $vmBackupTarget + ":"
-                        Invoke-Command -Session $session -FilePath "D:\Data\Scripts\HVS-WSB\Windows Server Backup.ps1" -ArgumentList $vmVolumesToBackup,$vmBackupTargetLetter
+                        Invoke-Command -Session $session -FilePath "$PSScriptRoot\Windows Server Backup.ps1" -ArgumentList $vmVolumesToBackup,$vmBackupTargetLetter
                         Write-Log "Did the WSB of $VMName complete: $?"
                         Write-log "Exit code $LASTEXITCODE"
                     }

@@ -4,6 +4,7 @@ $Username = "VMAdmin"
 $Fullname = "VMAdmin"
 $Description = "Local VM Administrator"
 $Groups = "Users,Hyper-V Administrators"
+$Server = "RI-HVS-901"
 $FQDN = "RI-HVS-901.ri.ads"
 
 IF (Test-Connection -ComputerName $FQDN -Quiet)
@@ -56,7 +57,40 @@ IF (Test-Connection -ComputerName $FQDN -Quiet)
     else
     {
         $Enabled = $UserAccount.Enabled
-        Write-host "The user account, $Username, exists and Enabled is $Enabled."
+        Write-host "The user account $Username exists and Enabled is $Enabled."
+        $parameters = @{
+            #Credential = $cred
+            Session = $Session
+            ScriptBlock = {Get-LocalGroup}
+        }
+
+        $LocalGroups  = Invoke-Command @parameters
+        ForEach($localGroup in $LocalGroups)
+        {
+            Write-Host "the local group testing is $localgroup"
+            $parameters = @{
+                #Credential = $cred
+                Session = $Session
+                #$Username = "RI-HVS-901\$Username"
+                ScriptBlock = {Param ($LocalGroup,$Server,$Username)Get-LocalGroupMember -Name $LocalGroup}
+                ArgumentList = ($LocalGroup,$Server,$Username)
+            }
+        
+            $GroupMembers  = Invoke-Command @parameters
+            ForEach($Member in $GroupMembers)
+            {
+                #Write-Host "   the members of the group are $member"
+                $FullName = "$Server\$UserName"
+                Write-host "The full name is $Fullname"
+                Write-Host "The groupmember we are checking is $member"
+                If($Member -eq $Fullname)
+                {
+                    Write-Host  "$username is in $LocalGroup group"
+                }
+                
+            }
+            
+        }
     }
 }
 else {
