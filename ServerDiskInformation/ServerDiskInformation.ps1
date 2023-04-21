@@ -4,6 +4,16 @@
 #log onto server
 # test if data directories exist on datasize check
 
+#NOTES:
+#WINRM must be running on target servers
+#2012 and later it is on by default
+#Need to run locally on 2008 and earlier machines to configure WINRM - winrm quickconfig
+#On the workstation/Server running the script, need WSMAN trustedhosts set
+#in code should add -value * for trusted hosts then use clear-item to clear the setting
+#unless other code requires it.
+#also this will not work on 2003 servers
+
+
 function ConvertToGB ($Size)
     {$a = [Math]::Round($Size/1gb,2)
     Return $a
@@ -85,6 +95,7 @@ foreach ($row in $Serverlist)
         {
             #Create the creds to connect
             Write-Log "A connection to $FQDN can be made."
+            Write-Host "Connecting to $FQDN"
             $Username = $Client + "\" + $AdminName
             $SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
             $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $Username, $SecurePassword

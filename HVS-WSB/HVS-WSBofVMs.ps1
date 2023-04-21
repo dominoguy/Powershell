@@ -7,16 +7,16 @@ This script does a Windows Server Backup of the System State and critical direct
 The script runs a WSB for each VM on a list. It requires that a vhdx is created for the VM of a proper size on a USB drive.
 It will find the proper vhdx for the VM and attach the drive to the VM.
 It will connect to the vm and tell it to run a wsb
-Once the wsb is done the drive will be detached from the vm
+Once the WSB is done the drive will be detached from the vm
 
 Pre-requisites to run on the HVS
-on client
+On Client
 Get-Item wsman:localhost\client\trustedhosts
 Set-Item wsman:\localhost\client\trustedhosts -value RI-TESTBCL-001
 
-on target
+On Target
+Enable-PSRemoting?
 Windows server backup needs to be installed on the target
-Powershell modules for WSB need to be installed on 
 
 .PARAMETER LogLocation
 Location of log file and its name
@@ -56,7 +56,7 @@ if ( $logFileExists -eq $False)
 Write-Log "Start WB VM Backups"
 #Get a list of VMs that are checkpointing
 
-$VMs = Import-CSV $ListVMs  | select-object -Property vmName,vhdxDrivePath,volumesToBackup,vmBackupTargetDrive,DiskUniqueID,User,FQDN
+$VMs = Import-CSV $ListVMs  | select-object -Property vmName,vhdxDrivePath,volumesToBackup,vmBackupTargetDrive,DiskUniqueID,User,FQDN,CheckPath
 
 Foreach ($VM in $VMs) 
 { 
@@ -66,6 +66,7 @@ Foreach ($VM in $VMs)
     $vmBackupTarget = $vm.vmBackupTargetDrive
     $vmDiskUniqueID = $vm.DiskUniqueID
     $vmFQDN = $vm.FQDN
+    $CheckPath = $vm.CheckPath
     
     #Get the credentials to access the vm
     $username = $vm.User
@@ -134,7 +135,6 @@ Foreach ($VM in $VMs)
                 #In the VM get the disk by UniqueID and assign it a drive letter
                 Write-Log "Set the Target Drive Letter"
                 $DriveisSet = Invoke-Command -Session $session -FilePath "$PSScriptRoot\SetDriveLetter.ps1" -ArgumentList $vmDiskUniqueID,$vmBackupTarget
-                Write-Host "Check 11.0"
                 If ($DriveisSet[0] -eq $True)
                     {   #run the wsb
                         Write-Log $DriveisSet[1]
@@ -142,8 +142,45 @@ Foreach ($VM in $VMs)
                         Write-Log "Running Windows Server backup on $vmName"
                         $vmBackupTargetLetter = $vmBackupTarget + ":"
                         Invoke-Command -Session $session -FilePath "$PSScriptRoot\Windows Server Backup.ps1" -ArgumentList $vmVolumesToBackup,$vmBackupTargetLetter
-                        Write-Log "Did the WSB of $VMName complete: $?"
+                        $WSBSuccess = $?
+                        Write-Log "Did the WSB of $VMName complete: $WSBSuccess"
                         Write-log "Exit code $LASTEXITCODE"
+                        #Create a check file for host monitor to verify WSB
+                        $CheckWSBFile = "$CheckPath\WSBCheck.log"
+                        Write-log "The check file for the WSB is located at $CheckWSBFile"
+                        $parameters = @{
+                            Session = $Session
+                            ScriptBlock = {
+                            Param ($CheckWSBFile)
+                                New-Item -Path $CheckWSBFile -Force
+                                    }
+                            ArgumentList = $CheckWSBFile
+                        }
+                        Invoke-Command @parameters
+                        If ($WSBSuccess -eq $True)
+                        {
+                            $parameters = @{
+                                Session = $Session
+                                ScriptBlock = {
+                                Param ($CheckWSBFile)
+                                    Set-Content -Path $CheckWSBFile -Value "WSB Completed"
+                                        }
+                                ArgumentList = $CheckWSBFile
+                            }
+                            Invoke-Command @parameters
+                        }
+                        elseIf($WSBSuccess -eq $False)
+                        {
+                            $parameters = @{
+                                Session = $Session
+                                ScriptBlock = {
+                                Param ($CheckWSBFile)
+                                    Set-Content -Path $CheckWSBFile -Value "WSB Failed"
+                                        }
+                                ArgumentList = $CheckWSBFile
+                            }
+                            Invoke-Command @parameters
+                        }
                     }
                 else {
                     Write-Log "Drive Letter is unavailable for target drive. WSB aborted "
@@ -152,6 +189,7 @@ Foreach ($VM in $VMs)
                 Exit-PSSession
                 #Unmount the wsbdrive
                 Get-vm $vmName | get-vmharddiskdrive -controllertype SCSI -controllernumber $vhdxControllerNumber -controllerlocation $vhdxControllerLocation | remove-vmharddiskdrive
+                Write-Log "Removing WSB Drive on $vmName"
                 Write-Log "Finished WSB for $vmName"
                
         }
