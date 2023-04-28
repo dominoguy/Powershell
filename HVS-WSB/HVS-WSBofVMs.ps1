@@ -142,9 +142,19 @@ Foreach ($VM in $VMs)
                         Write-Log "Running Windows Server backup on $vmName"
                         $vmBackupTargetLetter = $vmBackupTarget + ":"
                         Invoke-Command -Session $session -FilePath "$PSScriptRoot\Windows Server Backup.ps1" -ArgumentList $vmVolumesToBackup,$vmBackupTargetLetter
-                        $WSBSuccess = $?
-                        Write-Log "Did the WSB of $VMName complete: $WSBSuccess"
-                        Write-log "Exit code $LASTEXITCODE"
+
+                        $WSBSuccess = Invoke-Command -Session $session -ScriptBlock {Get-WBJob -Previous 1}
+                        $JobState = $WSBSuccess.JobState
+                        Write-Log "The state of the backup is $JobState"
+
+                        if ( $JobState -eq "Completed") {
+                            Write-Log "Backup was successful."
+                        }else {
+                            Write-Log "Backup was not successful."
+                        }
+                        #$WSBSuccess = $?
+                        #Write-Log "Did the WSB of $VMName complete: $WSBSuccess"
+                        #Write-log "Exit code $LASTEXITCODE"
                         #Create a check file for host monitor to verify WSB
                         $CheckWSBFile = "$CheckPath\WSBCheck.log"
                         Write-log "The check file for the WSB is located at $CheckWSBFile"
@@ -157,7 +167,7 @@ Foreach ($VM in $VMs)
                             ArgumentList = $CheckWSBFile
                         }
                         Invoke-Command @parameters
-                        If ($WSBSuccess -eq $True)
+                        If ($JobState -eq 'Completed')
                         {
                             $parameters = @{
                                 Session = $Session
@@ -169,7 +179,7 @@ Foreach ($VM in $VMs)
                             }
                             Invoke-Command @parameters
                         }
-                        elseIf($WSBSuccess -eq $False)
+                        elseIf($JobState -ne 'Completed')
                         {
                             $parameters = @{
                                 Session = $Session

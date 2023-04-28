@@ -70,6 +70,10 @@ else
 Write-Log "A Results File has been created"
 
 $ServerList = Import-Csv $ServerCSV
+#Allow PSRemoting to servers - TrustedHosts
+#Write-Log "Setting TrustedHosts"
+#Write-Host "Setting TrustedHosts"
+#Set-Item WSMan:\localhost\Client\TrustedHosts -Value *
 
 foreach ($row in $Serverlist)
 {
@@ -81,7 +85,7 @@ foreach ($row in $Serverlist)
     Write-Log "Working on $ServerName"
     $Client = $CredList.Where({$PSItem.ServerName -eq $ServerName}).Client
     If (!$Client)
-    {Write-Log "There is no credential entry for $Servername"}
+    {Write-Log "***** There is no credential entry for $Servername *****"}
     else
     {
         Write-Log "Checking $ServerName"
@@ -101,12 +105,14 @@ foreach ($row in $Serverlist)
             $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $Username, $SecurePassword
     
             $Session = New-PSSession -ComputerName $FQDN -Credential $cred
-
-            #Calculate hard disk usage
-            $driveArray = $null
-            $driveArray = $ServerDrives.split(',')
-            #USE a new ps session
-            Foreach ($Drive in $driveArray)
+            Write-host $Session
+            IF ($Session.State -eq "Opened")
+            {
+                #Calculate hard disk usage
+                $driveArray = $null
+                $driveArray = $ServerDrives.split(',')
+                #USE a new ps session
+                Foreach ($Drive in $driveArray)
                 {
                     Write-host "The drive we are working on is $Drive"
                     $deviceIDName = "DeviceID ='$Drive'"
@@ -120,6 +126,12 @@ foreach ($row in $Serverlist)
                                 }
                         ArgumentList = $deviceIDName
                     }
+
+                    #Clearing the disk variables
+                    $diskName = ""
+                    $diskFreeSpace = ""
+                    $diskSize = ""
+                    $diskUsed = ""
 
                     $disk = Invoke-Command @parameters
         
@@ -137,13 +149,13 @@ foreach ($row in $Serverlist)
                         DataSize = ""
                     } 
                     $Results | Export-Csv -Path $ResultsCSV -Append -NoTypeInformation
-                 }
-            Write-Log "Done calculating disk sizes"
-            #Calculate Data directory size
-            $dataArray = $null
-            $dataArray = $ServerDataLoc.split(',')
-            $sizeResult = 0
-            ForEach ($dataPath in $dataArray)
+                }
+                 Write-Log "Done calculating disk sizes"
+                #Calculate Data directory size
+                $dataArray = $null
+                $dataArray = $ServerDataLoc.split(',')
+                $sizeResult = 0
+                ForEach ($dataPath in $dataArray)
                 {
                     write-host "the data path is $datapath"
                     Write-Host "session for data size is $session"
@@ -159,25 +171,34 @@ foreach ($row in $Serverlist)
                         ArgumentList = $dataPath
                     }
                     $dirSize = Invoke-Command @parameters
-                    Write-host "the data size on $datapath is $dirsize"
+                    Write-Log "$FQDN the data size on $datapath is $dirsize"
+                    Write-host "$FQDN the data size on $datapath is $dirsize"
                     $sizeResult = $sizeResult + $dirSize
                 }
-            $Results = [PSCustomObject]@{
-            ServerName = "$Servername"
-            DriveName = ""
-            DiskSize = ""
-            UsedSpace = ""
-            FreeSpace = ""
-            DataSize = "$sizeResult"
-            } 
-            $Results | Export-Csv -Path $ResultsCSV -Force -Append -NoTypeInformation
-            Write-Log "Done calculating data size."
-            Exit-PSSession
+                $Results = [PSCustomObject]@{
+                    ServerName = "$Servername"
+                    DriveName = ""
+                    DiskSize = ""
+                    UsedSpace = ""
+                    FreeSpace = ""
+                    DataSize = "$sizeResult"
+                } 
+                $Results | Export-Csv -Path $ResultsCSV -Force -Append -NoTypeInformation
+                Write-Log "Done calculating data size."
+              
+            }
+            else {
+                Write-Log "***** Could NOT open session to $FQDN *****"
+                Write-Host "***** Could NOT open session to $FQDN *****"
+            }
+            Disconnect-PSSession -Name $Session
         }
         else {
-        Write-Log "$FQDN is not available"
+        Write-Log "***** $FQDN is not available *****"
         }
     }
     Write-Log "End Check on $ServerName"
 }
+#End PSRemoting: Clear the Trustedhosts file
+#Clear-Item WSMan:\localhost\Client\TrustedHosts
 Write-Log "End Server Disk Usage Check"

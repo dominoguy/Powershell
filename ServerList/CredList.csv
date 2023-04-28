@@ -36,10 +36,12 @@ ACAWT,ACAWT-APP-002,acawt.arcc.ads,administrator,aba7f1fc55eeb50db8a55156699f3dc
 ACAWT,ACAWT-APP-003,acawt.arcc.ads,administrator,aba7f1fc55eeb50db8a55156699f3dcd
 ACAWT,ACAWT-APP-004,acawt.arcc.ads,administrator,aba7f1fc55eeb50db8a55156699f3dcd
 ACAWT,ACAWT-APP-005,acawt.arcc.ads,administrator,aba7f1fc55eeb50db8a55156699f3dcd
+ACAWT,ACAWT-APP-006,acawt.arcc.ads,administrator,aba7f1fc55eeb50db8a55156699f3dcd
 ACAWT,ACAWT-DEV-001a,acawt.arcc.ads,administrator,aba7f1fc55eeb50db8a55156699f3dcd
 ACAWT,ACAWT-FS-001,acawt.arcc.ads,administrator,aba7f1fc55eeb50db8a55156699f3dcd
 ACAWT,ACAWT-HDC-001,acawt.arcc.ads,administrator,aba7f1fc55eeb50db8a55156699f3dcd
 ACAWT,ACAWT-SP-003,acawt.arcc.ads,administrator,aba7f1fc55eeb50db8a55156699f3dcd
+ACAWT,ACAWT-SQL-001,acawt.arcc.ads,administrator,aba7f1fc55eeb50db8a55156699f3dcd
 ACAWT,ACAWT-SQL-002,acawt.arcc.ads,administrator,aba7f1fc55eeb50db8a55156699f3dcd
 ACAWT,ACAWT-TSE-001,acawt.arcc.ads,administrator,aba7f1fc55eeb50db8a55156699f3dcd
 ACE,ACE-FS-001,ace.ads,riadmin,PlutoIs@Planet!2020
@@ -48,6 +50,7 @@ ACE,ACE-RDS-001,ace.ads,riadmin,PlutoIs@Planet!2020
 ACE,ACE-SRV-001,ace.ads,riadmin,PlutoIs@Planet!2020
 ACP,ACP-APP-002,acp.local,riadmin,PlutoIs@Planet!2020
 ACP,ACP-FS-001,acp.local,riadmin,PlutoIs@Planet!2020
+ACP,ACP-FS-002,acp.local,riadmin,PlutoIs@Planet!2020
 ACP,ACP-HDC-002,acp.local,riadmin,PlutoIs@Planet!2020
 ACP,ACP-HDC-003,acp.local,riadmin,PlutoIs@Planet!2020
 ACP,ACP-EXCH-002,acp.local,riadmin,PlutoIs@Planet!2020
@@ -70,11 +73,13 @@ BLUS,BLUS-SRV-001,blus.ads,riadmin,PlutoIs@Planet!2020
 BLUS,BLUS-SQL-001,blus.ads,riadmin,PlutoIs@Planet!2020
 BLUS,BLUS-SQL-002,blus.ads,riadmin,PlutoIs@Planet!2020
 BLUS,DemoPOS,blus.ads,riadmin,PlutoIs@Planet!2020
+BRIO,BRIO-APP-001,brio.ads,riadmin,PlutoIs@Planet!2020
 BRIO,BRIO-MEM-001,brio.ads,riadmin,PlutoIs@Planet!2020
 BRIO,BRIO-SRV-001,brio.ads,riadmin,PlutoIs@Planet!2020
 ENHC,ENHC-SRV-001,enhc.ads,riadmin,PlutoIs@Planet!2020
 GDA,GDA-HDC-001,gda.ads,riadmin,PlutoIs@Planet!2020
 GDA,GDA-FS-001,gda.ads,riadmin,PlutoIs@Planet!2020
+GDA,GDA-FS-002,gda.ads,riadmin,PlutoIs@Planet!2020
 GDA,GDA-RDS-001,gda.ads,riadmin,PlutoIs@Planet!2020
 GDA,GDA-WKS-001,gda.ads,riadmin,PlutoIs@Planet!2020
 GDA,GDA-WKS-002,gda.ads,riadmin,PlutoIs@Planet!2020
@@ -97,9 +102,10 @@ MW,MW-SQL-001,mw.ads,riadmin,PlutoIs@Planet!2020
 MW,MW-TSE-001,mw.ads,riadmin,PlutoIs@Planet!2020
 NAIL,NAIL-FS-001,nail.ads,riadmin,PlutoIs@Planet!2020
 NAIL,NAIL-HDC-001,nail.ads,riadmin,PlutoIs@Planet!2020
-ODC,ODC-APP-001,odc.ads,Administrator,PlutoIs@Planet!2020
-ODC,ODC-SRV-001,odc.ads,Administrator,PlutoIs@Planet!2020
-ODC,ODC-SQL-002,odc.ads,Administrator,PlutoIs@Planet!2020
+ODC,ODC-APP-001,odc.ads,backup,T@styOrangebeverage2023
+ODC,ODC-FS-001,odc.ads,backup,T@styOrangebeverage2023
+ODC,ODC-SRV-001,odc.ads,backup,T@styOrangebeverage2023
+ODC,ODC-SQL-002,odc.ads,backup,T@styOrangebeverage2023
 PAL,PAL-APP-001,pal.ads,riadmin,PlutoIs@Planet!2020
 PAL,PAL-FS-001,pal.ads,riadmin,PlutoIs@Planet!2020
 PAL,PAL-HDC-001,pal.ads,riadmin,PlutoIs@Planet!2020
@@ -111,6 +117,7 @@ PTA,PTA-HDC-001,pta.ads,riadmin,PlutoIs@Planet!2020
 PTA,PTA-SRV-001,pta.ads,riadmin,PlutoIs@Planet!2020
 RMC,RMC-FS-001,rmc.ads,riadmin,PlutoIs@Planet!2020
 RMC,RMC-HDC-001,rmc.ads,riadmin,PlutoIs@Planet!2020
+RMC,RMC-APP-001,rmc.ads,riadmin,PlutoIs@Planet!2020
 TOO,TOO-SRV-002,too.ads,riadmin,PlutoIs@Planet!2020
 TOO,TOO-TSE-001,too.ads,riadmin,PlutoIs@Planet!2020
 WPC,WPC-FS-001,wpc.ads,riadmin,PlutoIs@Planet!2020
