@@ -11,7 +11,7 @@ expand all
 
 # Select updated files.
 
-select left.diff.files left.orphan.files
+select left.diff.files left.newer.files left.orphan.files
 
 # Copy changes to the monthly directory.
 

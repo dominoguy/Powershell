@@ -1,11 +1,7 @@
 #HVS-WSBofVMs
 <#
 .SYNOPSIS
-Version 1.0
 This script does a Windows Server Backup of the System State and critical directories for a list of VMs on a Hyper-V server.
-Version 2.0 29-05-2023
-Changed WSB disk targeting to use disk number instead of volume name
-No longer need SetDriveLetter.ps1
 
 .DESCRIPTION
 The script runs a WSB for each VM on a list. It requires that a vhdx is created for the VM of a proper size on a USB drive.
@@ -14,14 +10,11 @@ It will connect to the vm and tell it to run a wsb
 Once the WSB is done the drive will be detached from the vm
 
 Pre-requisites to run on the HVS
-Value = the FQDN of the VM
+On Client
 Get-Item wsman:localhost\client\trustedhosts
 Set-Item wsman:\localhost\client\trustedhosts -value RI-TESTBCL-001
 
-Pre-requisties to run on the VM
-Load the powershell modules on the VM
-import-module WindowsServerBackup
-
+On Target
 Enable-PSRemoting?
 Windows server backup needs to be installed on the target
 
@@ -140,45 +133,29 @@ Foreach ($VM in $VMs)
                 $session = New-PSSession -ComputerName $vmFQDN -Credential $credential          
 
                 #In the VM get the disk by UniqueID and assign it a drive letter
-                Write-Log "Get the WSB Target Disk Number"
-                #$DriveisSet = Invoke-Command -Session $session -FilePath "$PSScriptRoot\SetDriveLetter.ps1" -ArgumentList $vmDiskUniqueID,$vmBackupTarget
-                $parameters = @{
-                    Session = $Session
-                    ScriptBlock = {
-                    Param ($vmDiskUniqueID)
-                            Get-Disk | Where-Object UniqueId -eq $vmDiskUniqueID
-                            }
-                    ArgumentList = $vmDiskUniqueID
-                }
-                $diskInfo = Invoke-Command @parameters
-                $diskNumber = $diskInfo.DiskNumber
-                Write-host "The disk number is $disknumber"
-                If ($Null -ne $diskNumber)
+                Write-Log "Set the Target Drive Letter"
+                $DriveisSet = Invoke-Command -Session $session -FilePath "$PSScriptRoot\SetDriveLetter.ps1" -ArgumentList $vmDiskUniqueID,$vmBackupTarget
+                If ($DriveisSet[0] -eq $True)
                     {   #run the wsb
-                        Write-Log "Disk Number is $diskNumber"
+                        Write-Log $DriveisSet[1]
+                        Write-Log "Drive Letter is set to $vmBackupTarget"
                         Write-Log "Running Windows Server backup on $vmName"
-                        Invoke-Command -Session $session -FilePath "$PSScriptRoot\Windows Server Backup.ps1" -ArgumentList $vmVolumesToBackup,$diskNumber
+                        $vmBackupTargetLetter = $vmBackupTarget + ":"
+                        Invoke-Command -Session $session -FilePath "$PSScriptRoot\Windows Server Backup.ps1" -ArgumentList $vmVolumesToBackup,$vmBackupTargetLetter
 
                         $WSBSuccess = Invoke-Command -Session $session -ScriptBlock {Get-WBJob -Previous 1}
                         $JobState = $WSBSuccess.JobState
                         Write-Log "The state of the backup is $JobState"
-                        $WSBSummary = Invoke-Command -Session $session -ScriptBlock {Get-WBSummary}
-                        $WSBSumLSBT = $WSBSummary.LastSuccessfulBackupTime
-                        $WSBSumLBT = $WSBSummary.LastBackupTime
-                        $WSBSumDM = $WSBSummary.DetailedMessage
-                        $WSBSumLBRHR = $WSBSummary.LastBackupResultHR
-
-                        Write-Log "The last successful Backup Time was $WSBSumLSBT"
-                        Write-Log "The last backup time was $WSBSumLBT"
-                        Write-Log "If WSB errored, the detailed message is $WSBSumDM"
-                        Write-Log "If WSB errored, the Last Backup Result HR code is $WSBSumLBRHR"
 
                         if ( $JobState -eq "Completed") {
                             Write-Log "Backup was successful."
                         }else {
                             Write-Log "Backup was not successful."
                         }
-                       
+                        #$WSBSuccess = $?
+                        #Write-Log "Did the WSB of $VMName complete: $WSBSuccess"
+                        #Write-log "Exit code $LASTEXITCODE"
+                        #Create a check file for host monitor to verify WSB
                         $CheckWSBFile = "$CheckPath\WSBCheck.log"
                         Write-log "The check file for the WSB is located at $CheckWSBFile"
                         $parameters = @{

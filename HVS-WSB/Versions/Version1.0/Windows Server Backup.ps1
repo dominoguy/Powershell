@@ -2,10 +2,7 @@
 
 <#
 .SYNOPSIS
-Version 1.0
 This script does a Windows Server Backup of the System State and critical directories for a server restore.
-Version 2.0 29-05-2023
-Changed WSB target from volume to using disk number
 
 .DESCRIPTION
 This script creates a Windows Backup Policy which is used to run the backup against.
@@ -17,7 +14,7 @@ IE. F:\Data\Scripts\Powershell\LOGS\ADInfo.log
 #>
 param(
         [Parameter(Mandatory=$False,HelpMessage='Volumes to backup')][string]$volumesToBackup,
-        [Parameter(Mandatory=$False,HelpMessage='Windows Server Drive')][UInt32]$diskNumber
+        [Parameter(Mandatory=$False,HelpMessage='Windows Server Drive')][string]$BackupTarget
     )
 <#
 
@@ -46,6 +43,7 @@ if ( $logFileExists -eq $False)
  New-Item -ItemType File -Force -Path $logFile
 }
 #>
+
 #need baremetal which should include critical volumes and need systemstate
 $WBPolicy = Get-WBPolicy
 If ($null -eq $WBPolicy)
@@ -79,20 +77,10 @@ $FileSpecArray = Foreach ($vol in $volumes)
 Add-WBFileSpec -Policy $WBPolicy $FileSpecArray
 
 #Set the backup location for the backup policy
-$WBDisks = Get-WBDisk
-$WBVolume = get-wbvolume -Disk $WBDisks[$diskNumber]
-#$backupLocation = New-WBBackupTarget -Disk $WBDisks[$diskNumber]
-$backupLocation = New-WBBackupTarget -Volume $WBVolume
+$backupLocation = New-WBBackupTarget -VolumePath "$BackupTarget"
 
 #Add the backup location into the policy
 Add-WBBackupTarget -Policy $WBPolicy -Target $backupLocation
-
-#Set the WBSchedule to a non time
-#Set-WBSchedule -Policy $WBPolicy -Schedule 10:00
-
-#Set the WBPolicy
-#Set-WBPolicy -Policy $WBPolicy
-
 }
 
 #

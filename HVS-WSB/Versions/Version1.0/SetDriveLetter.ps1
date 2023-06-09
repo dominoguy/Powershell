@@ -22,15 +22,15 @@ else {
     IF ($null -eq $partition)
     {
         Get-Partition | Where-Object {($_.DiskNumber -eq $diskNumber) -and ($_.Type -eq "Basic")} | Set-Partition -NewDriveLetter $vmBackupTarget
-        Return $true,"No Drive E Letter assigned. Assigning Drive E to target drive"
+        Return $true,"No Drive $vmBackupTarget Letter assigned. Assigning Drive $vmBackupTarget to target drive"
     }
     elseif ($partition.Disknumber -eq $diskNumber) 
     {
-        Return $true,"Drive E is assigned to the correct drive"
+        Return $true,"Drive $vmBackupTarget is assigned to the correct drive"
     }
     else 
     {
-        Return $False,"Drive E is NOT assigned to the correct drive"
+        Return $False,"Drive $vmBackupTarget is NOT assigned to the correct drive"
     }
 }
 
