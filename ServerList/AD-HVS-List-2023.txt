@@ -1,0 +1,62 @@
+Name	Type	Description	
+ACAWT-HVS-001	Computer	T640 - ST: 2DHS753	
+ACAWT-HVS-002	Computer	R540 - ST: 11BN243	
+ACE-HVS-001	Computer		
+ACE-HVS-002	Computer		
+ACP-HVS-001	Computer	9PKCBZ1 Dell PowerEdge T620	
+ACP-HVS-002	Computer		
+ACTC-HVS-001	Computer		
+ARCC-HVS-002	Computer	ARCC Hyper-V Server on Dell PowerEdge 2950	
+ARCC-HVS-003	Computer	ARCC Hyper-V Server on Dell PowerEdge 2950	
+ARCC-HVS-004	Computer		
+ARCC-HVS-006	Computer		
+ARCC-HVS-007	Computer		
+ARCC-HVS-008	Computer		
+BLUS-HVS-001	Computer		
+BLUS-HVS-002	Computer		
+BLUS-HVS-003	Computer		
+BRIO-HVS-001	Computer	BRIO Hyper-V Server on Dell PowerEdge R520	
+BRIO-HVS-002	Computer		
+ENHC-HVS-001	Computer		
+GDA-HVS-001	Computer	HS5W8Z1 Dell PowerEdge T620	
+GDA-HVS-002	Computer		
+HSFG-HVS-002	Computer		
+MW-HVS-001	Computer		
+NAIL-HVS-001	Computer		
+ODC-HVS-001	Computer		
+ODC-HVS-002	Computer		
+ODC-HVS-005	Computer		
+PAL-HVS-001	Computer		
+PAL-HVS-002	Computer	R540 ST: 206NKM3	
+PTA-HVS-000	Computer		
+PTA-HVS-001	Computer	T640 ST: J4C0343	
+REPLICA-SV01	Computer	From apro.local	
+RI-HVS-001	Computer		
+RI-HVS-002	Computer	Replica	
+RI-HVS-003	Computer	Deployment Hypervisor	
+RI-HVS-004	Computer	MDT Hypervisor	
+RI-HVS-005	Computer	Deployment Hypervisor	
+RI-HVS-006	Computer	Replica	
+RI-HVS-008	Computer		
+RI-HVS-009	Computer	Hosts HUE VMs (Formerly)	
+RI-HVS-010	Computer	RI-FS-002	
+RI-HVS-011	Computer	Backup, server 6	
+RI-HVS-012	Computer	Backup, Servers 7 and 8	
+RI-HVS-013	Computer	Hosts Backups 9 and 11	
+RI-HVS-014	Computer		
+RI-HVS-901	Computer		
+RI-HVS-902	Computer		
+RI-PATEST-001	Computer		
+RMC-HVS-001	Computer		
+RMC-HVS-002	Computer		
+SHEP-HVS-001	Computer		
+SHEP-HVS-002	Computer		
+SHEP-HVS-003	Computer		
+SHEP-HVS-005	Computer		
+SHEP-HVS-006	Computer		
+SHEP-HVS-007	Computer		
+SHEP-HVS-008	Computer		
+SHEP-HVS-009	Computer		
+TOO-HVS-001	Computer	TOO Hyper-V Server on Dell T620	
+TOO-HVS-002	Computer	PowerEdgeT440	
+WPC-HVS-001	Computer		

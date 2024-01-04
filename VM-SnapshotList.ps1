@@ -25,9 +25,9 @@ function Write-Log
     Add-Content $Logfile -value "$Time $logstring"
 }
 $ResultsDate = Get-Date -uformat "%Y-%m-%d"
-$LogLocation = 'F:\Data\Scripts\Powershell\LOGS\VMSnapShotList.log'
-$ServerCSV = 'F:\Data\Scripts\Powershell\VMSnapShotList\HVSServerList.csv'
-$ResultsCSV = "F:\Data\Scripts\Powershell\VMSnapShotList\$ResultsDate-VMSnapShotList-Results.csv"
+$LogLocation = 'F:\Data\Scripts\GitHub\Powershell\LOGS\VMSnapShotList.log'
+$ServerCSV = 'F:\Data\Scripts\Github\Powershell\ServerList\HVSServerList.csv'
+$ResultsCSV = "F:\Data\Scripts\GitHub\Powershell\VMSnapShotList\$ResultsDate-VMSnapShotList-Results.csv"
 
 $logFile = $LogLocation
 $logFileExists = Test-Path -path $logFile
