@@ -1,5 +1,6 @@
 #VM-SnapshotList
 <#This script connects to each HVS in the server list and gets size and free space on its C: and D: drive
+Make sure you can ping the HVS boxes, you may need to add a persistant route
 It then gets each vm on the HVS and gets it state and any snapshots associated with it.
 Revisions
 1) columns switch, disksize first then free space - done

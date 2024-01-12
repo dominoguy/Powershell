@@ -31,27 +31,60 @@ else
 Write-Log "Start Mailbox Search"
 #Get the mailboxes to search
 $MailBoxList = Import-csv -Path "$PSScriptRoot\Mailboxes.csv"
+#Get the list of TO email
+$ToList = Import-csv -Path "$PSScriptRoot\To.csv"
 #Get the list of keywords to search the mailbox
-$KeywordList = Import-csv -Path "$PSScriptRoot\Keywords.csv"
+$KeywordCSV = Import-csv -Path "$PSScriptRoot\Keywords.csv"
 #Format the list into a string for the query
-$StringList = "'"
-ForEach($Keyword in $KeywordList)
+
+#Build the To Search Query
+$ToString = ""
+ForEach($To in $ToList)
 {
-    If($StringList -ne "")
+    $ToEntry = $To.to
+    If($ToString -NE "")
     {
-        $StringList = $StringList + " OR "
+        $ToString = $ToString + " OR "
     }
-    $StringList = $StringList + '"' + $Keyword.Keyword + '"'
+    
+    $ToString = $ToString + 'To:"' + $ToEntry + '"'
 }
-$StringList = $StringList + "'"
+Write-Log "The To list is: $ToString"
 
-Write-Log $StringList
+#If($ToString -NE "")
+#{
+#    $ToString = $ToString + " And "
+#}
 
-#Search-Mailbox  -Identity "Jennifer Burns" -SearchQuery $StringList -TargetMailbox "Discovery Search Mailbox" -TargetFolder "Jennifer Burns" -LogLevel Full
-ForEach($Mailbox in $MailboxList)
+#Build the Keyword String list
+$KeyString = ""
+ForEach($Key in $KeywordCSV)
 {
-    $Mailbox = $Mailbox.Mailbox
-    Write-Log $Mailbox
-    Search-Mailbox  -Identity $MailBox -SearchQuery $StringList -TargetMailbox "Discovery Search Mailbox" -TargetFolder $Mailbox -LogLevel Full
+    $KeyEntry = $Key.keyword
+    If($KeyString -NE "")
+    {
+        $KeyString = $KeyString + " OR "
+    }
+    
+    $KeyString = $KeyString + '"' + $KeyEntry + '"'
+}
+Write-Log "The KeyString List is: $KeyString"
+
+$StringList = $ToString + $KeyString
+
+#-SearchQuery needs to be quotes if there are mutltiple search criteria
+$StringList = "'" + $StringList + "'"
+
+Write-Log "The -SearchQuery string is:  $StringList"
+#Search-Mailbox  -Identity "Jennifer Burns" -SearchQuery 'to:tmitchell or to:"slt@shepherdscare.org" And "LGBTQ" OR "Pride Month"' -TargetMailbox "Discovery Search Mailbox" -TargetFolder "Jennifer Burns" -LogLevel Full
+
+ForEach($Row in $MailboxList)
+{
+    $Mailbox = $Row.Mailbox
+    Write-Log "Searching the mailbox of:  $Mailbox"
+    #$Mailbox = """$Mailbox"""
+    #Write-Host ""Search-Mailbox  -Identity $MailBox -SearchQuery $StringList -TargetMailbox "Discovery Search Mailbox" -TargetFolder $Mailbox -LogLevel Full""
+    #Search-Mailbox  -Identity $MailBox -SearchQuery $StringList -TargetMailbox "Discovery Search Mailbox" -TargetFolder $Mailbox -LogLevel Full
+    Search-Mailbox  -Identity $MailBox -SearchQuery "$ToString And $Keystring" -TargetMailbox "Discovery Search Mailbox" -TargetFolder $Mailbox -LogLevel Full
 }
 Write-Log "End Mailbox Search"
