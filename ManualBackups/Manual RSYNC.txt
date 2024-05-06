@@ -1,0 +1,29 @@
+Manual RSYNC
+Build exclude file
+
+ribackup
+check user/blong - checking first two directories to build the exclusiion list - how big can this list be?
+also check first level dir and just exempt the first level (-Group)
+If last entry is still blong
+then
+note the directory it is in and start there
+if not the last entry
+enter -user/blong/* into exclude directory
+
+it will continue to build the two directory list until it switches dir
+dont add to exclude list until done with top level dir or end of file
+
+Using rsync we can also exclude files and directories based on a pattern that matches the file or directory name.
+
+For example, to exclude all .jpg files, we run the below command.
+
+rsync -a --exclude '*.jpg*' src_directory/ dst_directory/
+But if we wish to exclude all other files and directories except the files ending with .jpg then here is the command for it.
+
+rsync -a -m --include='*.jpg' --include='*/' --exclude='*' src_directory/ dst_directo
+
+exclude-file.txt
+
+file1.txt
+dir1/*
+dir2

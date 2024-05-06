@@ -1,5 +1,4 @@
-#MailboxSearch
-#This script searchs mailbox(es) in Exchange based on Keywords
+#SearchQuery Testing
 
 
 function Write-Log
@@ -14,8 +13,7 @@ function Write-Log
 #get the current date in the format of  month-day-year
 $curDate = Get-Date -UFormat "%m-%d-%Y"
 
-$LogLocation = "$PSScriptRoot\Logs\MailboxSearch-$curdate.log"
-$logFile = $LogLocation
+$logFile = "$PSScriptRoot\Logs\QuerySearchTest.log"
 $logFileExists = Test-Path -path $logFile
 
 if ( $logFileExists -eq $True)
@@ -28,13 +26,7 @@ else
     New-Item -ItemType File -Force -Path $logFile
 }
 
-Write-Log "Start Mailbox Search"
-#Get the mailboxes to search
-$MailBoxList = Import-csv -Path "$PSScriptRoot\Mailboxes.csv"
-#Get the list of SearchQuery Variables to search the mailbox
 $SearchVarCSV = Import-csv -Path "$PSScriptRoot\SearchVariables.csv"
-
-#Build the variables for the query
 
 ForEach($Key in $SearchVarCSV)
 {
@@ -74,8 +66,6 @@ ForEach($Key in $SearchVarCSV)
         }
     }
 }
-#Build -SearchQuery string
-
 
 If (-Not [String]::IsNullOrWhiteSpace($FromString))
 {
@@ -93,19 +83,16 @@ If (-Not [String]::IsNullOrWhiteSpace($KeyString))
     }
 }
 
-$SearchQuery = $ToString + $FromString + $KeyString
-Write-Log "The -SearchQuery string is:  $SearchQuery"
 
-#if Mailboxboxes.csv is blank then default is search all mailboxes
 
-$TargetMailBox = "Discovery Search Mailbox"
-ForEach($Row in $MailboxList)
-{
-    $Mailbox = $Row.Mailbox
-    Write-Log "Searching the mailbox of:  $Mailbox"
-    Write-Host "Searching the mailbox of:  $Mailbox"
-    #Search-Mailbox  -Identity $Mailbox -SearchQuery 'From:"ManiKadiyala@altec-inc.com" OR "eleson@SHEPHERDSCARE.org" AND "doclink" OR "prereqs" OR "Foodservices"' -TargetMailbox "$TargetMailBox" -TargetFolder $Mailbox -LogLevel Full
-    Search-Mailbox  -Identity $Mailbox -SearchQuery "$SearchQuery" -TargetMailbox "$TargetMailBox" -TargetFolder $Mailbox -LogLevel Full
-}
-Write-Host "End Mailbox Search"
-Write-Log "End Mailbox Search"
+$SearchQuery = "'" + $ToString + $FromString + $KeyString + "'"
+
+Write-Log "The keywords are $KeyString"
+Write-Log "The To addresses are $ToString"
+Write-Log "The From addresses are $FromString"
+Write-Log "This is the SearchQuery String: $SearchQuery"
+
+
+
+#:IsNullOrWhiteSpace
+
