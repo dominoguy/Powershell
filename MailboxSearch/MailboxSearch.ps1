@@ -1,6 +1,13 @@
 #MailboxSearch
-#This script searchs mailbox(es) in Exchange based on Keywords
-
+#Brian Long
+#Verison 1.0
+#This script searchs mailbox(es) in Exchange based on To and From Fields and Keywords
+#Required: 
+#The Discovery Search Mailbox needs to be setup.
+#SearchVariables.csv, Columns = To, From, Keyword
+#Mailboxes.csv, Columns = Mailbox
+#CSVs need to be in the same folder as MailboxSearch.ps1
+#Log folder, located in the same folder as MailboxSearch.ps1
 
 function Write-Log
 {
@@ -35,7 +42,6 @@ $MailBoxList = Import-csv -Path "$PSScriptRoot\Mailboxes.csv"
 $SearchVarCSV = Import-csv -Path "$PSScriptRoot\SearchVariables.csv"
 
 #Build the variables for the query
-
 ForEach($Key in $SearchVarCSV)
 {
     $ToEntry = $Key.To
@@ -74,9 +80,8 @@ ForEach($Key in $SearchVarCSV)
         }
     }
 }
+
 #Build -SearchQuery string
-
-
 If (-Not [String]::IsNullOrWhiteSpace($FromString))
 {
     If(-Not [String]::IsNullOrWhiteSpace($ToString))
