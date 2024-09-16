@@ -10,9 +10,11 @@
 #Need to run locally on 2008 and earlier machines to configure WINRM - winrm quickconfig
 #On the workstation/Server running the script, need WSMAN trustedhosts set
 #in code should add -value * for trusted hosts then use clear-item to clear the setting
-#unless other code requires it.
+#unless other code requires it. Be aware of what is currently in the trusted hosts.
 #also this will not work on 2003 servers
-
+#Get-Item WSMan:\localhost\Client\TrustedHosts, store the list
+#Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*'
+#Clear-Item -Path WSMan:\localhost\Client\TrustedHosts -Force, then put back the prior list
 
 function ConvertToGB ($Size)
     {$a = [Math]::Round($Size/1gb,2)
@@ -32,10 +34,10 @@ function Write-Log
 #get the current date in the format of  month-day-year
 $curDate = Get-Date -UFormat "%m-%d-%Y"
 
-$LogLocation = 'F:\Data\Scripts\Powershell\ServerDiskInformation\Logs\ServerDiskUsage.log'
-$CredList = Import-CSV -Path "F:\Data\Scripts\Powershell\ServerList\CredList.csv"
-$ServerCSV = 'F:\Data\Scripts\Powershell\ServerList\ServerList.csv'
-$ResultsCSV = "F:\Data\Scripts\Powershell\ServerDiskInformation\$curdate-ServerDiskUsage-Results.csv"
+$LogLocation = 'F:\Data\Scripts\GitHub\Powershell\ServerDiskInformation\Logs\ServerDiskUsage.log'
+$CredList = Import-CSV -Path "F:\Data\Scripts\GitHub\Powershell\ServerList\CredList.csv"
+$ServerCSV = 'F:\Data\Scripts\GitHub\Powershell\ServerList\ServerList.csv'
+$ResultsCSV = "F:\Data\Scripts\GitHub\Powershell\ServerDiskInformation\$curdate-ServerDiskUsage-Results.csv"
 
 $logFile = $LogLocation
 $logFileExists = Test-Path -path $logFile

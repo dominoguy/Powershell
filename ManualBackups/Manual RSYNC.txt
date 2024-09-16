@@ -27,3 +27,216 @@ exclude-file.txt
 file1.txt
 dir1/*
 dir2
+
+
+
+94:de:80:a4:d5:3b
+
+
+config file
+predator
+c:\predator software\Support\PXPs
+file open > 
+top right hand corner
+
+Predator DNC v.xx Administrator
+editing the pxp config file
+M: = \\ACE-NAS-001\AmadaOfficeC
+M:\Predator Software\PXPs\Ace Manufacturing (Bittern Lake, AB).pxp
+
+
+right click an existing folder and select copy
+select the the punch name at the top and select paste
+you will have two of the same folders
+right click the new entry and select properties
+rename the folder
+select finish
+expand your new folder
+right click the folder inside and select properties
+Under directory you can give the drive mapping if it is there or use the UNC path
+T:\Radan or \\ace-nas-001\Radan
+this is a live connection so using unc, drive does not need to be mapped.
+Support <support@shopfloorautomations.com>
+
+4.73
+
+6344752
+
+
+https://veeam.looop.co/pathway/12483
+
+
+Pentastar
+Adding the Employee and Customer Calendar
+These accounts are from a mailbox on MS365
+Login to portal.office.com using the following account
+PentastarAir@pentastar.biz
+PilotCalendar365
+Go to Outlook (OWA) > Calendar
+From the top menu select Share
+Select the calendar you want to share
+Add the user and select Share.
+The user will get an invite
+
+
+10:32 AM 2024-03-20
+endurance capital
+
+
+3:01 PM 2024-04-17
+apple support
+michael
+
+smtp.office365.com
+Device or Application setting	Value
+Server/smart host	smtp.office365.com
+Port	Port 587 (recommended) or port 25
+TLS/StartTLS	Enabled
+Username/email address and password	Enter the sign-in credentials of the hosted mailbox being used
+
+Power BI Pro
+from 16 to 17
+Adding Michelle Fowles as per Jillian
+
+
+hp smart universal printing v2.07.2
+D:\\Data\File Cabinets\RWDSU_Co.000001\000\000 folder.
+
+
+rmona
+
+877 568 2495
+905 568 0434
+
+
+File > Account Settings > Account Settings
+Select your email account > Select Change
+Use the slider to select how far back you want to display emails
+
+
+
+Mani Kadiyala <ManiKadiyala@altec-inc.com>
+
+Erin Leson <eleson@SHEPHERDSCARE.org>
+
+Get-ManagementRoleAssignment -role "Mailbox Import Export" -GetEffectiveUsers |
+
+Out-File -Path C:\Foo\pwsh.txt
+
+Mailbox Import Export-Organization Management-Delegating Mailbox Import Export Organization Management RoleGroup        RoleGroup        Administrator
+
+New-RoleGroup -Name "Exchange Mailbox Import Export" -Roles "Mailbox Import Export" -Members "RI\BLongAdmin" -DisplayName "Exchange Mailbox Import Export" -Description "This group will provide access to mailbox import and export cmdlets within entire Exchange Organization."
+
+Mailbox Import Export-Administrator                      Mailbox Import Export Administrator           User             Direct           BLongAdmin
+
+
+Remove-Mailbox ‘ExchangeGUID value’ -PermanentlyDelete
+Remove-Mailbox ‘{D919BA05-46A6-415f-80AD-7E09334BB852’ -PermanentlyDelete
+
+Get-Recipient -Identity "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}" -IncludeSoftDeletedRecipients | fl Name, Alias, DistinguishedName, GUID
+Remove-Mailbox '81db6971-1bd0-43ed-9d7d-2888cf37d270'
+
+Name : DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}
+Guid : 66b2cfc6-1511-4e80-8c4a-b16e10a4ad14
+
+DISM.exe /Get-ImageInfo /ImageFile:H:\sources\install.esd /Index:1
+DISM.exe /Export-Image /SourceImageFile:H:\sources\install.esd /SourceIndex:1 /DestinationImageFile:E:\install.wim /Compress:fast /CheckIntegrity
+DISM.exe /Mount-Wim /WimFile:E:\install.wim /index:1 /MountDir:E:\MountDir /ReadOnly
+
+DISM.exe /Unmount-Wim /MountDir:E:\MountDir /discard
+
+
+Get-WmiObject -Class Win32_Product | Select-Object -Property Name
+
+
+Settings > General > Transfer or Reset [Device] > Reset > Reset Network Settings
+
+
+
+
+Outlook
+File > Account Settings > Download Address Book
+d.may@overheaddoor.ca	Dmca2622
+
+kerry@blus.com		Iloveblus3228
+
+
+pos@overheaddoor.ca	Pord7673
+
+While it is unclear how servers are initially breached, the threat actor's attack starts with the execution of a file named 'Tiworker.exe,' which masquerades as a legitimate Windows file.
+
+This executable is the initial staging payload for GhostEngine, a PowerShell script that downloads various modules to conduct different behaviors on an infected device.
+
+When Tiworker.exe is executed, it will download a PowerShell script named 'get.png' from the attacker's command and control (C2) server, which acts as GhostEngine's primary loader.
+
+This PowerShell script downloads additional modules and their configurations, disables Windows Defender, enables remote services, and clears various Windows event logs.
+
+Next, get.png verifies that the system has at least 10MB of free space, which is necessary for furthering the infection, and creates scheduled tasks named 'OneDriveCloudSync,' 'DefaultBrowserUpdate,' and 'OneDriveCloudBackup,' for persistence.
+
+GhostEngine also runs several files that allow the malware to gain persistence, meaning it loads each time the infected machine restarts. To do this, the file responsible, name get.png, creates the following scheduled tasks with SYSTEM, the highest system privileges in Windows:
+
+OneDriveCloudSync using msdtc to run the malicious service DLL C:\Windows\System32\oci.dll every 20 minutes (described later)
+DefaultBrowserUpdate to run C:\Users\Public\run.bat, which downloads the get.png script and executes it every 60 minutes
+OneDriveCloudBackup to execute C:\Windows\Fonts\smartsscreen.exe every 40 minutes.
+A separate component can act as a backdoor that allows the attackers to further download and execute malware on the infected machine. A PowerShell script titled backup.png “functions like a backdoor, enabling remote command execution on the system,” the researchers wrote. “It continually sends a Base64-encoded JSON object containing a unique ID, derived from the current time and the computer name while awaiting base64-encoded commands. The results of those commands are then sent back.”
+
+
+&udm=14
+
+Monday2024
+VSunday-Kiden@shepherdscare.org
+
+
+
+
+
+"Information wants to be free"
+I tend to agree.
+This is also better than,
+"Information is lost"
+
+
+2198893232128
+ACE-FS-001-BACKUP.vhdx
+
+F:\Backups\VHDX\
+
+add-VMHardDiskDrive -VMName ACE-FS-001 -controllertype SCSI -controllernumber 0 -controllerlocation 6 -path F:\Backups\VHDX\ACE-FS-001-Backup.Vhdx
+
+
+Sameasbefore2024
+btest@pentastar.biz
+
+ https://aka.ms/MFASetup
+
+
+
+Setup for MFA
+1) Go to https://aka.ms/MFASetup
+2) Enter Email address
+3) Enter Password
+4) More information required, click Next.
+5) Download the Microsoft Authenticator app on your phone or if you have already installed the app, click Next
+6) Open the Microsoft Authenticator app on your phone and select the + sign to add an account
+7) Select the Work or School option and select QR code
+8) In your browser, Set up your account, select Next
+9)  A QR code appears, scan the code with your phone.
+10 You will see an entry for your account.
+11) In your browser click Next
+12) Enter the code displayed in your browser into your phone.
+13) You will see a Notification Approved notice and your registration is complete.
+
+
+dkneller@brio-techpc.com		Weather1sFrighful!23
+
+
+obrown@brio-techpce.com		Obro6276
+
+
+
+
+
+
+
+
+

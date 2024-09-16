@@ -50,10 +50,10 @@ function Write-Log
     Add-Content $Logfile -value "$Time $logstring"
 }
 
-$LogLocation = 'F:\Data\Scripts\Powershell\LOGS\FileSizeCheck.log'
-$ServerCSV = 'F:\Data\Scripts\Powershell\RegistrySizeCheck\ServerList.csv'
-$FileCSV = 'F:\Data\Scripts\Powershell\RegistrySizeCheck\FileLocation.csv'
-$ResultsCSV = "F:\Data\Scripts\Powershell\RegistrySizeCheck\FileSizeCheck-Results.csv"
+$LogLocation = 'F:\Data\Scripts\GitHub\Powershell\LOGS\FileSizeCheck.log'
+$ServerCSV = 'F:\Data\Scripts\GitHub\Powershell\RegistrySizeCheck\ServerList.csv'
+$FileCSV = 'F:\Data\Scripts\GitHub\Powershell\RegistrySizeCheck\FileLocation.csv'
+$ResultsCSV = "F:\Data\Scripts\GitHub\Powershell\RegistrySizeCheck\FileSizeCheck-Results.csv"
 
 $logFile = $LogLocation
 $logFileExists = Test-Path -path $logFile
