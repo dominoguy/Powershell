@@ -12,15 +12,16 @@ Function SendEmail {
     $SMTPServer = "smtp.4web.ca"
     #$SMTPServer = "ri-exch-002.ri.ads"
     $SMTPUser = "smtp@renatus.ca"
-    #$SMTPPWD = "Gamma@Echo42"
+    $SMTPPWD = "Gamma@Echo42"
 
 
-    $passwordLocation = "$PSScriptRoot\Password.txt"
-    $password = Get-Content $passwordLocation | ConvertTo-SecureString
+    #$passwordLocation = "$PSScriptRoot\Password.txt"
+    #$password = Get-Content $passwordLocation | ConvertTo-SecureString
+    $password = $SMTPPWD
     $Port = "587"
     #$Port = "25"
     $From = "testsender@renatus.ca"
-    $To = "brianlong@renatus.ca,support@renatus.ca"
+    $To = "brianlong@renatus.ca"
     
     $email = New-Object System.Net.Mail.MailMessage
     $email.From = $From
@@ -33,15 +34,16 @@ Function SendEmail {
    
     $smtp.EnableSSL = $False
     $smtp.Port = 587
-    #$emailAttachment = New-Object Net.Mail.Attachment $Attachments
-    #$email.Attachments.add($emailAttachment)
+    $emailAttachment = New-Object Net.Mail.Attachment $Attachments
+    $email.Attachments.add($emailAttachment)
     $smtp.Send($email)
+    $emailAttachment.Dispose()
 }
 
-
+$attachment = "F:\Data\Scripts\Github\Powershell\EmployeeClockedIn\ITR-EmployeeClockedIn.txt"
 $Subject = "This is a test 2"
 $Body = "Don't look up"
-#$Attachments = "F:\Data\Scripts\Powershell\VM-Startup\Logs\VMSetStartup.log"
+$Attachments = $attachment
 
 
 

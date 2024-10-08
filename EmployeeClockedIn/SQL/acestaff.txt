@@ -1,0 +1,55 @@
+Staff Logged In for Date: Fri 10/04/2024  
+LastName                       FirstName                
+------------------------------ -------------------------
+Arjona                         Joey                     
+Bautista                       Arnold                   
+Beckstead                      Mark                     
+Brooks                         Parker                   
+Christensen                    Leif                     
+Creighton                      Erik                     
+Cribb-Zacharias                Gage                     
+Hammer                         Jason                    
+Hansman                        Naveya                   
+Haugen                         Andy                     
+Hay                            Isabella                 
+Herron                         Cody                     
+Hewlett                        Cody                     
+Hobden                         Mark                     
+Hofbauer                       Ethan                    
+King                           Jason                    
+Kosinski                       Brad                     
+Kreutz                         Darrin                   
+Kudrowich                      Jacob                    
+Lunde                          Krist                    
+Lyver                          Dion                     
+Mallari                        Walter                   
+Mallo                          Michael                  
+Martens                        David                    
+McCallum                       Lachlan                  
+McCarthy                       Kari                     
+Melin                          Ty                       
+Mills                          Steve                    
+Mills                          Tim                      
+Morgan                         Garry                    
+Notario                        Jojo                     
+Olson                          Austin                   
+Pagdilao                       Jomar                    
+Parfett                        Jackson                  
+Parussini                      Jonathan                 
+Patterson                      Kirkland                 
+Plantnich                      Joshua                   
+Pozerniuk                      Shawn                    
+Pugong                         Jomil                    
+Ross                           Rachelle                 
+Russell                        Dean                     
+Schapansky                     Michael                  
+Schultz                        Joshua                   
+Snydmiller                     Ian                      
+Swartz                         Kyle                     
+Thompson                       Timothy                  
+Tulalian                       Melchor                  
+Vance                          Trevor                   
+Wieler                         Micheal                  
+
+(49 rows affected)
+
