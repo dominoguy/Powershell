@@ -36,6 +36,7 @@ if ($EmptyOrNot -eq $False) {
 }
 #>
 
+<#
 function Test-SQLConnection
 {    
     [OutputType([bool])]
@@ -67,7 +68,36 @@ $SQLDatabase = "ITR"
 $SQLUser = "itrscript"
 $SQLPWD = "sklDjfq34028217jcNvlan4e"
 
-#$SQLUp = Test-SQLConnection "Data Source=$SQLServer;database=$SQLDatabase ;User ID=$SQLUser;Password=$SQLPWD;"
-$SQLUp = Test-SQLConnection -ServerName $SQLServer -DatabaseName $SQLDatabase User ID=$SQLUser;Password=$SQLPWD;"
+#$SQLUp = Test-SQLConnection "SERVER=$SQLServer;DATABASE=$SQLDatabase;user=$SQLUser;password=$SQLPWD"
+$SQLUp = Test-SQLConnection "SERVER=$SQLServer\$SQLDatabase;user=$SQLUser;password=$SQLPWD"
+#$SQLUp = Test-SQLConnection -ServerName $SQLServer -DatabaseName $SQLDatabase User ID=$SQLUser;Password=$SQLPWD;"
 
 write-host "IS the SQL Server up: $SQLUP"
+
+#>
+
+$LogFileName = "EmployeeClockedIn"
+$LogFile = "$PSScriptroot\Logs\$LogFileName.log"
+
+$logFileExists = Test-Path -path $logFile
+if ( $logFileExists -eq $True)
+{
+   #let log grow a certain size, remove -1 log file
+   $FileSize = (Get-Item $LogFile).Length/1kb
+   write-host $filesize
+   if ($FileSize -gt 100) 
+   {
+    $logFileDash1Exists = Test-Path -path "$PSScriptroot\Logs\$LogFileName-1.log"
+    if ($logFileDash1Exists -eq $True) 
+    {
+        Remove-Item -Path "$PSScriptroot\Logs\$LogFileName-1.log"
+    }
+    Rename-Item -Path $LogFile -NewName "$LogFileName-1.log"
+    New-Item -ItemType File -Force -Path $logFile
+   }
+}
+else
+{
+    #create a new log file
+    New-Item -ItemType File -Force -Path $logFile  
+}

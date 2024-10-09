@@ -49,6 +49,29 @@ Function SendEmail {
     $emailAttachment.Dispose()
 }
 
+function Test-SQLConnection
+{    
+    [OutputType([bool])]
+    Param
+    (
+        [Parameter(Mandatory=$true,
+                    ValueFromPipelineByPropertyName=$true,
+                    Position=0)]
+        $ConnectionString
+    )
+    try
+    {
+        $sqlConnection = New-Object System.Data.SqlClient.SqlConnection $ConnectionString;
+        $sqlConnection.Open();
+        $sqlConnection.Close();
+        return $true;
+    }
+    catch
+    {
+        return $false;
+    }
+}
+
 #get the current date in the format of  month-day-year
 $curDate = Get-Date -UFormat "%m-%d-%Y"
 $LogFileName = "EmployeeClockedIn"
@@ -73,9 +96,14 @@ $logFileExists = Test-Path -path $logFile
 if ( $logFileExists -eq $True)
 {
    #let log grow a certain size, remove -1 log file
-   $FileSize = $logFile.Length
-   if ($FileSize -gt 1000KB) {
-    Remove-Item -Path "$PSScriptroot\Logs\$LogFileName-1.log"
+   $FileSize = (Get-Item $LogFile).Length/1kb
+   if ($FileSize -gt 1000) 
+   {
+    $logFileDash1Exists = Test-Path -path "$PSScriptroot\Logs\$LogFileName-1.log"
+    if ($logFileDash1Exists -eq $True) 
+    {
+        Remove-Item -Path "$PSScriptroot\Logs\$LogFileName-1.log"
+    }
     Rename-Item -Path $LogFile -NewName "$LogFileName-1.log"
     New-Item -ItemType File -Force -Path $logFile
    }
@@ -86,88 +114,107 @@ else
     New-Item -ItemType File -Force -Path $logFile  
 }
 
-$DateCheckFileExists = Test-Path -path $DateCheckFile
+#Check the SQL connection to the ITR Database
+$SQLUp = Test-SQLConnection "SERVER=$SQLInstance;user=$SQLUser;password=$SQLPWD"
 
-if ($DateCheckFileExists -eq $True)
+if ($SQLUp -eq $True) 
 {
-    $DateCheck = Get-Content -Path $DateCheckFile
-    
-    if ($curDate -eq $DateCheck) 
+    $DateCheckFileExists = Test-Path -path $DateCheckFile
+    if ($DateCheckFileExists -eq $True)
     {
-        #check against employee list and if any changes email new results
-        $ITRSQLTemp = "$PSScriptroot\$ITRSQLFileNameTemp"
-        Invoke-Sqlcmd -InputFile $SQLCMD -ServerInstance $SQLInstance -Username $SQLUser -Password $SQLPWD | Out-File -FilePath $ITRSQLTemp
-        Set-Location $PSScriptroot
-   
-        $CompareResults = Compare-Object -ReferenceObject (Get-Content -Path $ITRSQLResults) -DifferenceObject (Get-Content -Path $ITRSQLTemp) | Select-Object -ExpandProperty InputObject
-        Write-Log "Checking ITR Employee list"
-        If ($null -eq $CompareResults)
+        $DateCheck = Get-Content -Path $DateCheckFile
+        if ($curDate -eq $DateCheck) 
         {
-            Write-Log "The files are the same"
-            Remove-item $ITRSQLTemp
+            #check against employee list and if any changes email new results
+            $ITRSQLTemp = "$PSScriptroot\$ITRSQLFileNameTemp"
+            Invoke-Sqlcmd -InputFile $SQLCMD -ServerInstance $SQLInstance -Username $SQLUser -Password $SQLPWD | Out-File -FilePath $ITRSQLTemp
+            Set-Location $PSScriptroot
+            [System.Data.SqlClient.SqlConnection]::ClearAllPools()
+            $CompareResults = Compare-Object -ReferenceObject (Get-Content -Path $ITRSQLResults) -DifferenceObject (Get-Content -Path $ITRSQLTemp) | Select-Object -ExpandProperty InputObject
+            Write-Log "Checking ITR Employee list"
+            If ($null -eq $CompareResults)
+            {
+                Write-Log "The files are the same"
+                Remove-item $ITRSQLTemp
+            }
+            else 
+            {
+                Write-Log "The files are different"
+                Remove-Item "$PSScriptroot\$ITRSQLFileName"
+                Rename-Item -Path $ITRSQLTemp -NewName $ITRSQLFileName
+                Write-Log "Emailing Results"
+                #email out new results
+                $Time = Get-Date
+                $To = $EmailResults
+                $Subject = "ITR-Employee Checked In List"
+                $Body = "ITR Checked In Employees: List created at $Time"
+                $Attachments = $ITRSQLResults
+                SendEmail $To $Subject $Body $Attachments
+            }    
         }
         else 
         {
-            Write-Log "The files are different"
-
-            Remove-Item "$PSScriptroot\$ITRSQLFileName"
-            Rename-Item -Path $ITRSQLTemp -NewName $ITRSQLFileName
-            Write-Log "Emailing Results"
-            #email out new results
+            #remove contents of datecheckfile and put in curdate
+            Set-Content -Path $DateCheckFile -Value $curDate
+            #get employee list and send out email for first email of the day
+            Write-Log "Starting EmployeeClockedIn"
+            Write-Log "Getting first list of the day"
+            #Get a list of checked in employees
+            Invoke-Sqlcmd -InputFile $SQLCMD -ServerInstance $SQLInstance -Username $SQLUser -Password $SQLPWD | Out-File -FilePath $ITRSQLResults
+            Set-Location $PSScriptroot
+            [System.Data.SqlClient.SqlConnection]::ClearAllPools()
+            $ResultsCheck = IF ([string]::IsNullOrWhitespace($ITRSQLResults)){$True} else {$False}
             $Time = Get-Date
-            $To = $EmailResults
-            $Subject = "ITR-Employee Checked In List"
-            $Body = "ITR Checked In Employees: List created at $Time"
-            $Attachments = $ITRSQLResults
-            SendEmail $Subject $Body $Attachments
-        }    
+
+            If ($ResultsCheck -eq $False ) {
+                Write-Log "Emailing Results"
+                #email out the results
+                $To = $EmailResults
+                $Subject = "ITR-Employee Checked In List"
+                $Body = "ITR Checked In Employees: List created at $Time"
+                $Attachments = $ITRSQLResults
+                SendEmail $To $Subject $Body $Attachments
+            }
+            else {
+            Write-Log "There are no checked in employees at $Time."
+            }
+        }
     }
     else 
     {
-        #remove contents of datecheckfile and put in curdate
-        Set-Content -Path $DateCheckFile -Value $curDate
-
-        #get employee list and send out email for first email of the day
+        New-Item -Path $DateCheckFile -ItemType File -Force -Value $curDate
         Write-Log "Starting EmployeeClockedIn"
         Write-Log "Getting first list of the day"
         #Get a list of checked in employees
         Invoke-Sqlcmd -InputFile $SQLCMD -ServerInstance $SQLInstance -Username $SQLUser -Password $SQLPWD | Out-File -FilePath $ITRSQLResults
         Set-Location $PSScriptroot
-        $ResultsCheck = IF ([string]::IsNullOrWhitespace($ITRSQLResults)){$True} else {$False}
+        [System.Data.SqlClient.SqlConnection]::ClearAllPools()
         $Time = Get-Date
 
-        If ($ResultsCheck -eq $False ) {
+        If ($ResultsCheck -eq $False )
+        {
             Write-Log "Emailing Results"
             #email out the results
+            $To = $EmailResults
             $Subject = "ITR-Employee Checked In List"
             $Body = "ITR Checked In Employees: List created at $Time"
             $Attachments = $ITRSQLResults
-            SendEmail $Subject $Body $Attachments
+            SendEmail $To $Subject $Body $Attachments
         }
-        else {
+        else 
+        {
             Write-Log "There are no checked in employees at $Time."
         }
+
     }
 }
-else {
-    New-Item -Path $DateCheckFile -ItemType File -Force -Value $curDate
-    Write-Log "Starting EmployeeClockedIn"
-    Write-Log "Getting first list of the day"
-    #Get a list of checked in employees
-    Invoke-Sqlcmd -InputFile $SQLCMD -ServerInstance $SQLInstance -Username $SQLUser -Password $SQLPWD | Out-File -FilePath $ITRSQLResults
-    Set-Location $PSScriptroot
-    $Time = Get-Date
-
-    If ($ResultsCheck -eq $False ) {
-        Write-Log "Emailing Results"
-        #email out the results
-        $Subject = "ITR-Employee Checked In List"
-        $Body = "ITR Checked In Employees: List created at $Time"
-        $Attachments = $ITRSQLResults
-        SendEmail $Subject $Body $Attachments
-    }
-    else {
-        Write-Log "There are no checked in employees at $Time."
-    }
-
+else 
+{
+    Write-Log "Cannot connect to ITR SQL database - $SQLInstance"
+     #email out the results
+     $To = $EmailSupport
+     $Subject = "ITR-Employee Checked In Script - Cannot Connect to ITR DB"
+     $Body = "ITR Employee Script failed to connect to the ITR DB on $SQLInstance"
+     SendEmail $To $Subject $Body $Attachments
+     
 }
