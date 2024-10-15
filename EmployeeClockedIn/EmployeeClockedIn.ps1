@@ -197,6 +197,8 @@ if ($SQLUp -eq $True)
         Invoke-Sqlcmd -InputFile $SQLCMD -ServerInstance $SQLInstance -Username $SQLUser -Password $SQLPWD | Export-CSV -Path $ITRSQLResults -NoTypeInformation
         Set-Location $PSScriptroot
         [System.Data.SqlClient.SqlConnection]::ClearAllPools()
+        #Checking if the SQL query returns data: is empty(True) or has data(False)
+        $ResultsCheck = IF ([string]::IsNullOrWhitespace($ITRSQLResults)){$True} else {$False}
         $Time = Get-Date
 
         If ($ResultsCheck -eq $False )
