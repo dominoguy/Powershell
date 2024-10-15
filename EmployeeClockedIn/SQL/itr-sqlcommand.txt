@@ -1,4 +1,0 @@
-SELECT DISTINCT Employee.LastName, Employee.FirstName
-FROM         PunchRaw INNER JOIN
-                      Employee ON PunchRaw.EmployeeID = Employee.ID
-WHERE     (PunchRaw.dtDate >= CONVERT(DATETIME, DATEADD(d, 0, DATEDIFF(d, 0, GETDATE())), 102)) AND (PunchRaw.PunchAssignmentID = 1)

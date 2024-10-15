@@ -1,4 +1,7 @@
-SELECT DISTINCT Employee.LastName, Employee.FirstName
+SELECT Employee.LastName, Employee.FirstName, PunchRaw.dtdate
 FROM         PunchRaw INNER JOIN
                       Employee ON PunchRaw.EmployeeID = Employee.ID
-WHERE     (PunchRaw.dtDate >= CONVERT(DATETIME, DATEADD(d, 0, DATEDIFF(d, 0, GETDATE())), 102)) AND (PunchRaw.PunchAssignmentID = 1)
+WHERE     (PunchRaw.dtDate = (select max(PunchRaw2.dtdate) from PunchRaw PunchRaw2 
+                              where PunchRaw2.EmployeeID = PunchRaw.EmployeeID and (PunchRaw.dtDate >= CONVERT(DATETIME, DATEADD(d, 0, DATEDIFF(d, 0, GETDATE())), 102))))
+		  and punchRaw.punchassignmentid = 1
+order by employee.lastname, employee.firstname

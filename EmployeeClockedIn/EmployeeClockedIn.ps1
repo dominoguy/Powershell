@@ -3,7 +3,7 @@
 #This script queries the ITR database and lists the employees who have clocked in.
 #Upon first run of the day it will email list regardless, subsequent runs during the day, the script will email list only if there are changes.
 #SQL query commands are from itr-sqlcommands.txt
-#Scheduled Task
+#Scheduled Task Setup
 #Runs script from 6:10 AM every hour until noon
 #Runs script from 1:10 PM every hour until 4:30PM
 
@@ -90,8 +90,8 @@ $ITRSQLResults = "$PSScriptroot\$ITRSQLFileName"
 $DateCheckFile = "$PSScriptroot\DateCheck.txt"
 
 #Multiple receptients, separate by a comma
-$EmailResults = "brianlong@renatus.ca"
-#$EmailResults = "ahaugen@acemfg.com"
+#$EmailResults = "brianlong@renatus.ca"
+$EmailResults = "ahaugen@acemfg.com,neilshmyr@renatus.ca"
 $EmailSupport = "Suppprt@renatus.ca"
 
 $SQLInstance = "ACE-SRV-001\ITR"
@@ -134,7 +134,7 @@ if ($SQLUp -eq $True)
         {
             #Check against employee list and if any changes email new results
             $ITRSQLTemp = "$PSScriptroot\$ITRSQLFileNameTemp"
-            Invoke-Sqlcmd -InputFile $SQLCMD -ServerInstance $SQLInstance -Username $SQLUser -Password $SQLPWD | Out-File -FilePath $ITRSQLTemp
+            Invoke-Sqlcmd -InputFile $SQLCMD -ServerInstance $SQLInstance -Username $SQLUser -Password $SQLPWD | Export-CSV -Path $ITRSQLTemp -NoTypeInformation
             Set-Location $PSScriptroot
             [System.Data.SqlClient.SqlConnection]::ClearAllPools()
             $CompareResults = Compare-Object -ReferenceObject (Get-Content -Path $ITRSQLResults) -DifferenceObject (Get-Content -Path $ITRSQLTemp) | Select-Object -ExpandProperty InputObject
@@ -167,7 +167,7 @@ if ($SQLUp -eq $True)
             Write-Log "Starting EmployeeClockedIn"
             Write-Log "Getting first list of the day"
             #Get a list of checked in employees
-            Invoke-Sqlcmd -InputFile $SQLCMD -ServerInstance $SQLInstance -Username $SQLUser -Password $SQLPWD | Out-File -FilePath $ITRSQLResults
+            Invoke-Sqlcmd -InputFile $SQLCMD -ServerInstance $SQLInstance -Username $SQLUser -Password $SQLPWD | Export-CSV -Path $ITRSQLResults -NoTypeInformation
             Set-Location $PSScriptroot
             [System.Data.SqlClient.SqlConnection]::ClearAllPools()
             #Checking if the SQL query returns data: is empty(True) or has data(False)
@@ -194,7 +194,7 @@ if ($SQLUp -eq $True)
         Write-Log "Starting EmployeeClockedIn"
         Write-Log "Getting first list of the day"
         #Get a list of checked in employees
-        Invoke-Sqlcmd -InputFile $SQLCMD -ServerInstance $SQLInstance -Username $SQLUser -Password $SQLPWD | Out-File -FilePath $ITRSQLResults
+        Invoke-Sqlcmd -InputFile $SQLCMD -ServerInstance $SQLInstance -Username $SQLUser -Password $SQLPWD | Export-CSV -Path $ITRSQLResults -NoTypeInformation
         Set-Location $PSScriptroot
         [System.Data.SqlClient.SqlConnection]::ClearAllPools()
         $Time = Get-Date

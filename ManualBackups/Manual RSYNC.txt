@@ -156,12 +156,7 @@ Settings > General > Transfer or Reset [Device] > Reset > Reset Network Settings
 
 Outlook
 File > Account Settings > Download Address Book
-d.may@overheaddoor.ca	Dmca2622
 
-kerry@blus.com		Iloveblus3228
-
-
-pos@overheaddoor.ca	Pord7673
 
 While it is unclear how servers are initially breached, the threat actor's attack starts with the execution of a file named 'Tiworker.exe,' which masquerades as a legitimate Windows file.
 
@@ -182,10 +177,6 @@ A separate component can act as a backdoor that allows the attackers to further 
 
 
 &udm=14
-
-Monday2024
-VSunday-Kiden@shepherdscare.org
-
 
 
 
@@ -227,10 +218,52 @@ Setup for MFA
 13) You will see a Notification Approved notice and your registration is complete.
 
 
-dkneller@brio-techpc.com		Weather1sFrighful!23
+
+HKEY_Local_Machine\SOFTWARE\Microsoft\Terminal Server Client
+
+Right click Terminal Server Client and select Export to back up this registry entry.
+
+Then, right click Terminal Server Client and select New -> DWORD.
+
+Rename it as UseURCP with value 0.
+
+The next time the user logs in, this setting will take effect.
+
+This basically tells the rds service to stop trying to compensate for jitter on the line.
 
 
-obrown@brio-techpce.com		Obro6276
+hsinclair@shepherdsgardens.ca
+Candycane2022
+
+kirsty@kentpropertymanagement.co.uk
+
+Get-Item WSMan:\localhost\Client\TrustedHosts
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value 'machineA,machineB'
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*'
+Clear-Item -Path WSMan:\localhost\Client\TrustedHosts -Force
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value 'ACP-HDC-001.acp.local'
+
+
+rsync to resume in the directory where it left off.
+read the redirect file
+note the directory where it left off
+check the directory list file
+could be built dynamically
+	Group\
+	RoamProfiles\
+
+add the directories to an exclude file until you reach the directory where rsync left off
+
+
+jlyons
+Monday0624
+
+
+
+
+
+
+
 
 
 
